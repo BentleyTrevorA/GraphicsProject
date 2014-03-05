@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Camera" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/OpenAL32.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/OpenAL64.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-dx8.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-dx8_64.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-raw.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-raw_64.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/lwjgl.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/lwjgl64.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/455LabCompilation.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/455LabCompilation.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/BigPoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Camera/Camera.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataStructures.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LWJGLSandbox.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LWJGLmain.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab1Controller.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab2Controller.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab3Controller.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/LabController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/Line.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/PointData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/Quad.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/Triangle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/errors.log.1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/errors.log" />
+    </list>
+    <ignored path="455LabCompilation.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/Controllers/LabController.java" line="563" class="Controllers.LabController" package="Controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="455LabCompilation" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Lab3Controller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="1" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21052632" vertical-offset="0" max-vertical-offset="10275">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/Controllers/Lab1Controller.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/Point.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/LineData.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/TriangleData.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/Lab2Controller.java" />
+        <option value="$PROJECT_DIR$/src/DataStructures.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/BigPoint.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/PointData.java" />
+        <option value="$PROJECT_DIR$/src/Camera/Camera.java" />
+        <option value="$PROJECT_DIR$/src/LWJGLSandbox.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/Triangle.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/Quad.java" />
+        <option value="$PROJECT_DIR$/src/DataRepresentations/Line.java" />
+        <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/LabController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/Lab3Controller.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1373" />
+    <option name="y" value="52" />
+    <option name="width" value="1264" />
+    <option name="height" value="972" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataRepresentations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Camera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
+    <property name="last_opened_file_path" value="$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl_util.jar!/" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
+    <property name="SearchEverywhereHistory" value="shear" />
+  </component>
+  <component name="RunManager" selected="Application.LWJGLmain">
+    <configuration default="false" name="LWJGLmain" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="LWJGLmain" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=lib/native/linux" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="455LabCompilation" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.LWJGLmain" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.LWJGLmain" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="true" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">$USER_HOME$/.subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="" />
+      <created>1389821283963</created>
+      <updated>1389821283963</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Finished lab 2">
+      <created>1392666970320</created>
+      <updated>1392666970320</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactored raster and setPixel to LabController class to remove code duplication">
+      <created>1392667227468</created>
+      <updated>1392667227468</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactor my GLFunctions to LabController so that they can be used by other controllers">
+      <created>1392667897763</created>
+      <updated>1392667897763</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Lab 3 setup - created openGL functions for testing against">
+      <created>1392670871092</created>
+      <updated>1392670871092</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Got openGL depth rendering to work">
+      <created>1392671867356</created>
+      <updated>1392671867356</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Viewport Succesful Lab 3">
+      <created>1393130454504</created>
+      <updated>1393130454504</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Divide by w done">
+      <created>1393131938998</created>
+      <updated>1393131938998</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Modified all Points to be Vector3f to allow for depth buffering">
+      <created>1393134184648</created>
+      <updated>1393134184648</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Depth Working">
+      <created>1393138880132</created>
+      <updated>1393138880132</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Matrix Manipulation Working&#10;Restored integer arithmetic to Line (instead of float which was messing stuff up)">
+      <created>1393301382701</created>
+      <updated>1393301382701</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Removed extra z sections that were commented out.&#10;added 1 to the numSteps for z coordinate">
+      <created>1393301495843</created>
+      <updated>1393301495843</updated>
+    </task>
+    <task id="LOCAL-00012" summary="rotate, scale, and translate functions completed (lab 3 options)">
+      <created>1393308404747</created>
+      <updated>1393308404747</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Up to 80 points completed">
+      <created>1393467438849</created>
+      <updated>1393467438849</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Line, Quad, and Triangle now use Vecdtor4f instead of Vector3f&#10;LabController has doGLMatrixMode implemented&#10;Shear is implemented but for some reason is not working&#10;gluLookAt is also implemented but I don't know how to use it right to see anything">
+      <created>1393480092757</created>
+      <updated>1393480092757</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Shear works both in LWJGL and my implementation.">
+      <created>1393481581647</created>
+      <updated>1393481581647</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1373" y="52" width="1264" height="972" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.169045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.72231686" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4906696" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16851266" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33960176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40724477" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Finished lab 2" />
+    <MESSAGE value="Refactored raster and setPixel to LabController class to remove code duplication" />
+    <MESSAGE value="Refactor my GLFunctions to LabController so that they can be used by other controllers" />
+    <MESSAGE value="Lab 3 setup - created openGL functions for testing against" />
+    <MESSAGE value="Got openGL depth rendering to work" />
+    <MESSAGE value="Viewport Succesful Lab 3" />
+    <MESSAGE value="Divide by w done" />
+    <MESSAGE value="Modified all Points to be Vector3f to allow for depth buffering" />
+    <MESSAGE value="Depth Working" />
+    <MESSAGE value="Matrix Manipulation Working&#10;Restored integer arithmetic to Line (instead of float which was messing stuff up)" />
+    <MESSAGE value="Removed extra z sections that were commented out.&#10;added 1 to the numSteps for z coordinate" />
+    <MESSAGE value="rotate, scale, and translate functions completed (lab 3 options)" />
+    <MESSAGE value="Up to 80 points completed" />
+    <MESSAGE value="Line, Quad, and Triangle now use Vecdtor4f instead of Vector3f&#10;LabController has doGLMatrixMode implemented&#10;Shear is implemented but for some reason is not working&#10;gluLookAt is also implemented but I don't know how to use it right to see anything" />
+    <MESSAGE value="Shear works both in LWJGL and my implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shear works both in LWJGL and my implementation." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="515" column="36" selection-start="16230" selection-end="16230" vertical-scroll-proportion="0.0" vertical-offset="7725" max-vertical-offset="10230">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="580" column="35" selection-start="20808" selection-end="20808" vertical-scroll-proportion="0.0" vertical-offset="10247" max-vertical-offset="10795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="38" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="57" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3026">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/PointData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="300" column="30" selection-start="9875" selection-end="9875" vertical-scroll-proportion="0.0" vertical-offset="5022" max-vertical-offset="5916">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="69" selection-start="5684" selection-end="5684" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9809">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="34" selection-start="3590" selection-end="3590" vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="2975">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="269" column="0" selection-start="8923" selection-end="8923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4913">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="43" selection-start="4814" selection-end="4814" vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="3468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="0" selection-start="3634" selection-end="3634" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="2958">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="2788" max-vertical-offset="2788">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="398" column="22" selection-start="14524" selection-end="14524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Quad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="55" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1088">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1580#1591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="62" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2788">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/BigPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="29" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab1Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="21" selection-start="1027" selection-end="1030" vertical-scroll-proportion="0.3329453" vertical-offset="224" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataStructures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="17" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/BigPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="48" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="48" selection-start="508" selection-end="508" vertical-scroll-proportion="0.15370706" vertical-offset="0" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/PointData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="228" selection-end="228" vertical-scroll-proportion="-0.05923345" vertical-offset="187" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="264" selection-end="264" vertical-scroll-proportion="0.16550523" vertical-offset="92" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Camera/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="186" selection-end="186" vertical-scroll-proportion="0.2369338" vertical-offset="0" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="32" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Quad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="58" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="591" max-vertical-offset="1105">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1580#1591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="6" selection-start="6392" selection-end="6854" vertical-scroll-proportion="0.77700347" vertical-offset="3022" max-vertical-offset="5831">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="39" selection-start="1322" selection-end="1322" vertical-scroll-proportion="-11.769231" vertical-offset="102" max-vertical-offset="3026">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="0.11544991" vertical-offset="0" max-vertical-offset="589">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="1" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21052632" vertical-offset="0" max-vertical-offset="10275">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>455LabCompilation</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lwjgl</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
