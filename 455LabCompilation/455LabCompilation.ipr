@@ -172,8 +172,8 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="svn" />
-    <mapping directory="$USER_HOME$/Dropbox/School/Winter 2014/CS 455/Labs" vcs="svn" />
+    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="lwjgl">
