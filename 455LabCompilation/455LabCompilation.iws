@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LWJGLmain.java" afterPath="$PROJECT_DIR$/src/LWJGLmain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" afterPath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/LabController.java" afterPath="$PROJECT_DIR$/src/Controllers/LabController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
@@ -87,10 +86,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Lab4Controller.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Lab4Controller.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/Lab4Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="39" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.5670628" vertical-offset="1646" max-vertical-offset="2235">
+            <state line="165" column="5" selection-start="5567" selection-end="5567" vertical-scroll-proportion="0.0" vertical-offset="2006" max-vertical-offset="2595">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,11 +97,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LabController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LabController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="859" column="30" selection-start="30753" selection-end="30753" vertical-scroll-proportion="0.0" vertical-offset="12324" max-vertical-offset="12960">
-              <folding />
+            <state line="163" column="42" selection-start="5432" selection-end="5432" vertical-scroll-proportion="0.390625" vertical-offset="2220" max-vertical-offset="13560">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -559,7 +560,11 @@
       <created>1394068187923</created>
       <updated>1394068187923</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="glFrustum works">
+      <created>1394850885716</created>
+      <updated>1394850885716</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -641,7 +646,8 @@
     <MESSAGE value="Line, Quad, and Triangle now use Vecdtor4f instead of Vector3f&#10;LabController has doGLMatrixMode implemented&#10;Shear is implemented but for some reason is not working&#10;gluLookAt is also implemented but I don't know how to use it right to see anything" />
     <MESSAGE value="Shear works both in LWJGL and my implementation." />
     <MESSAGE value="IPR Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="IPR Updated" />
+    <MESSAGE value="glFrustum works" />
+    <option name="LAST_COMMIT_MESSAGE" value="glFrustum works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -663,7 +669,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -679,7 +687,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,14 +705,18 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="580" column="35" selection-start="20808" selection-end="20808" vertical-scroll-proportion="0.0" vertical-offset="10247" max-vertical-offset="10795">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -748,7 +762,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="69" selection-start="5684" selection-end="5684" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9809">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -780,7 +796,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="152" column="43" selection-start="4814" selection-end="4814" vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="3468">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -819,7 +837,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -842,7 +862,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -889,7 +911,9 @@
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="30" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="935">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="859" column="30" selection-start="30753" selection-end="30753" vertical-scroll-proportion="0.0" vertical-offset="12324" max-vertical-offset="12960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="54" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
@@ -1007,7 +1024,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/Lab4Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="39" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.5670628" vertical-offset="1646" max-vertical-offset="2235">
+        <state line="165" column="5" selection-start="5567" selection-end="5567" vertical-scroll-proportion="0.0" vertical-offset="2006" max-vertical-offset="2595">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="42" selection-start="5432" selection-end="5432" vertical-scroll-proportion="0.390625" vertical-offset="2220" max-vertical-offset="13560">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

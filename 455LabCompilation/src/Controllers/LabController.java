@@ -605,11 +605,11 @@ public abstract class LabController
         }
 
         tempMatrix.load(matrixBuffer.asFloatBuffer());
-        System.out.println("TEMP:\n" + tempMatrix.toString());
+//        System.out.println("TEMP:\n" + tempMatrix.toString());
 
         if (currentMatrix == modelView) {
             Matrix4f.mul(modelView, tempMatrix, modelView);
-            System.out.println("NEW MODELVIEW:\n" + modelView.toString());
+//            System.out.println("NEW MODELVIEW:\n" + modelView.toString());
         }
         else if (currentMatrix == projection) {
             Matrix4f.mul(projection, tempMatrix, projection);
@@ -842,6 +842,7 @@ public abstract class LabController
         doGLFrustumF((float) left, (float) right, (float) bottom, (float) top, (float) near, (float) far);
     }
 
+    // http://msdn.microsoft.com/en-us/library/dd373537(v=VS.85).aspx
     protected void doGLFrustumF(float left, float right, float bottom, float top, float near, float far)
     {
         /* [A 0  B 0]
@@ -857,13 +858,40 @@ public abstract class LabController
         float E = -1 * (far + near) / (far - near);
         float F = (-2 * far  * near) / (far - near);
 
-        float[] projection = {
+        float[] frustrumMatrix = {
                 A, 0, 0, 0,
                 0, C, 0, 0,
                 B, D, E, -1,
                 0, 0, F, 0};
 
-        doGLMultMatrixf(projection);
+        doGLMultMatrixf(frustrumMatrix);
+    }
+
+    // http://www.opengl.org/wiki/GluPerspective_code
+    protected void doGluPerspective(float fov_y, float aspect, float near, float far)
+    {
+        float ymax = near * (float)Math.tan(fov_y * Math.PI / 360.0);
+
+        //ymin = -ymax;
+        //xmin = -ymax * aspectRatio;
+        float xmax = ymax * aspect;
+        doGLFrustumF(-xmax, xmax, -ymax, ymax, near, far);
+
+
+        // This one zooms out more
+        // f = 1/tan(fov_y/2)
+//        float f = 1 / (float)Math.tan((double)fov_y / 2);
+//        float A = f / aspect;
+//        float B = (far + near) / (near - far);
+//        float C = (2 * far * near) / (near - far);
+//
+//        float[] perspective = {
+//            A, 0, 0, 0,
+//            0, f, 0, 0,
+//            0, 0, B, -1,
+//            0, 0, C, 0};
+//
+//        doGLMultMatrixf(perspective);
     }
 }
 

@@ -8,7 +8,7 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Lab4Controller extends LabController {
     public void init() {
-        drawMode = 1;
+        drawMode = 2;
     }
 
     // This method is called to "resize" the viewport to match the screen.
@@ -57,7 +57,7 @@ public class Lab4Controller extends LabController {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
-//                doMyViewportTransformation();
+                doMyGLPerspective();
                 render();
             }
         }
@@ -121,6 +121,30 @@ public class Lab4Controller extends LabController {
         doGLMatrixMode(GL_PROJECTION);
         doGLLoadIdentity();
         doGLFrustumD(-0.1, 0.1, -0.1 * 480 / 640, 0.1 * 480 / 640, 0.1, 10);
+        doGLMatrixMode(GL_MODELVIEW);
+        doGLLoadIdentity();
+        doGLBegin(GL_TRIANGLES);
+        doGLColor3f(0, 0, 1);
+        doGLVertex3f(-0.4f, -0.6f, -1);
+        doGLVertex3f(0.4f, -0.6f, -1);
+        doGLVertex3f(0.4f, -0.1f, -1);
+        doGLVertex3f(0.4f, -0.1f, -1);
+        doGLVertex3f(-0.4f, -0.1f, -1);
+        doGLVertex3f(-0.4f, -0.6f, -1);
+        doGLColor3f(1, 0, 1);
+        doGLVertex3f(-0.4f, -0.1f, -1);
+        doGLVertex3f(0.4f, -0.1f, -1);
+        doGLVertex3f(0.3f, 0, -2);
+        doGLVertex3f(0.3f, 0, -2);
+        doGLVertex3f(-0.3f, 0, -2);
+        doGLVertex3f(-0.4f, -0.1f, -1);
+        doGLEnd();
+    }
+
+    public void doMyGLPerspective() {
+        doGLMatrixMode(GL_PROJECTION);
+        doGLLoadIdentity();
+        doGluPerspective(90f, (640f) / 480f, .1f, 10f);
         doGLMatrixMode(GL_MODELVIEW);
         doGLLoadIdentity();
         doGLBegin(GL_TRIANGLES);
