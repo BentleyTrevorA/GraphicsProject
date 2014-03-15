@@ -1,6 +1,7 @@
 import Controllers.Lab1Controller;
 import Controllers.Lab2Controller;
 import Controllers.Lab3Controller;
+import Controllers.Lab4Controller;
 import DataRepresentations.PointData;
 
 import java.util.HashSet;
@@ -10,7 +11,7 @@ import java.util.TreeSet;
 
 public class LWJGLmain
 {
-    private static int lab = 3;
+    private static int lab = 4;
 
     public static void main(String[] args) {
         LWJGLSandbox main = null;
@@ -26,6 +27,8 @@ public class LWJGLmain
                 case 3:
                     main.create(new Lab3Controller());
                     break;
+                case 4:
+                    main.create(new Lab4Controller());
             }
             main.run();
         }

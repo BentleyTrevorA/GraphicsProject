@@ -836,6 +836,35 @@ public abstract class LabController
 
         return screenPoint;
     }
+
+    protected void doGLFrustumD(double left, double right, double bottom, double top, double near, double far)
+    {
+        doGLFrustumF((float) left, (float) right, (float) bottom, (float) top, (float) near, (float) far);
+    }
+
+    protected void doGLFrustumF(float left, float right, float bottom, float top, float near, float far)
+    {
+        /* [A 0  B 0]
+         * [0 C  D 0]
+         * [0 0  E F]
+         * [0 0 -1 0]
+         */
+
+        float A = (2 * near) / (right - left);
+        float B = (right + left) / (right - left);
+        float C = (2 * near) / (top - bottom);
+        float D = (top + bottom) / (top - bottom);
+        float E = -1 * (far + near) / (far - near);
+        float F = (-2 * far  * near) / (far - near);
+
+        float[] projection = {
+                A, 0, 0, 0,
+                0, C, 0, 0,
+                B, D, E, -1,
+                0, 0, F, 0};
+
+        doGLMultMatrixf(projection);
+    }
 }
 
 

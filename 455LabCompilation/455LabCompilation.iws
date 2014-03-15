@@ -1,43 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Camera" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/OpenAL32.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/OpenAL64.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-dx8.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-dx8_64.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-raw.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/jinput-raw_64.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/lwjgl.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows/lwjgl64.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/windows" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/455LabCompilation.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/455LabCompilation.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/BigPoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Camera/Camera.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataStructures.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LWJGLSandbox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LWJGLmain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab1Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab2Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab3Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/LabController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/Line.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/PointData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/Quad.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataRepresentations/Triangle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/errors.log.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/errors.log" />
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LWJGLmain.java" afterPath="$PROJECT_DIR$/src/LWJGLmain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/LabController.java" afterPath="$PROJECT_DIR$/src/Controllers/LabController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
     <ignored path="455LabCompilation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,10 +87,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Lab3Controller.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <file leaf-file-name="Lab4Controller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/Lab4Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="1" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21052632" vertical-offset="0" max-vertical-offset="10275">
+            <state line="132" column="39" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.5670628" vertical-offset="1646" max-vertical-offset="2235">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,7 +101,7 @@
       <file leaf-file-name="LabController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+            <state line="859" column="30" selection-start="30753" selection-end="30753" vertical-scroll-proportion="0.0" vertical-offset="12324" max-vertical-offset="12960">
               <folding />
             </state>
           </provider>
@@ -144,6 +113,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -162,17 +134,18 @@
         <option value="$PROJECT_DIR$/src/DataRepresentations/Triangle.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/Quad.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/Line.java" />
-        <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/LabController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/Lab3Controller.java" />
+        <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/LabController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1373" />
-    <option name="y" value="52" />
-    <option name="width" value="1264" />
-    <option name="height" value="972" />
+    <option name="x" value="1366" />
+    <option name="y" value="24" />
+    <option name="width" value="1280" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -299,8 +272,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
-    <property name="last_opened_file_path" value="$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl_util.jar!/" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/455LabCompilation.ipr" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -498,6 +471,24 @@
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
   </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="" />
@@ -564,7 +555,11 @@
       <created>1393481581647</created>
       <updated>1393481581647</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="IPR Updated">
+      <created>1394068187923</created>
+      <updated>1394068187923</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -588,7 +583,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1373" y="52" width="1264" height="972" extended-state="4" />
+    <frame x="1366" y="24" width="1280" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -601,21 +596,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32296136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16851266" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33960176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16796875" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3390558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40724477" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -645,7 +640,8 @@
     <MESSAGE value="Up to 80 points completed" />
     <MESSAGE value="Line, Quad, and Triangle now use Vecdtor4f instead of Vector3f&#10;LabController has doGLMatrixMode implemented&#10;Shear is implemented but for some reason is not working&#10;gluLookAt is also implemented but I don't know how to use it right to see anything" />
     <MESSAGE value="Shear works both in LWJGL and my implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shear works both in LWJGL and my implementation." />
+    <MESSAGE value="IPR Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="IPR Updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -655,6 +651,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="28" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="10275">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="1" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="10275">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="515" column="36" selection-start="16230" selection-end="16230" vertical-scroll-proportion="0.0" vertical-offset="7725" max-vertical-offset="10230">
@@ -954,23 +982,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="0.11544991" vertical-offset="0" max-vertical-offset="589">
-          <folding />
+        <state line="42" column="24" selection-start="1442" selection-end="1442" vertical-scroll-proportion="1.0696095" vertical-offset="0" max-vertical-offset="10275">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
+        <state line="859" column="30" selection-start="30753" selection-end="30753" vertical-scroll-proportion="0.0" vertical-offset="12324" max-vertical-offset="12960">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21052632" vertical-offset="0" max-vertical-offset="10275">
+        <state line="30" column="54" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab4Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="39" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.5670628" vertical-offset="1646" max-vertical-offset="2235">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
