@@ -14,8 +14,7 @@ import java.util.*;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public abstract class LabController
-{
+public abstract class LabController {
     protected Vector4f clearColor, currentColor, initialPointColor;
     protected Vector4f firstPointColor, secondPointColor, thirdPointColor;
     protected Set<PointData> pointData; // Used for drawing lines and points in the raster
@@ -23,22 +22,37 @@ public abstract class LabController
     protected int drawType;
     protected int pointCount, pointRadius;
     protected Vector4f initialPoint, firstPoint, secondPoint, thirdPoint;
+    protected Vector4f normal;
 
+    // For drawing
     protected Line line;
 
+    // Matrix Stack
     protected Stack<Matrix4f> matrixStack;
     protected int numModelViewOnStack, numProjectionOnStack;
+
+    // Transformation matrices
     protected Matrix4f modelView, projection, viewport, currentMatrix;
+    protected Matrix4f modelViewTranspose;
     protected Vector4f bLView, tRView;
 
+    // Clipping
     protected boolean depthTest, clippingEnabled;
     protected final float lowestZ = 1;
+
+    // Lighting
+    protected boolean lightingEnabled, colorMaterialEnabled;
+    protected boolean[] lightsEnabled;
+    protected Map<Integer, Vector4f> diffuseColors, ambientColors, lightPositions;
+
+    // Normalization
+    protected boolean normalize;
 
     protected final int DISPLAY_WIDTH = 640;
     protected final int DISPLAY_HEIGHT = 480;
 
     protected int drawMode = 1;
-    protected ByteBuffer raster, depthRaster;
+    protected ByteBuffer raster, depthRaster, normalRaster;
 
     public LabController() {
         initBase();
@@ -55,10 +69,16 @@ public abstract class LabController
         depthRaster = ByteBuffer.allocateDirect(DISPLAY_WIDTH * DISPLAY_HEIGHT * 4);
         depthRaster.order(ByteOrder.LITTLE_ENDIAN);
 
+        // For storing the normal associated with each vertex (x, y, z)
+        normalRaster = ByteBuffer.allocateDirect(DISPLAY_WIDTH * DISPLAY_HEIGHT * 4 * 3);
+        normalRaster.order(ByteOrder.LITTLE_ENDIAN);
+
         line = new Line();
         convexShapes = new ArrayList<ConvexShape>();
 
         modelView = new Matrix4f();
+        modelViewTranspose = new Matrix4f();
+        modelView.transpose(modelViewTranspose);
         projection = new Matrix4f();
         viewport = new Matrix4f();
         currentMatrix = modelView;
@@ -72,6 +92,23 @@ public abstract class LabController
 
         bLView = new Vector4f(0, 0, 0, 1);
         tRView = new Vector4f(DISPLAY_WIDTH, DISPLAY_HEIGHT, 0, 1);
+
+        lightingEnabled = false;
+        colorMaterialEnabled = false;
+
+        lightsEnabled = new boolean[8];
+        diffuseColors = new HashMap<Integer, Vector4f>();
+        ambientColors = new HashMap<Integer, Vector4f>();
+        lightPositions = new HashMap<Integer, Vector4f>();
+
+        for(int i=0; i<8; i++) {
+            diffuseColors.put(i, new Vector4f());
+            ambientColors.put(i, new Vector4f());
+            lightPositions.put(i, new Vector4f());
+        }
+
+        normal = new Vector4f();
+        normalize = false;
     }
 
     public void init() {
@@ -126,8 +163,7 @@ public abstract class LabController
 
             if (depthWasEnabled)
                 glEnable(GL_DEPTH_TEST);
-        }
-        else {
+        } else {
             Display.update();
         }
         glFlush();
@@ -139,33 +175,94 @@ public abstract class LabController
 
         try {
             if (withinViewport(x, y)) {
+                Vector4f pixelColor = new Vector4f(r, g, b, 1);
+
                 float depth = depthRaster.asFloatBuffer().get(zBasePos);
                 // -Z goes into the display
                 if (!depthTest) {
-                    raster.asFloatBuffer().put(basePos, r);
-                    raster.asFloatBuffer().put(basePos + 1, g);
-                    raster.asFloatBuffer().put(basePos + 2, b);
+                    // Put the pixel into the raster with the calculated color
+                    raster.asFloatBuffer().put(basePos, pixelColor.x);
+                    raster.asFloatBuffer().put(basePos + 1, pixelColor.y);
+                    raster.asFloatBuffer().put(basePos + 2, pixelColor.z);
                 }
+                // DEPTH TESTING ENABLED
                 else if (z >= -1 && z <= 1) {
                     if (depth == lowestZ || z == lowestZ || depth >= z) {
-                        raster.asFloatBuffer().put(basePos, r);
-                        raster.asFloatBuffer().put(basePos + 1, g);
-                        raster.asFloatBuffer().put(basePos + 2, b);
+                        raster.asFloatBuffer().put(basePos, pixelColor.x);
+                        raster.asFloatBuffer().put(basePos + 1, pixelColor.y);
+                        raster.asFloatBuffer().put(basePos + 2, pixelColor.z);
                         depthRaster.asFloatBuffer().put(zBasePos, z);
+
+                        Vector4f normal = modelToScreenNormal();
+                        normalRaster.asFloatBuffer().put(basePos, normal.x);
+                        normalRaster.asFloatBuffer().put(basePos + 1, normal.y);
+                        normalRaster.asFloatBuffer().put(basePos + 2, normal.z);
                     }
                 }
-//                else {
-//                    System.out.println("("+ x  + "," + y + "," + z + ")");
-//                }
             }
-        }
-        catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
             System.err.println("X: " + x);
             System.err.println("Y: " + y);
             System.err.println("Z: " + z);
             System.err.println("basePos: " + basePos);
             throw e;
         }
+    }
+
+    private Vector4f calculateLight(Vector4f position, Vector4f posNormal) {
+        Vector4f light = new Vector4f();
+
+        // Add light from each of the 8 lights IF they are enabled
+        for(int i=0; i<8; i++) {
+            if(lightsEnabled[i]) {
+                // light += l_a[i] + max(0, n.dotProduct((l_p[i] - p).normalize())) * l_d[i]
+
+                // (l_p[i] - p).normalize()
+                Vector4f normalizedInternals = new Vector4f();
+                Vector4f.sub(lightPositions.get(i), position, normalizedInternals);
+                normalizedInternals.normalise(normalizedInternals);
+
+                // max(0, n.dotProduct(normalizedInternals)
+                float max = Math.max(0, Vector4f.dot(posNormal, normalizedInternals));
+
+                Vector4f diffuse = diffuseColors.get(i);
+                Vector4f ambient = ambientColors.get(i);
+
+                light.x += ambient.x + max * diffuse.x;
+                light.y += ambient.y + max * diffuse.y;
+                light.z += ambient.z + max * diffuse.z;
+            }
+        }
+
+        return light;
+    }
+
+    private Vector4f calculateNewColor(Vector4f position) {
+        // Change the color based off the lighting that is on
+        if(lightingEnabled) {
+            // Get the normal
+            Vector4f posNormal = modelToScreenNormal();
+            Vector4f light = calculateLight(position, posNormal);
+
+            // TODO: Currently only does ambient and diffuse
+            if(colorMaterialEnabled)
+            {
+                // newColor = light < elementwise - times > oldColor
+                // NOTE: may add .2 .2 .2 if desired
+                return new Vector4f(light.x * currentColor.x, light.y * currentColor.y, light.z * currentColor.z, light.w * currentColor.w);
+            }
+            else
+            {
+                // newColor = light < elementwise − times > (.8, .8, .8, 1) + (.2, .2, .2, 0)
+                // light < elementwise - times > {.8, .8, .8, 1) MEANS:
+                // {light.x * .8, light.y * .8, light.z * .8, light.w * 1}
+                return new Vector4f(light.x * .8f + .2f, light.y * .8f + .2f, light.z * .8f + .2f, 1);
+            }
+
+            // Specular specColor += max(0, pow((n dot halfway), h)) * v_s <elementwise -times > l_s;
+        }
+
+        return new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
     }
 
     public boolean withinViewport(int x, int y) {
@@ -270,8 +367,7 @@ public abstract class LabController
         if (firstPoint == null) {
             firstPoint = new Vector4f(x, y, z, 1);
             firstPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else {
+        } else {
             pointData = line.plotLineData(firstPoint, new Vector4f(x, y, z, 1), firstPointColor, currentColor);
             Iterator iter = pointData.iterator();
             while (iter.hasNext()) {
@@ -289,8 +385,7 @@ public abstract class LabController
     protected void doGLLineStrip3D(float x, float y, float z) {
         if (firstPoint == null) {
             firstPoint = new Vector4f(x, y, z, 1);
-        }
-        else {
+        } else {
             secondPoint = new Vector4f(x, y, z, 1);
             pointData = line.plotLineData(firstPoint, secondPoint, firstPointColor, currentColor, pointData);
             firstPoint = secondPoint;
@@ -307,8 +402,7 @@ public abstract class LabController
             firstPoint = new Vector4f(x, y, z, 1);
             initialPoint = new Vector4f(x, y, z, 1);
             initialPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else {
+        } else {
             secondPoint = new Vector4f(x, y, z, 1);
             pointData = line.plotLineData(firstPoint, secondPoint, firstPointColor, currentColor, pointData);
             firstPoint = secondPoint;
@@ -329,26 +423,23 @@ public abstract class LabController
 
         if (firstPoint == null) {
             firstPoint = new Vector4f(x, y, z, 1);
-            firstPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else if (secondPoint == null) {
+            firstPointColor = calculateNewColor(firstPoint);
+        } else if (secondPoint == null) {
             secondPoint = new Vector4f(x, y, z, 1);
-            secondPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else {
+            secondPointColor = calculateNewColor(secondPoint);
+        } else {
             Triangle triangle = new Triangle();
 
             if (drawType == GL_TRIANGLES) {
                 triangle.addPoint(firstPoint, firstPointColor);
                 triangle.addPoint(secondPoint, secondPointColor);
-                triangle.addPoint(new Vector4f(x, y, z, 1), new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1));
+                triangle.addPoint(new Vector4f(x, y, z, 1), calculateNewColor(new Vector4f(x, y, z, 1)));
                 convexShapes.add(triangle);
 
                 // For awesome triangles - comment these two lines out
                 firstPoint = null;
                 secondPoint = null;
-            }
-            else if (drawType == GL_TRIANGLE_STRIP) {
+            } else if (drawType == GL_TRIANGLE_STRIP) {
                 // For even n, vertices n + 1, n, and n + 2 define triangle n.
                 if (pointCount % 2 == 0) {
                     triangle.addPoint(secondPoint, secondPointColor);
@@ -359,22 +450,21 @@ public abstract class LabController
                     triangle.addPoint(firstPoint, firstPointColor);
                     triangle.addPoint(secondPoint, secondPointColor);
                 }
-                triangle.addPoint(new Vector4f(x, y, z, 1), new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1));
+                triangle.addPoint(new Vector4f(x, y, z, 1), calculateNewColor(new Vector4f(x, y, z, 1)));
                 convexShapes.add(triangle);
 
                 firstPoint = secondPoint;
                 firstPointColor = secondPointColor;
                 secondPoint = new Vector4f(x, y, z, 1);
-                secondPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-            }
-            else if (drawType == GL_TRIANGLE_FAN || drawType == GL_POLYGON) {
+                secondPointColor = calculateNewColor(secondPoint);
+            } else if (drawType == GL_TRIANGLE_FAN || drawType == GL_POLYGON) {
                 triangle.addPoint(firstPoint, firstPointColor);
                 triangle.addPoint(secondPoint, secondPointColor);
-                triangle.addPoint(new Vector4f(x, y, z, 1), new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1));
+                triangle.addPoint(new Vector4f(x, y, z, 1), calculateNewColor(new Vector4f(x, y, z, 1)));
                 convexShapes.add(triangle);
 
                 secondPoint = new Vector4f(x, y, z, 1);
-                secondPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
+                secondPointColor = calculateNewColor(secondPoint);
             }
         }
     }
@@ -389,7 +479,7 @@ public abstract class LabController
      * each quadrilateral can be rendered directly or split into two triangles.
      * You can assume the quad vertices are specied in an order that make them convex.
      * EX: 4, 3, 2, 1
-     *
+     * <p/>
      * GL QUAD STRIP:
      * A connected group of quadrilaterals, with one dened for every two vertices beyond the first two
      * (if the rst point is called 1, not 0, then for all n, the points 2n-1, 2n, 2n+2, 2n+1 make a quad);
@@ -405,16 +495,13 @@ public abstract class LabController
         if (firstPoint == null) {
             firstPoint = new Vector4f(x, y, z, 1);
             firstPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else if (secondPoint == null) {
+        } else if (secondPoint == null) {
             secondPoint = new Vector4f(x, y, z, 1);
             secondPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else if (thirdPoint == null) {
+        } else if (thirdPoint == null) {
             thirdPoint = new Vector4f(x, y, z, 1);
             thirdPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else {
+        } else {
             Quad quad = new Quad();
             quad.addPoint(firstPoint, firstPointColor);
             quad.addPoint(secondPoint, secondPointColor);
@@ -427,8 +514,7 @@ public abstract class LabController
                 firstPoint = null;
                 secondPoint = null;
                 thirdPoint = null;
-            }
-            else if (drawType == GL_QUAD_STRIP) {
+            } else if (drawType == GL_QUAD_STRIP) {
                 // EX: 1 2 4 3
                 quad.addPoint(new Vector4f(x, y, z, 1), new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1));
                 quad.addPoint(thirdPoint, thirdPointColor);
@@ -446,10 +532,7 @@ public abstract class LabController
 
     // set all pixel values listed in pointData data structure
     protected void drawPoints() {
-        Iterator iter = pointData.iterator();
-
-        while (iter.hasNext()) {
-            PointData current = (PointData) iter.next();
+        for(PointData current : pointData) {
             setPixel(current.x, current.y, current.z, current.r, current.g, current.b);
         }
     }
@@ -465,6 +548,19 @@ public abstract class LabController
         if (property == GL_MAX_CLIP_PLANES) {
             clippingEnabled = true;
         }
+        if (property == GL_NORMALIZE) {
+            normalize = true;
+        }
+        if (property == GL_LIGHTING) {
+            lightingEnabled = true;
+        }
+        if (property == GL_COLOR_MATERIAL) {
+            colorMaterialEnabled = true;
+        }
+        if (property >= GL_LIGHT0 && property <= GL_LIGHT7) {
+            int lightPos = property - GL_LIGHT0;
+            lightsEnabled[lightPos] = true;
+        }
     }
 
     protected void doGLDisable(int property) {
@@ -473,6 +569,19 @@ public abstract class LabController
         }
         if (property == GL_MAX_CLIP_PLANES) {
             clippingEnabled = false;
+        }
+        if (property == GL_NORMALIZE) {
+            normalize = false;
+        }
+        if (property == GL_LIGHTING) {
+            lightingEnabled = false;
+        }
+        if (property == GL_COLOR_MATERIAL) {
+            colorMaterialEnabled = false;
+        }
+        if (property >= GL_LIGHT0 && property <= GL_LIGHT7) {
+            int lightPos = property - GL_LIGHT0;
+            lightsEnabled[lightPos] = false;
         }
     }
 
@@ -509,8 +618,7 @@ public abstract class LabController
             Matrix4f temp = new Matrix4f(modelView);
             matrixStack.push(temp);
             numModelViewOnStack++;
-        }
-        else if (currentMatrix == projection && numProjectionOnStack < 2) {
+        } else if (currentMatrix == projection && numProjectionOnStack < 2) {
             Matrix4f temp = new Matrix4f(projection);
             matrixStack.push(temp);
             numProjectionOnStack++;
@@ -520,9 +628,9 @@ public abstract class LabController
     protected void doGLPopMatrix() {
         if (currentMatrix == modelView && numModelViewOnStack > 0) {
             modelView.load(matrixStack.pop());
+            modelView.transpose(modelViewTranspose);
             numModelViewOnStack--;
-        }
-        else if (currentMatrix == projection && numProjectionOnStack > 0) {
+        } else if (currentMatrix == projection && numProjectionOnStack > 0) {
             projection.load(matrixStack.pop());
             numProjectionOnStack--;
         }
@@ -549,8 +657,7 @@ public abstract class LabController
         if (drawType == GL_LINE) {
             if (clippingEnabled) {
 
-            }
-            else {
+            } else {
                 doGLLines3D(point.x, point.y, point.z);
             }
         }
@@ -564,8 +671,8 @@ public abstract class LabController
         if (currentMatrix == modelView) {
             modelView = new Matrix4f();
             currentMatrix = modelView;
-        }
-        else if (currentMatrix == projection) {
+            modelView.transpose(modelViewTranspose);
+        } else if (currentMatrix == projection) {
             projection = new Matrix4f();
             currentMatrix = projection;
         }
@@ -584,9 +691,9 @@ public abstract class LabController
 
         if (currentMatrix == modelView) {
             modelView.load(matrixBuffer.asFloatBuffer());
+            modelView.transpose(modelViewTranspose);
 //            System.out.println(modelView.toString());
-        }
-        else if (currentMatrix == projection) {
+        } else if (currentMatrix == projection) {
             projection.load(matrixBuffer.asFloatBuffer());
         }
     }
@@ -609,9 +716,9 @@ public abstract class LabController
 
         if (currentMatrix == modelView) {
             Matrix4f.mul(modelView, tempMatrix, modelView);
+            modelView.transpose(modelViewTranspose);
 //            System.out.println("NEW MODELVIEW:\n" + modelView.toString());
-        }
-        else if (currentMatrix == projection) {
+        } else if (currentMatrix == projection) {
             Matrix4f.mul(projection, tempMatrix, projection);
         }
     }
@@ -629,16 +736,14 @@ public abstract class LabController
                     0, -1 * sine, cosine, 0,
                     0, 0, 0, 1};
             doGLMultMatrixf(rotate);
-        }
-        else if (y == 1) {
+        } else if (y == 1) {
             float[] rotate = {
                     cosine, 0, -1 * sine, 0,
                     0, 1, 0, 0,
                     sine, 0, cosine, 0,
                     0, 0, 0, 1};
             doGLMultMatrixf(rotate);
-        }
-        else if (z == 1) {
+        } else if (z == 1) {
             float[] rotate = {
                     cosine, sine, 0, 0,
                     -1 * sine, cosine, 0, 0,
@@ -706,8 +811,7 @@ public abstract class LabController
             shearBuffer.rewind();
 
             glMultMatrix(shearBuffer);
-        }
-        else {
+        } else {
             doGLMultMatrixf(shear);
         }
     }
@@ -718,7 +822,7 @@ public abstract class LabController
      * It defines a camera which has it's lens at (ex,ey,ez),
      * is looking toward (cx,cy,cz),
      * and is oriented so that it's up vector is as close to (ux,uy,uz) as it can be.
-     *
+     * <p/>
      * Thus, you are to modify the currently active matrix with a rotation matrix such that
      * points previously at (ex,ey,ez) are moved to (0,0,0);
      * points previously along the line between (ex,ey,ez) and (cx,cy,cz) are moved to (0,0,-d)
@@ -809,6 +913,13 @@ public abstract class LabController
         return screenPoint;
     }
 
+    protected Vector4f modelToScreenNormal() {
+        Vector4f newNormal = new Vector4f();
+        Matrix4f.transform(modelViewTranspose, normal, newNormal);
+
+        return newNormal;
+    }
+
     protected Vector4f modelToProjection(float x, float y, float z, float w) {
         Vector4f projectionPoint = new Vector4f();
         Matrix4f modelViewThenProjection = new Matrix4f();
@@ -837,14 +948,32 @@ public abstract class LabController
         return screenPoint;
     }
 
-    protected void doGLFrustumD(double left, double right, double bottom, double top, double near, double far)
+    // Get point (assuming w = 1) back to point where it was just multiplied by M
+    protected Vector4f ScreenToModelview(float x, float y, float z)
     {
+        Vector4f point = new Vector4f();
+        Matrix4f inverse = new Matrix4f();
+
+        Matrix4f invertedProjection = new Matrix4f();
+        Matrix4f invertedViewport = new Matrix4f();
+
+        Matrix4f.invert(projection, invertedProjection);
+        Matrix4f.invert(viewport, invertedProjection);
+
+        // P-1 * v^-1 - This assumes that w = 1
+        Matrix4f.mul(invertedProjection, invertedViewport, inverse);
+
+        Matrix4f.transform(inverse, new Vector4f(x, y, z, 1), point);
+
+        return point;
+    }
+
+    protected void doGLFrustumD(double left, double right, double bottom, double top, double near, double far) {
         doGLFrustumF((float) left, (float) right, (float) bottom, (float) top, (float) near, (float) far);
     }
 
     // http://msdn.microsoft.com/en-us/library/dd373537(v=VS.85).aspx
-    protected void doGLFrustumF(float left, float right, float bottom, float top, float near, float far)
-    {
+    protected void doGLFrustumF(float left, float right, float bottom, float top, float near, float far) {
         /* [A 0  B 0]
          * [0 C  D 0]
          * [0 0  E F]
@@ -856,7 +985,7 @@ public abstract class LabController
         float C = (2 * near) / (top - bottom);
         float D = (top + bottom) / (top - bottom);
         float E = -1 * (far + near) / (far - near);
-        float F = (-2 * far  * near) / (far - near);
+        float F = (-2 * far * near) / (far - near);
 
         float[] frustrumMatrix = {
                 A, 0, 0, 0,
@@ -868,31 +997,34 @@ public abstract class LabController
     }
 
     // http://www.opengl.org/wiki/GluPerspective_code
-    protected void doGluPerspective(float fov_y, float aspect, float near, float far)
-    {
-        float ymax = near * (float)Math.tan(fov_y * Math.PI / 360.0);
+    protected void doGluPerspective(float fov_y, float aspect, float near, float far) {
+        float ymax = near * (float) Math.tan(fov_y * Math.PI / 360.0);
 
         //ymin = -ymax;
         //xmin = -ymax * aspectRatio;
         float xmax = ymax * aspect;
         doGLFrustumF(-xmax, xmax, -ymax, ymax, near, far);
+    }
 
+    protected void doGLNormal3f(float x, float y, float z) {
+        normal = new Vector4f(x, y, z, 0);
+    }
 
-        // This one zooms out more
-        // f = 1/tan(fov_y/2)
-//        float f = 1 / (float)Math.tan((double)fov_y / 2);
-//        float A = f / aspect;
-//        float B = (far + near) / (near - far);
-//        float C = (2 * far * near) / (near - far);
-//
-//        float[] perspective = {
-//            A, 0, 0, 0,
-//            0, f, 0, 0,
-//            0, 0, B, -1,
-//            0, 0, C, 0};
-//
-//        doGLMultMatrixf(perspective);
+    protected void doGLLight(int light, int type, float[] value) {
+        if (light >= GL_LIGHT0 && light <= GL_LIGHT7) {
+            int lightIndex = light - GL_LIGHT0;
+            switch(type) {
+                case GL_DIFFUSE:
+                    diffuseColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
+                    break;
+                case GL_AMBIENT:
+                    ambientColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
+                    break;
+                case GL_POSITION:
+                    lightPositions.put(lightIndex, modelToScreen(value[0], value[1], value[2], value[3]));
+//                    lightPositions.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
+                    break;
+            }
+        }
     }
 }
-
-
