@@ -360,15 +360,16 @@ public abstract class LabController {
     }
 
     protected void doGLLines(int x, int y) {
-        doGLLines3D(x, y, 1);
+        doGLLines3D(x, y, 1, 1);
     }
 
-    protected void doGLLines3D(float x, float y, float z) {
+    protected void doGLLines3D(float x, float y, float z, float w) {
         if (firstPoint == null) {
-            firstPoint = new Vector4f(x, y, z, 1);
+            firstPoint = modelToScreen(x, y, z, w);
             firstPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        } else {
-            pointData = line.plotLineData(firstPoint, new Vector4f(x, y, z, 1), firstPointColor, currentColor);
+        }
+        else {
+            pointData = line.plotLineData(firstPoint, modelToScreen(x, y, z, w), firstPointColor, currentColor);
             Iterator iter = pointData.iterator();
             while (iter.hasNext()) {
                 PointData current = (PointData) iter.next();
@@ -415,58 +416,83 @@ public abstract class LabController {
     }
 
     protected void doGLTriangles(int x, int y) {
-        doGLTriangles3D(x, y, 1);
+        doGLTriangles3D(x, y, 1, 1);
     }
 
-    protected void doGLTriangles3D(float x, float y, float z) {
+    protected void doGLTriangles3D(float x, float y, float z, float w) {
         pointCount++;
 
+        Vector4f point = modelToScreen(x, y, z, w);
+        Vector4f pointBeforeP = modelToModelView(x, y, z, w);
+
         if (firstPoint == null) {
-            firstPoint = new Vector4f(x, y, z, 1);
-            firstPointColor = calculateNewColor(firstPoint);
-        } else if (secondPoint == null) {
-            secondPoint = new Vector4f(x, y, z, 1);
-            secondPointColor = calculateNewColor(secondPoint);
-        } else {
+            firstPoint = point;
+            firstPointColor = calculateNewColor(pointBeforeP);
+        }
+        else if (secondPoint == null) {
+            secondPoint = point;
+            secondPointColor = calculateNewColor(pointBeforeP);
+        }
+        else {
             Triangle triangle = new Triangle();
 
             if (drawType == GL_TRIANGLES) {
-                triangle.addPoint(firstPoint, firstPointColor);
-                triangle.addPoint(secondPoint, secondPointColor);
-                triangle.addPoint(new Vector4f(x, y, z, 1), calculateNewColor(new Vector4f(x, y, z, 1)));
-                convexShapes.add(triangle);
+                drawNormalTriangle(point, pointBeforeP);
+            }
+            else if (drawType == GL_TRIANGLE_STRIP) {
+                drawTriangleStrip(point, pointBeforeP);
 
-                // For awesome triangles - comment these two lines out
-                firstPoint = null;
-                secondPoint = null;
-            } else if (drawType == GL_TRIANGLE_STRIP) {
-                // For even n, vertices n + 1, n, and n + 2 define triangle n.
-                if (pointCount % 2 == 0) {
-                    triangle.addPoint(secondPoint, secondPointColor);
-                    triangle.addPoint(firstPoint, firstPointColor);
-                }
-                // For odd n, vertices n, n + 1, and n + 2 define triangle n.
-                else {
-                    triangle.addPoint(firstPoint, firstPointColor);
-                    triangle.addPoint(secondPoint, secondPointColor);
-                }
-                triangle.addPoint(new Vector4f(x, y, z, 1), calculateNewColor(new Vector4f(x, y, z, 1)));
-                convexShapes.add(triangle);
-
-                firstPoint = secondPoint;
-                firstPointColor = secondPointColor;
-                secondPoint = new Vector4f(x, y, z, 1);
-                secondPointColor = calculateNewColor(secondPoint);
             } else if (drawType == GL_TRIANGLE_FAN || drawType == GL_POLYGON) {
-                triangle.addPoint(firstPoint, firstPointColor);
-                triangle.addPoint(secondPoint, secondPointColor);
-                triangle.addPoint(new Vector4f(x, y, z, 1), calculateNewColor(new Vector4f(x, y, z, 1)));
-                convexShapes.add(triangle);
-
-                secondPoint = new Vector4f(x, y, z, 1);
-                secondPointColor = calculateNewColor(secondPoint);
+                drawTriangleFan(point, pointBeforeP);
             }
         }
+    }
+
+    private void drawNormalTriangle(Vector4f point, Vector4f pointBeforeP) {
+        Triangle triangle = new Triangle();
+
+        triangle.addPoint(firstPoint, firstPointColor);
+        triangle.addPoint(secondPoint, secondPointColor);
+        triangle.addPoint(point, calculateNewColor(pointBeforeP));
+        convexShapes.add(triangle);
+
+        // For awesome triangles - comment these two lines out
+        firstPoint = null;
+        secondPoint = null;
+    }
+
+    private void drawTriangleStrip(Vector4f point, Vector4f pointBeforeP) {
+        Triangle triangle = new Triangle();
+
+        // For even n, vertices n + 1, n, and n + 2 define triangle n.
+        if (pointCount % 2 == 0) {
+            triangle.addPoint(secondPoint, secondPointColor);
+            triangle.addPoint(firstPoint, firstPointColor);
+        }
+        // For odd n, vertices n, n + 1, and n + 2 define triangle n.
+        else {
+            triangle.addPoint(firstPoint, firstPointColor);
+            triangle.addPoint(secondPoint, secondPointColor);
+        }
+        triangle.addPoint(point, calculateNewColor(pointBeforeP));
+        convexShapes.add(triangle);
+
+        firstPoint = secondPoint;
+        firstPointColor = secondPointColor;
+        secondPoint = point;
+        secondPointColor = calculateNewColor(secondPoint);
+    }
+
+    private void drawTriangleFan(Vector4f point, Vector4f pointBeforeP) {
+        Triangle triangle = new Triangle();
+
+        triangle.addPoint(firstPoint, firstPointColor);
+        triangle.addPoint(secondPoint, secondPointColor);
+        triangle.addPoint(point, calculateNewColor(pointBeforeP));
+        convexShapes.add(triangle);
+
+        secondPoint = point;
+        secondPointColor = calculateNewColor(secondPoint);
     }
 
     protected void doGLQuads(int x, int y) {
@@ -637,10 +663,8 @@ public abstract class LabController {
     }
 
     protected void doGLVertex2f(float x, float y) {
-        Vector4f point = modelToScreen(x, y, 1, 1);
-
         if (drawType == GL_LINES) {
-            doGLLines3D(point.x, point.y, 1);
+            doGLLines3D(x, y, 1, 1);
         }
     }
 
@@ -651,18 +675,15 @@ public abstract class LabController {
 
     // Specifies the 4-vector point (x,y,z,w)
     protected void doGLVertex4f(float x, float y, float z, float w) {
-
-        Vector4f point = modelToScreen(x, y, z, w);
-
         if (drawType == GL_LINE) {
             if (clippingEnabled) {
 
             } else {
-                doGLLines3D(point.x, point.y, point.z);
+                doGLLines3D(x, y, z, w);
             }
         }
         if (drawType == GL_TRIANGLES) {
-            doGLTriangles3D(point.x, point.y, point.z);
+            doGLTriangles3D(x, y, z, w);
         }
     }
 
@@ -913,6 +934,15 @@ public abstract class LabController {
         return screenPoint;
     }
 
+    private Vector4f modelToModelView(float x, float y, float z, float w) {
+        Vector4f screenPoint = new Vector4f();
+
+        // M * point
+        Matrix4f.transform(modelView, new Vector4f(x, y, z, w), screenPoint);
+
+        return screenPoint;
+    }
+
     protected Vector4f modelToScreenNormal() {
         Vector4f newNormal = new Vector4f();
         Matrix4f.transform(modelViewTranspose, normal, newNormal);
@@ -1021,8 +1051,8 @@ public abstract class LabController {
                     ambientColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
                 case GL_POSITION:
-                    lightPositions.put(lightIndex, modelToScreen(value[0], value[1], value[2], value[3]));
-//                    lightPositions.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
+//                    lightPositions.put(lightIndex, modelToScreen(value[0], value[1], value[2], value[3]));
+                    lightPositions.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
             }
         }
