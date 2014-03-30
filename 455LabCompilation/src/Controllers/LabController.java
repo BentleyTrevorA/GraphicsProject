@@ -45,6 +45,11 @@ public abstract class LabController {
     protected boolean[] lightsEnabled;
     protected Map<Integer, Vector4f> diffuseColors, ambientColors, lightPositions;
 
+    // Fog
+    protected boolean fogEnabled;
+    protected Vector4f fogColor;
+    protected float fogMode, fogStart, fogEnd, fogDensity;
+
     // Normalization
     protected boolean normalize;
 
@@ -109,6 +114,12 @@ public abstract class LabController {
 
         normal = new Vector4f();
         normalize = false;
+
+        fogEnabled = false;
+        fogColor = new Vector4f();
+        fogStart = 0;
+        fogEnd = 1;
+        fogDensity = 1;
     }
 
     public void init() {
@@ -239,6 +250,15 @@ public abstract class LabController {
 
     private Vector4f calculateNewColor(Vector4f position) {
         // Change the color based off the lighting that is on
+        Vector4f newColor = calculateColorChangeFromLight(position);
+
+        // Change the color based off of the fog settings
+        newColor = calculateColorChangeFromFog(position, newColor);
+
+        return newColor;
+    }
+
+    public Vector4f calculateColorChangeFromLight(Vector4f position) {
         if(lightingEnabled) {
             // Get the normal
             Vector4f posNormal = modelToScreenNormal();
@@ -258,11 +278,44 @@ public abstract class LabController {
                 // {light.x * .8, light.y * .8, light.z * .8, light.w * 1}
                 return new Vector4f(light.x * .8f + .2f, light.y * .8f + .2f, light.z * .8f + .2f, 1);
             }
-
             // Specular specColor += max(0, pow((n dot halfway), h)) * v_s <elementwise -times > l_s;
         }
 
         return new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
+    }
+
+    private Vector4f calculateColorChangeFromFog(Vector4f position, Vector4f pixelColor) {
+        if(fogEnabled) {
+            float g=0;
+
+            switch((int)fogMode){
+                case GL_LINEAR:
+                    g = fogEnd - Math.abs(position.z);
+                    g /= (fogEnd - fogStart);
+                    break;
+                case GL_EXP:
+                    g = (float)Math.exp(-1 * (fogDensity * Math.abs(position.z)));
+                    break;
+                case GL_EXP2:
+                    double inner = fogDensity * Math.abs(position.z);
+                    g = (float)Math.exp(-1 * inner * inner);
+                    break;
+                default:
+                    break;
+            }
+
+            // g * currentColor + (1 - g) * fogColor
+            // http://msdn.microsoft.com/en-us/library/windows/desktop/bb324452(v=vs.85).aspx
+            Vector4f pixelColorTimesG = new Vector4f(pixelColor.x * g, pixelColor.y * g, pixelColor.z * g, 0);
+            float g2 = 1 - g;
+            Vector4f fogColorTimesG = new Vector4f(fogColor.x * g2, fogColor.y * g2, fogColor.z * g2, 0);
+
+            Vector4f result = new Vector4f();
+            Vector4f.add(pixelColorTimesG, fogColorTimesG, result);
+            return result;
+        }
+
+        return pixelColor;
     }
 
     public boolean withinViewport(int x, int y) {
@@ -480,7 +533,7 @@ public abstract class LabController {
         firstPoint = secondPoint;
         firstPointColor = secondPointColor;
         secondPoint = point;
-        secondPointColor = calculateNewColor(secondPoint);
+        secondPointColor = calculateNewColor(pointBeforeP);
     }
 
     private void drawTriangleFan(Vector4f point, Vector4f pointBeforeP) {
@@ -492,7 +545,7 @@ public abstract class LabController {
         convexShapes.add(triangle);
 
         secondPoint = point;
-        secondPointColor = calculateNewColor(secondPoint);
+        secondPointColor = calculateNewColor(pointBeforeP);
     }
 
     protected void doGLQuads(int x, int y) {
@@ -587,6 +640,9 @@ public abstract class LabController {
             int lightPos = property - GL_LIGHT0;
             lightsEnabled[lightPos] = true;
         }
+        if (property == GL_FOG) {
+            fogEnabled = true;
+        }
     }
 
     protected void doGLDisable(int property) {
@@ -608,6 +664,9 @@ public abstract class LabController {
         if (property >= GL_LIGHT0 && property <= GL_LIGHT7) {
             int lightPos = property - GL_LIGHT0;
             lightsEnabled[lightPos] = false;
+        }
+        if (property == GL_FOG) {
+            fogEnabled = false;
         }
     }
 
@@ -666,6 +725,10 @@ public abstract class LabController {
         if (drawType == GL_LINES) {
             doGLLines3D(x, y, 1, 1);
         }
+    }
+
+    protected void doGLVertex3f(double x, double y, double z) {
+        doGLVertex3f((float)x, (float)y, (float)z);
     }
 
     // Specifies the 4-vector point (x,y,z,1)
@@ -1051,10 +1114,37 @@ public abstract class LabController {
                     ambientColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
                 case GL_POSITION:
-//                    lightPositions.put(lightIndex, modelToScreen(value[0], value[1], value[2], value[3]));
                     lightPositions.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
             }
+        }
+    }
+
+    protected void doGLFog(int parameter, float[] value)
+    {
+        if(parameter == GL_FOG_COLOR)
+        {
+            fogColor = new Vector4f(value[0], value[1], value[2], value[3]);
+        }
+    }
+
+    protected void doGLFogf(int parameter, float value)
+    {
+        switch(parameter) {
+            case GL_FOG_MODE:
+                fogMode = value;
+                break;
+            case GL_FOG_START:
+                fogStart = value;
+                break;
+            case GL_FOG_END:
+                fogEnd = value;
+                break;
+            case GL_FOG_DENSITY:
+                fogDensity = value;
+                break;
+            default:
+                break;
         }
     }
 }

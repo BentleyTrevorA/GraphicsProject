@@ -1,5 +1,6 @@
 package Controllers;
 
+import org.lwjgl.BufferUtils;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.glu.GLU;
@@ -82,6 +83,9 @@ public class Lab4Controller extends LabController {
                 render();
             }
         }
+        if (Keyboard.isKeyDown(Keyboard.KEY_F)) {
+            drawExperimentGouraud();
+        }
         if (Keyboard.isKeyDown(Keyboard.KEY_J)) {
             x--;
             drawExperimentGouraud();
@@ -106,17 +110,52 @@ public class Lab4Controller extends LabController {
             z++;
             drawExperimentGouraud();
         }
+        if (Keyboard.isKeyDown(Keyboard.KEY_Z)) {
+            if (drawMode == 1) {
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+                doLinearFog();
+            } else {
+                doGLClearColor(0, 0, 0, 0);
+                doGLClear(GL_COLOR_BUFFER_BIT);
+                doGLClear(GL_DEPTH_BUFFER_BIT);
+                doMyLinearFog();
+                render();
+            }
+        }
+        if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
+            if (drawMode == 1) {
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+                doExponentialFog();
+            } else {
+                doGLClearColor(0, 0, 0, 0);
+                doGLClear(GL_COLOR_BUFFER_BIT);
+                doGLClear(GL_DEPTH_BUFFER_BIT);
+                doMyExponentialFog();
+                render();
+            }
+        }
+        if (Keyboard.isKeyDown(Keyboard.KEY_C)) {
+            if (drawMode == 1) {
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+                doExponentialSquaredFog();
+            } else {
+                doGLClearColor(0, 0, 0, 0);
+                doGLClear(GL_COLOR_BUFFER_BIT);
+                doGLClear(GL_DEPTH_BUFFER_BIT);
+                doMyExponentialSquaredFog();
+                render();
+            }
+        }
     }
 
-    private void drawExperimentGouraud()
-    {
+    private void drawExperimentGouraud() {
         if (drawMode == 1) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_LIGHTING_BIT);
         } else {
             doGLClearColor(0, 0, 0, 0);
             doGLClear(GL_COLOR_BUFFER_BIT);
             doGLClear(GL_DEPTH_BUFFER_BIT);
-            System.out.println("(" + x + ", " + y + ", " + z + ")");
+//            System.out.println("(" + x + ", " + y + ", " + z + ")");
             doMyGLGouraudExperiment(x, y, z);
             render();
         }
@@ -139,7 +178,7 @@ public class Lab4Controller extends LabController {
         glLoadIdentity();
     }
 
-     public void doOpenGLFrustrum() {
+    public void doOpenGLFrustrum() {
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
         glFrustum(-0.1, 0.1, -0.1 * 480 / 640, 0.1 * 480 / 640, 0.1, 10);
@@ -211,52 +250,162 @@ public class Lab4Controller extends LabController {
         glBegin(GL_TRIANGLES);
         for (float theta = 0; theta < 2 * Math.PI; theta += dp) {
             for (float phi = 0; phi < Math.PI; phi += dp) {
-                glNormal3f((float)(Math.cos(theta) * Math.sin(phi)),
-                        (float)Math.cos(phi),
-                        (float)(Math.sin(theta) * Math.sin(phi)));
-                glVertex3f((float)(Math.cos(theta) * Math.sin(phi)),
-                        (float)Math.cos(phi),
-                        (float)(Math.sin(theta) * Math.sin(phi)));
+                glNormal3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+                glVertex3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
 
-                glNormal3f((float)(Math.cos(theta + dp) * Math.sin(phi)),
-                        (float)Math.cos(phi),
-                        (float)(Math.sin(theta + dp) * Math.sin(phi)));
-                glVertex3f((float)(Math.cos(theta + dp) * Math.sin(phi)),
-                        (float)Math.cos(phi),
-                        (float)(Math.sin(theta + dp) * Math.sin(phi)));
+                glNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi)));
+                glVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi)));
 
-                glNormal3f((float)(Math.cos(theta + dp) * Math.sin(phi + dp)),
-                        (float)Math.cos(phi + dp),
-                        (float)(Math.sin(theta + dp) * Math.sin(phi + dp)));
-                glVertex3f((float)(Math.cos(theta + dp) * Math.sin(phi + dp)),
-                        (float)Math.cos(phi + dp),
-                        (float)(Math.sin(theta + dp) * Math.sin(phi + dp)));
+                glNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+                glVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
 
-                glNormal3f((float)(Math.cos(theta) * Math.sin(phi)),
-                        (float)Math.cos(phi),
-                        (float)(Math.sin(theta) * Math.sin(phi)));
-                glVertex3f((float)(Math.cos(theta) * Math.sin(phi)),
-                        (float)Math.cos(phi),
-                        (float)(Math.sin(theta) * Math.sin(phi)));
+                glNormal3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+                glVertex3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
 
-                glNormal3f((float)(Math.cos(theta + dp) * Math.sin(phi + dp)),
-                        (float)Math.cos(phi + dp),
-                        (float)(Math.sin(theta + dp) * Math.sin(phi + dp)));
-                glVertex3f((float)(Math.cos(theta + dp) * Math.sin(phi + dp)),
-                        (float)Math.cos(phi + dp),
-                        (float)(Math.sin(theta + dp) * Math.sin(phi + dp)));
+                glNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+                glVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
 
-                glNormal3f((float)(Math.cos(theta) * Math.sin(phi + dp)),
-                        (float)Math.cos(phi + dp),
-                        (float)(Math.sin(theta) * Math.sin(phi + dp)));
-                glVertex3f((float)(Math.cos(theta) * Math.sin(phi + dp)),
-                        (float)Math.cos(phi + dp),
-                        (float)(Math.sin(theta) * Math.sin(phi + dp)));
+                glNormal3f((float) (Math.cos(theta) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta) * Math.sin(phi + dp)));
+                glVertex3f((float) (Math.cos(theta) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta) * Math.sin(phi + dp)));
             }
         }
         glEnd();
         glDisable(GL_LIGHTING);
+    }
 
+    public void doLinearFog() {
+        glEnable(GL_FOG);
+
+        FloatBuffer fogColor = BufferUtils.createFloatBuffer(4);
+        fogColor.put(0).put(1).put(0).put(1).flip();
+        glFog(GL_FOG_COLOR, fogColor);
+
+        glFogf(GL_FOG_MODE, GL_LINEAR);
+        glFogf(GL_FOG_START, 0.4f);
+        glFogf(GL_FOG_END, 1);
+        glFogf(GL_FOG_DENSITY, 1);
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+
+        glBegin(GL_TRIANGLES);
+        glColor3f(0, 0, 1);
+        glVertex3f(-0.4f, -0.6f, -0.1f);
+        glVertex3f(0.4f, -0.6f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glVertex3f(-0.4f, -0.6f, -0.1f);
+        glColor3f(1, 0, 1);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(0.3f, 0.5f, -0.99f);
+        glVertex3f(0.3f, 0.5f, -0.99f);
+        glVertex3f(-0.3f, 0.5f, -0.99f);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glEnd();
+
+        glDisable(GL_FOG);
+    }
+
+    public void doExponentialFog() {
+        glEnable(GL_FOG);
+
+        FloatBuffer fogColor = BufferUtils.createFloatBuffer(4);
+        fogColor.put(0).put(1).put(0).put(1).flip();
+        glFog(GL_FOG_COLOR, fogColor);
+
+        glFogf(GL_FOG_MODE, GL_EXP);
+        glFogf(GL_FOG_START, 0.4f);
+        glFogf(GL_FOG_END, 1);
+        glFogf(GL_FOG_DENSITY, 1);
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+
+        glBegin(GL_TRIANGLES);
+        glColor3f(0, 0, 1);
+        glVertex3f(-0.4f, -0.6f, -0.1f);
+        glVertex3f(0.4f, -0.6f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glVertex3f(-0.4f, -0.6f, -0.1f);
+        glColor3f(1, 0, 1);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(0.3f, 0.5f, -0.99f);
+        glVertex3f(0.3f, 0.5f, -0.99f);
+        glVertex3f(-0.3f, 0.5f, -0.99f);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glEnd();
+
+        glDisable(GL_FOG);
+    }
+
+    public void doExponentialSquaredFog() {
+        glEnable(GL_FOG);
+
+        FloatBuffer fogColor = BufferUtils.createFloatBuffer(4);
+        fogColor.put(0).put(1).put(0).put(1).flip();
+        glFog(GL_FOG_COLOR, fogColor);
+
+        glFogf(GL_FOG_MODE, GL_EXP2);
+        glFogf(GL_FOG_START, 0.4f);
+        glFogf(GL_FOG_END, 1);
+        glFogf(GL_FOG_DENSITY, 1);
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+
+        glBegin(GL_TRIANGLES);
+        glColor3f(0, 0, 1);
+        glVertex3f(-0.4f, -0.6f, -0.1f);
+        glVertex3f(0.4f, -0.6f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glVertex3f(-0.4f, -0.6f, -0.1f);
+        glColor3f(1, 0, 1);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glVertex3f(0.4f, -0.1f, -0.1f);
+        glVertex3f(0.3f, 0.5f, -0.99f);
+        glVertex3f(0.3f, 0.5f, -0.99f);
+        glVertex3f(-0.3f, 0.5f, -0.99f);
+        glVertex3f(-0.4f, -0.1f, -0.1f);
+        glEnd();
+
+        glDisable(GL_FOG);
     }
 
     /* ****************************
@@ -392,7 +541,7 @@ public class Lab4Controller extends LabController {
 
         doGLEnable(GL_NORMALIZE);
         doGLEnable(GL_LIGHTING);
-        doGLEnable(GL_COLOR_MATERIAL);
+//        doGLEnable(GL_COLOR_MATERIAL);
         doGLEnable(GL_LIGHT0);
         float[] diffuse_color = {1.0f, 1.0f, 1.0f, 1};
         float[] ambient_color = {0.1f, 0.1f, 0.1f, 1};
@@ -456,5 +605,113 @@ public class Lab4Controller extends LabController {
         doGLDisable(GL_NORMALIZE);
         doGLDisable(GL_COLOR_MATERIAL);
         doGLDisable(GL_LIGHT0);
+    }
+
+    public void doMyLinearFog() {
+        doGLEnable(GL_FOG);
+
+        float[] fog_color = {0, 1, 0, 1};
+        ByteBuffer temp = ByteBuffer.allocateDirect(4 * 4);
+        doGLFog(GL_FOG_COLOR, fog_color);
+
+        doGLFogf(GL_FOG_MODE, GL_LINEAR);
+        doGLFogf(GL_FOG_START, 0.4f);
+        doGLFogf(GL_FOG_END, 1);
+        doGLFogf(GL_FOG_DENSITY, 1);
+
+        doGLMatrixMode(GL_PROJECTION);
+        doGLLoadIdentity();
+        doGLMatrixMode(GL_MODELVIEW);
+        doGLLoadIdentity();
+
+        doGLBegin(GL_TRIANGLES);
+        doGLColor3f(0, 0, 1);
+        doGLVertex3f(-0.4f, -0.6f, -0.1f);
+        doGLVertex3f(0.4f, -0.6f, -0.1f);
+        doGLVertex3f(0.4f, -0.1f, -0.1f);
+        doGLVertex3f(0.4f, -0.1f, -0.1f);
+        doGLVertex3f(-0.4f, -0.1f, -0.1f);
+        doGLVertex3f(-0.4f, -0.6f, -0.1f);
+        doGLColor3f(1, 0, 1);
+        doGLVertex3f(-0.4f, -0.1f, -0.1f);
+        doGLVertex3f(0.4f, -0.1f, -0.1f);
+        doGLVertex3f(0.3f, 0.5f, -0.99f);
+        doGLVertex3f(0.3f, 0.5f, -0.99f);
+        doGLVertex3f(-0.3f, 0.5f, -0.99f);
+        doGLVertex3f(-0.4f, -0.1f, -0.1f);
+        doGLEnd();
+
+        doGLDisable(GL_FOG);
+    }
+
+    public void doMyExponentialFog() {
+        doGLEnable(GL_FOG);
+        float[] fog_color = {0, 1, 0, 1};
+        doGLFog(GL_FOG_COLOR, fog_color);
+
+        doGLFogf(GL_FOG_MODE, GL_EXP);
+        doGLFogf(GL_FOG_START, 0.4f);
+        doGLFogf(GL_FOG_END, 1);
+        doGLFogf(GL_FOG_DENSITY, 1);
+
+        doGLMatrixMode(GL_PROJECTION);
+        doGLLoadIdentity();
+        doGLMatrixMode(GL_MODELVIEW);
+        doGLLoadIdentity();
+
+        doGLBegin(GL_TRIANGLES);
+        doGLColor3f(0, 0, 1);
+        doGLVertex3f(-0.4, -0.6, -0.1);
+        doGLVertex3f(0.4, -0.6, -0.1);
+        doGLVertex3f(0.4, -0.1, -0.1);
+        doGLVertex3f(0.4, -0.1, -0.1);
+        doGLVertex3f(-0.4, -0.1, -0.1);
+        doGLVertex3f(-0.4, -0.6, -0.1);
+        doGLColor3f(1, 0, 1);
+        doGLVertex3f(-0.4, -0.1, -0.1);
+        doGLVertex3f(0.4, -0.1, -0.1);
+        doGLVertex3f(0.3, 0.5, -0.99);
+        doGLVertex3f(0.3, 0.5, -0.99);
+        doGLVertex3f(-0.3, 0.5, -0.99);
+        doGLVertex3f(-0.4, -0.1, -0.1);
+        doGLEnd();
+
+        doGLDisable(GL_FOG);
+    }
+
+    public void doMyExponentialSquaredFog() {
+        doGLEnable(GL_FOG);
+
+        float[] fog_color = {0, 1, 0, 1};
+        doGLFog(GL_FOG_COLOR, fog_color);
+
+        doGLFogf(GL_FOG_MODE, GL_EXP2);
+        doGLFogf(GL_FOG_START, 0.4f);
+        doGLFogf(GL_FOG_END, 1);
+        doGLFogf(GL_FOG_DENSITY, 1);
+
+        doGLMatrixMode(GL_PROJECTION);
+        doGLLoadIdentity();
+        doGLMatrixMode(GL_MODELVIEW);
+        doGLLoadIdentity();
+
+        doGLBegin(GL_TRIANGLES);
+        doGLColor3f(0, 0, 1);
+        doGLVertex3f(-0.4, -0.6, -0.1);
+        doGLVertex3f(0.4, -0.6, -0.1);
+        doGLVertex3f(0.4, -0.1, -0.1);
+        doGLVertex3f(0.4, -0.1, -0.1);
+        doGLVertex3f(-0.4, -0.1, -0.1);
+        doGLVertex3f(-0.4, -0.6, -0.1);
+        doGLColor3f(1, 0, 1);
+        doGLVertex3f(-0.4, -0.1, -0.1);
+        doGLVertex3f(0.4, -0.1, -0.1);
+        doGLVertex3f(0.3, 0.5, -0.99);
+        doGLVertex3f(0.3, 0.5, -0.99);
+        doGLVertex3f(-0.3, 0.5, -0.99);
+        doGLVertex3f(-0.4, -0.1, -0.1);
+        doGLEnd();
+
+        doGLDisable(GL_FOG);
     }
 }
