@@ -43,7 +43,9 @@ public abstract class LabController {
     // Lighting
     protected boolean lightingEnabled, colorMaterialEnabled;
     protected boolean[] lightsEnabled;
-    protected Map<Integer, Vector4f> diffuseColors, ambientColors, lightPositions;
+    protected Map<Integer, Vector4f> diffuseColors, ambientColors, specularColors, lightPositions;
+    protected Vector4f specularSurfaceColor;
+    protected float materialShininess;
 
     // Fog
     protected boolean fogEnabled;
@@ -104,13 +106,18 @@ public abstract class LabController {
         lightsEnabled = new boolean[8];
         diffuseColors = new HashMap<Integer, Vector4f>();
         ambientColors = new HashMap<Integer, Vector4f>();
+        specularColors = new HashMap<Integer, Vector4f>();
         lightPositions = new HashMap<Integer, Vector4f>();
 
         for(int i=0; i<8; i++) {
             diffuseColors.put(i, new Vector4f());
             ambientColors.put(i, new Vector4f());
+            specularColors.put(i, new Vector4f());
             lightPositions.put(i, new Vector4f());
         }
+
+        specularSurfaceColor = new Vector4f();
+        materialShininess = 0;
 
         normal = new Vector4f();
         normalize = false;
@@ -245,7 +252,43 @@ public abstract class LabController {
             }
         }
 
+        //specColor += max(0, pow((n dot halfway), h)) * v_s <elementwise -times > l_s;
+
         return light;
+    }
+
+    private Vector4f calculateSpecularLightColor(Vector4f position, Vector4f posNormal) {
+        Vector4f color = new Vector4f();
+
+        // Add light from each of the 8 lights IF they are enabled
+        for(int i=0; i<8; i++) {
+            if(lightsEnabled[i]) {
+                Vector4f unitLengthPosition = new Vector4f();
+                Vector4f.sub(lightPositions.get(i), position, unitLengthPosition);
+                unitLengthPosition.normalise(unitLengthPosition);
+
+                if(Vector4f.dot(posNormal, unitLengthPosition) > 0) {
+                    Vector4f halfway = new Vector4f();
+                    Vector4f.add(unitLengthPosition, new Vector4f(0, 0, 1, 0), halfway);
+                    halfway.normalise(halfway);
+
+                    //specColor += max(0, pow((n dot halfway), h)) * v_s <elementwise -times > l_s;
+                    // v_s = specularSurfaceColor
+                    // l_s = specularLightColor
+                    float max = (float)Math.max(0, Math.pow(Vector4f.dot(posNormal, halfway), materialShininess));
+
+                    Vector4f specularLight = specularColors.get(i);
+                    Vector4f elementWiseTimes = new Vector4f(specularSurfaceColor.x * specularLight.x * max,
+                            specularSurfaceColor.y * specularLight.y * max,
+                            specularSurfaceColor.z * specularLight.z * max,
+                            specularSurfaceColor.w * specularLight.w * max);
+
+                    Vector4f.add(color, elementWiseTimes, color);
+                }
+            }
+        }
+
+        return color;
     }
 
     private Vector4f calculateNewColor(Vector4f position) {
@@ -263,22 +306,24 @@ public abstract class LabController {
             // Get the normal
             Vector4f posNormal = modelToScreenNormal();
             Vector4f light = calculateLight(position, posNormal);
+            Vector4f specularLight = calculateSpecularLightColor(position, posNormal);
 
-            // TODO: Currently only does ambient and diffuse
+            // Currently only does ambient and diffuse
             if(colorMaterialEnabled)
             {
-                // newColor = light < elementwise - times > oldColor
+                // newColor = light < elementwise - times > oldColor + specular
                 // NOTE: may add .2 .2 .2 if desired
-                return new Vector4f(light.x * currentColor.x, light.y * currentColor.y, light.z * currentColor.z, light.w * currentColor.w);
+                Vector4f lightWithoutSpecular = new Vector4f(light.x * currentColor.x, light.y * currentColor.y, light.z * currentColor.z, light.w * currentColor.w);
+                return Vector4f.add(lightWithoutSpecular, specularLight, new Vector4f());
             }
             else
             {
-                // newColor = light < elementwise − times > (.8, .8, .8, 1) + (.2, .2, .2, 0)
+                // newColor = light < elementwise − times > (.8, .8, .8, 1) + (.2, .2, .2, 0) + specColor
                 // light < elementwise - times > {.8, .8, .8, 1) MEANS:
                 // {light.x * .8, light.y * .8, light.z * .8, light.w * 1}
-                return new Vector4f(light.x * .8f + .2f, light.y * .8f + .2f, light.z * .8f + .2f, 1);
+                Vector4f lightWithoutSpecular = new Vector4f(light.x * .8f + .2f, light.y * .8f + .2f, light.z * .8f + .2f, 0);
+                return Vector4f.add(lightWithoutSpecular, specularLight, new Vector4f());
             }
-            // Specular specColor += max(0, pow((n dot halfway), h)) * v_s <elementwise -times > l_s;
         }
 
         return new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
@@ -808,7 +853,6 @@ public abstract class LabController {
     }
 
     protected void doGLRotatef(float angDegrees, float x, float y, float z) {
-        // TODO: What to do with x, y and z?
         float angleRadians = (float) Math.toRadians(angDegrees);
         float cosine = (float) Math.cos(angleRadians);
         float sine = (float) Math.sin(angleRadians);
@@ -1010,6 +1054,10 @@ public abstract class LabController {
         Vector4f newNormal = new Vector4f();
         Matrix4f.transform(modelViewTranspose, normal, newNormal);
 
+        if(normalize) {
+            return new Vector4f(newNormal.x / newNormal.length(), newNormal.y/newNormal.length(), newNormal.z/newNormal.length(), 0);
+        }
+
         return newNormal;
     }
 
@@ -1113,6 +1161,9 @@ public abstract class LabController {
                 case GL_AMBIENT:
                     ambientColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
+                case GL_SPECULAR:
+                    specularColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
+                    break;
                 case GL_POSITION:
                     lightPositions.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
@@ -1145,6 +1196,28 @@ public abstract class LabController {
                 break;
             default:
                 break;
+        }
+    }
+
+    protected void doGLMaterial(int face, int parameter, float[] value)
+    {
+        if(face == GL_FRONT_AND_BACK)
+        {
+            if(parameter == GL_SPECULAR)
+            {
+                specularSurfaceColor = new Vector4f(value[0], value[1], value[2], value[3]);
+            }
+        }
+    }
+
+    protected void doGLMaterialf(int face, int parameter, float value)
+    {
+        if(face == GL_FRONT_AND_BACK)
+        {
+            if(parameter == GL_SHININESS)
+            {
+                materialShininess = value;
+            }
         }
     }
 }

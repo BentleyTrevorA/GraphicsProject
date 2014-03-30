@@ -146,6 +146,18 @@ public class Lab4Controller extends LabController {
                 render();
             }
         }
+        if (Keyboard.isKeyDown(Keyboard.KEY_V)) {
+            if (drawMode == 1) {
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+                doOpenGLSpecular();
+            } else {
+                doGLClearColor(0, 0, 0, 0);
+                doGLClear(GL_COLOR_BUFFER_BIT);
+                doGLClear(GL_DEPTH_BUFFER_BIT);
+                doMyGLSpecular();
+                render();
+            }
+        }
     }
 
     private void drawExperimentGouraud() {
@@ -244,6 +256,82 @@ public class Lab4Controller extends LabController {
         glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
         glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
         glLight(GL_LIGHT0, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position).flip());
+        glColor3f(1, 0, 0);
+        float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
+
+        glBegin(GL_TRIANGLES);
+        for (float theta = 0; theta < 2 * Math.PI; theta += dp) {
+            for (float phi = 0; phi < Math.PI; phi += dp) {
+                glNormal3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+                glVertex3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+
+                glNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi)));
+                glVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi)));
+
+                glNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+                glVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+
+                glNormal3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+                glVertex3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+
+                glNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+                glVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+
+                glNormal3f((float) (Math.cos(theta) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta) * Math.sin(phi + dp)));
+                glVertex3f((float) (Math.cos(theta) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta) * Math.sin(phi + dp)));
+            }
+        }
+        glEnd();
+        glDisable(GL_LIGHTING);
+    }
+
+    public void doOpenGLSpecular() {
+        openGlDrawingSetup();
+        ByteBuffer temp = ByteBuffer.allocateDirect(4 * 4);
+        temp.order(ByteOrder.LITTLE_ENDIAN);
+
+        glEnable(GL_LIGHTING);
+        glEnable(GL_COLOR_MATERIAL);
+        glEnable(GL_LIGHT0);
+        float[] diffuse_color = {.7f, .7f, .7f, 1};
+        float[] ambient_color = {0.1f, 0.1f, 0.1f, 1};
+        float[] specular_color = {0, 1, 0, 1};
+        float[] position = {1, 0, -10, 1};
+
+        // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
+        glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
+        glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
+        glLight(GL_LIGHT0, GL_SPECULAR, (FloatBuffer) temp.asFloatBuffer().put(specular_color).flip());
+        glLight(GL_LIGHT0, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position).flip());
+
+        float [] specular_surface_color = {0.0f , 1.0f , 0.9f , 1};
+        glMaterial(GL_FRONT_AND_BACK, GL_SPECULAR, (FloatBuffer) temp.asFloatBuffer().put(specular_surface_color).flip());
+        glMaterialf ( GL_FRONT_AND_BACK , GL_SHININESS , 1);
+
         glColor3f(1, 0, 0);
         float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
 
@@ -713,5 +801,87 @@ public class Lab4Controller extends LabController {
         doGLEnd();
 
         doGLDisable(GL_FOG);
+    }
+
+    public void doMyGLSpecular() {
+        doGLMatrixMode(GL_PROJECTION);
+        doGLLoadIdentity();
+        doGLMatrixMode(GL_MODELVIEW);
+        doGLLoadIdentity();
+
+        doGLEnable(GL_LIGHTING);
+        doGLEnable(GL_COLOR_MATERIAL);
+        doGLEnable(GL_LIGHT0);
+        float[] diffuse_color = {.7f, .7f, .7f, 1};
+        float[] ambient_color = {0.1f, 0.1f, 0.1f, 1};
+        float[] specular_color = {0, 1, 0, 1};
+        float[] position = {1, 0, -10, 1};
+
+        // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
+        doGLLight(GL_LIGHT0, GL_DIFFUSE, diffuse_color);
+        doGLLight(GL_LIGHT0, GL_AMBIENT, ambient_color);
+        doGLLight(GL_LIGHT0, GL_SPECULAR, specular_color);
+        doGLLight(GL_LIGHT0, GL_POSITION, position);
+
+        float [] specular_surface_color = {0.0f , 1.0f , 0.9f , 1};
+        doGLMaterial(GL_FRONT_AND_BACK, GL_SPECULAR, specular_surface_color);
+        doGLMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 1);
+         doGLColor3f(1, 0, 0);
+        float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
+
+        doGLBegin(GL_TRIANGLES);
+        for (float theta = 0; theta < 2 * Math.PI; theta += dp) {
+            for (float phi = 0; phi < Math.PI; phi += dp) {
+                doGLNormal3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+                doGLVertex3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+
+                doGLNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi)));
+                doGLVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi)));
+
+                doGLNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+                doGLVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+
+                doGLNormal3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+                doGLVertex3f((float) (Math.cos(theta) * Math.sin(phi)),
+                        (float) Math.cos(phi),
+                        (float) (Math.sin(theta) * Math.sin(phi)));
+
+                doGLNormal3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+                doGLVertex3f((float) (Math.cos(theta + dp) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta + dp) * Math.sin(phi + dp)));
+
+                doGLNormal3f((float) (Math.cos(theta) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta) * Math.sin(phi + dp)));
+                doGLVertex3f((float) (Math.cos(theta) * Math.sin(phi + dp)),
+                        (float) Math.cos(phi + dp),
+                        (float) (Math.sin(theta) * Math.sin(phi + dp)));
+            }
+        }
+        doGLEnd();
+        doGLDisable(GL_LIGHTING);
+        doGLDisable(GL_NORMALIZE);
+        doGLDisable(GL_COLOR_MATERIAL);
+        doGLDisable(GL_LIGHT0);
+
+        float [] spec = {0, 0, 0, 0};
+        doGLLight(GL_LIGHT0, GL_SPECULAR, spec);
     }
 }
