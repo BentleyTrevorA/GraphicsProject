@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.input.Keyboard;

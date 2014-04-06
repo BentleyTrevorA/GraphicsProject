@@ -1,4 +1,4 @@
-import Controllers.LabController;
+import controllers.LabController;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;

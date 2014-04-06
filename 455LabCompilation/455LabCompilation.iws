@@ -2,9 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/HouseModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/Line3D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/Point3D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/WireFrame.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Camera/.svn/lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Camera/.svn/props/Camera.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/props/Lab1Controller.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/props/Lab2Controller.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/props/Lab3Controller.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/props/LabController.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/props/BigPoint.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/props/ConvexShape.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/props/Line.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/props/PointData.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/props/Quad.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/props/Triangle.java.svn-work" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/.svn/entries" afterPath="$PROJECT_DIR$/src/camera/.svn/entries" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/Camera.java" afterPath="$PROJECT_DIR$/src/camera/Camera.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/entries" afterPath="$PROJECT_DIR$/src/controllers/.svn/entries" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/Lab1Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Lab1Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/Lab2Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Lab2Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/Lab3Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Lab3Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Lab4Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/LabController.java" afterPath="$PROJECT_DIR$/src/controllers/LabController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/entries" afterPath="$PROJECT_DIR$/src/dataRepresentations/.svn/entries" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/BigPoint.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/BigPoint.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/Line.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/Line.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/PointData.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/PointData.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/Quad.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/Quad.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/Triangle.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/Triangle.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" afterPath="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/LabController.java" afterPath="$PROJECT_DIR$/src/Controllers/LabController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LWJGLSandbox.java" afterPath="$PROJECT_DIR$/src/LWJGLSandbox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LWJGLmain.java" afterPath="$PROJECT_DIR$/src/LWJGLmain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
     <ignored path="455LabCompilation.iws" />
@@ -61,7 +95,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/Controllers/LabController.java" line="359" class="Controllers.LabController" package="Controllers">
+      <breakpoint url="file://$PROJECT_DIR$/src/controllers/LabController.java" line="359" class="Controllers.LabController" package="Controllers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -76,7 +110,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/Controllers/LabController.java" line="1057" class="Controllers.LabController" package="Controllers">
+      <breakpoint url="file://$PROJECT_DIR$/src/controllers/LabController.java" line="1056" class="Controllers.LabController" package="Controllers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -101,39 +135,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Lab4Controller.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/Lab4Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="880" column="39" selection-start="34766" selection-end="34766" vertical-scroll-proportion="0.70149255" vertical-offset="2637" max-vertical-offset="3255">
-              <folding>
-                <element signature="method#init#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#resizeGL#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#updateKeyboard#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#drawExperimentGouraud#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#openGlDrawingSetup#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="e#5945#6010#0" expanded="false" />
-                <element signature="method#doOpenGLFrustrum#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doOpenGLPerspective#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doOpenGLGouraud#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doLinearFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doExponentialFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLFrustrum#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLPerspective#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLGouraud#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLGouraudExperiment#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyLinearFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyExponentialFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LabController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+        <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="325" column="13" selection-start="12327" selection-end="12327" vertical-scroll-proportion="0.0" vertical-offset="1468" max-vertical-offset="4230">
+            <state line="945" column="0" selection-start="34242" selection-end="34242" vertical-scroll-proportion="0.0" vertical-offset="618" max-vertical-offset="4215">
               <folding>
                 <element signature="method#LabController#0;class#LabController#0" expanded="false" />
                 <element signature="method#initBase#0;class#LabController#0" expanded="false" />
@@ -197,8 +202,8 @@
                 <element signature="method#shear#0;class#LabController#0" expanded="false" />
                 <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
                 <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-                <element signature="e#35334#35411#0" expanded="false" />
-                <element signature="e#36473#36541#0" expanded="false" />
+                <element signature="e#35332#35409#0" expanded="false" />
+                <element signature="e#36471#36539#0" expanded="false" />
                 <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
                 <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
                 <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -208,7 +213,7 @@
                 <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
                 <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
                 <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-                <element signature="e#41706#41721#0" expanded="false" />
+                <element signature="e#41704#41719#0" expanded="false" />
                 <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
                 <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
                 <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -216,6 +221,51 @@
                 <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
                 <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HouseModel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/HouseModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="74" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Line3D.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Line3D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="13" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="82" selection-start="2726" selection-end="2726" vertical-scroll-proportion="0.33438987" vertical-offset="794" max-vertical-offset="2730">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LWJGLmain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="26" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Point3D.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Point3D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="13" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -248,9 +298,16 @@
         <option value="$PROJECT_DIR$/src/DataRepresentations/Quad.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/Line.java" />
         <option value="$PROJECT_DIR$/src/Controllers/Lab3Controller.java" />
-        <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/LabController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/Lab4Controller.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/StudentLWJGLController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/CS355LWJGLController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/CS355LWJGL.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/LabController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/LabController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/StudentLWJGLController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/GameController.java" />
+        <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
+        <option value="$PROJECT_DIR$/src/game/GameController.java" />
       </list>
     </option>
   </component>
@@ -286,6 +343,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,7 +391,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DataRepresentations" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,32 +409,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Camera" />
+              <option name="myItemId" value="game" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,6 +439,13 @@
     <property name="options.searchVisible" value="true" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="SearchEverywhereHistory" value="&#10;shear" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/controllers" />
+      <recent name="$PROJECT_DIR$/src/model" />
+      <recent name="$PROJECT_DIR$/src/Controllers" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.LWJGLmain">
     <configuration default="false" name="LWJGLmain" type="Application" factoryName="Application" temporary="true">
@@ -458,6 +504,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -483,19 +542,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -692,7 +738,11 @@
       <created>1396147831751</created>
       <updated>1396147831751</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Specular Lighting working. Lab 4 up to 95 points.">
+      <created>1396152580684</created>
+      <updated>1396152580684</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -724,24 +774,24 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3608361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.72231686" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39273927" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27722773" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32296136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32233223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1736672" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27722773" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17285945" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2761276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3608361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -779,7 +829,8 @@
     <MESSAGE value="Gourad Shading started though it isn't quite working right&#10;" />
     <MESSAGE value="Got Gourad shading to work. It was a problem where I was using a position AFTER doing the Projection transformation, dividing by W and then applying the Viewing transformation as well. When what I needed to do was only transform it by the Modelview matrix, and then apply lighting." />
     <MESSAGE value="Fog working - 20 pts worth. Just need 20 pts more for lab to be done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fog working - 20 pts worth. Just need 20 pts more for lab to be done." />
+    <MESSAGE value="Specular Lighting working. Lab 4 up to 95 points." />
+    <option name="LAST_COMMIT_MESSAGE" value="Specular Lighting working. Lab 4 up to 95 points." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -793,16 +844,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="28" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="10275">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
           <folding>
@@ -868,8 +910,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -879,7 +921,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -890,201 +932,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="10275">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawPoints#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="515" column="36" selection-start="16230" selection-end="16230" vertical-scroll-proportion="0.0" vertical-offset="7725" max-vertical-offset="10230">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawPoints#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="580" column="35" selection-start="20808" selection-end="20808" vertical-scroll-proportion="0.0" vertical-offset="10247" max-vertical-offset="10795">
           <folding>
@@ -1150,8 +998,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1161,7 +1009,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1172,21 +1020,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1139">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Triangle.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="38" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="157" column="57" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3026">
           <folding>
@@ -1195,14 +1043,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/PointData.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/PointData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="40" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="884">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="300" column="30" selection-start="9875" selection-end="9875" vertical-scroll-proportion="0.0" vertical-offset="5022" max-vertical-offset="5916">
           <folding>
@@ -1211,7 +1059,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="69" selection-start="5684" selection-end="5684" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9809">
           <folding>
@@ -1277,8 +1125,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1288,7 +1136,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1299,14 +1147,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="108" column="34" selection-start="3590" selection-end="3590" vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="2975">
           <folding>
@@ -1315,7 +1163,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="269" column="0" selection-start="8923" selection-end="8923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4913">
           <folding>
@@ -1324,7 +1172,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="152" column="43" selection-start="4814" selection-end="4814" vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="3468">
           <folding>
@@ -1390,8 +1238,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1401,7 +1249,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1412,14 +1260,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="110" column="0" selection-start="3634" selection-end="3634" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="2958">
           <folding>
@@ -1428,14 +1276,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788">
           <folding>
@@ -1444,7 +1292,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
           <folding>
@@ -1510,8 +1358,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1521,7 +1369,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1532,14 +1380,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="2788" max-vertical-offset="2788">
           <folding>
@@ -1548,7 +1396,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
           <folding>
@@ -1614,8 +1462,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1625,7 +1473,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1636,31 +1484,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="398" column="22" selection-start="14524" selection-end="14524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Quad.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="55" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1088">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1580#1591#0" expanded="true" />
+            <element signature="e#1522#1533#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Triangle.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="62" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2788">
           <folding>
@@ -1669,14 +1517,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/BigPoint.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/BigPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="29" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1037">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="30" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="935">
           <folding>
@@ -1742,8 +1590,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1753,7 +1601,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1771,7 +1619,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab1Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab1Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="21" selection-start="1027" selection-end="1030" vertical-scroll-proportion="0.3329453" vertical-offset="224" max-vertical-offset="1190">
           <folding />
@@ -1785,7 +1633,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/BigPoint.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/BigPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="48" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="986">
           <folding />
@@ -1799,45 +1647,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/PointData.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/PointData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="40" selection-start="228" selection-end="228" vertical-scroll-proportion="-0.05923345" vertical-offset="187" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Camera/Camera.java">
+    <entry file="file://$PROJECT_DIR$/src/camera/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="186" selection-end="186" vertical-scroll-proportion="0.2369338" vertical-offset="0" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Triangle.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="32" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="918">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Quad.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="58" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="591" max-vertical-offset="1105">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1580#1591#0" expanded="true" />
+            <element signature="e#1522#1533#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab2Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="217" column="6" selection-start="6392" selection-end="6854" vertical-scroll-proportion="0.77700347" vertical-offset="3022" max-vertical-offset="5831">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/Line.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="39" selection-start="1322" selection-end="1322" vertical-scroll-proportion="-11.769231" vertical-offset="102" max-vertical-offset="3026">
           <folding>
@@ -1851,7 +1699,7 @@
         <state line="102" column="0" selection-start="5594" selection-end="5594" vertical-scroll-proportion="0.8800738" vertical-offset="1038" max-vertical-offset="1605" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab3Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="203" column="4" selection-start="7474" selection-end="7882" vertical-scroll-proportion="0.0" vertical-offset="2852" max-vertical-offset="10275">
           <folding>
@@ -1860,14 +1708,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="31" selection-start="1577" selection-end="1577" vertical-scroll-proportion="1.1642599" vertical-offset="0" max-vertical-offset="975">
           <folding />
@@ -1876,28 +1717,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/errors.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6632653" vertical-offset="585" max-vertical-offset="25590">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6632653" vertical-offset="585" max-vertical-offset="25590" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl.jar!/org/lwjgl/opengl/GL11.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="750" column="23" selection-start="37070" selection-end="37070" vertical-scroll-proportion="0.3462838" vertical-offset="11030" max-vertical-offset="25230">
-          <folding />
-        </state>
+        <state line="750" column="23" selection-start="37070" selection-end="37070" vertical-scroll-proportion="0.3462838" vertical-offset="11030" max-vertical-offset="25230" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl_util.jar!/org/lwjgl/util/vector/Vector4f.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="42" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.3462838" vertical-offset="365" max-vertical-offset="1095">
-          <folding />
-        </state>
+        <state line="39" column="42" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.3462838" vertical-offset="365" max-vertical-offset="1095" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LabController.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="325" column="13" selection-start="12327" selection-end="12327" vertical-scroll-proportion="0.0" vertical-offset="1468" max-vertical-offset="4230">
+        <state line="945" column="0" selection-start="34242" selection-end="34242" vertical-scroll-proportion="0.0" vertical-offset="618" max-vertical-offset="4215">
           <folding>
             <element signature="method#LabController#0;class#LabController#0" expanded="false" />
             <element signature="method#initBase#0;class#LabController#0" expanded="false" />
@@ -1961,8 +1796,8 @@
             <element signature="method#shear#0;class#LabController#0" expanded="false" />
             <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35334#35411#0" expanded="false" />
-            <element signature="e#36473#36541#0" expanded="false" />
+            <element signature="e#35332#35409#0" expanded="false" />
+            <element signature="e#36471#36539#0" expanded="false" />
             <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
             <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
@@ -1972,7 +1807,7 @@
             <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
             <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41706#41721#0" expanded="false" />
+            <element signature="e#41704#41719#0" expanded="false" />
             <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
             <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
@@ -1983,9 +1818,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Lab4Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Point3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="880" column="39" selection-start="34766" selection-end="34766" vertical-scroll-proportion="0.70149255" vertical-offset="2637" max-vertical-offset="3255">
+        <state line="3" column="13" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="49" selection-start="303" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3255">
           <folding>
             <element signature="method#init#0;class#Lab4Controller#0" expanded="false" />
             <element signature="method#resizeGL#0;class#Lab4Controller#0" expanded="false" />
@@ -2007,6 +1849,34 @@
             <element signature="method#doMyExponentialFog#0;class#Lab4Controller#0" expanded="false" />
             <element signature="method#doMyExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="26" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Line3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/HouseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="74" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="82" selection-start="2726" selection-end="2726" vertical-scroll-proportion="0.33438987" vertical-offset="794" max-vertical-offset="2730">
+          <folding />
         </state>
       </provider>
     </entry>
