@@ -11,23 +11,25 @@ package game;
 import controllers.LabController;
 import model.HouseModel;
 import model.Line3D;
+import model.MapPieces;
 import model.WireFrame;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
+import org.lwjgl.util.vector.Vector3f;
 
 import java.util.Iterator;
 
-import static org.lwjgl.opengl.GL11.*;import static org.lwjgl.util.glu.GLU.gluPerspective;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.util.glu.GLU.gluPerspective;
 
-public class GameController extends LabController
-{
-    private double xPos = 0;
-    private double yPos = -2;
-    private double zPos = -20;
+public class GameController extends LabController {
+    // Right handed coordinate system - These values (numeric) are inverted because of the translation matrix
+    private double xPos = 0;  // X = Right
+    private double yPos = -5; // Y = Up
+    private double zPos = -20;  // Z = Back
     private double rotateAngle = 0;
 
-    // This is a model of a house.
-    private WireFrame model = new HouseModel();
+    MapPieces map = new MapPieces();
 
     // This method is called to "resize" the viewport to match the screen.
     // When you first start, have it be in perspective mode.
@@ -56,25 +58,29 @@ public class GameController extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
             zPos += Math.cos(Math.toRadians(rotateAngle));
             xPos -= Math.sin(Math.toRadians(rotateAngle));
+            printVariables();
         }
         // MOVE BACKWARD
         else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
             zPos -= Math.cos(Math.toRadians(rotateAngle));
             xPos += Math.sin(Math.toRadians(rotateAngle));
+            printVariables();
         }
 
         // MOVE LEFT
         if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
             xPos += Math.cos(Math.toRadians(rotateAngle));
             zPos += Math.sin(Math.toRadians(rotateAngle));
+            printVariables();
         }
         // MOVE RIGHT
         else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
             xPos -= Math.cos(Math.toRadians(rotateAngle));
             zPos -= Math.sin(Math.toRadians(rotateAngle));
+            printVariables();
         }
 
-        /* MOVEMENT NOT ALLOWED, BUT WILL NEED THIS EVENTUALLY FOR MOVING UP STUFF
+        /* MOVEMENT NOT ALLOWED, BUT WILL NEED THIS EVENTUALLY FOR MOVING UP STUFF */
         // MOVE UP
         if (Keyboard.isKeyDown(Keyboard.KEY_R)) {
             yPos -= 1;
@@ -84,7 +90,7 @@ public class GameController extends LabController
         else if (Keyboard.isKeyDown(Keyboard.KEY_F)) {
             yPos += 1;
             printVariables();
-        }*/
+        }/**/
 
         // TURN LEFT
         if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
@@ -102,16 +108,16 @@ public class GameController extends LabController
             gluPerspective(80.0f, 640 / 480f, 0f, 50f);
         }
         // SWITCH TO ORTHOGRAPHIC PROJECTION
-        else if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
-            glMatrixMode(GL_PROJECTION);
-            glLoadIdentity();
-            glOrtho(0, Display.getDisplayMode().getWidth()/40, 0, Display.getDisplayMode().getHeight()/40, -500, 500);
-        }
+//        else if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
+//            glMatrixMode(GL_PROJECTION);
+//            glLoadIdentity();
+//            glOrtho(0, Display.getDisplayMode().getWidth()/40, 0, Display.getDisplayMode().getHeight()/40, -500, 500);
+//        }
 
         // RESET TO CENTER
         if (Keyboard.isKeyDown(Keyboard.KEY_H)) {
             xPos = 0;
-            yPos = -2;
+            yPos = -5;
             zPos = -20;
             rotateAngle = 0;
         }
@@ -126,53 +132,33 @@ public class GameController extends LabController
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        glRotatef((float)rotateAngle, 0f, 1.0f, 0f);
+        glRotatef((float) rotateAngle, 0f, 1.0f, 0f);
         glTranslatef((float) xPos, (float) yPos, (float) zPos);
 
         // DRAW THE HOUSE
         glColor3f(0.0f, 1.0f, 1.0f);
         glLineWidth(2);
-//        glBegin(GL_LINES);
-        glBegin(GL_POLYGON);
-        {
-            Iterator<Line3D> iter = model.getLines();
-            while (iter.hasNext()) {
-                Line3D line = iter.next();
-                float startX = (float) line.start.x;
-                float startY = (float) line.start.y;
-                float startZ = (float) line.start.z;
+        glEnable(GL_CULL_FACE);
 
-                float endX = (float) line.end.x;
-                float endY = (float) line.end.y;
-                float endZ = (float) line.end.z;
+//        drawHouse();
+        Vector3f color = new Vector3f(1, 1, 0);
 
-                glVertex3f(startX, startY, startZ);
-                glVertex3f(endX, endY, endZ);
-            }
-        }
-        glEnd();
 
-        glColor3f(0, 0, 1);
-        glBegin(GL_LINES);
-        {
-            Iterator<Line3D> iter = model.getLines();
-            while (iter.hasNext()) {
-                Line3D line = iter.next();
-                float startX = (float) line.start.x;
-                float startY = (float) line.start.y;
-                float startZ = (float) line.start.z;
+        map.drawFloor(25, 10);
+        map.drawWalls(25, 10);
 
-                float endX = (float) line.end.x;
-                float endY = (float) line.end.y;
-                float endZ = (float) line.end.z;
+        map.drawPyramid(5, 0, 0, 0, color, false);
+        map.drawPyramid(5, 10, 0, 0, color, false);
+        map.drawPyramid(5, 10, 0, -15, color, false);
 
-                glVertex3f(startX, startY, startZ);
-                glVertex3f(endX, endY, endZ);
-            }
-        }
-        glEnd();
+        map.drawCube(15, -50, 25, -50, color, true);
+        map.drawCube(15, 50, 0, 50, new Vector3f(1, 0, 0), true);
+        // TODO: Figure out how to make it so you can't just see through the shapes - culling perhaps?
+
         glFlush();
     }
+
+
 
     private void printVariables() {
         System.out.println("X: " + xPos);

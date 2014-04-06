@@ -16,6 +16,7 @@ public class HouseModel extends WireFrame
         lines.add(new Line3D(new Point3D(5, 0, -5), new Point3D(5, 0, 5)));
         lines.add(new Line3D(new Point3D(5, 0, 5), new Point3D(-5, 0, 5)));
         lines.add(new Line3D(new Point3D(-5, 0, 5), new Point3D(-5, 0, -5)));
+
         //Ceiling
         lines.add(new Line3D(new Point3D(-5, 5, -5), new Point3D(5, 5, -5)));
         lines.add(new Line3D(new Point3D(5, 5, -5), new Point3D(5, 5, 5)));
