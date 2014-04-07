@@ -14,12 +14,16 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.glLight;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
 
 public class GameController extends LabController {
@@ -31,6 +35,13 @@ public class GameController extends LabController {
     // Variables for creating the playing field
     private int scale = 25;
     private int numTiles = 10;
+
+    // Lighting Position
+    float[] position = {0, 3, -10, 1};
+    float a = 0;
+    float b = 3;
+    float c = -10;
+    float d = 1;
 
     // Shots taken
     private ArrayList<Shot> shots;
@@ -94,19 +105,28 @@ public class GameController extends LabController {
         }
 
         // MOVE LEFT
-        if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
+        if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
             xPos -= Math.cos(Math.toRadians(rotateAngle));
             zPos -= Math.sin(Math.toRadians(rotateAngle));
 //            printVariables();
         }
         // MOVE RIGHT
-        else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
+        else if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
             xPos += Math.cos(Math.toRadians(rotateAngle));
             zPos += Math.sin(Math.toRadians(rotateAngle));
 //            printVariables();
         }
 
-        /* MOVEMENT NOT ALLOWED, BUT WILL NEED THIS EVENTUALLY FOR MOVING UP STUFF */
+        // TURN LEFT
+        if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
+            rotateAngle -= 1;
+        }
+        // TURN RIGHT
+        else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
+            rotateAngle += 1;
+        }
+
+        /* MOVEMENT NOT ALLOWED, BUT WILL NEED THIS EVENTUALLY FOR MOVING UP STUFF
         // MOVE UP
         if (Keyboard.isKeyDown(Keyboard.KEY_C)) {
             yPos += 1;
@@ -116,23 +136,28 @@ public class GameController extends LabController {
         else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
             yPos -= 1;
 //            printVariables();
-        }/**/
+        }*/
 
-        // TURN LEFT
-        if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
-            rotateAngle -= 1;
-        }
-        // TURN RIGHT
-        else if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
-            rotateAngle += 1;
-        }
+        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d++; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d--; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_O)) { c++; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c--; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b++; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b--; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a++; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a--; printLightVariables();}
 
-        if (Keyboard.isKeyDown(Keyboard.KEY_F)) {
+        if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
             if(shots.size() < maxShots) {
                 System.out.println("Added shot #" + shots.size());
-                double dz = -1 * Math.cos(Math.toRadians(rotateAngle));
-                double dx = Math.sin(Math.toRadians(rotateAngle));
-                shots.add(new Shot(xPos, yPos, zPos, dx, 0, dz));
+                // Put shots out in front of the player
+                double z = zPos - 4 * Math.cos(Math.toRadians(rotateAngle));
+                double x = xPos + 4 * Math.sin(Math.toRadians(rotateAngle));
+
+                // Set speed of ball to be faster than the player so if they are running it's not weird
+                double dz = -2 * Math.cos(Math.toRadians(rotateAngle));
+                double dx = 2 * Math.sin(Math.toRadians(rotateAngle));
+                shots.add(new Shot(x, yPos, z, dx, 0, dz));
             }
         }
 
@@ -161,7 +186,7 @@ public class GameController extends LabController {
     //This method is the one that actually draws to the screen.
     public void render() {
         //This clears the screen.
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // | GL_LIGHTING_BIT);
 
         // UPDATE THE VIEW
         glMatrixMode(GL_MODELVIEW);
@@ -169,6 +194,8 @@ public class GameController extends LabController {
 
         glRotatef((float) rotateAngle, 0f, 1.0f, 0f);
         glTranslatef((float) -xPos, (float) -yPos, (float) -zPos);
+
+        enableLighting(); // TODO: Get lighting to work right - light changes after shooting
 
         glLineWidth(2);
         glEnable(GL_CULL_FACE);
@@ -182,17 +209,51 @@ public class GameController extends LabController {
         map.drawPyramid(5, 10, 0, 0, color, false);
         map.drawPyramid(5, 10, 0, -15, color, false);
 
-        map.drawCube(15, -50, 25, -50, color, true);
-        map.drawCube(15, 50, 0, 50, new Vector3f(1, 0, 0), true);
+        map.drawCube(15, -50, 25, -50, color, false);
+        map.drawCube(15, 50, 0, 50, new Vector3f(1, 0, 0), false);
 
         for (Shot shot : shots) {
             map.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, color);
         }
+        drawShotsRemaining();
+
         // TODO: Figure out how to make it so you can't just see through the shapes - culling perhaps?
 
-        glColor3f(1, 1, 1);
-        TextRenderer.drawString("Shot Remaining: " + (maxShots - shots.size()), 0, 50, -250);
         glFlush();
+    }
+
+    private void enableLighting() {
+        ByteBuffer temp = ByteBuffer.allocateDirect(4 * 4);
+        temp.order(ByteOrder.LITTLE_ENDIAN);
+
+        glEnable(GL_NORMALIZE);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_COLOR_MATERIAL);
+        glEnable(GL_LIGHT0);
+        float[] diffuse_color = {1.0f, 1.0f, 1.0f, 1};
+        float[] ambient_color = {0.1f, 0.1f, 0.1f, 1};
+        float[] position = {a, b, c, d};
+
+        // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
+        glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
+        glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
+        glLight(GL_LIGHT0, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position).flip());
+        glColor3f(1, 0, 0);
+        float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
+    }
+
+    private void drawShotsRemaining() {
+        glColor3f(1, 1, 1);
+        TextRenderer.drawString("Shot Remaining: " + (maxShots - shots.size()), -50, 50, -250);
+
+        glRotatef(90, 0f, 1.0f, 0f);
+        TextRenderer.drawString("Shot Remaining: " + (maxShots - shots.size()), -50, 50, -250);
+
+        glRotatef(180, 0f, 1.0f, 0f);
+        TextRenderer.drawString("Shot Remaining: " + (maxShots - shots.size()), -50, 50, -250);
+
+        glRotatef(-90, 0f, 1.0f, 0f);
+        TextRenderer.drawString("Shot Remaining: " + (maxShots - shots.size()), -50, 50, -250);
     }
 
     private void printVariables() {
@@ -202,5 +263,9 @@ public class GameController extends LabController {
         System.out.println("Rotate Angle: " + rotateAngle);
         System.err.println("COS: " + Math.cos(Math.toRadians(rotateAngle)));
         System.err.println("SIN: " + Math.sin(Math.toRadians(rotateAngle)));
+    }
+
+    private void printLightVariables() {
+        System.out.println("A: " + a + " B: " + b + " C: " + c + " D: " + d);
     }
 }

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/Shot.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/TextRenderer.java" />
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Can shoot shots">
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/.svn/entries" afterPath="$PROJECT_DIR$/src/camera/.svn/entries" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/entries" afterPath="$PROJECT_DIR$/src/controllers/.svn/entries" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/entries" afterPath="$PROJECT_DIR$/src/dataRepresentations/.svn/entries" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameController.java" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/LabController.java" afterPath="$PROJECT_DIR$/src/controllers/LabController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/Lab4Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Lab4Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/MapPieces.java" afterPath="$PROJECT_DIR$/src/model/MapPieces.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log.1" afterPath="$PROJECT_DIR$/errors.log.1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
     <ignored path="455LabCompilation.iws" />
@@ -107,22 +106,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GameController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="27" selection-start="6548" selection-end="6548" vertical-scroll-proportion="0.0" vertical-offset="2568" max-vertical-offset="3180">
+            <state line="197" column="92" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.3647059" vertical-offset="1435" max-vertical-offset="2790">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2111#2117#0" expanded="true" />
+                <element signature="method#updateKeyboard#0;class#GameController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextRenderer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Lab4Controller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="183" column="8" selection-start="6136" selection-end="6301" vertical-scroll-proportion="0.0" vertical-offset="2745" max-vertical-offset="13440">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextRenderer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/TextRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.45882353" vertical-offset="0" max-vertical-offset="7275">
+            <state line="4" column="27" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="7275">
               <folding />
             </state>
           </provider>
@@ -131,7 +139,7 @@
       <file leaf-file-name="MapPieces.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="294" column="45" selection-start="9788" selection-end="9788" vertical-scroll-proportion="0.0" vertical-offset="3829" max-vertical-offset="4455">
+            <state line="221" column="0" selection-start="7503" selection-end="7503" vertical-scroll-proportion="0.0" vertical-offset="3315" max-vertical-offset="4575">
               <folding />
             </state>
           </provider>
@@ -174,10 +182,10 @@
         <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
         <option value="$PROJECT_DIR$/src/model/HouseModel.java" />
         <option value="$PROJECT_DIR$/src/controllers/LabController.java" />
-        <option value="$PROJECT_DIR$/src/LWJGLSandbox.java" />
-        <option value="$PROJECT_DIR$/src/model/MapPieces.java" />
         <option value="$PROJECT_DIR$/src/game/Shot.java" />
+        <option value="$PROJECT_DIR$/src/LWJGLSandbox.java" />
         <option value="$PROJECT_DIR$/src/model/TextRenderer.java" />
+        <option value="$PROJECT_DIR$/src/model/MapPieces.java" />
         <option value="$PROJECT_DIR$/src/game/GameController.java" />
       </list>
     </option>
@@ -214,8 +222,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,6 +310,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -621,7 +629,11 @@
       <created>1396816172796</created>
       <updated>1396816172796</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Can shoot shots">
+      <created>1396832746103</created>
+      <updated>1396832746103</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -711,7 +723,8 @@
     <MESSAGE value="Specular Lighting working. Lab 4 up to 95 points." />
     <MESSAGE value="Game Started" />
     <MESSAGE value="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled" />
-    <option name="LAST_COMMIT_MESSAGE" value="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled" />
+    <MESSAGE value="Can shoot shots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can shoot shots" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -848,7 +861,9 @@
     <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="0" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1734">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -880,11 +895,6 @@
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="58" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="591" max-vertical-offset="1105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="6" selection-start="6392" selection-end="6854" vertical-scroll-proportion="0.77700347" vertical-offset="3022" max-vertical-offset="5831" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
@@ -952,45 +962,14 @@
         <state line="54" column="19" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.33252427" vertical-offset="658" max-vertical-offset="2595" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="49" selection-start="303" selection-end="324" vertical-scroll-proportion="-0.39529413" vertical-offset="228" max-vertical-offset="3375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="1711" selection-end="1711" vertical-scroll-proportion="0.41275167" vertical-offset="777" max-vertical-offset="1365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl_util.jar!/org/lwjgl/util/glu/Sphere.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="266" selection-end="266" vertical-scroll-proportion="0.19966722" vertical-offset="0" max-vertical-offset="601">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="27" selection-start="6548" selection-end="6548" vertical-scroll-proportion="0.0" vertical-offset="2568" max-vertical-offset="3180">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2111#2117#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="9" column="16" selection-start="266" selection-end="266" vertical-scroll-proportion="0.19966722" vertical-offset="0" max-vertical-offset="601" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="19" selection-start="2057" selection-end="2068" vertical-scroll-proportion="-0.4368932" vertical-offset="960" max-vertical-offset="18225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="45" selection-start="9788" selection-end="9788" vertical-scroll-proportion="0.0" vertical-offset="3829" max-vertical-offset="4455">
           <folding />
         </state>
       </provider>
@@ -1002,10 +981,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="29" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.8117647" vertical-offset="975" max-vertical-offset="1530">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="40" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.33093524" vertical-offset="823" max-vertical-offset="5145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/TextRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.45882353" vertical-offset="0" max-vertical-offset="7275">
+        <state line="4" column="27" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7275">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="0" selection-start="7503" selection-end="7503" vertical-scroll-proportion="0.0" vertical-offset="3085" max-vertical-offset="4470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="8" selection-start="6136" selection-end="6301" vertical-scroll-proportion="0.0" vertical-offset="2520" max-vertical-offset="13305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="92" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.3647059" vertical-offset="1435" max-vertical-offset="2790">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#updateKeyboard#0;class#GameController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

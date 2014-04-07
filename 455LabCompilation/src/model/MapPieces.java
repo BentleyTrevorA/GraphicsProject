@@ -59,29 +59,30 @@ public class MapPieces {
         int heightScale = 4;
         glBegin(GL_QUADS);
         {
+            glColor3f(0, 0, 1);
             // Front
-            glColor3f(1, 0, 0);
+//            glColor3f(1, 0, 0);
             glVertex3d(-cornerCoord, 0, -cornerCoord);
             glVertex3d(cornerCoord, 0, -cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, -cornerCoord);
             glVertex3d(-cornerCoord, heightScale * scale, -cornerCoord);
 
             // Right
-            glColor3f(1, 1, 0);
+//            glColor3f(1, 1, 0);
             glVertex3d(cornerCoord, 0, -cornerCoord);
             glVertex3d(cornerCoord, 0, cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, -cornerCoord);
 
             // Back
-            glColor3f(0, 0, 1);
+//            glColor3f(0, 0, 1);
             glVertex3d(cornerCoord, 0, cornerCoord);
             glVertex3d(-cornerCoord, 0, cornerCoord);
             glVertex3d(-cornerCoord, heightScale * scale, cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, cornerCoord);
 
             // Left
-            glColor3f(0, 1, 1);
+//            glColor3f(0, 1, 1);
             glVertex3d(-cornerCoord, 0, cornerCoord);
             glVertex3d(-cornerCoord, 0, -cornerCoord);
             glVertex3d(-cornerCoord, heightScale * scale, -cornerCoord);

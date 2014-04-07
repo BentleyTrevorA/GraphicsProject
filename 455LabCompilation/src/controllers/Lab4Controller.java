@@ -252,6 +252,9 @@ public class Lab4Controller extends LabController {
         float[] ambient_color = {0.1f, 0.1f, 0.1f, 1};
         float[] position = {0, 3, -10, 1};
 
+
+
+
         // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
         glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
         glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
