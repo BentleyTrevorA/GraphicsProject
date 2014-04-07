@@ -1,5 +1,6 @@
 package model;
 
+import org.lwjgl.util.glu.Sphere;
 import org.lwjgl.util.vector.Vector3f;
 
 import java.util.Iterator;
@@ -283,5 +284,15 @@ public class MapPieces {
             }
             glEnd();
         }
+    }
+
+    public void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color)
+    {
+        glColor3f(color.x, color.y, color.z);
+        glPushMatrix();
+        glTranslated(x, y, z);
+        Sphere s = new Sphere();
+        s.draw((float)radius, slices, stacks);
+        glPopMatrix();
     }
 }

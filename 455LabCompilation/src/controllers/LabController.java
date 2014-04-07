@@ -66,7 +66,7 @@ public abstract class LabController {
         init();
     }
 
-    private void initBase() {
+    protected void initBase() {
         currentColor = new Vector4f(1, 1, 1, 1);
         clearColor = new Vector4f(0, 0, 0, 0);
 

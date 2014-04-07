@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/MapPieces.java" />
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/Shot.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/TextRenderer.java" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/.svn/entries" afterPath="$PROJECT_DIR$/src/camera/.svn/entries" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/entries" afterPath="$PROJECT_DIR$/src/controllers/.svn/entries" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/entries" afterPath="$PROJECT_DIR$/src/dataRepresentations/.svn/entries" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameController.java" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/HouseModel.java" afterPath="$PROJECT_DIR$/src/model/HouseModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log.1" afterPath="$PROJECT_DIR$/errors.log.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/LabController.java" afterPath="$PROJECT_DIR$/src/controllers/LabController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/MapPieces.java" afterPath="$PROJECT_DIR$/src/model/MapPieces.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
     <ignored path="455LabCompilation.iws" />
@@ -106,88 +107,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HouseModel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/HouseModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="36" selection-start="975" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="750">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="12" selection-start="5106" selection-end="5106" vertical-scroll-proportion="0.0" vertical-offset="1756" max-vertical-offset="2475">
+            <state line="192" column="27" selection-start="6548" selection-end="6548" vertical-scroll-proportion="0.0" vertical-offset="2568" max-vertical-offset="3180">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2111#2117#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextRenderer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/TextRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.45882353" vertical-offset="0" max-vertical-offset="7275">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapPieces.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MapPieces.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="56" selection-start="2990" selection-end="2990" vertical-scroll-proportion="0.3300248" vertical-offset="1157" max-vertical-offset="4395">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lab4Controller.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="49" selection-start="303" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="3255">
-              <folding>
-                <element signature="method#init#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#resizeGL#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#updateKeyboard#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#drawExperimentGouraud#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#openGlDrawingSetup#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="e#5945#6010#0" expanded="false" />
-                <element signature="method#doOpenGLFrustrum#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doOpenGLPerspective#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doOpenGLGouraud#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doLinearFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doExponentialFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLFrustrum#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLPerspective#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLGouraud#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyGLGouraudExperiment#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyLinearFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyExponentialFog#0;class#Lab4Controller#0" expanded="false" />
-                <element signature="method#doMyExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lab3Controller.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="258" column="8" selection-start="8957" selection-end="9308" vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="10275">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LWJGLmain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="27" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="585">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point3D.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Point3D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="11" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="585">
+            <state line="294" column="45" selection-start="9788" selection-end="9788" vertical-scroll-proportion="0.0" vertical-offset="3829" max-vertical-offset="4455">
               <folding />
             </state>
           </provider>
@@ -216,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/DataRepresentations/ConvexShape.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/PointData.java" />
         <option value="$PROJECT_DIR$/src/Camera/Camera.java" />
-        <option value="$PROJECT_DIR$/src/LWJGLSandbox.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/Triangle.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/Quad.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/Line.java" />
@@ -226,13 +169,16 @@
         <option value="$PROJECT_DIR$/src/Controllers/CS355LWJGLController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/CS355LWJGL.java" />
         <option value="$PROJECT_DIR$/src/Controllers/LabController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/LabController.java" />
         <option value="$PROJECT_DIR$/src/controllers/StudentLWJGLController.java" />
         <option value="$PROJECT_DIR$/src/controllers/GameController.java" />
         <option value="$PROJECT_DIR$/src/LWJGLmain.java" />
         <option value="$PROJECT_DIR$/src/model/HouseModel.java" />
-        <option value="$PROJECT_DIR$/src/game/GameController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/LabController.java" />
+        <option value="$PROJECT_DIR$/src/LWJGLSandbox.java" />
         <option value="$PROJECT_DIR$/src/model/MapPieces.java" />
+        <option value="$PROJECT_DIR$/src/game/Shot.java" />
+        <option value="$PROJECT_DIR$/src/model/TextRenderer.java" />
+        <option value="$PROJECT_DIR$/src/game/GameController.java" />
       </list>
     </option>
   </component>
@@ -268,6 +214,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -356,8 +304,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,6 +393,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -472,19 +431,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -572,24 +518,6 @@
     <configuration useDefault="true">$USER_HOME$/.subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
-  </component>
-  <component name="SvnFileUrlMappingImpl">
-    <option name="myMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$PROJECT_DIR$" />
-          <option name="myCopyRoot" value="$PROJECT_DIR$" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-    <option name="myMoreRealMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$PROJECT_DIR$" />
-          <option name="myCopyRoot" value="$PROJECT_DIR$" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -689,7 +617,11 @@
       <created>1396758970041</created>
       <updated>1396758970041</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled">
+      <created>1396816172796</created>
+      <updated>1396816172796</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -721,9 +653,8 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53292495" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.72231686" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39273927" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5022971" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27722773" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -733,12 +664,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17254902" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3078101" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53292495" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -778,7 +710,8 @@
     <MESSAGE value="Fog working - 20 pts worth. Just need 20 pts more for lab to be done." />
     <MESSAGE value="Specular Lighting working. Lab 4 up to 95 points." />
     <MESSAGE value="Game Started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game Started" />
+    <MESSAGE value="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -792,192 +725,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="735" column="28" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="11025" max-vertical-offset="12705">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="580" column="35" selection-start="20808" selection-end="20808" vertical-scroll-proportion="0.0" vertical-offset="10247" max-vertical-offset="10795">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1003" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="157" column="57" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3026" />
@@ -990,105 +737,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="30" selection-start="9875" selection-end="9875" vertical-scroll-proportion="0.0" vertical-offset="5022" max-vertical-offset="5916">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="300" column="30" selection-start="9875" selection-end="9875" vertical-scroll-proportion="0.0" vertical-offset="5022" max-vertical-offset="5916" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="69" selection-start="5684" selection-end="5684" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9809">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
@@ -1098,105 +759,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="0" selection-start="8923" selection-end="8923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4913">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="269" column="0" selection-start="8923" selection-end="8923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4913" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="152" column="43" selection-start="4814" selection-end="4814" vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="3468">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1139" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
@@ -1206,215 +781,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052">
-          <folding />
-        </state>
+        <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052">
-          <folding />
-        </state>
+        <state line="124" column="4" selection-start="3825" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="6052" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="2788" max-vertical-offset="2788">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="225" column="5" selection-start="7482" selection-end="7482" vertical-scroll-proportion="0.0" vertical-offset="2788" max-vertical-offset="2788" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="414" column="8" selection-start="14531" selection-end="14531" vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="7225">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="22" selection-start="14524" selection-end="14524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492">
-          <folding />
-        </state>
+        <state line="398" column="22" selection-start="14524" selection-end="14524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
@@ -1440,87 +841,7 @@
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="30" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="935">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1533,16 +854,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab1Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="21" selection-start="1027" selection-end="1030" vertical-scroll-proportion="0.3329453" vertical-offset="224" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataStructures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="17" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1700">
-          <folding />
-        </state>
+        <state line="36" column="21" selection-start="1027" selection-end="1030" vertical-scroll-proportion="0.3329453" vertical-offset="224" max-vertical-offset="1190" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/BigPoint.java">
@@ -1572,9 +884,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="6" selection-start="6392" selection-end="6854" vertical-scroll-proportion="0.77700347" vertical-offset="3022" max-vertical-offset="5831">
-          <folding />
-        </state>
+        <state line="217" column="6" selection-start="6392" selection-end="6854" vertical-scroll-proportion="0.77700347" vertical-offset="3022" max-vertical-offset="5831" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
@@ -1589,19 +899,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="31" selection-start="1577" selection-end="1577" vertical-scroll-proportion="1.1642599" vertical-offset="0" max-vertical-offset="975">
-          <folding />
-        </state>
+        <state line="45" column="31" selection-start="1577" selection-end="1577" vertical-scroll-proportion="1.1642599" vertical-offset="0" max-vertical-offset="975" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/errors.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6632653" vertical-offset="585" max-vertical-offset="25590" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl.jar!/org/lwjgl/opengl/GL11.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="750" column="23" selection-start="37070" selection-end="37070" vertical-scroll-proportion="0.3462838" vertical-offset="11030" max-vertical-offset="25230" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl_util.jar!/org/lwjgl/util/vector/Vector4f.class">
@@ -1611,175 +914,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Point3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="11" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
+        <state line="9" column="11" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Line3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="13" selection-start="58" selection-end="58" vertical-scroll-proportion="0.07165605" vertical-offset="0" max-vertical-offset="628">
-          <folding />
-        </state>
+        <state line="3" column="13" selection-start="58" selection-end="58" vertical-scroll-proportion="0.07165605" vertical-offset="0" max-vertical-offset="628" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/HouseModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="975" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="657" column="19" selection-start="24734" selection-end="24734" vertical-scroll-proportion="0.33252427" vertical-offset="2623" max-vertical-offset="4275">
-          <folding>
-            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
-            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
-            <element signature="method#init#0;class#LabController#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
-            <element signature="method#update#0;class#LabController#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
-            <element signature="method#render#0;class#LabController#0" expanded="false" />
-            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
-            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
-            <element signature="e#8098#8174#0" expanded="false" />
-            <element signature="e#9772#9851#0" expanded="false" />
-            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
-            <element signature="e#11859#11948#0" expanded="false" />
-            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
-            <element signature="e#13166#13206#0" expanded="false" />
-            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClearColor#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
-            <element signature="e#16180#16241#0" expanded="false" />
-            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPointSize#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
-            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
-            <element signature="e#27394#27434#0" expanded="false" />
-            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex3f#1;class#LabController#0" expanded="false" />
-            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMultMatrixf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLRotatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLScalef#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
-            <element signature="method#shear#0;class#LabController#0" expanded="false" />
-            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
-            <element signature="e#35332#35409#0" expanded="false" />
-            <element signature="e#36471#36539#0" expanded="false" />
-            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
-            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
-            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
-            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
-            <element signature="e#41704#41719#0" expanded="false" />
-            <element signature="method#doGLNormal3f#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
-            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="16" selection-start="892" selection-end="892" vertical-scroll-proportion="0.3317647" vertical-offset="189" max-vertical-offset="1365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="49" selection-start="303" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="3255">
-          <folding>
-            <element signature="method#init#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#resizeGL#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#updateKeyboard#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#drawExperimentGouraud#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#openGlDrawingSetup#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="e#5945#6010#0" expanded="false" />
-            <element signature="method#doOpenGLFrustrum#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doOpenGLPerspective#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doOpenGLGouraud#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doLinearFog#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doExponentialFog#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyGLFrustrum#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyGLPerspective#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyGLGouraud#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyGLGouraudExperiment#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyLinearFog#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyExponentialFog#0;class#Lab4Controller#0" expanded="false" />
-            <element signature="method#doMyExponentialSquaredFog#0;class#Lab4Controller#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="25" column="36" selection-start="975" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="750" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="8" selection-start="8957" selection-end="9308" vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="10275">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="258" column="8" selection-start="8957" selection-end="9308" vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="10275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataStructures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="17" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.03529412" vertical-offset="765" max-vertical-offset="1500" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLmain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="27" selection-start="860" selection-end="860" vertical-scroll-proportion="0.7882353" vertical-offset="25" max-vertical-offset="585" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl.jar!/org/lwjgl/opengl/GL11.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="550" column="23" selection-start="28383" selection-end="28383" vertical-scroll-proportion="0.35400516" vertical-offset="8098" max-vertical-offset="25230" />
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="19" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.33252427" vertical-offset="658" max-vertical-offset="2595" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="49" selection-start="303" selection-end="324" vertical-scroll-proportion="-0.39529413" vertical-offset="228" max-vertical-offset="3375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="1711" selection-end="1711" vertical-scroll-proportion="0.41275167" vertical-offset="777" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl_util.jar!/org/lwjgl/util/glu/Sphere.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="16" selection-start="266" selection-end="266" vertical-scroll-proportion="0.19966722" vertical-offset="0" max-vertical-offset="601">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="12" selection-start="5106" selection-end="5106" vertical-scroll-proportion="0.0" vertical-offset="1756" max-vertical-offset="2475">
+        <state line="192" column="27" selection-start="6548" selection-end="6548" vertical-scroll-proportion="0.0" vertical-offset="2568" max-vertical-offset="3180">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2111#2117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="19" selection-start="2057" selection-end="2068" vertical-scroll-proportion="-0.4368932" vertical-offset="960" max-vertical-offset="18225">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="56" selection-start="2990" selection-end="2990" vertical-scroll-proportion="0.3300248" vertical-offset="1157" max-vertical-offset="4395">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="294" column="45" selection-start="9788" selection-end="9788" vertical-scroll-proportion="0.0" vertical-offset="3829" max-vertical-offset="4455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Shot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="461" selection-end="461" vertical-scroll-proportion="0.5647059" vertical-offset="90" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/TextRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.45882353" vertical-offset="0" max-vertical-offset="7275">
+          <folding />
         </state>
       </provider>
     </entry>
