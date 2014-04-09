@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Made the screen size bigger for the game.">
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
     </list>
     <list id="e93f3324-464a-46f7-91c2-e8c05dfc6fc2" name="Entries" comment="">
@@ -115,7 +115,7 @@
       <file leaf-file-name="MapPieces.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="280" column="36" selection-start="8498" selection-end="8498" vertical-scroll-proportion="0.26937985" vertical-offset="3956" max-vertical-offset="4605">
+            <state line="290" column="36" selection-start="8760" selection-end="8760" vertical-scroll-proportion="0.56007755" vertical-offset="3956" max-vertical-offset="4605">
               <folding />
             </state>
           </provider>
@@ -656,7 +656,11 @@
       <created>1397073491122</created>
       <updated>1397073491122</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Made the screen size bigger for the game.">
+      <created>1397077432158</created>
+      <updated>1397077432158</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1043,7 +1047,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="280" column="36" selection-start="8498" selection-end="8498" vertical-scroll-proportion="0.26937985" vertical-offset="3956" max-vertical-offset="4605">
+        <state line="290" column="36" selection-start="8760" selection-end="8760" vertical-scroll-proportion="0.56007755" vertical-offset="3956" max-vertical-offset="4605">
           <folding />
         </state>
       </provider>
