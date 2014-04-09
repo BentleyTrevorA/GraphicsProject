@@ -10,8 +10,10 @@ package game;
 
 import controllers.LabController;
 import model.*;
+import org.lwjgl.BufferUtils;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
+import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.vector.Vector3f;
 
 import java.nio.ByteBuffer;
@@ -19,11 +21,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL11.glLight;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
 
 public class GameController extends LabController {
@@ -36,12 +36,21 @@ public class GameController extends LabController {
     private int scale = 25;
     private int numTiles = 10;
 
+    public Vector3f shotColor = Colors.PINK;
+
+    //----------- Variables added for Lighting Test -----------//
+    private FloatBuffer matSpecular;
+    private FloatBuffer lightPosition;
+    private FloatBuffer whiteLight;
+    private FloatBuffer lModelAmbient;
+    //----------- END: Variables added for Lighting Test -----------//
+
     // Lighting Position
     float[] position = {0, 3, -10, 1};
-    float a = 0;
-    float b = 3;
-    float c = -10;
-    float d = 1;
+    float a = 1;
+    float b = 1;
+    float c = 1;
+    float d = 0;
 
     // Shots taken
     private ArrayList<Shot> shots;
@@ -126,7 +135,7 @@ public class GameController extends LabController {
             rotateAngle += 1;
         }
 
-        /* MOVEMENT NOT ALLOWED, BUT WILL NEED THIS EVENTUALLY FOR MOVING UP STUFF
+        /* MOVEMENT NOT ALLOWED, BUT WILL NEED THIS EVENTUALLY FOR MOVING UP STUFF */
         // MOVE UP
         if (Keyboard.isKeyDown(Keyboard.KEY_C)) {
             yPos += 1;
@@ -136,10 +145,10 @@ public class GameController extends LabController {
         else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
             yPos -= 1;
 //            printVariables();
-        }*/
+        }
 
-        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d++; printLightVariables();}
-        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d--; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d += (1.0/180.f); printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d -= (1.0/180.f); printLightVariables();}
         if (Keyboard.isKeyDown(Keyboard.KEY_O)) { c++; printLightVariables();}
         if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c--; printLightVariables();}
         if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b++; printLightVariables();}
@@ -148,17 +157,7 @@ public class GameController extends LabController {
         if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a--; printLightVariables();}
 
         if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
-            if(shots.size() < maxShots) {
-                System.out.println("Added shot #" + shots.size());
-                // Put shots out in front of the player
-                double z = zPos - 4 * Math.cos(Math.toRadians(rotateAngle));
-                double x = xPos + 4 * Math.sin(Math.toRadians(rotateAngle));
-
-                // Set speed of ball to be faster than the player so if they are running it's not weird
-                double dz = -2 * Math.cos(Math.toRadians(rotateAngle));
-                double dx = 2 * Math.sin(Math.toRadians(rotateAngle));
-                shots.add(new Shot(x, yPos, z, dx, 0, dz));
-            }
+            addShot();
         }
 
         // SWITCH TO PERSPECTIVE PROJECTION
@@ -192,34 +191,95 @@ public class GameController extends LabController {
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        glRotatef((float) rotateAngle, 0f, 1.0f, 0f);
-        glTranslatef((float) -xPos, (float) -yPos, (float) -zPos);
+        glRotated(rotateAngle, 0f, 1.0f, 0f);
+        glTranslated(-xPos, -yPos, -zPos);
 
-        enableLighting(); // TODO: Get lighting to work right - light changes after shooting
+//        enableDepthBuffering();
+        enableLighting2(); // TODO: Get lighting to work right - light changes after shooting
 
         glLineWidth(2);
         glEnable(GL_CULL_FACE);
-//        glEnable(GL_DEPTH_TEST);
-        Vector3f color = new Vector3f(1, 1, 0);
 
         map.drawFloor(scale, numTiles);
-        map.drawWalls(scale, numTiles);
+        map.drawWalls(scale, numTiles, Colors.BLUE);
 
-        map.drawPyramid(5, 0, 0, 0, color, false);
-        map.drawPyramid(5, 10, 0, 0, color, false);
-        map.drawPyramid(5, 10, 0, -15, color, false);
+        map.drawPyramid(15, 100, 0, 0, Colors.CYAN, true);
+        map.drawPyramid(15, -100, 0, 0, Colors.GREEN, false);
+        map.drawPyramid(20, 0, 0, 100, Colors.LIGHT_BLUE, false);
+        map.drawPyramid(25, 0, 0, -100, Colors.PURPLE, false);
 
-        map.drawCube(15, -50, 25, -50, color, false);
-        map.drawCube(15, 50, 0, 50, new Vector3f(1, 0, 0), false);
+        map.drawCube(15, -50, 25, -50, Colors.RED, true);
+        map.drawCube(15, 50, 0, 50, Colors.ORANGE, false);
+
+        map.drawSphere(5, 0, 25, 0, 25, 25, Colors.YELLOW);
 
         for (Shot shot : shots) {
-            map.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, color);
+            map.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
         }
-        drawShotsRemaining();
+
+        drawShotsRemaining(Colors.WHITE);
 
         // TODO: Figure out how to make it so you can't just see through the shapes - culling perhaps?
 
         glFlush();
+    }
+
+    private void addShot() {
+        if(shots.size() < maxShots) {
+            // Put shots out in front of the player
+            double z = zPos - 4 * Math.cos(Math.toRadians(rotateAngle));
+            double x = xPos + 4 * Math.sin(Math.toRadians(rotateAngle));
+
+            // Set speed of ball to be faster than the player so if they are running it's not weird
+            double dz = -2 * Math.cos(Math.toRadians(rotateAngle));
+            double dx = 2 * Math.sin(Math.toRadians(rotateAngle));
+            shots.add(new Shot(x, yPos, z, dx, 0, dz));
+        }
+    }
+
+    private void enableDepthBuffering() {
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // sets background to black
+        glClearDepth(1.0f); // clear depth buffer
+        glEnable(GL_DEPTH_TEST); // Enables depth testing
+        glDepthFunc(GL_LEQUAL); // sets the type of test to use for depth testing
+
+        glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+    }
+
+    private void enableLighting2() {
+        //----------- Variables & method calls added for Lighting Test -----------//
+        initLightArrays();
+        glShadeModel(GL_SMOOTH);
+        glMaterial(GL_FRONT, GL_SPECULAR, matSpecular);				// sets specular material color
+        glMaterialf(GL_FRONT, GL_SHININESS, 50.0f);					// sets shininess
+
+        glLight(GL_LIGHT0, GL_POSITION, lightPosition);				// sets light position
+        glLight(GL_LIGHT0, GL_SPECULAR, whiteLight);				// sets specular light to white
+        glLight(GL_LIGHT0, GL_DIFFUSE, whiteLight);					// sets diffuse light to white
+        glLightModel(GL_LIGHT_MODEL_AMBIENT, lModelAmbient);		// global ambient light
+
+        glEnable(GL_LIGHTING);										// enables lighting
+        glEnable(GL_LIGHT0);										// enables light0
+
+        glEnable(GL_COLOR_MATERIAL);								// enables opengl to use glColor3f to define material color
+        glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);			// tell opengl glColor3f effects the ambient and diffuse properties of material
+        //----------- END: Variables & method calls added for Lighting Test -----------//
+    }
+
+    //------- Added for Lighting Test----------//
+    private void initLightArrays() {
+        matSpecular = BufferUtils.createFloatBuffer(4);
+        matSpecular.put(1.0f).put(1.0f).put(1.0f).put(1.0f).flip();
+
+        lightPosition = BufferUtils.createFloatBuffer(4);
+//        lightPosition.put(1.0f).put(1.0f).put(1.0f).put(0.0f).flip();
+        lightPosition.put(a).put(b).put(c).put(d).flip();
+
+        whiteLight = BufferUtils.createFloatBuffer(4);
+        whiteLight.put(1.0f).put(1.0f).put(1.0f).put(1.0f).flip();
+
+        lModelAmbient = BufferUtils.createFloatBuffer(4);
+        lModelAmbient.put(0.5f).put(0.5f).put(0.5f).put(1.0f).flip();
     }
 
     private void enableLighting() {
@@ -228,22 +288,33 @@ public class GameController extends LabController {
 
         glEnable(GL_NORMALIZE);
         glEnable(GL_LIGHTING);
-        glEnable(GL_COLOR_MATERIAL);
+//        glEnable(GL_COLOR_MATERIAL);
         glEnable(GL_LIGHT0);
         float[] diffuse_color = {1.0f, 1.0f, 1.0f, 1};
         float[] ambient_color = {0.1f, 0.1f, 0.1f, 1};
-        float[] position = {a, b, c, d};
+//        float[] ambient_color = {0.0f, 0.5f, 0.5f, 1};
+//        float[] position = {0, 3, -10, 1};
+        float[] position = {25, 38, -66, .1999f};
 
         // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
         glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
         glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
         glLight(GL_LIGHT0, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position).flip());
-        glColor3f(1, 0, 0);
-        float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
+
+        glEnable(GL_LIGHT1);
+        float[] diffuse_color1 = {1.0f, 1.0f, 1.0f, 1};
+//        float[] ambient_color1 = {0.5f, 0.0f, 0.5f, 1};
+        float[] ambient_color1 = {1f, 0.0f, 0.0f, 1};
+        float[] position1 = {a, b, c, d};
+
+        // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
+        glLight(GL_LIGHT1, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color1).flip());
+        glLight(GL_LIGHT1, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color1).flip());
+        glLight(GL_LIGHT1, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position1).flip());
     }
 
-    private void drawShotsRemaining() {
-        glColor3f(1, 1, 1);
+    private void drawShotsRemaining(Vector3f color) {
+        glColor3f(color.x, color.y, color.z);
         TextRenderer.drawString("Shot Remaining: " + (maxShots - shots.size()), -50, 50, -250);
 
         glRotatef(90, 0f, 1.0f, 0f);

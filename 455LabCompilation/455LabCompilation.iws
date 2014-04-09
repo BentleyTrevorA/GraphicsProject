@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Can shoot shots">
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="First attempt at lighting">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/Colors.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/LightingTest1.java" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/.svn/entries" afterPath="$PROJECT_DIR$/src/camera/.svn/entries" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controllers/.svn/entries" afterPath="$PROJECT_DIR$/src/controllers/.svn/entries" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataRepresentations/.svn/entries" afterPath="$PROJECT_DIR$/src/dataRepresentations/.svn/entries" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameController.java" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/Lab4Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Lab4Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/MapPieces.java" afterPath="$PROJECT_DIR$/src/model/MapPieces.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log.1" afterPath="$PROJECT_DIR$/errors.log.1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
@@ -96,6 +97,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/game/LightingTest1.java" line="79" class="game.LightingTest1" package="game">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -109,10 +125,9 @@
       <file leaf-file-name="GameController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="92" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.3647059" vertical-offset="1435" max-vertical-offset="2790">
+            <state line="193" column="45" selection-start="6672" selection-end="6672" vertical-scroll-proportion="0.36944938" vertical-offset="2687" max-vertical-offset="5220">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#updateKeyboard#0;class#GameController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,16 +136,7 @@
       <file leaf-file-name="Lab4Controller.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="8" selection-start="6136" selection-end="6301" vertical-scroll-proportion="0.0" vertical-offset="2745" max-vertical-offset="13440">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextRenderer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/TextRenderer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="27" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="7275">
+            <state line="208" column="36" selection-start="6931" selection-end="6931" vertical-scroll-proportion="0.0" vertical-offset="2655" max-vertical-offset="13305">
               <folding />
             </state>
           </provider>
@@ -139,7 +145,16 @@
       <file leaf-file-name="MapPieces.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="0" selection-start="7503" selection-end="7503" vertical-scroll-proportion="0.0" vertical-offset="3315" max-vertical-offset="4575">
+            <state line="198" column="9" selection-start="6427" selection-end="6427" vertical-scroll-proportion="0.0" vertical-offset="2192" max-vertical-offset="4605">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Colors.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Colors.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -185,16 +200,18 @@
         <option value="$PROJECT_DIR$/src/game/Shot.java" />
         <option value="$PROJECT_DIR$/src/LWJGLSandbox.java" />
         <option value="$PROJECT_DIR$/src/model/TextRenderer.java" />
+        <option value="$PROJECT_DIR$/src/model/Colors.java" />
+        <option value="$PROJECT_DIR$/src/game/LightingTest1.java" />
         <option value="$PROJECT_DIR$/src/model/MapPieces.java" />
         <option value="$PROJECT_DIR$/src/game/GameController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
+    <option name="x" value="1366" />
     <option name="y" value="24" />
-    <option name="width" value="1317" />
-    <option name="height" value="744" />
+    <option name="width" value="1280" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -222,6 +239,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,7 +329,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,6 +369,28 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="455LabCompilation" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LightingTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.LightingTest1" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -494,12 +533,14 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.LWJGLmain" />
+      <item index="1" class="java.lang.String" itemvalue="Application.LightingTest1" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Application.LWJGLmain" />
+        <item index="1" class="java.lang.String" itemvalue="Application.LightingTest1" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -633,7 +674,11 @@
       <created>1396832746103</created>
       <updated>1396832746103</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="First attempt at lighting">
+      <created>1396845248760</created>
+      <updated>1396845248760</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -657,7 +702,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="24" width="1317" height="744" extended-state="6" />
+    <frame x="1366" y="24" width="1280" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -665,8 +710,9 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19581959" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.72231686" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5022971" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20682068" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27722773" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -676,13 +722,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3078101" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20597738" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3069307" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53292495" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -699,7 +744,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Finished lab 2" />
     <MESSAGE value="Refactored raster and setPixel to LabController class to remove code duplication" />
     <MESSAGE value="Refactor my GLFunctions to LabController so that they can be used by other controllers" />
     <MESSAGE value="Lab 3 setup - created openGL functions for testing against" />
@@ -724,7 +768,8 @@
     <MESSAGE value="Game Started" />
     <MESSAGE value="Map starting to be created&#10;Can draw:&#10;- Cubes&#10;- Pyramids&#10;- Checkered Floor&#10;- Walls&#10;Can move around the world using keyboard.&#10;Back-Face culling is enabled" />
     <MESSAGE value="Can shoot shots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Can shoot shots" />
+    <MESSAGE value="First attempt at lighting" />
+    <option name="LAST_COMMIT_MESSAGE" value="First attempt at lighting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,21 +783,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="57" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/PointData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="884" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/Lab3Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="30" selection-start="9875" selection-end="9875" vertical-scroll-proportion="0.0" vertical-offset="5022" max-vertical-offset="5916" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="69" selection-start="5684" selection-end="5684" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9809">
@@ -952,11 +982,6 @@
         <state line="28" column="27" selection-start="860" selection-end="860" vertical-scroll-proportion="0.7882353" vertical-offset="25" max-vertical-offset="585" />
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl.jar!/org/lwjgl/opengl/GL11.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="550" column="23" selection-start="28383" selection-end="28383" vertical-scroll-proportion="0.35400516" vertical-offset="8098" max-vertical-offset="25230" />
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="19" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.33252427" vertical-offset="658" max-vertical-offset="2595" />
@@ -974,25 +999,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="40" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.33093524" vertical-offset="823" max-vertical-offset="5145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Shot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="11" selection-start="461" selection-end="461" vertical-scroll-proportion="0.5647059" vertical-offset="90" max-vertical-offset="555">
+        <state line="22" column="11" selection-start="461" selection-end="461" vertical-scroll-proportion="0.5472637" vertical-offset="0" max-vertical-offset="603">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Colors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LWJGLSandbox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="29" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.8117647" vertical-offset="975" max-vertical-offset="1530">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="40" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.33093524" vertical-offset="823" max-vertical-offset="5145">
+        <state line="88" column="29" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1365">
           <folding />
         </state>
       </provider>
@@ -1004,26 +1034,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl.jar!/org/lwjgl/opengl/GL11.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1166" column="23" selection-start="55045" selection-end="55045" vertical-scroll-proportion="0.3480663" vertical-offset="17286" max-vertical-offset="25230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/LWJGL/lwjgl-2.9.0/lwjgl-2.9.0/jar/lwjgl.jar!/org/lwjgl/opengl/Display.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="23" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.35519126" vertical-offset="485" max-vertical-offset="2610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/LightingTest1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="4" selection-start="732" selection-end="1015" vertical-scroll-proportion="0.55932206" vertical-offset="0" max-vertical-offset="2175">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/MapPieces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="0" selection-start="7503" selection-end="7503" vertical-scroll-proportion="0.0" vertical-offset="3085" max-vertical-offset="4470">
+        <state line="198" column="9" selection-start="6427" selection-end="6427" vertical-scroll-proportion="0.0" vertical-offset="2192" max-vertical-offset="4605">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="8" selection-start="6136" selection-end="6301" vertical-scroll-proportion="0.0" vertical-offset="2520" max-vertical-offset="13305">
+        <state line="208" column="36" selection-start="6931" selection-end="6931" vertical-scroll-proportion="0.0" vertical-offset="2655" max-vertical-offset="13305">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="92" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.3647059" vertical-offset="1435" max-vertical-offset="2790">
+        <state line="193" column="45" selection-start="6672" selection-end="6672" vertical-scroll-proportion="0.36944938" vertical-offset="2687" max-vertical-offset="5220">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#updateKeyboard#0;class#GameController#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -13,7 +13,8 @@ public class MapPieces {
 
     private WireFrame model = new HouseModel();
 
-    public void drawHouse() {
+    public void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
+        glColor3f(houseColor.x, houseColor.y, houseColor.z);
         glBegin(GL_POLYGON);
         {
             Iterator<Line3D> iter = model.getLines();
@@ -33,7 +34,7 @@ public class MapPieces {
         }
         glEnd();
 
-        glColor3f(0, 0, 1);
+        glColor3f(outlineColor.x, outlineColor.y, outlineColor.z);
         glBegin(GL_LINES);
         {
             Iterator<Line3D> iter = model.getLines();
@@ -54,35 +55,31 @@ public class MapPieces {
         glEnd();
     }
 
-    public void drawWalls(int scale, int numTilesInOneDirection) {
+    public void drawWalls(int scale, int numTilesInOneDirection, Vector3f color) {
         int cornerCoord = scale * numTilesInOneDirection;
         int heightScale = 4;
+        glColor3f(color.x, color.y, color.z);
         glBegin(GL_QUADS);
         {
-            glColor3f(0, 0, 1);
             // Front
-//            glColor3f(1, 0, 0);
             glVertex3d(-cornerCoord, 0, -cornerCoord);
             glVertex3d(cornerCoord, 0, -cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, -cornerCoord);
             glVertex3d(-cornerCoord, heightScale * scale, -cornerCoord);
 
             // Right
-//            glColor3f(1, 1, 0);
             glVertex3d(cornerCoord, 0, -cornerCoord);
             glVertex3d(cornerCoord, 0, cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, -cornerCoord);
 
             // Back
-//            glColor3f(0, 0, 1);
             glVertex3d(cornerCoord, 0, cornerCoord);
             glVertex3d(-cornerCoord, 0, cornerCoord);
             glVertex3d(-cornerCoord, heightScale * scale, cornerCoord);
             glVertex3d(cornerCoord, heightScale * scale, cornerCoord);
 
             // Left
-//            glColor3f(0, 1, 1);
             glVertex3d(-cornerCoord, 0, cornerCoord);
             glVertex3d(-cornerCoord, 0, -cornerCoord);
             glVertex3d(-cornerCoord, heightScale * scale, -cornerCoord);
@@ -96,9 +93,9 @@ public class MapPieces {
             for (int z = 0; z < numTiles + 1; z++) {
                 Vector3f tileColor;
                 if ((x + z) % 2 == 0)
-                    tileColor = new Vector3f(1, 1, 1);
+                    tileColor = Colors.WHITE;
                 else
-                    tileColor = new Vector3f(0, 0, 0);
+                    tileColor = Colors.BLACK;
 
 
                 drawFloorTile(scale, scale * x, 0, scale * z, tileColor);
@@ -115,14 +112,20 @@ public class MapPieces {
     public void drawFloorTile(double scale, double x, double y, double z, Vector3f color) {
         glColor3f(color.x, color.y, color.z);
 
+        glPushMatrix();
+        glTranslated(x, y, z);
+        glScaled(scale, scale, scale);
+
         glBegin(GL_QUADS);
         {
-            glVertex3d(x, y, z);
-            glVertex3d(x, y, z + scale);
-            glVertex3d(scale + x, y, z + scale);
-            glVertex3d(scale + x, y, z);
+            glVertex3d(0, 0, 0);
+            glVertex3d(0, 0, 1);
+            glVertex3d(1, 0, 1);
+            glVertex3d(1, 0, 0);
         }
         glEnd();
+
+        glPopMatrix();
     }
 
     /**
@@ -135,34 +138,32 @@ public class MapPieces {
      * @param outline - draw the shape outline
      */
     public void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
-        double halfScale = .5 * scale;
+        double halfScale = .5;
         double height = Math.sqrt(halfScale * halfScale + halfScale * halfScale);
-
         glColor3f(color.x, color.y, color.z);
+
+        glPushMatrix();
+        glTranslated(x, y, z);
+        glScaled(scale, scale, scale);
+
         // Be sure to be CCW
-//        glEnable(GL_NORMALIZE);
-//        glEnable(GL_DEPTH_TEST);
         glBegin(GL_TRIANGLES);
         {
-            glColor3f(0, 0, 1);
-            glVertex3d(scale + x, y, z);
-            glVertex3d(x, y, z);
-            glVertex3d(halfScale + x, height + y, halfScale + z);
+            glVertex3d(1, 0, 0);
+            glVertex3d(0, 0, 0);
+            glVertex3d(halfScale, height, halfScale);
 
-            glColor3f(0, 1, 0);
-            glVertex3d(scale + x, y, scale + z);
-            glVertex3d(scale + x, y, z);
-            glVertex3d(halfScale + x, height + y, halfScale + z);
+            glVertex3d(1, 0, 1);
+            glVertex3d(1, 0, 0);
+            glVertex3d(halfScale, height, halfScale);
 
-            glColor3f(1, 0, 0);
-            glVertex3d(x, y, scale + z);
-            glVertex3d(scale + x, y, scale + z);
-            glVertex3d(halfScale + x, height + y, halfScale + z);
+            glVertex3d(0, 0, 1);
+            glVertex3d(1, 0, 1);
+            glVertex3d(halfScale, height, halfScale);
 
-            glColor3f(0, 1, 1);
-            glVertex3d(x, y, z);
-            glVertex3d(x, y, scale + z);
-            glVertex3d(halfScale + x, height + y, halfScale + z);
+            glVertex3d(0, 0, 0);
+            glVertex3d(0, 0, 1);
+            glVertex3d(halfScale, height, halfScale);
         }
         glEnd();
 
@@ -170,73 +171,79 @@ public class MapPieces {
             glColor3f(0, 0, 0);
             glBegin(GL_LINES);
             {
-                glVertex3d(x, y, z);
-                glVertex3d(scale + x, y, z);
+                glVertex3d(0, 0, 0);
+                glVertex3d(1, 0, 0);
 
-                glVertex3d(scale + x, y, z);
-                glVertex3d(scale + x, y, scale + z);
+                glVertex3d(1, 0, 0);
+                glVertex3d(1, 0, 1);
 
-                glVertex3d(scale + x, y, scale + z);
-                glVertex3d(x, y, scale + z);
+                glVertex3d(1, 0, 1);
+                glVertex3d(0, 0, 1);
 
-                glVertex3d(x, y, scale + z);
-                glVertex3d(x, y, z);
+                glVertex3d(0, 0, 1);
+                glVertex3d(0, 0, 0);
 
-                glVertex3d(x, y, z);
-                glVertex3d(halfScale + x, height + y, halfScale + z);
+                glVertex3d(0, 0, 0);
+                glVertex3d(halfScale, height, halfScale);
 
-                glVertex3d(scale + x, y, z);
-                glVertex3d(halfScale + x, height + y, halfScale + z);
+                glVertex3d(1, 0, 0);
+                glVertex3d(halfScale, height, halfScale);
 
-                glVertex3d(scale + x, y, scale + z);
-                glVertex3d(halfScale + x, height + y, halfScale + z);
+                glVertex3d(1, 0, 1);
+                glVertex3d(halfScale, height, halfScale);
 
-                glVertex3d(x, y, scale + z);
-                glVertex3d(halfScale + x, height + y, halfScale + z);
+                glVertex3d(0, 0, 1);
+                glVertex3d(halfScale, height, halfScale);
             }
             glEnd();
         }
+        glPopMatrix();
     }
 
     public void drawCube(double scale, double x, double y, double z, Vector3f color, boolean outline) {
         glColor3f(color.x, color.y, color.z);
+
+        glPushMatrix();
+        glTranslated(x, y, z);
+        glScaled(scale, scale, scale);
+
         glBegin(GL_QUADS);
         {
             // Front
-            glVertex3d(x, y, scale + z);
-            glVertex3d(scale + x, y, scale + z);
-            glVertex3d(scale + x, scale + y, scale + z);
-            glVertex3d(x, scale + y, scale + z);
+            glVertex3d(0, 0, 1);
+            glVertex3d(1, 0, 1);
+            glVertex3d(1, 1, 1);
+            glVertex3d(0, 1, 1);
 
             // Right
-            glVertex3d(scale + x, y, scale + z);
-            glVertex3d(scale + x, y, z);
-            glVertex3d(scale + x, scale + y, z);
-            glVertex3d(scale + x, scale + y, scale + z);
+            glVertex3d(1, 0, 1);
+            glVertex3d(1, 0, 0);
+            glVertex3d(1, 1, 0);
+            glVertex3d(1, 1, 1);
 
             // Back
-            glVertex3d(scale + x, y, z);
-            glVertex3d(x, y, z);
-            glVertex3d(x, scale + y, z);
-            glVertex3d(scale + x, scale + y, z);
+            glVertex3d(1, 0, 0);
+            glVertex3d(0, 0, 0);
+            glVertex3d(0, 1, 0);
+            glVertex3d(1, 1, 0);
 
             // Left
-            glVertex3d(x, y, z);
-            glVertex3d(x, y, scale + z);
-            glVertex3d(x, scale + y, scale + z);
-            glVertex3d(x, scale + y, z);
+            glVertex3d(0, 0, 0);
+            glVertex3d(0, 0, 1);
+            glVertex3d(0, 1, 1);
+            glVertex3d(0, 1, 0);
 
             // Bottom
-            glVertex3d(x, y, z);
-            glVertex3d(scale + x, y, z);
-            glVertex3d(scale + x, y, scale + z);
-            glVertex3d(x, y, scale + z);
+            glVertex3d(0, 0, 0);
+            glVertex3d(1, 0, 0);
+            glVertex3d(1, 0, 1);
+            glVertex3d(0, 0, 1);
 
             // Top
-            glVertex3d(x, scale + y, z);
-            glVertex3d(x, scale + y, scale + z);
-            glVertex3d(scale + x, scale + y, scale + z);
-            glVertex3d(scale + x, scale + y, z);
+            glVertex3d(0, 1, 0);
+            glVertex3d(0, 1, 1);
+            glVertex3d(1, 1, 1);
+            glVertex3d(1, 1, 0);
         }
         glEnd();
 
@@ -245,46 +252,48 @@ public class MapPieces {
             glBegin(GL_LINES);
             {
                 // Bottom
-                glVertex3d(x, y, z);
-                glVertex3d(scale + x, y, z);
+                glVertex3d(0, 0, 0);
+                glVertex3d(1, 0, 0);
 
-                glVertex3d(scale + x, y, z);
-                glVertex3d(scale + x, y, scale + z);
+                glVertex3d(1, 0, 0);
+                glVertex3d(1, 0, 1);
 
-                glVertex3d(scale + x, y, scale + z);
-                glVertex3d(x, y, scale + z);
+                glVertex3d(1, 0, 1);
+                glVertex3d(0, 0, 1);
 
-                glVertex3d(x, y, scale + z);
-                glVertex3d(x, y, z);
+                glVertex3d(0, 0, 1);
+                glVertex3d(0, 0, 0);
 
                 // Top
-                glVertex3d(x, scale + y, z);
-                glVertex3d(scale + x, scale + y, z);
+                glVertex3d(0, 1, 0);
+                glVertex3d(1, 1, 0);
 
-                glVertex3d(scale + x, scale + y, z);
-                glVertex3d(scale + x, scale + y, scale + z);
+                glVertex3d(1, 1, 0);
+                glVertex3d(1, 1, 1);
 
-                glVertex3d(scale + x, scale + y, scale + z);
-                glVertex3d(x, scale + y, scale + z);
+                glVertex3d(1, 1, 1);
+                glVertex3d(0, 1, 1);
 
-                glVertex3d(x, scale + y, scale + z);
-                glVertex3d(x, scale + y, z);
+                glVertex3d(0, 1, 1);
+                glVertex3d(0, 1, 0);
 
                 // Sides
-                glVertex3d(x, y, z);
-                glVertex3d(x, scale + y, z);
+                glVertex3d(0, 0, 0);
+                glVertex3d(0, 1, 0);
 
-                glVertex3d(scale + x, y, z);
-                glVertex3d(scale + x, scale + y, z);
+                glVertex3d(1, 0, 0);
+                glVertex3d(1, 1, 0);
 
-                glVertex3d(scale + x, y, scale + z);
-                glVertex3d(scale + x, scale + y, scale + z);
+                glVertex3d(1, 0, 1);
+                glVertex3d(1, 1, 1);
 
-                glVertex3d(x, y, scale + z);
-                glVertex3d(x, scale + y, scale + z);
+                glVertex3d(0, 0, 1);
+                glVertex3d(0, 1, 1);
             }
             glEnd();
         }
+
+        glPopMatrix();
     }
 
     public void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color)
