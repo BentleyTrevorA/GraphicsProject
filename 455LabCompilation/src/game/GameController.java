@@ -1,12 +1,12 @@
 package game;
-//You might notice a lot of imports here.
-//You are probably wondering why I didn't just import org.lwjgl.opengl.GL11.*
-//Well, I did it as a hint to you.
-//OpenGL has a lot of commands, and it can be kind of intimidating.
-//This is a list of all the commands I used when I implemented my project.
-//Therefore, if a command appears in this list, you probably need it.
-//If it doesn't appear in this list, you probably don't.
-//Of course, your mileage may vary. Don't feel restricted by this list of imports.
+
+// Collision Detection Help - http://nehe.gamedev.net/tutorial/collision_detection/17005/
+// TODO: Collisions
+// 1 - rotate back
+// 2 - translate back
+// 3 - scale back
+// 4 - test if within the bounding box?
+// 5 - test if within the cube or within the radius - not sure how to do pyramid.
 
 import controllers.LabController;
 import model.*;
@@ -70,7 +70,9 @@ public class GameController extends LabController {
     public void resizeGL() {
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        gluPerspective(80.0f, 640 / 480f, 1.0f, 700f);
+
+        // IMPORTANT: DO NOT use 0 for near plane - it screws up depth_testing
+        gluPerspective(80.0f, 960 / 720f, 1.0f, 700f);
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();

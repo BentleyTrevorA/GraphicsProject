@@ -1,4 +1,5 @@
 import controllers.LabController;
+import game.GameController;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -35,7 +36,11 @@ public class LWJGLSandbox
         this.c = c;
 
         //Display
-        Display.setDisplayMode(new DisplayMode(DISPLAY_WIDTH, DISPLAY_HEIGHT));
+        if(c.getClass() == GameController.class)
+            Display.setDisplayMode(new DisplayMode(960, 720));
+        else
+            Display.setDisplayMode(new DisplayMode(DISPLAY_WIDTH, DISPLAY_HEIGHT));
+
         Display.setFullscreen(false);
         Display.setTitle("OpenGL Frame");
         Display.create();
