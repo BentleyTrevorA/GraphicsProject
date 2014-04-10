@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/MapCreator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Pyramid.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Sphere.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Wall.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/model/mapObjects/MapPieces.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/ModelRenderer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/MapPieces.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/MapPieces.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameController.java" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Model.java" afterPath="$PROJECT_DIR$/src/model/Model.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
@@ -106,19 +113,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="24" selection-start="3685" selection-end="3685" vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="1695">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Model.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="65" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1815">
+            <state line="48" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.4205052" vertical-offset="437" max-vertical-offset="1905">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,16 +124,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapPieces.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapPieces.java">
+      <file leaf-file-name="MapCreator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="28" selection-start="6111" selection-end="6111" vertical-scroll-proportion="0.7376093" vertical-offset="904" max-vertical-offset="4500">
+            <state line="30" column="53" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding>
-                <element signature="method#drawHouse#0;class#MapPieces#0" expanded="false" />
-                <element signature="method#drawFloor#0;class#MapPieces#0" expanded="false" />
-                <element signature="method#drawFloorTile#0;class#MapPieces#0" expanded="false" />
-                <element signature="docComment;method#drawPyramid#0;class#MapPieces#0" expanded="false" />
-                <element signature="method#drawSphere#0;class#MapPieces#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#355#366#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cube.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="4" selection-start="377" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pyramid.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Pyramid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="50" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="30" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1245">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Wall.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Wall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="26" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelRenderer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/ModelRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="434" column="82" selection-start="12580" selection-end="12583" vertical-scroll-proportion="0.0" vertical-offset="5282" max-vertical-offset="5955">
+              <folding>
+                <element signature="method#drawHouse#0;class#ModelRenderer#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -154,10 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Controllers/Lab1Controller.java" />
-        <option value="$PROJECT_DIR$/src/DataRepresentations/Point.java" />
-        <option value="$PROJECT_DIR$/src/DataRepresentations/LineData.java" />
-        <option value="$PROJECT_DIR$/src/DataRepresentations/TriangleData.java" />
         <option value="$PROJECT_DIR$/src/Controllers/Lab2Controller.java" />
         <option value="$PROJECT_DIR$/src/DataStructures.java" />
         <option value="$PROJECT_DIR$/src/DataRepresentations/BigPoint.java" />
@@ -196,12 +242,19 @@
         <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" />
         <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/Entity.java" />
         <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/DestructibleObject.java" />
-        <option value="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" />
         <option value="$PROJECT_DIR$/src/model/Lighting.java" />
-        <option value="$PROJECT_DIR$/src/game/GameController.java" />
         <option value="$PROJECT_DIR$/src/model/DepthBuffer.java" />
-        <option value="$PROJECT_DIR$/src/model/Model.java" />
         <option value="$PROJECT_DIR$/src/model/mapObjects/MapPieces.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/ModelDrawer.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Sphere.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Pyramid.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/ModelRenderer.java" />
+        <option value="$PROJECT_DIR$/src/game/GameController.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Wall.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/MapCreator.java" />
+        <option value="$PROJECT_DIR$/src/model/Model.java" />
       </list>
     </option>
   </component>
@@ -312,58 +365,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mapObjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapObjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nondestructible" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapObjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="destructible" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -801,7 +802,11 @@
       <created>1397094631458</created>
       <updated>1397094631459</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up.">
+      <created>1397095856773</created>
+      <updated>1397095856773</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -867,7 +872,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Divide by w done" />
     <MESSAGE value="Modified all Points to be Vector3f to allow for depth buffering" />
     <MESSAGE value="Depth Working" />
     <MESSAGE value="Matrix Manipulation Working&#10;Restored integer arithmetic to Line (instead of float which was messing stuff up)" />
@@ -892,7 +896,8 @@
     <MESSAGE value="Made the screen size bigger for the game." />
     <MESSAGE value="Divided GameController into Model, DepthBuffer, and Lighting classes.&#10;Moved Camera class to the camera directory&#10;Made MapPieces a static class" />
     <MESSAGE value="Added map objects classes&#10;Formatted all of the code using reformatter&#10;Added basic normals to cubes and pyramids" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added map objects classes&#10;Formatted all of the code using reformatter&#10;Added basic normals to cubes and pyramids" />
+    <MESSAGE value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -906,31 +911,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controllers/Lab2Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="22" selection-start="14524" selection-end="14524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11492" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="55" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1088" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="62" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1003" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2788" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/BigPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1037" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="30" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="935">
@@ -1173,26 +1153,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="24" selection-start="3685" selection-end="3685" vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="1695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/DepthBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="26" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="31" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="960">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1214,24 +1178,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Model.java">
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Sphere.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="65" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1815">
+        <state line="23" column="5" selection-start="199" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="605" selection-end="605" vertical-scroll-proportion="0.2616279" vertical-offset="0" max-vertical-offset="1695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="4" selection-start="377" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapPieces.java">
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="28" selection-start="6111" selection-end="6111" vertical-scroll-proportion="0.7376093" vertical-offset="904" max-vertical-offset="4500">
+        <state line="16" column="26" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <folding>
-            <element signature="method#drawHouse#0;class#MapPieces#0" expanded="false" />
-            <element signature="method#drawFloor#0;class#MapPieces#0" expanded="false" />
-            <element signature="method#drawFloorTile#0;class#MapPieces#0" expanded="false" />
-            <element signature="docComment;method#drawPyramid#0;class#MapPieces#0" expanded="false" />
-            <element signature="method#drawSphere#0;class#MapPieces#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/ModelRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="434" column="82" selection-start="12580" selection-end="12583" vertical-scroll-proportion="0.0" vertical-offset="5282" max-vertical-offset="5955">
+          <folding>
+            <element signature="method#drawHouse#0;class#ModelRenderer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="30" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1245">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Pyramid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="50" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="53" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#355#366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.4205052" vertical-offset="437" max-vertical-offset="1905">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

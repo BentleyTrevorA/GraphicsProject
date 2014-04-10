@@ -7,13 +7,14 @@ import model.WireFrame;
 import org.lwjgl.util.glu.Sphere;
 import org.lwjgl.util.vector.Vector3f;
 
+import java.awt.*;
 import java.util.Iterator;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glEnd;
 import static org.lwjgl.opengl.GL11.glVertex3d;
 
-public class MapPieces {
+public class ModelRenderer {
 
     private static WireFrame model = new HouseModel();
 
@@ -59,39 +60,86 @@ public class MapPieces {
         glEnd();
     }
 
-    public static void drawWalls(int scale, int numTilesInOneDirection, Vector3f color) {
-        int cornerCoord = scale * numTilesInOneDirection;
-        int heightScale = 4;
+    /**
+     * @param sX    - scale in x
+     * @param sY    - scale in y
+     * @param sZ    - scale in z
+     * @param tX    - translate x
+     * @param tY    - translate y
+     * @param tZ    - translate z
+     * @param angle - rotation angle
+     * @param rX    - rotation about x
+     * @param rY    - rotation about y
+     * @param rZ    - rotation about z
+     * @param color - color
+     */
+    public static void drawQuad(double sX, double sY, double sZ,
+                                double tX, double tY, double tZ,
+                                double angle, int rX, int rY, int rZ,
+                                Vector3f color, boolean normalize) {
         glColor3f(color.x, color.y, color.z);
-        glBegin(GL_QUADS);
-        {
-            // Front
-            glVertex3d(-cornerCoord, 0, -cornerCoord);
-            glVertex3d(cornerCoord, 0, -cornerCoord);
-            glVertex3d(cornerCoord, heightScale * scale, -cornerCoord);
-            glVertex3d(-cornerCoord, heightScale * scale, -cornerCoord);
+        glPushMatrix();
 
-            // Right
-            glVertex3d(cornerCoord, 0, -cornerCoord);
-            glVertex3d(cornerCoord, 0, cornerCoord);
-            glVertex3d(cornerCoord, heightScale * scale, cornerCoord);
-            glVertex3d(cornerCoord, heightScale * scale, -cornerCoord);
+        glTranslated(tX, tY, tZ);
+        glRotated(angle, rX, rY, rZ);
+        glScaled(sX, sY, sZ);
 
-            // Back
-            glVertex3d(cornerCoord, 0, cornerCoord);
-            glVertex3d(-cornerCoord, 0, cornerCoord);
-            glVertex3d(-cornerCoord, heightScale * scale, cornerCoord);
-            glVertex3d(cornerCoord, heightScale * scale, cornerCoord);
+        if(normalize) {
+            glBegin(GL_QUADS);
+            {
+                glNormal3d(-1, -1, -1);
+                glVertex3d(0, 0, 0);
 
-            // Left
-            glVertex3d(-cornerCoord, 0, cornerCoord);
-            glVertex3d(-cornerCoord, 0, -cornerCoord);
-            glVertex3d(-cornerCoord, heightScale * scale, -cornerCoord);
-            glVertex3d(-cornerCoord, heightScale * scale, cornerCoord);
+                glNormal3d(1, -1, -1);
+                glVertex3d(1, 0, 0);
+
+                glNormal3d(1, 1, -1);
+                glVertex3d(1, 1, 0);
+
+                glNormal3d(-1, 1, -1);
+                glVertex3d(0, 1, 0);
+            }
+        }
+        else {
+            glBegin(GL_QUADS);
+            {
+                glVertex3d(0, 0, 0);
+                glVertex3d(1, 0, 0);
+                glVertex3d(1, 1, 0);
+                glVertex3d(0, 1, 0);
+            }
         }
         glEnd();
+        glPopMatrix();
     }
 
+    public static void drawWalls(double width, double height, Vector3f color) {
+        drawQuad(width, height, 1, -width/2, 0, -width/2, 0, 0, 1, 0, color, true); // Front
+        drawQuad(width, height, 1, width/2, 0, width/2, 180, 0, 1, 0, color, true); // Back
+        drawQuad(width, height, 1, width/2, 0, -width/2, -90, 0, 1, 0, color, true); // Right
+        drawQuad(width, height, 1, -width/2, 0, width/2, 90, 0, 1, 0, color, true); // Left
+    }
+
+
+    public static void drawFloorTiles(double tileSize, int numTilesInOneDirection)
+    {
+        for (int x = 0; x < numTilesInOneDirection + 1; x++) {
+            for (int z = 0; z < numTilesInOneDirection + 1; z++) {
+                Vector3f tileColor;
+                if ((x + z) % 2 == 0)
+                    tileColor = Colors.WHITE;
+                else
+                    tileColor = Colors.BLACK;
+
+                drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false);
+                drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false); // Reflect across z axis
+                drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false); // Reflect across x axis
+                drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false); // Reflect across x & z axis
+            }
+        }
+    }
+
+    // TODO: Add normals
     public static void drawFloor(int scale, int numTiles) {
         for (int x = 0; x < numTiles + 1; x++) {
             for (int z = 0; z < numTiles + 1; z++) {
@@ -100,7 +148,6 @@ public class MapPieces {
                     tileColor = Colors.WHITE;
                 else
                     tileColor = Colors.BLACK;
-
 
                 drawFloorTile(scale, scale * x, 0, scale * z, tileColor);
                 // Reflect across z axis

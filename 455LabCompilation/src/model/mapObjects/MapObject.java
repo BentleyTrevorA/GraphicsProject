@@ -22,6 +22,25 @@ public class MapObject {
         this.outline = outline;
     }
 
+    public void render() {
+        switch(type) {
+            case CUBE:
+                ModelRenderer.drawCube(scale, x, y, z, color, outline);
+                break;
+            case PYRAMID:
+                ModelRenderer.drawPyramid(scale, x, y, z, color, outline);
+                break;
+            case SPHERE:
+                int slicesAndStacks = (int)(scale * scale);
+                ModelRenderer.drawSphere(scale, x, y, z, slicesAndStacks, slicesAndStacks, color);
+                break;
+            case PLANE:
+                break;
+            default:
+                break;
+        }
+    }
+
     // Move x
 
     // Move y

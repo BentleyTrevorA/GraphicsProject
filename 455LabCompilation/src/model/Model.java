@@ -2,9 +2,10 @@ package model;
 
 import camera.Camera;
 import game.Shot;
+import model.mapObjects.MapCreator;
+import model.mapObjects.ModelRenderer;
 import model.mapObjects.destructible.EnemyEntity;
 import model.mapObjects.MapObject;
-import model.mapObjects.MapPieces;
 import org.lwjgl.util.vector.Vector3f;
 
 import java.util.ArrayList;
@@ -15,22 +16,28 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Model {
     // Variables for creating the playing field
-    private int scale = 25;
-    private int numTiles = 10;
+    private int tileSize = 25;
+    private int numTilesInOneDirection = 10;
     private int lineWidth = 1;
 
     // Shots taken
     private ArrayList<Shot> shots;
     private int maxShots = 30;
 
-    // Objects
-    private ArrayList<MapObject> objects;
+    private MapCreator mapCreator;
+
+    // Map Obstacles
+    private ArrayList<MapObject> obstacles;
+
+    // Map Enemies
     private ArrayList<EnemyEntity> enemies;
 
     private Vector3f shotColor = Colors.PINK;
 
-    public Model() {
+    public Model(int mapNumber) {
+        mapCreator = new MapCreator();
         shots = new ArrayList<Shot>();
+        obstacles = mapCreator.createMap(mapNumber);
     }
 
     public void update() {
@@ -40,20 +47,19 @@ public class Model {
     public void drawMap() {
         glLineWidth(lineWidth);
 
-        MapPieces.drawFloor(scale, numTiles);
-        MapPieces.drawWalls(scale, numTiles, Colors.BLUE);
+        ModelRenderer.drawFloor(tileSize, numTilesInOneDirection);
+//        ModelRenderer.drawFloorTiles(tileSize, numTilesInOneDirection); // Makes floor pink
+        ModelRenderer.drawWalls(500.0, 100.0, Colors.BLUE);
 
-        MapPieces.drawPyramid(15, 100, 0, 0, Colors.CYAN, false);
-        MapPieces.drawPyramid(15, -100, 0, 0, Colors.GREEN, false);
-        MapPieces.drawPyramid(20, 0, 0, 100, Colors.LIGHT_BLUE, false);
-        MapPieces.drawPyramid(25, 0, 0, -100, Colors.PURPLE, false);
-
-        MapPieces.drawCube(15, -50, 25, -50, Colors.YELLOW, false);
-        MapPieces.drawCube(15, 50, 0, 50, Colors.ORANGE, false);
-
-        MapPieces.drawSphere(5, 0, 25, 0, 25, 25, Colors.YELLOW);
+        drawObstacles();
         drawShots();
         drawShotsRemaining(Colors.WHITE);
+    }
+
+    public void drawObstacles() {
+        for(MapObject obstacle : obstacles) {
+            obstacle.render();
+        }
     }
 
     public void addShot(Camera camera) {
@@ -67,7 +73,7 @@ public class Model {
         for (Shot shot : shots) {
 //            shot.z -= 1;
             shot.updatePosition();
-            if (shot.isOutsideGameField(-scale * numTiles, scale * numTiles)) {
+            if (shot.isOutsideGameField(-tileSize * numTilesInOneDirection, tileSize * numTilesInOneDirection)) {
                 shotRemoval.add(shot);
             }
         }
@@ -78,7 +84,7 @@ public class Model {
 
     public void drawShots() {
         for (Shot shot : shots) {
-            MapPieces.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
+            ModelRenderer.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
         }
     }
 
@@ -109,7 +115,7 @@ public class Model {
     // TODO: Collisions
     // 1 - rotate back
     // 2 - translate back
-    // 3 - scale back
+    // 3 - tileSize back
     // 4 - test if within the bounding box?
     // 5 - test if within the cube or within the radius - not sure how to do pyramid.
 }
