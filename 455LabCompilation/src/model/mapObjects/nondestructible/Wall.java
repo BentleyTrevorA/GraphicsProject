@@ -15,6 +15,6 @@ public class Wall extends NonDestructibleObject{
     }
     
     public void render() {
-        // TODO: Call ModelRenderer using scale values
+        // TODO: Call ShapeRenderer using scale values
     }
 }

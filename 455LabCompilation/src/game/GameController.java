@@ -27,7 +27,7 @@ public class GameController extends LabController {
     float d = 0;
 
     protected void initBase() {
-        model = new Model(1);
+        model = new Model(-1); // TODO: Change to 1
         camera = new Camera();
         depthBuffer = new DepthBuffer();
         light = new Lighting();

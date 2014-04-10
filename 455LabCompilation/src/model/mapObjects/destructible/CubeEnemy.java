@@ -10,8 +10,18 @@ public class CubeEnemy extends EnemyEntity {
         super(MapObjectType.CUBE, cubeScale, x, z);
     }
 
+    public CubeEnemy(double x, double z, int pointValue) {
+        super(MapObjectType.CUBE, cubeScale, x, z);
+        this.pointValue = pointValue;
+    }
+
     public CubeEnemy(double x, double z, Vector3f color) {
         super(MapObjectType.CUBE, cubeScale, x, z, color);
+    }
+
+    public CubeEnemy(double x, double z, int pointValue, Vector3f color) {
+        super(MapObjectType.CUBE, cubeScale, x, z, color);
+        this.pointValue = pointValue;
     }
 
     public CubeEnemy(double x, double z, Vector3f color, boolean outline) {

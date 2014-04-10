@@ -14,7 +14,7 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glEnd;
 import static org.lwjgl.opengl.GL11.glVertex3d;
 
-public class ModelRenderer {
+public class ShapeRenderer {
 
     private static WireFrame model = new HouseModel();
 
@@ -120,7 +120,7 @@ public class ModelRenderer {
         drawQuad(width, height, 1, -width/2, 0, width/2, 90, 0, 1, 0, color, true); // Left
     }
 
-
+    // Draaws floor with normals
     public static void drawFloorTiles(double tileSize, int numTilesInOneDirection)
     {
         for (int x = 0; x < numTilesInOneDirection + 1; x++) {
@@ -139,7 +139,6 @@ public class ModelRenderer {
         }
     }
 
-    // TODO: Add normals
     public static void drawFloor(int scale, int numTiles) {
         for (int x = 0; x < numTiles + 1; x++) {
             for (int z = 0; z < numTiles + 1; z++) {

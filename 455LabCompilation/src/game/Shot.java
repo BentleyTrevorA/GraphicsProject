@@ -7,6 +7,8 @@ public class Shot {
     public double size = 1;
     public int slices = 16;
     public int stacks = 14;
+    public int damage = 1;
+    public int hp = 3; // Can hit this many objects before disappearing
 
     public Shot(double x, double y, double z, double dx, double dy, double dz) {
         this.x = x;
@@ -37,5 +39,9 @@ public class Shot {
     // Assumes board is always a square field
     public boolean isOutsideGameField(double min, double max) {
         return x <= min || x >= max || z <= min || z >= max;
+    }
+
+    public void loseHp() {
+        hp--;
     }
 }

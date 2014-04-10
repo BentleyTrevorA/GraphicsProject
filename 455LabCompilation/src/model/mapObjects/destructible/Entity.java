@@ -3,7 +3,7 @@ package model.mapObjects.destructible;
 import model.mapObjects.MapObjectType;
 import org.lwjgl.util.vector.Vector3f;
 
-public class Entity extends DestructibleObject{
+public abstract class Entity extends DestructibleObject{
     protected int hp;
 
     public Entity(MapObjectType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {

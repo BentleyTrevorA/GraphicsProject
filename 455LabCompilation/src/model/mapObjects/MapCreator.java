@@ -1,6 +1,7 @@
 package model.mapObjects;
 
 import model.Colors;
+import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.nondestructible.Cube;
 import model.mapObjects.nondestructible.Pyramid;
 import model.mapObjects.nondestructible.Sphere;
@@ -12,6 +13,8 @@ public class MapCreator {
     public ArrayList<MapObject> createMap(int mapNumber) {
         ArrayList<MapObject> map = new ArrayList<MapObject>();
         switch(mapNumber) {
+            case -1:
+                return createTestCollisionMap(map);
             case 1:
                 return createMap1(map);
             default:
@@ -29,6 +32,16 @@ public class MapCreator {
         map.add(new Cube(50, 0, 50, Colors.ORANGE));
 
         map.add(new Sphere(0, 25, 0, Colors.YELLOW));
+        return map;
+    }
+
+    private ArrayList<MapObject> createTestCollisionMap(ArrayList<MapObject> map) {
+        map.add(new Cube(0, 0, -50));
+        map.add(new Cube(50, 0, 0));
+        map.add(new Cube(100, 0, -50));
+        map.add(new Cube(150, 0, 0));
+        map.add(new Cube(0, 0, 50));
+
         return map;
     }
 }
