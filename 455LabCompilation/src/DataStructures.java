@@ -6,12 +6,11 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Stack;
 
-public class DataStructures
-{
+public class DataStructures {
     // Read and write matrices and vectors to simple arrays of floats do matrices in column major format. Thus,
     public void runAll() {
-        Vector4f a = new Vector4f(5,4,3,2);
-        Vector4f b = new Vector4f(6,7,8,9);
+        Vector4f a = new Vector4f(5, 4, 3, 2);
+        Vector4f b = new Vector4f(6, 7, 8, 9);
         System.out.println("Using Vectors");
         System.out.println(a);
         System.out.println(b);
@@ -19,7 +18,7 @@ public class DataStructures
         Matrix4f matrixA = new Matrix4f();
         ByteBuffer stuff = ByteBuffer.allocateDirect(16 * 4); // IMPORTANT: Have to multiply stuff size by 4 to fit floats
         stuff.order(ByteOrder.LITTLE_ENDIAN);
-        for(int i=1; i<17; i++) {
+        for (int i = 1; i < 17; i++) {
             stuff.putFloat((float) i);
         }
         stuff.rewind();
@@ -37,17 +36,17 @@ public class DataStructures
     private void multiplyVectorByNumber(Vector4f vector, float num) {
         System.out.println("\nMultiplying by " + num);
         System.out.println(vector.scale(num));
-        vector.scale(1/num);
+        vector.scale(1 / num);
     }
 
-    private void addAndSubtractVectors(Vector4f a, Vector4f b){
+    private void addAndSubtractVectors(Vector4f a, Vector4f b) {
         Vector4f c = new Vector4f();
 
-        Vector4f.add(a,b,c);
+        Vector4f.add(a, b, c);
         System.out.println("\nAdding");
         System.out.println(c);
 
-        Vector4f.sub(b,a,c);
+        Vector4f.sub(b, a, c);
         System.out.println("\nSubtracting");
         System.out.println(c);
     }
@@ -60,7 +59,7 @@ public class DataStructures
         Matrix4f a = new Matrix4f();
         ByteBuffer stuff = ByteBuffer.allocateDirect(16 * 4); // IMPORTANT: Have to multiply stuff size by 4 to fit floats
         stuff.order(ByteOrder.LITTLE_ENDIAN);
-        for(int i=0; i<16; i++) {
+        for (int i = 0; i < 16; i++) {
             stuff.putFloat((float) i);
         }
         stuff.rewind();
@@ -74,7 +73,7 @@ public class DataStructures
 
 
         Vector4f result = new Vector4f();
-        Matrix4f.transform(a,vector,result);
+        Matrix4f.transform(a, vector, result);
         System.out.println("\nMultiply Matrix by vector");
         System.out.println(a);
         System.out.println(vector);
@@ -94,7 +93,7 @@ public class DataStructures
         matrixStack.pop();
     }
 
-    private void crossProduct(Vector3f a, Vector3f b){
+    private void crossProduct(Vector3f a, Vector3f b) {
 //        Vector3f.cross(a)
     }
 }

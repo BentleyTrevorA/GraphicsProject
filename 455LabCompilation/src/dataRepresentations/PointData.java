@@ -2,8 +2,7 @@ package dataRepresentations;
 
 import org.lwjgl.util.vector.Vector4f;
 
-public class PointData implements Comparable
-{
+public class PointData implements Comparable {
     public int x, y;
     public float r, g, b, z;
 
@@ -26,18 +25,18 @@ public class PointData implements Comparable
     }
 
     public int compareTo(Object o) {
-        PointData other = (PointData)o;
-        if((this.y - other.y) != 0)
+        PointData other = (PointData) o;
+        if ((this.y - other.y) != 0)
             return this.y - other.y;
         else
             return this.x - other.x;
     }
 
     public boolean equals(Object o) {
-        if(!(o instanceof PointData))
+        if (!(o instanceof PointData))
             return false;
         else {
-            PointData other = (PointData)o;
+            PointData other = (PointData) o;
             return ((x == other.x) && (y == other.y));
         }
     }

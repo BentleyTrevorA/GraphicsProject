@@ -6,8 +6,7 @@ import org.lwjgl.util.vector.Vector4f;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public class Lab2Controller extends LabController
-{
+public class Lab2Controller extends LabController {
     public void init() {
         currentColor = new Vector4f(1, 1, 1, 1);
         clearColor = new Vector4f(0, 0, 0, 0);

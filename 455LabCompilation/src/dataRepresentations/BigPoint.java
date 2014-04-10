@@ -5,8 +5,7 @@ import org.lwjgl.util.vector.Vector4f;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class BigPoint extends ConvexShape
-{
+public class BigPoint extends ConvexShape {
     Vector4f color;
     ArrayList<PointData> circlePoints;
 
@@ -18,7 +17,7 @@ public class BigPoint extends ConvexShape
         int xOffset = radius;
         int yOffset = 0;
         double rSquared = radius * radius;
-        while(yOffset <= xOffset) {
+        while (yOffset <= xOffset) {
             // First Quadrant (TR)
             addToCirclePoints(x + xOffset, y + yOffset);
             addToCirclePoints(x + yOffset, y + xOffset);
@@ -36,14 +35,14 @@ public class BigPoint extends ConvexShape
             addToCirclePoints(x + xOffset, y - yOffset);
 
             // Xn+1^2 = R^2 - Yn^2 - 2Yn - 1
-            xOffset = (int)Math.sqrt(rSquared - (yOffset * yOffset) - (2* yOffset) - 1);
+            xOffset = (int) Math.sqrt(rSquared - (yOffset * yOffset) - (2 * yOffset) - 1);
             yOffset++;
         }
     }
 
-    private void addToCirclePoints(int x, int y){
+    private void addToCirclePoints(int x, int y) {
         PointData point = new PointData(x, y, 1, color);
-        if(!circlePoints.contains(point))
+        if (!circlePoints.contains(point))
             circlePoints.add(point);
     }
 

@@ -253,8 +253,6 @@ public class Lab4Controller extends LabController {
         float[] position = {0, 3, -10, 1};
 
 
-
-
         // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
         glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
         glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
@@ -331,9 +329,9 @@ public class Lab4Controller extends LabController {
         glLight(GL_LIGHT0, GL_SPECULAR, (FloatBuffer) temp.asFloatBuffer().put(specular_color).flip());
         glLight(GL_LIGHT0, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position).flip());
 
-        float [] specular_surface_color = {0.0f , 1.0f , 0.9f , 1};
+        float[] specular_surface_color = {0.0f, 1.0f, 0.9f, 1};
         glMaterial(GL_FRONT_AND_BACK, GL_SPECULAR, (FloatBuffer) temp.asFloatBuffer().put(specular_surface_color).flip());
-        glMaterialf ( GL_FRONT_AND_BACK , GL_SHININESS , 1);
+        glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 1);
 
         glColor3f(1, 0, 0);
         float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
@@ -826,10 +824,10 @@ public class Lab4Controller extends LabController {
         doGLLight(GL_LIGHT0, GL_SPECULAR, specular_color);
         doGLLight(GL_LIGHT0, GL_POSITION, position);
 
-        float [] specular_surface_color = {0.0f , 1.0f , 0.9f , 1};
+        float[] specular_surface_color = {0.0f, 1.0f, 0.9f, 1};
         doGLMaterial(GL_FRONT_AND_BACK, GL_SPECULAR, specular_surface_color);
         doGLMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 1);
-         doGLColor3f(1, 0, 0);
+        doGLColor3f(1, 0, 0);
         float dp = (float) (Math.PI / 16); // 16 picked arbitrarily ; try other numbers too
 
         doGLBegin(GL_TRIANGLES);
@@ -884,7 +882,7 @@ public class Lab4Controller extends LabController {
         doGLDisable(GL_COLOR_MATERIAL);
         doGLDisable(GL_LIGHT0);
 
-        float [] spec = {0, 0, 0, 0};
+        float[] spec = {0, 0, 0, 0};
         doGLLight(GL_LIGHT0, GL_SPECULAR, spec);
     }
 }

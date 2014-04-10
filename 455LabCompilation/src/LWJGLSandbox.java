@@ -5,6 +5,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -12,8 +13,7 @@ import java.util.logging.Logger;
 
 import static org.lwjgl.opengl.GL11.glClearColor;
 
-public class LWJGLSandbox
-{
+public class LWJGLSandbox {
     public static final int DISPLAY_WIDTH = 640;
     public static final int DISPLAY_HEIGHT = 480;
     public static final Logger LOGGER = Logger.getLogger(LWJGLSandbox.class.getName());
@@ -21,8 +21,7 @@ public class LWJGLSandbox
     static {
         try {
             LOGGER.addHandler(new FileHandler("errors.log", true));
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             LOGGER.log(Level.WARNING, ex.toString(), ex);
         }
     }
@@ -36,7 +35,7 @@ public class LWJGLSandbox
         this.c = c;
 
         //Display
-        if(c.getClass() == GameController.class)
+        if (c.getClass() == GameController.class)
             Display.setDisplayMode(new DisplayMode(960, 720));
         else
             Display.setDisplayMode(new DisplayMode(DISPLAY_WIDTH, DISPLAY_HEIGHT));
@@ -79,15 +78,13 @@ public class LWJGLSandbox
                 processKeyboard();
                 update();
                 render();
-            }
-            else {
+            } else {
                 if (Display.isDirty()) {
                     render();
                 }
                 try {
                     Thread.sleep(100);
-                }
-                catch (InterruptedException ex) {
+                } catch (InterruptedException ex) {
                 }
             }
             Display.update();

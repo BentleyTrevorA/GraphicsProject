@@ -61,7 +61,7 @@ public class Lighting {
         // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
         glLight(GL_LIGHT0, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color).flip());
         glLight(GL_LIGHT0, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color).flip());
-        glLight(GL_LIGHT0, GL_SPECULAR, whiteLight);				// sets specular light to white
+        glLight(GL_LIGHT0, GL_SPECULAR, whiteLight);                // sets specular light to white
         glLight(GL_LIGHT0, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position).flip());
 
         glEnable(GL_LIGHT1);
@@ -73,7 +73,7 @@ public class Lighting {
         // http://lwjgl.org/forum/index.php?action=printpage;topic=2233.0
         glLight(GL_LIGHT1, GL_DIFFUSE, (FloatBuffer) temp.asFloatBuffer().put(diffuse_color1).flip());
         glLight(GL_LIGHT1, GL_AMBIENT, (FloatBuffer) temp.asFloatBuffer().put(ambient_color1).flip());
-        glLight(GL_LIGHT1, GL_SPECULAR, whiteLight);				// sets specular light to white
+        glLight(GL_LIGHT1, GL_SPECULAR, whiteLight);                // sets specular light to white
         glLight(GL_LIGHT1, GL_POSITION, (FloatBuffer) temp.asFloatBuffer().put(position1).flip());
     }
 
@@ -81,27 +81,28 @@ public class Lighting {
 //        initLightArrays();
         glPushMatrix();
 //        glTranslated(50, 0, 0);
+//        glEnable(GL_NORMALIZE);
         glShadeModel(GL_SMOOTH);
-        glMaterial(GL_FRONT, GL_SPECULAR, matSpecular);				// sets specular material color
-        glMaterialf(GL_FRONT, GL_SHININESS, 50.0f);					// sets shininess
+        glMaterial(GL_FRONT, GL_SPECULAR, matSpecular);                // sets specular material color
+        glMaterialf(GL_FRONT, GL_SHININESS, 50.0f);                    // sets shininess
 
-        glLight(GL_LIGHT0, GL_POSITION, lightPosition);				// sets light position
-        glLight(GL_LIGHT0, GL_SPECULAR, whiteLight);				// sets specular light to white
-        glLight(GL_LIGHT0, GL_DIFFUSE, whiteLight);					// sets diffuse light to white
+        glLight(GL_LIGHT0, GL_POSITION, lightPosition);                // sets light position
+        glLight(GL_LIGHT0, GL_SPECULAR, whiteLight);                // sets specular light to white
+        glLight(GL_LIGHT0, GL_DIFFUSE, whiteLight);                    // sets diffuse light to white
 
-        glLight(GL_LIGHT1, GL_POSITION, lightPosition2);			// sets light position
-        glLight(GL_LIGHT1, GL_SPECULAR, whiteLight);				// sets specular light to white
-        glLight(GL_LIGHT1, GL_DIFFUSE, pinkLight);					// sets diffuse light to pink
+        glLight(GL_LIGHT1, GL_POSITION, lightPosition2);            // sets light position
+        glLight(GL_LIGHT1, GL_SPECULAR, whiteLight);                // sets specular light to white
+        glLight(GL_LIGHT1, GL_DIFFUSE, pinkLight);                    // sets diffuse light to pink
 
-        glLightModel(GL_LIGHT_MODEL_AMBIENT, lModelAmbient);		// global ambient light
+        glLightModel(GL_LIGHT_MODEL_AMBIENT, lModelAmbient);        // global ambient light
 
 //        glEnable(GL_NORMALIZE);
-        glEnable(GL_LIGHTING);										// enables lighting
-        glEnable(GL_LIGHT0);										// enables light0
-        glEnable(GL_LIGHT1);										// enables light1
+        glEnable(GL_LIGHTING);                                        // enables lighting
+        glEnable(GL_LIGHT0);                                        // enables light0
+        glEnable(GL_LIGHT1);                                        // enables light1
 
-        glEnable(GL_COLOR_MATERIAL);								// enables opengl to use glColor3f to define material color
-        glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);			// tell opengl glColor3f effects the ambient and diffuse properties of material
+        glEnable(GL_COLOR_MATERIAL);                                // enables opengl to use glColor3f to define material color
+        glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);            // tell opengl glColor3f effects the ambient and diffuse properties of material
         glPopMatrix();
     }
 }

@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/** @author Brennan Smith */
-public class HouseModel extends WireFrame
-{
+/**
+ * @author Brennan Smith
+ */
+public class HouseModel extends WireFrame {
     List<Line3D> lines = new ArrayList<Line3D>();
 
     public HouseModel() {

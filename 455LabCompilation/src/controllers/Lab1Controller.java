@@ -7,16 +7,15 @@ import java.nio.ByteOrder;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public class Lab1Controller extends LabController
-{
+public class Lab1Controller extends LabController {
     private ByteBuffer raster;
 
     public void init() {
         raster = ByteBuffer.allocateDirect(640 * 480 * 4 * 3);
         raster.order(ByteOrder.LITTLE_ENDIAN);
 
-        for(int i=0; i<(640*480*3); i++) {
-            float value = ((float)i)/(640*480*3);
+        for (int i = 0; i < (640 * 480 * 3); i++) {
+            float value = ((float) i) / (640 * 480 * 3);
             raster.putFloat(value);
         }
         raster.rewind(); // Put pointer at the front again

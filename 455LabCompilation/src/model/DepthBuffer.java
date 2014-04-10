@@ -4,9 +4,6 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class DepthBuffer {
 
-    public DepthBuffer()
-    {}
-
     public void enableDepthBuffering() {
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // sets background to black
         glClearDepth(1.0f); // clear depth buffer

@@ -2,6 +2,9 @@ package model;
 
 import camera.Camera;
 import game.Shot;
+import model.mapObjects.destructible.EnemyEntity;
+import model.mapObjects.MapObject;
+import model.mapObjects.MapPieces;
 import org.lwjgl.util.vector.Vector3f;
 
 import java.util.ArrayList;
@@ -20,6 +23,10 @@ public class Model {
     private ArrayList<Shot> shots;
     private int maxShots = 30;
 
+    // Objects
+    private ArrayList<MapObject> objects;
+    private ArrayList<EnemyEntity> enemies;
+
     private Vector3f shotColor = Colors.PINK;
 
     public Model() {
@@ -36,13 +43,13 @@ public class Model {
         MapPieces.drawFloor(scale, numTiles);
         MapPieces.drawWalls(scale, numTiles, Colors.BLUE);
 
-        MapPieces.drawPyramid(15, 100, 0, 0, Colors.CYAN, true);
-        MapPieces.drawPyramid(15, -100, 0, 0, Colors.GREEN, true);
-        MapPieces.drawPyramid(20, 0, 0, 100, Colors.LIGHT_BLUE, true);
-        MapPieces.drawPyramid(25, 0, 0, -100, Colors.PURPLE, true);
+        MapPieces.drawPyramid(15, 100, 0, 0, Colors.CYAN, false);
+        MapPieces.drawPyramid(15, -100, 0, 0, Colors.GREEN, false);
+        MapPieces.drawPyramid(20, 0, 0, 100, Colors.LIGHT_BLUE, false);
+        MapPieces.drawPyramid(25, 0, 0, -100, Colors.PURPLE, false);
 
-        MapPieces.drawCube(15, -50, 25, -50, Colors.RED, true);
-        MapPieces.drawCube(15, 50, 0, 50, Colors.ORANGE, true);
+        MapPieces.drawCube(15, -50, 25, -50, Colors.RED, false);
+        MapPieces.drawCube(15, 50, 0, 50, Colors.ORANGE, false);
 
         MapPieces.drawSphere(5, 0, 25, 0, 25, 25, Colors.YELLOW);
 
@@ -53,7 +60,7 @@ public class Model {
     }
 
     public void addShot(Camera camera) {
-        if(shots.size() < maxShots) {
+        if (shots.size() < maxShots) {
             shots.add(new Shot(camera));
         }
     }
@@ -63,11 +70,11 @@ public class Model {
         for (Shot shot : shots) {
 //            shot.z -= 1;
             shot.updatePosition();
-            if(shot.isOutsideGameField(-scale * numTiles, scale * numTiles)) {
+            if (shot.isOutsideGameField(-scale * numTiles, scale * numTiles)) {
                 shotRemoval.add(shot);
             }
         }
-        for(Shot shot : shotRemoval) {
+        for (Shot shot : shotRemoval) {
             shots.remove(shot);
         }
     }
@@ -78,7 +85,9 @@ public class Model {
         }
     }
 
-    /** Draw shot count on all the walls */
+    /**
+     * Draw shot count on all the walls
+     */
     public void drawShotsRemaining(Vector3f color) {
         glColor3f(color.x, color.y, color.z);
 //        glRotated(-camera.rotateAngle, 0, 1, 0);

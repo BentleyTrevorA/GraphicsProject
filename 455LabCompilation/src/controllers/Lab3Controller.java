@@ -5,8 +5,7 @@ import org.lwjgl.opengl.Display;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public class Lab3Controller extends LabController
-{
+public class Lab3Controller extends LabController {
     public void init() {
         drawMode = 2;
     }
@@ -41,8 +40,7 @@ public class Lab3Controller extends LabController
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 doViewportTransformation();
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -54,8 +52,7 @@ public class Lab3Controller extends LabController
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 doDivideByW();
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -68,8 +65,7 @@ public class Lab3Controller extends LabController
                 // IMPORTANT: GL_DEPTH_BUFFER_BIT must be cleared for depth to work in rendering
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 doDepthTest();
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -81,8 +77,7 @@ public class Lab3Controller extends LabController
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 doEasyPointClipping();
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -93,8 +88,7 @@ public class Lab3Controller extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_G)) {
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -105,8 +99,7 @@ public class Lab3Controller extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_H)) {
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -117,8 +110,7 @@ public class Lab3Controller extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_J)) {
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -129,8 +121,7 @@ public class Lab3Controller extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_K)) {
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -141,8 +132,7 @@ public class Lab3Controller extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_L)) {
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -153,8 +143,7 @@ public class Lab3Controller extends LabController
         if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) {
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -166,8 +155,7 @@ public class Lab3Controller extends LabController
             if (drawMode == 1) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 doShear();
-            }
-            else {
+            } else {
                 doGLClearColor(0, 0, 0, 0);
                 doGLClear(GL_COLOR_BUFFER_BIT);
                 doGLClear(GL_DEPTH_BUFFER_BIT);
@@ -179,22 +167,22 @@ public class Lab3Controller extends LabController
 
     /**
      * 1. Draw your triangles/polygons (i.e. call glBegin, glVertex3f, glEnd, etc.)
-     *
+     * <p/>
      * 2. Multiply all points by the modelview and projection matrices
-     *
+     * <p/>
      * 3. Divide by the w that results from step 2
-     *
+     * <p/>
      * 4. Clip everything to the square from -1,-1 to 1,1 (This is by convention, and because it makes other things work out
      * nicely). However, if you are only doing point clipping, you can skip this part and do it when you plot individual pixels.
      * If you do that, you just have to check to make sure the point is in the viewport (not just the screen).
-     *
+     * <p/>
      * 5. Size to your viewport. Basically, add 1 to all x and y coordinates, and then divide by two. This will put all your points
      * between 0,0 and 1,1. Then, multiply your x coordinate by the viewport width and add the x viewport min. Do the
      * same to your y coordinate with the height and y viewport min.
-     *
+     * <p/>
      * 6. Use your triangle/polygon/line code as usual using the new coordinates, converting your points to integer points if your
      * code needs that.
-     *
+     * <p/>
      * 7. When you set each pixel, check the z buer to see if you should set the pixel. This is essentially your clipping in z.
      */
 

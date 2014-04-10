@@ -15,8 +15,7 @@ public class Camera {
 
     private boolean printVariables = false;
 
-    public Camera()
-    {
+    public Camera() {
 
     }
 
@@ -86,7 +85,7 @@ public class Camera {
     }
 
     private void printCameraVariables() {
-        if(printVariables) {
+        if (printVariables) {
             System.out.println("X: " + xPos);
             System.out.println("Y: " + yPos);
             System.out.println("Z: " + zPos);

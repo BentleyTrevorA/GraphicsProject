@@ -56,29 +56,25 @@ public class GameController extends LabController {
     public void updateKeyboard() {
         if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
             camera.moveForward();
-        }
-        else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+        } else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
             camera.moveBackward();
         }
 
         if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
             camera.moveLeft();
-        }
-        else if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
+        } else if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
             camera.moveRight();
         }
 
         if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
             camera.turnLeft();
-        }
-        else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
+        } else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
             camera.turnRight();
         }
 
         if (Keyboard.isKeyDown(Keyboard.KEY_C)) {
             camera.moveUp();
-        }
-        else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
+        } else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
             camera.moveDown();
         }
 

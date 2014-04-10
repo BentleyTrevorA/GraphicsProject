@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 
-public class Quad extends ConvexShape
-{
+public class Quad extends ConvexShape {
     private Vector4f point1, point2, point3, point4;
     private Vector4f p1Color, p2Color, p3Color, p4Color;
     private Line line;
@@ -17,19 +16,16 @@ public class Quad extends ConvexShape
     }
 
     public void addPoint(Vector4f point, Vector4f color) {
-        if(point1 == null) {
+        if (point1 == null) {
             point1 = point;
             p1Color = color;
-        }
-        else if(point2 == null) {
+        } else if (point2 == null) {
             point2 = point;
             p2Color = color;
-        }
-        else if(point3 == null){
+        } else if (point3 == null) {
             point3 = point;
             p3Color = color;
-        }
-        else {
+        } else {
             point4 = point;
             p4Color = color;
         }
@@ -37,8 +33,7 @@ public class Quad extends ConvexShape
 
     // Returns triangle points sorted by Y value, then X value
     protected ArrayList<PointData> calculateSortedFramePoints() {
-        if(point1 != null && point2 != null && point3 != null)
-        {
+        if (point1 != null && point2 != null && point3 != null) {
             // Use line algorithm code to get edges of triangle
             Set<PointData> points = line.plotLineData(point1, point2, p1Color, p2Color);
             points = line.plotLineData(point2, point3, p2Color, p3Color, points);
@@ -50,8 +45,7 @@ public class Quad extends ConvexShape
             Collections.sort(sortedPointsList);
 
             return sortedPointsList;
-        }
-        else
+        } else
             return null;
     }
 }

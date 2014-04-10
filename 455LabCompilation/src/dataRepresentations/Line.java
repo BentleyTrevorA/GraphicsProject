@@ -5,8 +5,7 @@ import org.lwjgl.util.vector.Vector4f;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Line
-{
+public class Line {
     private int x0, y0, x1, y1;                      // Line Coordinates
     private float z;                                 // Z Value for incrementing
     private float dz;                                // Z slope
@@ -23,10 +22,10 @@ public class Line
 
     public Set<PointData> plotLineData(Vector4f p1, Vector4f p2, Vector4f startColor, Vector4f endColor, Set<PointData> points) {
         this.points = points;
-        x0 = (int)p1.x;
-        y0 = (int)p1.y;
-        x1 = (int)p2.x;
-        y1 = (int)p2.y;
+        x0 = (int) p1.x;
+        y0 = (int) p1.y;
+        x1 = (int) p2.x;
+        y1 = (int) p2.y;
         z = p1.z;
 
         int dx = x1 - x0;
@@ -42,12 +41,11 @@ public class Line
         g = startColor.y;
         b = startColor.z;
 
-        if(Math.abs(dx) > Math.abs(dy)){
+        if (Math.abs(dx) > Math.abs(dy)) {
             int steps = Math.abs(dx) - 1;
             setRGBSteps(startColor, endColor, steps);
             setZSteps(p1.z, p2.z, steps);
-        }
-        else {
+        } else {
             int steps = Math.abs(dy) - 1;
             setRGBSteps(startColor, endColor, steps);
             setZSteps(p1.z, p2.z, steps);
@@ -72,12 +70,10 @@ public class Line
         // Plot line
         if (dx == 0) {
             verticalLine();
-        }
-        else {
+        } else {
             if (isSmallSlope()) {
                 smallSlopeLine();
-            }
-            else {
+            } else {
                 steepSlopeLine();
             }
         }
@@ -126,8 +122,7 @@ public class Line
             if (accumulation >= 0.5 && positiveSlope) {
                 y += yMod;
                 accumulation--;
-            }
-            else if (accumulation <= -0.5 && !positiveSlope) {
+            } else if (accumulation <= -0.5 && !positiveSlope) {
                 y -= yMod;
                 accumulation++;
             }
@@ -148,8 +143,7 @@ public class Line
             if (accumulation >= 0.5 && positiveSlope) {
                 x += xMod;
                 accumulation--;
-            }
-            else if (accumulation <= -0.5 && !positiveSlope) {
+            } else if (accumulation <= -0.5 && !positiveSlope) {
                 x -= xMod;
                 accumulation++;
             }

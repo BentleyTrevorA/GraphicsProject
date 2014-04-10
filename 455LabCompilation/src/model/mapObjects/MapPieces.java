@@ -1,5 +1,9 @@
-package model;
+package model.mapObjects;
 
+import model.Colors;
+import model.HouseModel;
+import model.Line3D;
+import model.WireFrame;
 import org.lwjgl.util.glu.Sphere;
 import org.lwjgl.util.vector.Vector3f;
 
@@ -149,21 +153,39 @@ public class MapPieces {
         // Be sure to be CCW
         glBegin(GL_TRIANGLES);
         {
+            // Back face
+            glNormal3d(0, 1, 1);
             glVertex3d(1, 0, 0);
             glVertex3d(0, 0, 0);
             glVertex3d(halfScale, height, halfScale);
 
+            // Right face
+            glNormal3d(1, 1, 0);
             glVertex3d(1, 0, 1);
             glVertex3d(1, 0, 0);
             glVertex3d(halfScale, height, halfScale);
 
+            // Front face
+            glNormal3d(0, 1, -1);
             glVertex3d(0, 0, 1);
             glVertex3d(1, 0, 1);
             glVertex3d(halfScale, height, halfScale);
 
+            // Left face
+            glNormal3d(-1, 1, 0);
             glVertex3d(0, 0, 0);
             glVertex3d(0, 0, 1);
             glVertex3d(halfScale, height, halfScale);
+        }
+        glEnd();
+
+        glBegin(GL_QUADS);
+        {
+            glNormal3d(0, -1, 0);
+            glVertex3d(0, 0, 0);
+            glVertex3d(0, 0, 1);
+            glVertex3d(1, 0, 1);
+            glVertex3d(1, 0, 0);
         }
         glEnd();
 
@@ -210,36 +232,42 @@ public class MapPieces {
         glBegin(GL_QUADS);
         {
             // Front
+            glNormal3d(0, 0, 1);
             glVertex3d(0, 0, 1);
             glVertex3d(1, 0, 1);
             glVertex3d(1, 1, 1);
             glVertex3d(0, 1, 1);
 
             // Right
+            glNormal3d(1, 0, 0);
             glVertex3d(1, 0, 1);
             glVertex3d(1, 0, 0);
             glVertex3d(1, 1, 0);
             glVertex3d(1, 1, 1);
 
             // Back
+            glNormal3d(0, 0, -1);
             glVertex3d(1, 0, 0);
             glVertex3d(0, 0, 0);
             glVertex3d(0, 1, 0);
             glVertex3d(1, 1, 0);
 
             // Left
+            glNormal3d(-1, 0, 0);
             glVertex3d(0, 0, 0);
             glVertex3d(0, 0, 1);
             glVertex3d(0, 1, 1);
             glVertex3d(0, 1, 0);
 
             // Bottom
+            glNormal3d(0, -1, 0);
             glVertex3d(0, 0, 0);
             glVertex3d(1, 0, 0);
             glVertex3d(1, 0, 1);
             glVertex3d(0, 0, 1);
 
             // Top
+            glNormal3d(0, 1, 0);
             glVertex3d(0, 1, 0);
             glVertex3d(0, 1, 1);
             glVertex3d(1, 1, 1);
@@ -247,7 +275,7 @@ public class MapPieces {
         }
         glEnd();
 
-        if(outline) {
+        if (outline) {
             glColor3f(0, 0, 0);
             glBegin(GL_LINES);
             {
@@ -296,13 +324,12 @@ public class MapPieces {
         glPopMatrix();
     }
 
-    public static void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color)
-    {
+    public static void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color) {
         glColor3f(color.x, color.y, color.z);
         glPushMatrix();
         glTranslated(x, y, z);
         Sphere s = new Sphere();
-        s.draw((float)radius, slices, stacks);
+        s.draw((float) radius, slices, stacks);
         glPopMatrix();
     }
 }

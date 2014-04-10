@@ -4,15 +4,14 @@ import controllers.Lab3Controller;
 import controllers.Lab4Controller;
 import game.GameController;
 
-public class LWJGLmain
-{
+public class LWJGLmain {
     private static int lab = 5;
 
     public static void main(String[] args) {
         LWJGLSandbox main = null;
         try {
             main = new LWJGLSandbox();
-            switch(lab) {
+            switch (lab) {
                 case 1:
                     main.create(new Lab1Controller());
                     break;
@@ -30,8 +29,12 @@ public class LWJGLmain
                     break;
             }
             main.run();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (main != null) {
+                main.destroy();
+            }
         }
-        catch (Exception ex) { ex.printStackTrace(); }
-        finally { if (main != null) { main.destroy(); } }
     }
 }

@@ -8,8 +8,7 @@ public class Shot {
     public int slices = 16;
     public int stacks = 14;
 
-    public Shot(double x, double y, double z, double dx, double dy, double dz)
-    {
+    public Shot(double x, double y, double z, double dx, double dy, double dz) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -29,16 +28,14 @@ public class Shot {
         dz = -2 * Math.cos(Math.toRadians(camera.rotateAngle));
     }
 
-    public void updatePosition()
-    {
+    public void updatePosition() {
         x += dx;
         y += dy;
         z += dz;
     }
 
     // Assumes board is always a square field
-    public boolean isOutsideGameField(double min, double max)
-    {
+    public boolean isOutsideGameField(double min, double max) {
         return x <= min || x >= max || z <= min || z >= max;
     }
 }

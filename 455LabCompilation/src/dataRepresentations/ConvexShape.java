@@ -4,8 +4,7 @@ import controllers.LabController;
 
 import java.util.ArrayList;
 
-public class ConvexShape
-{
+public class ConvexShape {
     protected ArrayList<PointData> calculateSortedFramePoints() {
         return null;
     }
@@ -28,13 +27,12 @@ public class ConvexShape
 
                 int steps = (endPoint.x - startPoint.x) - 1;
                 float rStep, gStep, bStep, zStep;
-                if(steps > 0) {
+                if (steps > 0) {
                     rStep = (endPoint.r - r) / steps;
                     gStep = (endPoint.g - g) / steps;
                     bStep = (endPoint.b - b) / steps;
                     zStep = (endPoint.z - z) / steps;
-                }
-                else {
+                } else {
                     rStep = 0;
                     gStep = 0;
                     bStep = 0;
@@ -52,8 +50,7 @@ public class ConvexShape
 
                 startPoint = point;
                 endPoint = startPoint;
-            }
-            else {
+            } else {
                 endPoint = point;
             }
         }

@@ -109,7 +109,7 @@ public abstract class LabController {
         specularColors = new HashMap<Integer, Vector4f>();
         lightPositions = new HashMap<Integer, Vector4f>();
 
-        for(int i=0; i<8; i++) {
+        for (int i = 0; i < 8; i++) {
             diffuseColors.put(i, new Vector4f());
             ambientColors.put(i, new Vector4f());
             specularColors.put(i, new Vector4f());
@@ -231,8 +231,8 @@ public abstract class LabController {
         Vector4f light = new Vector4f();
 
         // Add light from each of the 8 lights IF they are enabled
-        for(int i=0; i<8; i++) {
-            if(lightsEnabled[i]) {
+        for (int i = 0; i < 8; i++) {
+            if (lightsEnabled[i]) {
                 // light += l_a[i] + max(0, n.dotProduct((l_p[i] - p).normalize())) * l_d[i]
 
                 // (l_p[i] - p).normalize()
@@ -261,13 +261,13 @@ public abstract class LabController {
         Vector4f color = new Vector4f();
 
         // Add light from each of the 8 lights IF they are enabled
-        for(int i=0; i<8; i++) {
-            if(lightsEnabled[i]) {
+        for (int i = 0; i < 8; i++) {
+            if (lightsEnabled[i]) {
                 Vector4f unitLengthPosition = new Vector4f();
                 Vector4f.sub(lightPositions.get(i), position, unitLengthPosition);
                 unitLengthPosition.normalise(unitLengthPosition);
 
-                if(Vector4f.dot(posNormal, unitLengthPosition) > 0) {
+                if (Vector4f.dot(posNormal, unitLengthPosition) > 0) {
                     Vector4f halfway = new Vector4f();
                     Vector4f.add(unitLengthPosition, new Vector4f(0, 0, 1, 0), halfway);
                     halfway.normalise(halfway);
@@ -275,7 +275,7 @@ public abstract class LabController {
                     //specColor += max(0, pow((n dot halfway), h)) * v_s <elementwise -times > l_s;
                     // v_s = specularSurfaceColor
                     // l_s = specularLightColor
-                    float max = (float)Math.max(0, Math.pow(Vector4f.dot(posNormal, halfway), materialShininess));
+                    float max = (float) Math.max(0, Math.pow(Vector4f.dot(posNormal, halfway), materialShininess));
 
                     Vector4f specularLight = specularColors.get(i);
                     Vector4f elementWiseTimes = new Vector4f(specularSurfaceColor.x * specularLight.x * max,
@@ -302,22 +302,19 @@ public abstract class LabController {
     }
 
     public Vector4f calculateColorChangeFromLight(Vector4f position) {
-        if(lightingEnabled) {
+        if (lightingEnabled) {
             // Get the normal
             Vector4f posNormal = modelToScreenNormal();
             Vector4f light = calculateLight(position, posNormal);
             Vector4f specularLight = calculateSpecularLightColor(position, posNormal);
 
             // Currently only does ambient and diffuse
-            if(colorMaterialEnabled)
-            {
+            if (colorMaterialEnabled) {
                 // newColor = light < elementwise - times > oldColor + specular
                 // NOTE: may add .2 .2 .2 if desired
                 Vector4f lightWithoutSpecular = new Vector4f(light.x * currentColor.x, light.y * currentColor.y, light.z * currentColor.z, light.w * currentColor.w);
                 return Vector4f.add(lightWithoutSpecular, specularLight, new Vector4f());
-            }
-            else
-            {
+            } else {
                 // newColor = light < elementwise − times > (.8, .8, .8, 1) + (.2, .2, .2, 0) + specColor
                 // light < elementwise - times > {.8, .8, .8, 1) MEANS:
                 // {light.x * .8, light.y * .8, light.z * .8, light.w * 1}
@@ -330,20 +327,20 @@ public abstract class LabController {
     }
 
     private Vector4f calculateColorChangeFromFog(Vector4f position, Vector4f pixelColor) {
-        if(fogEnabled) {
-            float g=0;
+        if (fogEnabled) {
+            float g = 0;
 
-            switch((int)fogMode){
+            switch ((int) fogMode) {
                 case GL_LINEAR:
                     g = fogEnd - Math.abs(position.z);
                     g /= (fogEnd - fogStart);
                     break;
                 case GL_EXP:
-                    g = (float)Math.exp(-1 * (fogDensity * Math.abs(position.z)));
+                    g = (float) Math.exp(-1 * (fogDensity * Math.abs(position.z)));
                     break;
                 case GL_EXP2:
                     double inner = fogDensity * Math.abs(position.z);
-                    g = (float)Math.exp(-1 * inner * inner);
+                    g = (float) Math.exp(-1 * inner * inner);
                     break;
                 default:
                     break;
@@ -465,8 +462,7 @@ public abstract class LabController {
         if (firstPoint == null) {
             firstPoint = modelToScreen(x, y, z, w);
             firstPointColor = new Vector4f(currentColor.x, currentColor.y, currentColor.z, 1);
-        }
-        else {
+        } else {
             pointData = line.plotLineData(firstPoint, modelToScreen(x, y, z, w), firstPointColor, currentColor);
             Iterator iter = pointData.iterator();
             while (iter.hasNext()) {
@@ -526,18 +522,15 @@ public abstract class LabController {
         if (firstPoint == null) {
             firstPoint = point;
             firstPointColor = calculateNewColor(pointBeforeP);
-        }
-        else if (secondPoint == null) {
+        } else if (secondPoint == null) {
             secondPoint = point;
             secondPointColor = calculateNewColor(pointBeforeP);
-        }
-        else {
+        } else {
             Triangle triangle = new Triangle();
 
             if (drawType == GL_TRIANGLES) {
                 drawNormalTriangle(point, pointBeforeP);
-            }
-            else if (drawType == GL_TRIANGLE_STRIP) {
+            } else if (drawType == GL_TRIANGLE_STRIP) {
                 drawTriangleStrip(point, pointBeforeP);
 
             } else if (drawType == GL_TRIANGLE_FAN || drawType == GL_POLYGON) {
@@ -656,7 +649,7 @@ public abstract class LabController {
 
     // set all pixel values listed in pointData data structure
     protected void drawPoints() {
-        for(PointData current : pointData) {
+        for (PointData current : pointData) {
             setPixel(current.x, current.y, current.z, current.r, current.g, current.b);
         }
     }
@@ -773,7 +766,7 @@ public abstract class LabController {
     }
 
     protected void doGLVertex3f(double x, double y, double z) {
-        doGLVertex3f((float)x, (float)y, (float)z);
+        doGLVertex3f((float) x, (float) y, (float) z);
     }
 
     // Specifies the 4-vector point (x,y,z,1)
@@ -943,7 +936,8 @@ public abstract class LabController {
             doGLMultMatrixf(shear);
         }
     }
-   /**
+
+    /**
      * This method, from the GLU library which extends OpenGL and is included with virtually every
      * OpenGL distribution, is essentially your "camera" method.
      * It defines a camera which has it's lens at (ex,ey,ez),
@@ -1053,8 +1047,8 @@ public abstract class LabController {
         Vector4f newNormal = new Vector4f();
         Matrix4f.transform(modelViewTranspose, normal, newNormal);
 
-        if(normalize) {
-            return new Vector4f(newNormal.x / newNormal.length(), newNormal.y/newNormal.length(), newNormal.z/newNormal.length(), 0);
+        if (normalize) {
+            return new Vector4f(newNormal.x / newNormal.length(), newNormal.y / newNormal.length(), newNormal.z / newNormal.length(), 0);
         }
 
         return newNormal;
@@ -1089,8 +1083,7 @@ public abstract class LabController {
     }
 
     // Get point (assuming w = 1) back to point where it was just multiplied by M
-    protected Vector4f ScreenToModelview(float x, float y, float z)
-    {
+    protected Vector4f ScreenToModelview(float x, float y, float z) {
         Vector4f point = new Vector4f();
         Matrix4f inverse = new Matrix4f();
 
@@ -1153,7 +1146,7 @@ public abstract class LabController {
     protected void doGLLight(int light, int type, float[] value) {
         if (light >= GL_LIGHT0 && light <= GL_LIGHT7) {
             int lightIndex = light - GL_LIGHT0;
-            switch(type) {
+            switch (type) {
                 case GL_DIFFUSE:
                     diffuseColors.put(lightIndex, new Vector4f(value[0], value[1], value[2], value[3]));
                     break;
@@ -1170,17 +1163,14 @@ public abstract class LabController {
         }
     }
 
-    protected void doGLFog(int parameter, float[] value)
-    {
-        if(parameter == GL_FOG_COLOR)
-        {
+    protected void doGLFog(int parameter, float[] value) {
+        if (parameter == GL_FOG_COLOR) {
             fogColor = new Vector4f(value[0], value[1], value[2], value[3]);
         }
     }
 
-    protected void doGLFogf(int parameter, float value)
-    {
-        switch(parameter) {
+    protected void doGLFogf(int parameter, float value) {
+        switch (parameter) {
             case GL_FOG_MODE:
                 fogMode = value;
                 break;
@@ -1198,23 +1188,17 @@ public abstract class LabController {
         }
     }
 
-    protected void doGLMaterial(int face, int parameter, float[] value)
-    {
-        if(face == GL_FRONT_AND_BACK)
-        {
-            if(parameter == GL_SPECULAR)
-            {
+    protected void doGLMaterial(int face, int parameter, float[] value) {
+        if (face == GL_FRONT_AND_BACK) {
+            if (parameter == GL_SPECULAR) {
                 specularSurfaceColor = new Vector4f(value[0], value[1], value[2], value[3]);
             }
         }
     }
 
-    protected void doGLMaterialf(int face, int parameter, float value)
-    {
-        if(face == GL_FRONT_AND_BACK)
-        {
-            if(parameter == GL_SHININESS)
-            {
+    protected void doGLMaterialf(int face, int parameter, float value) {
+        if (face == GL_FRONT_AND_BACK) {
+            if (parameter == GL_SHININESS) {
                 materialShininess = value;
             }
         }
