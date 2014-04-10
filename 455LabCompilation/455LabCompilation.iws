@@ -800,7 +800,11 @@
       <created>1397100751672</created>
       <updated>1397100751672</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Pushing to repository failed.">
+      <created>1397100846269</created>
+      <updated>1397100846269</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -866,7 +870,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Depth Working" />
     <MESSAGE value="Matrix Manipulation Working&#10;Restored integer arithmetic to Line (instead of float which was messing stuff up)" />
     <MESSAGE value="Removed extra z sections that were commented out.&#10;added 1 to the numSteps for z coordinate" />
     <MESSAGE value="rotate, scale, and translate functions completed (lab 3 options)" />
@@ -891,7 +894,8 @@
     <MESSAGE value="Added map objects classes&#10;Formatted all of the code using reformatter&#10;Added basic normals to cubes and pyramids" />
     <MESSAGE value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
     <MESSAGE value="Draw map using array of MapObjects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Draw map using array of MapObjects" />
+    <MESSAGE value="Pushing to repository failed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushing to repository failed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
