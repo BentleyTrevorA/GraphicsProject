@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/MapCreator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Pyramid.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Sphere.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/mapObjects/nondestructible/Wall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/model/mapObjects/MapPieces.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/ModelRenderer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameController.java" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Model.java" afterPath="$PROJECT_DIR$/src/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors.log" afterPath="$PROJECT_DIR$/errors.log" />
     </list>
     <list id="e93f3324-464a-46f7-91c2-e8c05dfc6fc2" name="Entries" comment="">
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/.svn/entries" afterPath="$PROJECT_DIR$/src/camera/.svn/entries" />
@@ -113,10 +103,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Model.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Model.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.4205052" vertical-offset="437" max-vertical-offset="1905">
+            <state line="42" column="26" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1905">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,10 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cube.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Cube.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="4" selection-start="377" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="23" column="5" selection-start="833" selection-end="833" vertical-scroll-proportion="0.50291544" vertical-offset="0" max-vertical-offset="686">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -806,7 +796,11 @@
       <created>1397095856773</created>
       <updated>1397095856773</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Draw map using array of MapObjects">
+      <created>1397100751672</created>
+      <updated>1397100751672</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -872,7 +866,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Modified all Points to be Vector3f to allow for depth buffering" />
     <MESSAGE value="Depth Working" />
     <MESSAGE value="Matrix Manipulation Working&#10;Restored integer arithmetic to Line (instead of float which was messing stuff up)" />
     <MESSAGE value="Removed extra z sections that were commented out.&#10;added 1 to the numSteps for z coordinate" />
@@ -897,7 +890,8 @@
     <MESSAGE value="Divided GameController into Model, DepthBuffer, and Lighting classes.&#10;Moved Camera class to the camera directory&#10;Made MapPieces a static class" />
     <MESSAGE value="Added map objects classes&#10;Formatted all of the code using reformatter&#10;Added basic normals to cubes and pyramids" />
     <MESSAGE value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
-    <option name="LAST_COMMIT_MESSAGE" value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
+    <MESSAGE value="Draw map using array of MapObjects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draw map using array of MapObjects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1194,15 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="377" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="26" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
@@ -1239,6 +1224,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="26" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1905">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/mapObjects/MapCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="53" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
@@ -1249,9 +1243,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Model.java">
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/nondestructible/Cube.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.4205052" vertical-offset="437" max-vertical-offset="1905">
+        <state line="23" column="5" selection-start="833" selection-end="833" vertical-scroll-proportion="0.50291544" vertical-offset="0" max-vertical-offset="686">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
