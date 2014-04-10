@@ -1,5 +1,11 @@
 package model;
 
+// http://ninjacave.com/taxonomy/term/3?page=1
+import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.Color;
+
+import java.awt.*;
+
 import static org.lwjgl.opengl.GL11.*;
 
 public class TextRenderer {
@@ -475,5 +481,13 @@ public class TextRenderer {
             }
         }
         glEnd();
+    }
+
+    // http://www.lwjgl.org/wiki/index.php?title=Slick-Util_Library_-_Part_3_-_TrueType_Fonts_for_LWJGL
+    public static void drawString(String s) {
+        Font awtFont = new Font("Times New Roman", Font.BOLD, 24);
+        TrueTypeFont font = new TrueTypeFont(awtFont, false);
+
+        font.drawString(100, 50, "THE LIGHTWEIGHT JAVA GAMES LIBRARY", Color.yellow);
     }
 }

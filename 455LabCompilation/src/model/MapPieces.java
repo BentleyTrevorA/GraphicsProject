@@ -11,9 +11,9 @@ import static org.lwjgl.opengl.GL11.glVertex3d;
 
 public class MapPieces {
 
-    private WireFrame model = new HouseModel();
+    private static WireFrame model = new HouseModel();
 
-    public void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
+    public static void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
         glColor3f(houseColor.x, houseColor.y, houseColor.z);
         glBegin(GL_POLYGON);
         {
@@ -55,7 +55,7 @@ public class MapPieces {
         glEnd();
     }
 
-    public void drawWalls(int scale, int numTilesInOneDirection, Vector3f color) {
+    public static void drawWalls(int scale, int numTilesInOneDirection, Vector3f color) {
         int cornerCoord = scale * numTilesInOneDirection;
         int heightScale = 4;
         glColor3f(color.x, color.y, color.z);
@@ -88,7 +88,7 @@ public class MapPieces {
         glEnd();
     }
 
-    public void drawFloor(int scale, int numTiles) {
+    public static void drawFloor(int scale, int numTiles) {
         for (int x = 0; x < numTiles + 1; x++) {
             for (int z = 0; z < numTiles + 1; z++) {
                 Vector3f tileColor;
@@ -109,7 +109,7 @@ public class MapPieces {
         }
     }
 
-    public void drawFloorTile(double scale, double x, double y, double z, Vector3f color) {
+    private static void drawFloorTile(double scale, double x, double y, double z, Vector3f color) {
         glColor3f(color.x, color.y, color.z);
 
         glPushMatrix();
@@ -137,7 +137,7 @@ public class MapPieces {
      * @param z       - z offset
      * @param outline - draw the shape outline
      */
-    public void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public static void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
         double halfScale = .5;
         double height = Math.sqrt(halfScale * halfScale + halfScale * halfScale);
         glColor3f(color.x, color.y, color.z);
@@ -200,7 +200,7 @@ public class MapPieces {
         glPopMatrix();
     }
 
-    public void drawCube(double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public static void drawCube(double scale, double x, double y, double z, Vector3f color, boolean outline) {
         glColor3f(color.x, color.y, color.z);
 
         glPushMatrix();
@@ -296,7 +296,7 @@ public class MapPieces {
         glPopMatrix();
     }
 
-    public void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color)
+    public static void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color)
     {
         glColor3f(color.x, color.y, color.z);
         glPushMatrix();
