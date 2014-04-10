@@ -48,13 +48,10 @@ public class Model {
         MapPieces.drawPyramid(20, 0, 0, 100, Colors.LIGHT_BLUE, false);
         MapPieces.drawPyramid(25, 0, 0, -100, Colors.PURPLE, false);
 
-        MapPieces.drawCube(15, -50, 25, -50, Colors.RED, false);
+        MapPieces.drawCube(15, -50, 25, -50, Colors.YELLOW, false);
         MapPieces.drawCube(15, 50, 0, 50, Colors.ORANGE, false);
 
         MapPieces.drawSphere(5, 0, 25, 0, 25, 25, Colors.YELLOW);
-
-//        MapPieces.drawSphere(5, 0, 35, 0, 25, 25, Colors.CYAN);
-
         drawShots();
         drawShotsRemaining(Colors.WHITE);
     }

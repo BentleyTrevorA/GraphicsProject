@@ -154,38 +154,61 @@ public class MapPieces {
         glBegin(GL_TRIANGLES);
         {
             // Back face
-            glNormal3d(0, 1, 1);
+            glNormal3d(1, -1, -1);
             glVertex3d(1, 0, 0);
+
+            glNormal3d(-1, -1, -1);
             glVertex3d(0, 0, 0);
+
+            glNormal3d(0, 1, 0);
             glVertex3d(halfScale, height, halfScale);
 
             // Right face
-            glNormal3d(1, 1, 0);
+            glNormal3d(1, -1, 1);
             glVertex3d(1, 0, 1);
+
+            glNormal3d(1, -1, -1);
             glVertex3d(1, 0, 0);
+
+            glNormal3d(0, 1, 0);
             glVertex3d(halfScale, height, halfScale);
 
             // Front face
-            glNormal3d(0, 1, -1);
+            glNormal3d(-1, -1, 1);
             glVertex3d(0, 0, 1);
+
+            glNormal3d(1, -1, 1);
             glVertex3d(1, 0, 1);
+
+            glNormal3d(0, 1, 0);
             glVertex3d(halfScale, height, halfScale);
 
             // Left face
-            glNormal3d(-1, 1, 0);
+            glNormal3d(-1, -1, -1);
             glVertex3d(0, 0, 0);
+
+            glNormal3d(-1, -1, 1);
             glVertex3d(0, 0, 1);
+
+            glNormal3d(0, 1, 0);
             glVertex3d(halfScale, height, halfScale);
         }
         glEnd();
 
         glBegin(GL_QUADS);
         {
-            glNormal3d(0, -1, 0);
+            // Bottom face
+            glNormal3d(-1, -1, -1);
             glVertex3d(0, 0, 0);
-            glVertex3d(0, 0, 1);
-            glVertex3d(1, 0, 1);
+
+            glNormal3d(1, -1, -1);
             glVertex3d(1, 0, 0);
+
+            glNormal3d(1, -1, 1);
+            glVertex3d(1, 0, 1);
+
+            glNormal3d(-1, -1, 1);
+            glVertex3d(0, 0, 1);
         }
         glEnd();
 
@@ -231,46 +254,84 @@ public class MapPieces {
 
         glBegin(GL_QUADS);
         {
+            // For greater shading variation, Each vertex points out in all 3 directions
+            // if vertex value is 0, normal is -1, if value is 1, normal is 1
             // Front
-            glNormal3d(0, 0, 1);
+            glNormal3d(-1, -1, 1);
             glVertex3d(0, 0, 1);
+
+            glNormal3d(1, -1, 1);
             glVertex3d(1, 0, 1);
+
+            glNormal3d(1, 1, 1);
             glVertex3d(1, 1, 1);
+
+            glNormal3d(-1, 1, 1);
             glVertex3d(0, 1, 1);
 
             // Right
-            glNormal3d(1, 0, 0);
+            glNormal3d(1, -1, 1);
             glVertex3d(1, 0, 1);
+
+            glNormal3d(1, -1, -1);
             glVertex3d(1, 0, 0);
+
+            glNormal3d(1, 1, -1);
             glVertex3d(1, 1, 0);
+
+            glNormal3d(1, 1, 1);
             glVertex3d(1, 1, 1);
 
             // Back
-            glNormal3d(0, 0, -1);
+            glNormal3d(1, -1, -1);
             glVertex3d(1, 0, 0);
+
+            glNormal3d(-1, -1, -1);
             glVertex3d(0, 0, 0);
+
+            glNormal3d(-1, 1, -1);
             glVertex3d(0, 1, 0);
+
+            glNormal3d(1, 1, -1);
             glVertex3d(1, 1, 0);
 
             // Left
-            glNormal3d(-1, 0, 0);
+            glNormal3d(-1, -1, -1);
             glVertex3d(0, 0, 0);
+
+            glNormal3d(-1, -1, 1);
             glVertex3d(0, 0, 1);
+
+            glNormal3d(-1, 1, 1);
             glVertex3d(0, 1, 1);
+
+            glNormal3d(-1, 1, -1);
             glVertex3d(0, 1, 0);
 
             // Bottom
-            glNormal3d(0, -1, 0);
+            glNormal3d(-1, -1, -1);
             glVertex3d(0, 0, 0);
+
+            glNormal3d(1, -1, -1);
             glVertex3d(1, 0, 0);
+
+            glNormal3d(1, -1, 1);
             glVertex3d(1, 0, 1);
+
+            glNormal3d(-1, -1, 1);
             glVertex3d(0, 0, 1);
 
             // Top
-            glNormal3d(0, 1, 0);
+            glNormal3d(-1, 1, -1);
             glVertex3d(0, 1, 0);
+
+            glNormal3d(-1, 1, 1);
             glVertex3d(0, 1, 1);
+
+            glNormal3d(1, 1, 1);
             glVertex3d(1, 1, 1);
+
+            glNormal3d(1, 1, -1);
             glVertex3d(1, 1, 0);
         }
         glEnd();
