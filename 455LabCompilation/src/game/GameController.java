@@ -3,6 +3,7 @@ package game;
 
 import camera.Camera;
 import controllers.LabController;
+import driver.LWJGLSandbox;
 import model.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
@@ -20,6 +21,7 @@ public class GameController extends LabController {
     private Camera camera;
     private DepthBuffer depthBuffer;
     private Lighting light;
+    private static int map = -2; // TODO: Change to 1
 
     float a = 1f;
     float b = 1f;
@@ -27,7 +29,7 @@ public class GameController extends LabController {
     float d = 0;
 
     protected void initBase() {
-        model = new Model(-1); // TODO: Change to 1
+        model = new Model(map);
         camera = new Camera();
         depthBuffer = new DepthBuffer();
         light = new Lighting();
@@ -38,7 +40,7 @@ public class GameController extends LabController {
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
         // IMPORTANT: DO NOT use 0 for near plane - it screws up depth_testing
-        gluPerspective(80.0f, 960 / 720f, 1.0f, 700f);
+        gluPerspective(80.0f, LWJGLSandbox.DISPLAY_WIDTH / (float) LWJGLSandbox.DISPLAY_HEIGHT, 1.0f, 700f);
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();

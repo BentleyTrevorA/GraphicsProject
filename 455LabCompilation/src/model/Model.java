@@ -68,8 +68,7 @@ public class Model {
         drawObstacles();
         drawEnemies();
         drawShots();
-        textHandler.drawShotsRemaining(maxShots, shots.size(), Colors.WHITE);
-        textHandler.drawPoints(points, Colors.WHITE);
+        drawHud();
     }
 
     public void drawObstacles() {
@@ -88,6 +87,12 @@ public class Model {
         for (Shot shot : shots) {
             ShapeRenderer.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
         }
+    }
+
+    public void drawHud() {
+        textHandler.drawShotsRemaining(maxShots, shots.size());
+        textHandler.drawPoints(points);
+        textHandler.drawNumEnemies(enemies.size());
     }
 
     public void addShot(Camera camera) {

@@ -15,6 +15,10 @@ public class Cube extends NonDestructibleObject{
         super(MapObjectType.CUBE, defaultScale, x, y, z, color, false);
     }
 
+    public Cube(double scale, double x, double y, double z) {
+        super(MapObjectType.CUBE, scale, x, y, z, Colors.YELLOW, false);
+    }
+
     public Cube(double scale, double x, double y, double z, Vector3f color) {
         super(MapObjectType.CUBE, scale, x, y, z, color, false);
     }

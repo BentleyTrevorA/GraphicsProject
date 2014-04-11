@@ -14,7 +14,9 @@ public class MapCreator {
         ArrayList<MapObject> map = new ArrayList<MapObject>();
         switch(mapNumber) {
             case -1:
-                return createTestCollisionMap(map);
+                return createTestCollisionMap1(map);
+            case -2:
+                return createTestCollisionMap2(map);
             case 1:
                 return createMap1(map);
             default:
@@ -35,12 +37,21 @@ public class MapCreator {
         return map;
     }
 
-    private ArrayList<MapObject> createTestCollisionMap(ArrayList<MapObject> map) {
+    private ArrayList<MapObject> createTestCollisionMap1(ArrayList<MapObject> map) {
         map.add(new Cube(0, 0, -50));
         map.add(new Cube(50, 0, 0));
         map.add(new Cube(100, 0, -50));
         map.add(new Cube(150, 0, 0));
         map.add(new Cube(0, 0, 50));
+
+        return map;
+    }
+
+    private ArrayList<MapObject> createTestCollisionMap2(ArrayList<MapObject> map) {
+        map.add(new Cube(50, -50, 0, 0));
+        map.add(new Cube(50, 50, 0, 0));
+        map.add(new Cube(50, 0, 0, -50));
+        map.add(new Cube(50, 0, 0, 50));
 
         return map;
     }
