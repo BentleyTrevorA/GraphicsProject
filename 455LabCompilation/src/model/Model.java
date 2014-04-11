@@ -1,166 +1,76 @@
 package model;
 
 import camera.Camera;
-import game.Shot;
+import model.handlers.EnemyHandler;
+import model.handlers.HudHandler;
+import model.handlers.ScoreHandler;
+import model.handlers.ShotsHandler;
 import model.mapObjects.MapCreator;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.SphereEnemy;
 import model.renderers.ShapeRenderer;
-import model.renderers.TextHandler;
-import org.lwjgl.util.vector.Vector3f;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.lwjgl.opengl.GL11.*;
 
 public class Model {
-    // Variables for creating the playing field
-    private int tileSize = 25;
-    private int numTilesInOneDirection = 10;
     private int lineWidth = 1;
 
-    // Shots taken
-    private ArrayList<Shot> shots;
-    private int maxShots = 1;
-
-    // Points
-    private int points = 0;
+    // Variables for creating the playing field
+    private static final int TILE_SIZE = 25;
+    private static final int NUM_TILES_IN_ONE_DIRECTION = 10;
+    public static final int MIN_MAP_COORDINATE = -TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
+    public static final int MAX_MAP_COORDINATE = TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
 
     private MapCreator mapCreator;
-    private TextHandler textHandler;
-
-    // Map Obstacles
     private ArrayList<MapObject> obstacles;
 
-    // Map Enemies
-    private ArrayList<EnemyEntity> enemies;
-
-    private Vector3f shotColor = Colors.PINK;
+    private ScoreHandler scoreHandler;
+    private EnemyHandler enemyHandler;
+    private ShotsHandler shotsHandler;
+    private HudHandler hudHandler;
 
     public Model(int mapNumber) {
         mapCreator = new MapCreator();
-        textHandler = new TextHandler();
-        shots = new ArrayList<Shot>();
-        obstacles = mapCreator.createMap(mapNumber);
 
-        enemies = new ArrayList<EnemyEntity>();
-        enemies.add(new CubeEnemy(0, 0));
-        enemies.add(new CubeEnemy(0, -200, 50));
-        enemies.add(new CubeEnemy(0, 200, 50));
-        enemies.add(new SphereEnemy(150, 0));
+        scoreHandler = new ScoreHandler();
+        enemyHandler = new EnemyHandler(scoreHandler);
+        shotsHandler = new ShotsHandler(enemyHandler);
+        hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler);
+
+        obstacles = mapCreator.createMap(mapNumber);
     }
 
     public void update() {
-        updateShotPositions();
+        shotsHandler.updateShots(obstacles);
     }
 
     public void drawMap() {
         glLineWidth(lineWidth);
 
-        ShapeRenderer.drawFloor(tileSize, numTilesInOneDirection);
-//        ShapeRenderer.drawFloorTiles(tileSize, numTilesInOneDirection); // Makes floor pink
+        ShapeRenderer.drawFloor(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION);
+//        ShapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION); // Makes floor pink
         ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE);
 
         drawObstacles();
-        drawEnemies();
-        drawShots();
-        drawHud();
+        enemyHandler.drawEnemies();
+        shotsHandler.drawShots();
+        hudHandler.drawHud();
     }
 
+    public void addShot(Camera camera) {
+        shotsHandler.addShot(camera);
+    }
+
+    /* **********************************************
+     *                  OBSTACLES
+     * *********************************************/
     public void drawObstacles() {
         for(MapObject obstacle : obstacles) {
             obstacle.render();
         }
-    }
-
-    public void drawEnemies() {
-        for(EnemyEntity enemy : enemies) {
-            enemy.render();
-        }
-    }
-
-    public void drawShots() {
-        for (Shot shot : shots) {
-            ShapeRenderer.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
-        }
-    }
-
-    public void drawHud() {
-        textHandler.drawShotsRemaining(maxShots, shots.size());
-        textHandler.drawPoints(points);
-        textHandler.drawNumEnemies(enemies.size());
-    }
-
-    public void addShot(Camera camera) {
-        if (shots.size() < maxShots) {
-            shots.add(new Shot(camera));
-        }
-    }
-
-    private void updateShotPositions() {
-        Set<Shot> shotRemoval = new HashSet<Shot>();
-        for (Shot shot : shots) {
-            shot.updatePosition();
-            // TODO: Don't do all these checks here
-            if (shot.isOutsideGameField(-tileSize * numTilesInOneDirection, tileSize * numTilesInOneDirection)) {
-                shotRemoval.add(shot);
-            }
-            else {
-                EnemyEntity enemyHit = findEnemyHitByShot(shot);
-                if (enemyHit != null)
-                {
-                    enemyHit.loseHp(shot.damage);
-                    System.out.println("Hit an enemy!\nEnemy lost " + shot.damage + "hp!\n Enemy hp = " + enemyHit.getHp());
-                    if(enemyHit.getHp() <= 0) {
-                        enemies.remove(enemyHit);
-                        points += enemyHit.getPointValue();
-                    }
-                    shotRemoval.add(shot);
-                }
-                else {
-                    MapObject objectHit = findObjectHitByShot(shot);
-                    if (objectHit != null)
-                    {
-                        System.out.println("I'm hit!\n" + objectHit);
-
-//                        if(objectHit.getCollisionPlane() == MapObject.Z_PLANE)
-                            shot.dz *= -1;
-//                        else if(objectHit.getCollisionPlane() == MapObject.X_PLANE)
-//                            shot.dx *= -1;
-
-                        shot.loseHp();
-                        if(shot.hp <= 0) {
-                            System.out.println("Shot died");
-                            shotRemoval.add(shot);
-                        }
-                    }
-                }
-            }
-        }
-        for (Shot shot : shotRemoval) {
-            shots.remove(shot);
-        }
-    }
-
-    private MapObject findObjectHitByShot(Shot shot) {
-        for(MapObject obstacle : obstacles) {
-            if(obstacle.isCollidingWith(shot.x, shot.y, shot.z)) {
-                return obstacle;
-            }
-        }
-        return null;
-    }
-
-    private EnemyEntity findEnemyHitByShot(Shot shot) {
-        for(EnemyEntity enemy: enemies) {
-            if(enemy.isCollidingWith(shot.x, shot.y, shot.z)) {
-                return enemy;
-            }
-        }
-        return null;
     }
 }

@@ -36,4 +36,6 @@ public abstract class EnemyEntity extends Entity {
     public int getPointValue() {
         return pointValue;
     }
+
+    // TODO: Update color based off of hp
 }

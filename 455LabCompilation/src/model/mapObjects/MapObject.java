@@ -56,6 +56,11 @@ public abstract class MapObject {
     // Move y
     // Move z
 
+    public void setColor(Vector3f color) {
+        this.color = color;
+    }
+
+    // TODO: Take in MapObject instead of position
     /**
      * Given the coordinates of an object, determine if that object is colliding
      * with this one
