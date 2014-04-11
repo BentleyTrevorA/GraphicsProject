@@ -16,15 +16,6 @@ import static org.lwjgl.opengl.GL11.glClearColor;
 public class LWJGLSandbox {
     public static final int DISPLAY_WIDTH = 640;
     public static final int DISPLAY_HEIGHT = 480;
-    public static final Logger LOGGER = Logger.getLogger(LWJGLSandbox.class.getName());
-
-    static {
-        try {
-            LOGGER.addHandler(new FileHandler("errors.log", true));
-        } catch (IOException ex) {
-            LOGGER.log(Level.WARNING, ex.toString(), ex);
-        }
-    }
 
     public LWJGLSandbox() {
     }
