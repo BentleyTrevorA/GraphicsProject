@@ -1,4 +1,4 @@
-package model.mapObjects;
+package model.renderers;
 
 import model.Colors;
 import model.HouseModel;

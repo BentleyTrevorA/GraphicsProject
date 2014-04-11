@@ -8,7 +8,7 @@ public class Shot {
     public int slices = 16;
     public int stacks = 14;
     public int damage = 1;
-    public int hp = 3; // Can hit this many objects before disappearing
+    public int hp = 1000; // Can hit this many objects before disappearing
 
     public Shot(double x, double y, double z, double dx, double dy, double dz) {
         this.x = x;

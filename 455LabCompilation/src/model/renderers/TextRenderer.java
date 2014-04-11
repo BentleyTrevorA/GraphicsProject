@@ -1,4 +1,4 @@
-package model;
+package model.renderers;
 
 // http://ninjacave.com/taxonomy/term/3?page=1
 

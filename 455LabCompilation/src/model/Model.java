@@ -3,12 +3,12 @@ package model;
 import camera.Camera;
 import game.Shot;
 import model.mapObjects.MapCreator;
-import model.mapObjects.ShapeRenderer;
-import model.mapObjects.TextHandler;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.SphereEnemy;
+import model.renderers.ShapeRenderer;
+import model.renderers.TextHandler;
 import org.lwjgl.util.vector.Vector3f;
 
 import java.util.ArrayList;
@@ -45,8 +45,8 @@ public class Model {
         mapCreator = new MapCreator();
         textHandler = new TextHandler();
         shots = new ArrayList<Shot>();
-//        obstacles = mapCreator.createMap(mapNumber);
-        obstacles = new ArrayList<MapObject>(); // TODO: Undo
+        obstacles = mapCreator.createMap(mapNumber);
+
         enemies = new ArrayList<EnemyEntity>();
         enemies.add(new CubeEnemy(0, 0));
         enemies.add(new CubeEnemy(0, -200, 50));
@@ -84,9 +84,12 @@ public class Model {
         }
     }
 
-    /* ***************************************
-     *              SHOTS
-     * **************************************/
+    public void drawShots() {
+        for (Shot shot : shots) {
+            ShapeRenderer.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
+        }
+    }
+
     public void addShot(Camera camera) {
         if (shots.size() < maxShots) {
             shots.add(new Shot(camera));
@@ -119,11 +122,14 @@ public class Model {
                     {
                         System.out.println("I'm hit!\n" + objectHit);
 
-                        // TODO: Figure out how to change directions appropriately - currently only does 2 sides of z
-                        shot.dz *= -1;
+//                        if(objectHit.getCollisionPlane() == MapObject.Z_PLANE)
+                            shot.dz *= -1;
+//                        else if(objectHit.getCollisionPlane() == MapObject.X_PLANE)
+//                            shot.dx *= -1;
 
                         shot.loseHp();
                         if(shot.hp <= 0) {
+                            System.out.println("Shot died");
                             shotRemoval.add(shot);
                         }
                     }
@@ -141,7 +147,6 @@ public class Model {
                 return obstacle;
             }
         }
-
         return null;
     }
 
@@ -153,18 +158,4 @@ public class Model {
         }
         return null;
     }
-
-    public void drawShots() {
-        for (Shot shot : shots) {
-            ShapeRenderer.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
-        }
-    }
-
-    // Collision Detection Help - http://nehe.gamedev.net/tutorial/collision_detection/17005/
-    // TODO: Collisions
-    // 1 - rotate back
-    // 2 - translate back
-    // 3 - tileSize back
-    // 4 - test if within the bounding box?
-    // 5 - test if within the cube or within the radius - not sure how to do pyramid.
 }

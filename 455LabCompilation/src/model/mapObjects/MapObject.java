@@ -1,5 +1,6 @@
 package model.mapObjects;
 
+import model.renderers.ShapeRenderer;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector3f;
@@ -9,11 +10,17 @@ import java.nio.FloatBuffer;
 
 public abstract class MapObject {
     protected double scale;       // Scale of object
-    protected double rotation;    // Rotation of object TODO: Future addition
+    protected double rotation;    // Rotation of object
     protected double x, y, z;     // Position of object
     protected Vector3f color;     // Color of object
     protected boolean outline;    // Draw outline of object
     protected MapObjectType type; // Type of object
+
+    // Collision Variables
+    public static final int X_PLANE = 0;
+    public static final int Y_PLANE = 1;
+    public static final int Z_PLANE = 2;
+    protected Vector4f collisionPoint; // point used for checking collisions
 
     public MapObject(MapObjectType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {
         this.type = type;
@@ -59,22 +66,24 @@ public abstract class MapObject {
      * @return - if the (x, y, z) position is colliding with this MapObject
      */
     public boolean isCollidingWith(double x, double y, double z) {
-        Vector4f position = new Vector4f((float)x, (float)y, (float)z, 1);
+        collisionPoint = new Vector4f((float)x, (float)y, (float)z, 1);
 
-        position = inverseTranslate(position);
-        position = inverseRotate(position);
-        position = inverseScale(position);
+        collisionPoint = inverseTranslate(collisionPoint);
+        collisionPoint = inverseRotate(collisionPoint);
+        collisionPoint = inverseScale(collisionPoint);
 
         // For now, ignore y value since it should always hit with how it is setup currently
         switch(type) {
             case CUBE:
-                boolean withinX = (position.x >= 0 && position.x <= 1);
-                boolean withinZ = (position.z >= 0 && position.z <= 1);
-                return withinX && withinZ;
+                boolean withinX = (collisionPoint.x >= 0 && collisionPoint.x <= 1);
+                boolean withinZ = (collisionPoint.z >= 0 && collisionPoint.z <= 1);
+
+                return (withinX && withinZ);
             case PYRAMID:
+                // TODO: Collision detection for pyramid
                 break;
             case SPHERE:
-                double distFromCenter = position.x * position.x + position.y * position.y + position.z * position.z;
+                double distFromCenter = collisionPoint.x * collisionPoint.x + collisionPoint.y * collisionPoint.y + collisionPoint.z * collisionPoint.z;
                 return (distFromCenter <= scale * scale);
             case PLANE:
                 break;
@@ -83,6 +92,14 @@ public abstract class MapObject {
         }
 
         return false;
+    }
+
+    public int getCollisionPlane(double dx, double dz) {
+        // TODO: Figure out this logic for balls bouncing off right (Maybe, or just forget it)
+        if(collisionPoint.z > collisionPoint.x && dz < 0 || collisionPoint.z < collisionPoint.x && dz > 0)
+            return Z_PLANE;
+        else
+            return X_PLANE;
     }
 
     private Vector4f inverseTranslate(Vector4f position) {
@@ -129,7 +146,9 @@ public abstract class MapObject {
         return position;
     }
 
-    // get type
+    public MapObjectType getType() {
+        return type;
+    }
 
     public String toString() {
         String output = "Type: " + type;

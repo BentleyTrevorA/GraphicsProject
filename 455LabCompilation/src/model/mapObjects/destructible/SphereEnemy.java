@@ -4,7 +4,7 @@ import model.mapObjects.MapObjectType;
 import org.lwjgl.util.vector.Vector3f;
 
 public class SphereEnemy extends EnemyEntity {
-    private static double radius = 5;
+    private static double radius = 6;
     private static int baseValue = 25;
     private static int baseHp = 3;
 
