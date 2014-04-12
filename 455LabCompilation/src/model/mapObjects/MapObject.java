@@ -67,8 +67,6 @@ public abstract class MapObject {
         this.color = color;
     }
 
-    // TODO: Take in MapObject instead of position
-
     /**
      * Given the coordinates of an object, determine if that object is colliding
      * with this one
