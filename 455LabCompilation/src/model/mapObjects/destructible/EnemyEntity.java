@@ -60,6 +60,5 @@ public abstract class EnemyEntity extends Entity {
 
     protected void updatePointValue() {
         pointValue = defaultPointValue * hp;
-        System.out.println("ENEMY: " + pointValue);
     }
 }

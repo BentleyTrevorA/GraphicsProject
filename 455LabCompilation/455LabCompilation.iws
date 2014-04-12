@@ -4,10 +4,9 @@
     <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/camera/Camera.java" afterPath="$PROJECT_DIR$/src/camera/Camera.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameController.java" afterPath="$PROJECT_DIR$/src/game/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/HudHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/HudHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/HudVisualHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/HudVisualHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Model.java" afterPath="$PROJECT_DIR$/src/model/Model.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/PlayerHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/PlayerHandler.java" />
     </list>
@@ -130,21 +129,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/model/mapObjects/destructible/Entity.java" line="11" class="model.mapObjects.destructible.Entity" package="model.mapObjects.destructible">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -158,7 +142,7 @@
       <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="55" selection-start="3930" selection-end="3930" vertical-scroll-proportion="0.0" vertical-offset="1212" max-vertical-offset="2370">
+            <state line="139" column="26" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.0" vertical-offset="1821" max-vertical-offset="2370">
               <folding />
             </state>
           </provider>
@@ -167,7 +151,7 @@
       <file leaf-file-name="Model.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="29" selection-start="2232" selection-end="2232" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1185">
+            <state line="12" column="53" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -186,10 +170,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HudHandler.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HudHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/handlers/HudHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="64" selection-start="685" selection-end="685" vertical-scroll-proportion="0.52224374" vertical-offset="0" max-vertical-offset="690">
+            <state line="25" column="27" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyEntity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="5" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="945">
               <folding />
             </state>
           </provider>
@@ -206,10 +199,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Camera.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/camera/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="8" selection-start="643" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="1650">
+            <state line="87" column="47" selection-start="2588" selection-end="2588" vertical-scroll-proportion="0.6518375" vertical-offset="968" max-vertical-offset="1905">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,33 +213,21 @@
       <file leaf-file-name="PlayerHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/handlers/PlayerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="22" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
+            <state line="35" column="5" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="1680">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#919#920#0" expanded="true" />
-                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#921#922#0" expanded="true" />
+                <element signature="e#950#951#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShapeRenderer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/renderers/ShapeRenderer.java">
+      <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="94" selection-start="5623" selection-end="5623" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="4050">
-              <folding>
-                <element signature="method#drawHouse#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="docComment;method#drawQuad#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="method#drawQuad#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="method#drawWalls#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="method#drawFloorTiles#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="docComment;method#drawPyramid#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="method#drawPyramid#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="e#10934#11010#0" expanded="false" />
-                <element signature="e#13490#13566#0" expanded="false" />
-                <element signature="method#drawCubeOutline#0;class#ShapeRenderer#0" expanded="false" />
-                <element signature="method#drawSphere#0;class#ShapeRenderer#0" expanded="false" />
-              </folding>
+            <state line="11" column="0" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -254,14 +235,15 @@
       <file leaf-file-name="EnemyHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/handlers/EnemyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="9" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="840">
+            <state line="59" column="40" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
               <folding>
                 <element signature="method#EnemyHandler#0;class#EnemyHandler#0" expanded="false" />
                 <element signature="method#populateTestEnemies#0;class#EnemyHandler#0" expanded="false" />
-                <element signature="method#populateEnemies#0;class#EnemyHandler#0" expanded="false" />
                 <element signature="method#drawEnemies#0;class#EnemyHandler#0" expanded="false" />
                 <element signature="method#getEnemiesRemaining#0;class#EnemyHandler#0" expanded="false" />
                 <element signature="method#findEnemyHitByShot#0;class#EnemyHandler#0" expanded="false" />
+                <element signature="method#findEnemyHitByPlayer#0;class#EnemyHandler#0" expanded="false" />
+                <element signature="method#damageEnemy#0;class#EnemyHandler#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -321,16 +303,16 @@
         <option value="$PROJECT_DIR$/src/model/handlers/ShotsHandler.java" />
         <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/SphereEnemy.java" />
         <option value="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" />
-        <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" />
         <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/Entity.java" />
-        <option value="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" />
-        <option value="$PROJECT_DIR$/src/camera/Camera.java" />
-        <option value="$PROJECT_DIR$/src/model/handlers/PlayerHandler.java" />
-        <option value="$PROJECT_DIR$/src/game/GameController.java" />
         <option value="$PROJECT_DIR$/src/model/handlers/HudVisualHandler.java" />
         <option value="$PROJECT_DIR$/src/driver/LWJGLSandbox.java" />
-        <option value="$PROJECT_DIR$/src/model/Model.java" />
         <option value="$PROJECT_DIR$/src/model/handlers/HudHandler.java" />
+        <option value="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" />
+        <option value="$PROJECT_DIR$/src/game/GameController.java" />
+        <option value="$PROJECT_DIR$/src/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/model/handlers/PlayerHandler.java" />
+        <option value="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" />
+        <option value="$PROJECT_DIR$/src/camera/Camera.java" />
       </list>
     </option>
   </component>
@@ -1043,7 +1025,11 @@
       <created>1397334138348</created>
       <updated>1397334138349</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added the capability of displaying a mini-map">
+      <created>1397337828949</created>
+      <updated>1397337828949</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1109,7 +1095,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Made the screen size bigger for the game." />
     <MESSAGE value="Divided GameController into Model, DepthBuffer, and Lighting classes.&#10;Moved Camera class to the camera directory&#10;Made MapPieces a static class" />
     <MESSAGE value="Added map objects classes&#10;Formatted all of the code using reformatter&#10;Added basic normals to cubes and pyramids" />
     <MESSAGE value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
@@ -1134,7 +1119,8 @@
     <MESSAGE value="Continually has 30 enemies" />
     <MESSAGE value="Refactored out ShapeRenderer and created a TextureHandler instead that handles the textures." />
     <MESSAGE value="Got collisions with enemies to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got collisions with enemies to work" />
+    <MESSAGE value="Added the capability of displaying a mini-map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the capability of displaying a mini-map" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1501,23 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="990">
-          <folding>
-            <element signature="e#1745#1746#0" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="36" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.7619048" vertical-offset="201" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/CubeEnemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="41" selection-start="239" selection-end="239" vertical-scroll-proportion="-0.12765957" vertical-offset="171" max-vertical-offset="1110">
@@ -1531,20 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="200" selection-end="200" vertical-scroll-proportion="0.2504638" vertical-offset="0" max-vertical-offset="539">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/handlers/EnemyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="9" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="840">
-          <folding>
-            <element signature="method#EnemyHandler#0;class#EnemyHandler#0" expanded="false" />
-            <element signature="method#populateTestEnemies#0;class#EnemyHandler#0" expanded="false" />
-            <element signature="method#populateEnemies#0;class#EnemyHandler#0" expanded="false" />
-            <element signature="method#drawEnemies#0;class#EnemyHandler#0" expanded="false" />
-            <element signature="method#getEnemiesRemaining#0;class#EnemyHandler#0" expanded="false" />
-            <element signature="method#findEnemyHitByShot#0;class#EnemyHandler#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1567,33 +1522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/handlers/PlayerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="22" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/camera/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="8" selection-start="643" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="1650">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="55" selection-start="3930" selection-end="3930" vertical-scroll-proportion="0.0" vertical-offset="1212" max-vertical-offset="2370">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/handlers/HudVisualHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="31" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1605">
@@ -1612,19 +1540,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/handlers/HudHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="27" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="29" selection-start="2232" selection-end="2232" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1185">
+        <state line="12" column="53" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/handlers/HudHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="64" selection-start="685" selection-end="685" vertical-scroll-proportion="0.52224374" vertical-offset="0" max-vertical-offset="690">
+        <state line="50" column="5" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="945">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="26" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.0" vertical-offset="1821" max-vertical-offset="2370">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/mapObjects/destructible/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/handlers/EnemyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="40" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
+          <folding>
+            <element signature="method#EnemyHandler#0;class#EnemyHandler#0" expanded="false" />
+            <element signature="method#populateTestEnemies#0;class#EnemyHandler#0" expanded="false" />
+            <element signature="method#drawEnemies#0;class#EnemyHandler#0" expanded="false" />
+            <element signature="method#getEnemiesRemaining#0;class#EnemyHandler#0" expanded="false" />
+            <element signature="method#findEnemyHitByShot#0;class#EnemyHandler#0" expanded="false" />
+            <element signature="method#findEnemyHitByPlayer#0;class#EnemyHandler#0" expanded="false" />
+            <element signature="method#damageEnemy#0;class#EnemyHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/handlers/PlayerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="5" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="1680">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="47" selection-start="2588" selection-end="2588" vertical-scroll-proportion="0.6518375" vertical-offset="968" max-vertical-offset="1905">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

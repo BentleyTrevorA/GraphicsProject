@@ -28,11 +28,11 @@ public class PlayerHandler {
         return (float)hp / maxHp;
     }
 
-    public void loseHp(int hp) {
+    public void loseHp(int hpToLose) {
         if(hp > 0)
-            this.hp -= hp;
+            hp -= hpToLose;
         if(hp < 0)
-            this.hp = 0;
+            hp = 0;
     }
 
     public boolean isAlive() {

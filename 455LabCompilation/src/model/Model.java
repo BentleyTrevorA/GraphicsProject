@@ -10,7 +10,7 @@ public class Model {
     private static final int NUM_TILES_IN_ONE_DIRECTION = 25;
     public static final int MIN_MAP_COORDINATE = -TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
     public static final int MAX_MAP_COORDINATE = TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
-    public static final boolean DRAW_MINI_MAP = false;
+    public static final boolean DRAW_MINI_MAP = true;
 
     private Camera camera;
     private ScoreHandler scoreHandler;

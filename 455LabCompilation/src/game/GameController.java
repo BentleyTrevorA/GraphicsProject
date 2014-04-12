@@ -144,13 +144,13 @@ public class GameController extends LabController {
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        if(playerHandler.isAlive()) {
+//        if(playerHandler.isAlive()) {
             playerHandler.positionCamera();
             depthBuffer.enableDepthBuffering();
             light.enableLighting();
             model.drawMap();
             model.drawHud();
-        }
+//        }
         // TODO: Else draw game-over and options to start again (#'s or something)
         glFlush();
     }

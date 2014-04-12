@@ -19,6 +19,7 @@ public class EnemyHandler {
 
     private Collection<EnemyEntity> enemies;
     private int maxEnemies = 30;
+    private int counter = 0;
 
     public EnemyHandler(ScoreHandler scoreHandler, TextureHandler textureHandler) {
         enemies = new HashSet<EnemyEntity>();
@@ -30,7 +31,7 @@ public class EnemyHandler {
     public void updateEnemies(Camera camera) {
         for (EnemyEntity enemy : enemies) {
             enemy.updatePosition();
-//            enemy.updateTargetPosition(camera);
+            enemy.updateTargetPosition(camera);
         }
         populateEnemies();
     }
@@ -54,9 +55,11 @@ public class EnemyHandler {
                 test.setHp(2);
             }
             enemies.add(test);
-            if(enemies.size() % 2 == 1)
-                xScale *= -1;
-            if(enemies.size() % 4 == 1)
+
+            counter++;
+            System.out.println(counter);
+            xScale *= -1;
+            if(counter % 2 == 0)
                 zScale *= -1;
         }
     }

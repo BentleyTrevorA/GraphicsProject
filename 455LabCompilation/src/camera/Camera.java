@@ -1,5 +1,6 @@
 package camera;
 
+import model.Model;
 import org.lwjgl.util.vector.Vector4f;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -12,8 +13,8 @@ public class Camera {
 
     public double rotateAngle = 0;
 
-    private double rotateSpeed = 1;
-    private double movementSpeed = 1;
+    private double rotateSpeed = 1.5;
+    private double movementSpeed = 1.2;
 
     private boolean printVariables = false;
 
@@ -31,24 +32,28 @@ public class Camera {
         zPos -= movementSpeed * Math.cos(Math.toRadians(rotateAngle));
         xPos += movementSpeed * Math.sin(Math.toRadians(rotateAngle));
         printCameraVariables();
+        remainInsidePlayingField();
     }
 
     public void moveBackward() {
         zPos += movementSpeed * Math.cos(Math.toRadians(rotateAngle));
         xPos -= movementSpeed * Math.sin(Math.toRadians(rotateAngle));
         printCameraVariables();
+        remainInsidePlayingField();
     }
 
     public void moveLeft() {
         xPos -= movementSpeed * Math.cos(Math.toRadians(rotateAngle));
         zPos -= movementSpeed * Math.sin(Math.toRadians(rotateAngle));
         printCameraVariables();
+        remainInsidePlayingField();
     }
 
     public void moveRight() {
         xPos += movementSpeed * Math.cos(Math.toRadians(rotateAngle));
         zPos += movementSpeed * Math.sin(Math.toRadians(rotateAngle));
         printCameraVariables();
+        remainInsidePlayingField();
     }
 
     public void moveUp() {
@@ -69,6 +74,18 @@ public class Camera {
     public void turnRight() {
         rotateAngle += rotateSpeed;
         printCameraVariables();
+    }
+
+    public void remainInsidePlayingField() {
+        if(zPos >= Model.MAX_MAP_COORDINATE - 1)
+            zPos = Model.MAX_MAP_COORDINATE - 1;
+        if(zPos <= Model.MIN_MAP_COORDINATE + 1)
+            zPos = Model.MIN_MAP_COORDINATE + 1;
+
+        if(xPos >= Model.MAX_MAP_COORDINATE - 1)
+            xPos = Model.MAX_MAP_COORDINATE - 1;
+        if(xPos <= Model.MIN_MAP_COORDINATE + 1)
+            xPos = Model.MIN_MAP_COORDINATE + 1;
     }
 
     public Vector4f getPositionVector(){
