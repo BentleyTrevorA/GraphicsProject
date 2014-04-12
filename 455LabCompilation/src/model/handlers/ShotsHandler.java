@@ -87,7 +87,7 @@ public class ShotsHandler {
 
             // TODO: Reflect correctly
 //                        if(objectHit.getCollisionPlane() == MapObject.Z_PLANE)
-            shot.dz *= -1;
+            shot.setDz(shot.getDz() * -1);
 //                        else if(objectHit.getCollisionPlane() == MapObject.X_PLANE)
 //                            shot.dx *= -1;
         }

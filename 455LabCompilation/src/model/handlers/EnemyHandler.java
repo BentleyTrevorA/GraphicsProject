@@ -46,7 +46,7 @@ public class EnemyHandler {
     }
 
     public void damageEnemy(EnemyEntity enemy, Shot shot) {
-        enemy.loseHp(shot.damage);
+        enemy.loseHp(shot.getDamage());
 
         if (enemy.isDead()) {
             enemies.remove(enemy);

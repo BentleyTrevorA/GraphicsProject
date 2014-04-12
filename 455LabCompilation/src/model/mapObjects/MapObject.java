@@ -13,6 +13,7 @@ public abstract class MapObject {
     protected int slices, stacks;    // For Spheres
     protected double rotation;       // Rotation of object
     protected double x, y, z;        // Position of object
+    protected double dx, dy, dz;     // Speed in x, y, and z respectively
     protected Vector3f color;        // Color of object
     protected boolean outline;       // Draw outline of object
     protected ShapeType type;        // Type of object
@@ -37,6 +38,9 @@ public abstract class MapObject {
         this.x = x;
         this.y = y;
         this.z = z;
+        dx = 0;
+        dy = 0;
+        dz = 0;
         this.color = color;
         this.outline = outline;
     }
@@ -59,9 +63,45 @@ public abstract class MapObject {
         }
     }
 
-    // Move x
-    // Move y
-    // Move z
+    public void updatePosition() {
+        x += dx;
+        y += dy;
+        z += dz;
+    }
+
+    // TODO: Update to move towards a given location, or a given position
+    public void updateTargetPosition(MapObject objectToMoveTowards) {
+
+    }
+
+    public double getDx() {
+        return dx;
+    }
+
+    public double getDy() {
+        return dy;
+    }
+
+    public double getDz() {
+        return dz;
+    }
+
+    public void setDx(double dx) {
+        this.dx = dx;
+    }
+
+    public void setDy(double dy) {
+        this.dy = dy;
+    }
+
+    public void setDz(double dz) {
+        this.dz = dz;
+    }
+
+    public void reflect(MapObject object) {
+        // based off of object, reflect
+        // this will apply for both enemies and for shots
+    }
 
     public void setColor(Vector3f color) {
         this.color = color;

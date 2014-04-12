@@ -9,27 +9,18 @@ import org.lwjgl.util.vector.Vector3f;
 import java.util.Calendar;
 
 public class Shot extends DestructibleObject {
-    public double dx, dy, dz;
     protected static double radius = 1;
-    public static Vector3f color = Colors.PINK;
+    private static Vector3f color = Colors.PINK;
 
-    public int damage = 1;        // Damage shot does to enemies
+    private int damage = 1;        // Damage shot does to enemies
 
     private int timeOfBirth;      // Time that the shot was born (seconds)
     private int secToLive = 10;   // Time (seconds) that shot will live before dying
 
     public boolean alive;         // Shot is alive and moving around the map still
 
-//    protected double scale;       // Scale of object
-//    protected double rotation;    // Rotation of object
-//    protected double x, y, z;     // Position of object
-//    protected Vector3f color;     // Color of object
-//    protected boolean outline;    // Draw outline of object
-//    protected ShapeType type; // Type of object
-
     public Shot(double x, double y, double z, double dx, double dy, double dz) {
         super (ShapeType.SPHERE, radius, x, y, z, color, false);
-        //ShapeType type, double scale, double x, double y, double z, Vector3f color, boolean outline
         this.dx = dx;
         this.dy = dy;
         this.dz = dz;
@@ -52,10 +43,8 @@ public class Shot extends DestructibleObject {
         timeOfBirth = getCurrentTimeInSeconds();
     }
 
-    public void updatePosition() {
-        x += dx;
-        y += dy;
-        z += dz;
+    public int getDamage() {
+        return damage;
     }
 
     // Assumes board is always a square field
