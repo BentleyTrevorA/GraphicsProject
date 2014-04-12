@@ -22,6 +22,7 @@ public class Camera {
     }
 
     public void positionCamera() {
+        // TODO: This messes with the Orthographic projection
         glRotated(rotateAngle, 0f, 1.0f, 0f);
         glTranslated(-xPos, -yPos, -zPos);
     }
@@ -70,7 +71,7 @@ public class Camera {
         printCameraVariables();
     }
 
-    public Vector4f getVector(){
+    public Vector4f getPositionVector(){
         return new Vector4f((float)xPos, (float)yPos, (float)zPos, 1);
     }
 

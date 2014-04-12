@@ -2,7 +2,7 @@ package model.handlers;
 
 import camera.Camera;
 import model.mapObjects.destructible.EnemyEntity;
-import model.mapObjects.destructible.Shot;
+import org.lwjgl.util.vector.Vector4f;
 
 public class PlayerHandler {
     int maxHp = 100;
@@ -39,13 +39,21 @@ public class PlayerHandler {
         return hp > 0;
     }
 
+    public Vector4f getPlayerPosition() {
+        return camera.getPositionVector();
+    }
+
+    public Camera getCamera() {
+        return camera;
+    }
+
     public void checkForCollisions() {
         checkForEnemyCollisions();
         // checkForObjectCollisions();
     }
 
     private void checkForEnemyCollisions() {
-        EnemyEntity enemyHit = enemyHandler.findEnemyHitByPlayer(camera.getVector());
+        EnemyEntity enemyHit = enemyHandler.findEnemyHitByPlayer(camera.getPositionVector());
         if (enemyHit != null) {
             loseHp(1);
         }
@@ -92,5 +100,11 @@ public class PlayerHandler {
 
     public void resetPosition() {
         camera.resetPosition(); // TODO: Remove in actual gameplay
+    }
+
+    private void updatePlayerPyramid() {
+//        ShapeRenderer.drawPyramid
+        // TODO: Draw pyramid that faces the direction of the player
+        // this will mostly be helpful for the orthographic view displayed to the hud
     }
 }

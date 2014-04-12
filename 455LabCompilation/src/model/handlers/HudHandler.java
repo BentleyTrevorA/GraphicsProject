@@ -1,5 +1,7 @@
 package model.handlers;
 
+import model.Model;
+
 public class HudHandler {
     private ShotsHandler shotsHandler;
     private ScoreHandler scoreHandler;
@@ -7,7 +9,6 @@ public class HudHandler {
     private PlayerHandler playerHandler;
     private HudTextHandler hudTextHandler;
     private HudVisualHandler hudVisualHandler;
-
 
     public HudHandler(ScoreHandler scoreHandler,
                       ShotsHandler shotsHandler,
@@ -28,5 +29,12 @@ public class HudHandler {
         hudTextHandler.drawNumEnemies(enemyHandler.getEnemiesRemaining());
         hudTextHandler.drawHpRemaining(playerHandler.getHp(), playerHandler.getMaxHp());
         hudVisualHandler.drawLife(playerHandler.getPercentLife());
+
+        if(Model.DRAW_MINI_MAP)
+            hudVisualHandler.drawMiniMap(playerHandler.getCamera());
+    }
+
+    public void finishDrawingHud() {
+        hudVisualHandler.cleanupDrawingMiniMap();
     }
 }

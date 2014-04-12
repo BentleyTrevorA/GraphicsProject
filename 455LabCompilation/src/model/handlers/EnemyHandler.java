@@ -30,7 +30,7 @@ public class EnemyHandler {
     public void updateEnemies(Camera camera) {
         for (EnemyEntity enemy : enemies) {
             enemy.updatePosition();
-            enemy.updateTargetPosition(camera);
+//            enemy.updateTargetPosition(camera);
         }
         populateEnemies();
     }

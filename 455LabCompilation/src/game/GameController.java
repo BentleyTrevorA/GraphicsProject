@@ -23,8 +23,8 @@ public class GameController extends LabController {
 
     public static float a = 1f;
     public static float b = 1f;
-    public static float c = 1f;
-    public static float d = 0;
+    public static float c = 0f;
+    public static float d = 0f;
 
     protected void initBase() {
         camera = new Camera();
@@ -58,9 +58,11 @@ public class GameController extends LabController {
         glLoadIdentity();
         glRotated(-90, 1, 0, 0);
 
-        glOrtho(0, LWJGLSandbox.DISPLAY_WIDTH, 0, LWJGLSandbox.DISPLAY_HEIGHT, Model.MIN_MAP_COORDINATE, Model.MAX_MAP_COORDINATE);
-        glTranslated(875, 10, 190);
-        glScaled(.3, 1, .25);
+//        glOrtho(0, LWJGLSandbox.DISPLAY_WIDTH, 0, LWJGLSandbox.DISPLAY_HEIGHT, Model.MIN_MAP_COORDINATE, Model.MAX_MAP_COORDINATE);
+        glOrtho(camera.xPos - 50, camera.xPos + 50, camera.zPos - 50, camera.zPos + 50, Model.MIN_MAP_COORDINATE, Model.MAX_MAP_COORDINATE);
+//        glTranslated(875, 10, 190);
+        glTranslated(a, 10, b);
+        glScaled(c, 1, d);
     }
 
     public void update() {
@@ -115,22 +117,22 @@ public class GameController extends LabController {
             }
 
             //Switch to perspective
-            if (Keyboard.isKeyDown(Keyboard.KEY_P)) {
-                setupPerspectiveMode();
-            }
-            else if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
-                setupOrthographicMode();
-            }
+//            if (Keyboard.isKeyDown(Keyboard.KEY_P)) {
+//                setupPerspectiveMode();
+//            }
+//            else if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
+//                setupOrthographicMode();
+//            }
 
             // Debugging using a, b, c, and d variables
-    //        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d += (1.0/180.f); printLightVariables();}
-    //        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d -= (1.0/180.f); printLightVariables();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { c += 1f; printLightVariables(); setupOrthographicMode();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= 1f; printLightVariables(); setupOrthographicMode();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables(); setupOrthographicMode();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables(); setupOrthographicMode();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables(); setupOrthographicMode();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables(); setupOrthographicMode();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_COMMA)) { d -= .01f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_PERIOD)) { d += .01f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { c += .01f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= .01f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables(); }
+            if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables(); }
         }
     }
 
@@ -147,6 +149,7 @@ public class GameController extends LabController {
             depthBuffer.enableDepthBuffering();
             light.enableLighting();
             model.drawMap();
+            model.drawHud();
         }
         // TODO: Else draw game-over and options to start again (#'s or something)
         glFlush();

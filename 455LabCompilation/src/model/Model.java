@@ -10,6 +10,7 @@ public class Model {
     private static final int NUM_TILES_IN_ONE_DIRECTION = 25;
     public static final int MIN_MAP_COORDINATE = -TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
     public static final int MAX_MAP_COORDINATE = TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
+    public static final boolean DRAW_MINI_MAP = false;
 
     private Camera camera;
     private ScoreHandler scoreHandler;
@@ -49,7 +50,19 @@ public class Model {
         obstacleHandler.drawObstacles();
         enemyHandler.drawEnemies();
         shotsHandler.drawShots();
+    }
+
+    public void drawHud() {
         hudHandler.drawHud();
+        if(DRAW_MINI_MAP) {
+            ShapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION,
+                    textureHandler.getTexture(TextureHandler.STONE_1), textureHandler.getTexture(TextureHandler.STONE_2));
+            ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, textureHandler.getTexture(TextureHandler.STONE_4));
+            obstacleHandler.drawObstacles();
+            enemyHandler.drawEnemies();
+            shotsHandler.drawShots();
+            hudHandler.finishDrawingHud();
+        }
     }
 
     public void addShot() {
