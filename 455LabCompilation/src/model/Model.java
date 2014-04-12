@@ -19,17 +19,23 @@ public class Model {
     private ObstacleHandler obstacleHandler;
     private ShotsHandler shotsHandler;
     private HudHandler hudHandler;
+
+    // Use slick library - IMPORTANT: Have to be initialized AFTER InitGL()
     private TextureHandler textureHandler;
+    private SoundHandler soundHandler;
 
     public Model(Camera camera, int mapNumber, int difficulty) {
         this.camera = camera;
         scoreHandler = new ScoreHandler();
-        textureHandler = new TextureHandler(); // IMPORTANT: Has to happen AFTER InitGL()
-        enemyHandler = new EnemyHandler(scoreHandler, textureHandler);
-        playerHandler = new PlayerHandler(camera, enemyHandler);
+        textureHandler = new TextureHandler();
+        soundHandler = new SoundHandler();
+        enemyHandler = new EnemyHandler(scoreHandler, textureHandler, soundHandler);
+        playerHandler = new PlayerHandler(camera, enemyHandler, soundHandler);
         obstacleHandler = new ObstacleHandler(textureHandler, mapNumber);
-        shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, textureHandler);
+        shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, textureHandler, soundHandler);
         hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler, playerHandler, textureHandler);
+
+        soundHandler.getBackgroundAudio().playAsMusic(1.0f, 1.0f, true);
     }
 
     public void resetGame(int difficulty) {

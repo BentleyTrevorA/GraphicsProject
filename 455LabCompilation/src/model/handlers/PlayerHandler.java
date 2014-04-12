@@ -10,10 +10,14 @@ public class PlayerHandler {
 
     private Camera camera;
     private EnemyHandler enemyHandler;
+    private SoundHandler soundHandler;
+    private boolean hasPlayedDyingSound;
 
-    public PlayerHandler(Camera camera, EnemyHandler enemyHandler) {
+    public PlayerHandler(Camera camera, EnemyHandler enemyHandler, SoundHandler soundHandler) {
         this.camera = camera;
         this.enemyHandler = enemyHandler;
+        this.soundHandler = soundHandler;
+        hasPlayedDyingSound = false;
     }
 
     public int getMaxHp() {
@@ -29,10 +33,17 @@ public class PlayerHandler {
     }
 
     public void loseHp(int hpToLose) {
-        if(hp > 0)
+        if(hp > 0) {
             hp -= hpToLose;
-        if(hp < 0)
+            soundHandler.getSoundEffect(SoundHandler.ENEMY_HIT2).playAsSoundEffect(1, 1, false);
+        }
+        if(hp <= 0) {
             hp = 0;
+            if(!hasPlayedDyingSound) {
+                soundHandler.getSoundEffect(SoundHandler.ENEMY_DIE1).playAsSoundEffect(1, 1, false);
+                hasPlayedDyingSound = true;
+            }
+        }
     }
 
     public boolean isAlive() {

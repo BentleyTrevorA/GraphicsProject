@@ -16,6 +16,7 @@ public class ShotsHandler {
     private EnemyHandler enemyHandler;
     private ObstacleHandler obstacleHandler;
     private TextureHandler textureHandler;
+    private SoundHandler soundHandler;
 
     private Collection<Shot> shots;
     private Set<Shot> shotsToRemove;
@@ -23,10 +24,15 @@ public class ShotsHandler {
     private long lastShotTimeMilliseconds;
     private float timeTillNextShot; // TODO: Display how long until you can shoot again
 
-    public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler, TextureHandler textureHandler) {
+    public ShotsHandler(ObstacleHandler obstacleHandler,
+                        EnemyHandler enemyHandler,
+                        TextureHandler textureHandler,
+                        SoundHandler soundHandler) {
         this.obstacleHandler = obstacleHandler;
         this.enemyHandler = enemyHandler;
         this.textureHandler = textureHandler;
+        this.soundHandler = soundHandler;
+
         shots = new HashSet<Shot>();
         lastShotTimeMilliseconds = 0;
     }
@@ -52,8 +58,8 @@ public class ShotsHandler {
                 Shot shot = new Shot(camera);
                 shot.setTextureHandler(textureHandler);
                 shots.add(shot);
+                soundHandler.getSoundEffect(SoundHandler.SHOT4).playAsSoundEffect(1, 1, false);
                 lastShotTimeMilliseconds = TimeHandler.getCurrentTimeInMilliseconds();
-
             }
         }
     }

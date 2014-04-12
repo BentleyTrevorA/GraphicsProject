@@ -16,15 +16,19 @@ import java.util.HashSet;
 public class EnemyHandler {
     private ScoreHandler scoreHandler;
     private TextureHandler textureHandler;
+    private SoundHandler soundHandler;
 
     private Collection<EnemyEntity> enemies;
     private int maxEnemies = 30;
     private int counter = 0;
 
-    public EnemyHandler(ScoreHandler scoreHandler, TextureHandler textureHandler) {
+    public EnemyHandler(ScoreHandler scoreHandler,
+                        TextureHandler textureHandler,
+                        SoundHandler soundHandler) {
         enemies = new HashSet<EnemyEntity>();
         this.scoreHandler = scoreHandler;
         this.textureHandler = textureHandler;
+        this.soundHandler = soundHandler;
 //        populateTestEnemies();/
     }
 
@@ -95,6 +99,7 @@ public class EnemyHandler {
 
     public void damageEnemy(EnemyEntity enemy, Shot shot) {
         enemy.loseHp(shot.getDamage());
+        soundHandler.getSoundEffect(SoundHandler.ENEMY_HIT1).playAsSoundEffect(1, 1, false);
 
         if (enemy.isDead()) {
             enemies.remove(enemy);
