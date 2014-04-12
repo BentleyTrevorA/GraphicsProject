@@ -39,14 +39,28 @@ public class GameController extends LabController {
 
     // This method is called to "resize" the viewport to match the screen.
     public void resizeGL() {
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        // IMPORTANT: DO NOT use 0 for near plane - it screws up depth_testing
-        gluPerspective(80.0f, LWJGLSandbox.DISPLAY_WIDTH / (float) LWJGLSandbox.DISPLAY_HEIGHT, 1.0f, 700f);
+        setupPerspectiveMode();
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
         glViewport(0, 0, Display.getDisplayMode().getWidth(), Display.getDisplayMode().getHeight());
+    }
+
+    private void setupPerspectiveMode() {
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        // IMPORTANT: DO NOT use 0 for near plane - it screws up depth_testing
+        gluPerspective(80.0f, LWJGLSandbox.DISPLAY_WIDTH / (float) LWJGLSandbox.DISPLAY_HEIGHT, 1.0f, 700f);
+    }
+
+    private void setupOrthographicMode() {
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glRotated(-90, 1, 0, 0);
+
+        glOrtho(0, LWJGLSandbox.DISPLAY_WIDTH, 0, LWJGLSandbox.DISPLAY_HEIGHT, Model.MIN_MAP_COORDINATE, Model.MAX_MAP_COORDINATE);
+        glTranslated(875, 10, 190);
+        glScaled(.3, 1, .25);
     }
 
     public void update() {
@@ -100,15 +114,23 @@ public class GameController extends LabController {
                 model.addShot();
             }
 
+            //Switch to perspective
+            if (Keyboard.isKeyDown(Keyboard.KEY_P)) {
+                setupPerspectiveMode();
+            }
+            else if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
+                setupOrthographicMode();
+            }
+
             // Debugging using a, b, c, and d variables
     //        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d += (1.0/180.f); printLightVariables();}
     //        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d -= (1.0/180.f); printLightVariables();}
-    //        if (Keyboard.isKeyDown(Keyboard.KEY_O)) { c += 1f; printLightVariables();}
-    //        if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= 1f; printLightVariables();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables();}
-            if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { c += 1f; printLightVariables(); setupOrthographicMode();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= 1f; printLightVariables(); setupOrthographicMode();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables(); setupOrthographicMode();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables(); setupOrthographicMode();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables(); setupOrthographicMode();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables(); setupOrthographicMode();}
         }
     }
 

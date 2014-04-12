@@ -7,8 +7,10 @@ import org.newdawn.slick.opengl.Texture;
 
 public abstract class EnemyEntity extends Entity {
     protected static Vector3f defaultColor = Colors.RED;
-    protected int pointValue = 10;
-    private double defaultSpeed = .3;
+    protected static int defaultPointValue = 10;
+    private static double defaultSpeed = .3;
+
+    protected int pointValue;
 
     public EnemyEntity(ShapeType type, double scale, double x, double z) {
         super(type, scale, x, 0, z, defaultColor, false);
@@ -54,5 +56,10 @@ public abstract class EnemyEntity extends Entity {
             value = Math.random();
         }
         return value * topSpeed;
+    }
+
+    protected void updatePointValue() {
+        pointValue = defaultPointValue * hp;
+        System.out.println("ENEMY: " + pointValue);
     }
 }

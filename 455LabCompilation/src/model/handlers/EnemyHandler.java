@@ -18,12 +18,13 @@ public class EnemyHandler {
     private TextureHandler textureHandler;
 
     private Collection<EnemyEntity> enemies;
+    private int maxEnemies = 30;
 
     public EnemyHandler(ScoreHandler scoreHandler, TextureHandler textureHandler) {
         enemies = new HashSet<EnemyEntity>();
         this.scoreHandler = scoreHandler;
         this.textureHandler = textureHandler;
-//        populateTestEnemies();
+//        populateTestEnemies();/
     }
 
     public void updateEnemies(Camera camera) {
@@ -47,12 +48,13 @@ public class EnemyHandler {
         int xScale = Model.MAX_MAP_COORDINATE;
         int zScale = Model.MAX_MAP_COORDINATE;
 
-        while(enemies.size() < 30) {
+        while(enemies.size() < maxEnemies) {
             EnemyEntity test = new CubeEnemy(Math.random() * xScale, Math.random() * zScale, textureHandler);
-//            test.setHp(6 - i);
-//            test.setPointValue(test.getHp() * 10);
+            if(enemies.size() % 5 == 0) {
+                test.setHp(2);
+            }
             enemies.add(test);
-            if(enemies.size() % 3 == 1)
+            if(enemies.size() % 2 == 1)
                 xScale *= -1;
             if(enemies.size() % 4 == 1)
                 zScale *= -1;
@@ -80,7 +82,8 @@ public class EnemyHandler {
 
     public EnemyEntity findEnemyHitByPlayer(Vector4f position) {
         for (EnemyEntity enemy : enemies) {
-            if (enemy.isCollidingWith(position)) {
+            Vector4f myPosition = new Vector4f(position.x, position.y, position.z, 1);
+            if (enemy.isCollidingWith(myPosition)) {
                 return enemy;
             }
         }

@@ -314,7 +314,8 @@ public abstract class MapObject {
     }
 
     public String toString() {
-        String output = "Type: " + type;
+        String output = "Class: " + this.getClass().getSimpleName();
+        output += "\nType: " + type;
         output += "\nX: " + x;
         output += "\nY: " + y;
         output += "\nZ: " + z;
