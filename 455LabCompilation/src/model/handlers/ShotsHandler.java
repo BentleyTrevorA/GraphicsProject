@@ -10,19 +10,25 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ShotsHandler {
+    private static int maxShots = 10;
+    private static int shotDelayMilliseconds = 125;
+
     private EnemyHandler enemyHandler;
     private ObstacleHandler obstacleHandler;
     private TextureHandler textureHandler;
 
     private Collection<Shot> shots;
-    private int maxShots = 10;
     private Set<Shot> shotsToRemove;
+
+    private long lastShotTimeMilliseconds;
+    private float timeTillNextShot; // TODO: Display how long until you can shoot again
 
     public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler, TextureHandler textureHandler) {
         this.obstacleHandler = obstacleHandler;
         this.enemyHandler = enemyHandler;
         this.textureHandler = textureHandler;
         shots = new HashSet<Shot>();
+        lastShotTimeMilliseconds = 0;
     }
 
     public int getShotsRemaining() {
@@ -40,10 +46,15 @@ public class ShotsHandler {
 
     // TODO: Use Calendar.getSeconds() to only let you shoot every so often.
     public void addShot(Camera camera) {
-        if (shots.size() < maxShots) {
-            Shot shot = new Shot(camera);
-            shot.setTextureHandler(textureHandler);
-            shots.add(shot);
+        long timePassed = TimeHandler.getCurrentTimeInMilliseconds() - lastShotTimeMilliseconds;
+        if (timePassed > shotDelayMilliseconds) {
+            if (shots.size() < maxShots) {
+                Shot shot = new Shot(camera);
+                shot.setTextureHandler(textureHandler);
+                shots.add(shot);
+                lastShotTimeMilliseconds = TimeHandler.getCurrentTimeInMilliseconds();
+
+            }
         }
     }
 

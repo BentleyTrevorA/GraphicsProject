@@ -3,10 +3,9 @@ package model.mapObjects.destructible;
 import camera.Camera;
 import model.Colors;
 import model.Model;
+import model.handlers.TimeHandler;
 import model.mapObjects.ShapeType;
 import org.lwjgl.util.vector.Vector3f;
-
-import java.util.Calendar;
 
 public class Shot extends DestructibleObject {
     protected static double radius = 1;
@@ -40,7 +39,7 @@ public class Shot extends DestructibleObject {
         dz = -2 * Math.cos(Math.toRadians(camera.rotateAngle));
 
         alive = true;
-        timeOfBirth = getCurrentTimeInSeconds();
+        timeOfBirth = TimeHandler.getCurrentTimeInSeconds();
     }
 
     public int getDamage() {
@@ -55,7 +54,7 @@ public class Shot extends DestructibleObject {
 
     // Checks if lifespan of shot is over
     public void checkShotLife() {
-        if (getCurrentTimeInSeconds() - timeOfBirth >= secToLive)
+        if (TimeHandler.getCurrentTimeInSeconds() - timeOfBirth >= secToLive)
             kill();
     }
 
@@ -65,9 +64,5 @@ public class Shot extends DestructibleObject {
 
     public boolean isDead() {
         return !alive;
-    }
-
-    private int getCurrentTimeInSeconds() {
-        return Calendar.getInstance().get(Calendar.SECOND);
     }
 }
