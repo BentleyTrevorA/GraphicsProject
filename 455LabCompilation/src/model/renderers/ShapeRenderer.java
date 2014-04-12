@@ -12,7 +12,9 @@ import org.newdawn.slick.opengl.TextureLoader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glEnd;
@@ -21,30 +23,46 @@ import static org.lwjgl.opengl.GL11.glVertex3d;
 public class ShapeRenderer {
 
     private static WireFrame model = new HouseModel();
-    public Texture EnemyCubeHP6, EnemyCubeHP5,EnemyCubeHP4, EnemyCubeHP3, EnemyCubeHP2, EnemyCubeHP1;
-    public Texture stone1, stone2, stone3, stone4;
     public String imgLocation = "img/textures/";
+    public Map<Integer, Texture> textures;
+
+    public static final int ENEMY_HP_6 = 0;
+    public static final int ENEMY_HP_5 = 1;
+    public static final int ENEMY_HP_4 = 2;
+    public static final int ENEMY_HP_3 = 3;
+    public static final int ENEMY_HP_2 = 4;
+    public static final int ENEMY_HP_1 = 5;
+    public static final int STONE_1 = 6;
+    public static final int STONE_2 = 7;
+    public static final int STONE_3 = 8;
+    public static final int STONE_4 = 9;
+
+    public ShapeRenderer() {
+        loadTextures();
+    }
 
     public void loadTextures() {
         try {
-            EnemyCubeHP6 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar1.png"));
-            EnemyCubeHP5 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar2.png"));
-            EnemyCubeHP4 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar3.png"));
-            EnemyCubeHP3 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar4.png"));
-            EnemyCubeHP2 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar5.png"));
-            EnemyCubeHP1 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar6.png"));
+            textures = new HashMap<Integer, Texture>();
 
-            stone1 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone1.png"));
-            stone2 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone2.png"));
-            stone3 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone3.png"));
-            stone4 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone4.png"));
+            textures.put(ENEMY_HP_6, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar1.png")));
+            textures.put(ENEMY_HP_5, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar2.png")));
+            textures.put(ENEMY_HP_4, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar3.png")));
+            textures.put(ENEMY_HP_3, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar4.png")));
+            textures.put(ENEMY_HP_2, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar5.png")));
+            textures.put(ENEMY_HP_1, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar6.png")));
+
+            textures.put(STONE_1, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone1.png")));
+            textures.put(STONE_2, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone2.png")));
+            textures.put(STONE_3, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone3.png")));
+            textures.put(STONE_4, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone4.png")));
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
+    public void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
         glColor3f(houseColor.x, houseColor.y, houseColor.z);
         glBegin(GL_POLYGON);
         {
@@ -99,7 +117,7 @@ public class ShapeRenderer {
      * @param rZ    - rotation about z
      * @param color - color
      */
-    public static void drawQuad(double sX, double sY, double sZ,
+    public void drawQuad(double sX, double sY, double sZ,
                                 double tX, double tY, double tZ,
                                 double angle, int rX, int rY, int rZ,
                                 Vector3f color, boolean normalize) {
@@ -138,15 +156,15 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public static void drawWalls(double width, double height, Vector3f color) {
+    public void drawWalls(double width, double height, Vector3f color) {
         drawQuad(width, height, 1, -width / 2, 0, -width / 2, 0, 0, 1, 0, color, true); // Front
         drawQuad(width, height, 1, width / 2, 0, width / 2, 180, 0, 1, 0, color, true); // Back
         drawQuad(width, height, 1, width / 2, 0, -width / 2, -90, 0, 1, 0, color, true); // Right
         drawQuad(width, height, 1, -width / 2, 0, width / 2, 90, 0, 1, 0, color, true); // Left
     }
 
-    // Draaws floor with normals
-    public static void drawFloorTiles(double tileSize, int numTilesInOneDirection) {
+    // Draws floor with normals
+    public void drawFloorTiles(double tileSize, int numTilesInOneDirection) {
         for (int x = 0; x < numTilesInOneDirection + 1; x++) {
             for (int z = 0; z < numTilesInOneDirection + 1; z++) {
                 Vector3f tileColor;
@@ -174,7 +192,7 @@ public class ShapeRenderer {
      * @param z       - z offset
      * @param outline - draw the shape outline
      */
-    public static void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
         double halfScale = .5;
         double height = Math.sqrt(halfScale * halfScale + halfScale * halfScale);
         glColor3f(color.x, color.y, color.z);
@@ -278,8 +296,8 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public static void drawCube(MapObject object) {
-        if(object.getTextureFilename() != null) {
+    public void drawCube(MapObject object) {
+        if(object.getTextureNumber() > 0) {
             drawCubeWithTexture(object);
             return;
         }
@@ -386,154 +404,138 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public static void drawCubeWithTexture(MapObject object) {
-        Texture texture = null;
+    public void drawCubeWithTexture(MapObject object) {
+        Texture texture = textures.get(object.getTextureNumber());
 
-        String textureFilename = object.getTextureFilename();
-        try {
-            FileInputStream stream = new FileInputStream("img/textures/" + object.getTextureFilename());
-            texture = TextureLoader.getTexture("PNG", new FileInputStream("img/textures/" + object.getTextureFilename()));
+        double x = object.getX();
+        double y = object.getY();
+        double z = object.getZ();
+        double scale = object.getScale();
+        boolean outline = object.getOutlined();
+
+        glColor3f(1, 1, 1);
+
+        glPushMatrix();
+        glTranslated(x, y, z);
+        glScaled(scale, scale, scale);
+
+        glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
+        glEnable(GL_TEXTURE_2D);
+        glBegin(GL_QUADS);
+        {
+            // For greater shading variation, Each vertex points out in all 3 directions
+            // if vertex value is 0, normal is -1, if value is 1, normal is 1
+            // Front
+            glNormal3d(-1, -1, 1);
+            glTexCoord2d(0, texture.getHeight());
+            glVertex3d(0, 0, 1); // BL
+
+            glNormal3d(1, -1, 1);
+            glTexCoord2d(texture.getWidth(), texture.getHeight());
+            glVertex3d(1, 0, 1); // BR
+
+            glNormal3d(1, 1, 1);
+            glTexCoord2d(texture.getWidth(), 0);
+            glVertex3d(1, 1, 1); // TR
+
+            glNormal3d(-1, 1, 1);
+            glTexCoord2d(0, 0);
+            glVertex3d(0, 1, 1); // TL
+
+            // Right
+            glNormal3d(1, -1, 1);
+            glTexCoord2d(0, texture.getHeight());
+            glVertex3d(1, 0, 1);
+
+            glNormal3d(1, -1, -1);
+            glTexCoord2d(texture.getWidth(), texture.getHeight());
+            glVertex3d(1, 0, 0);
+
+            glNormal3d(1, 1, -1);
+            glTexCoord2d(texture.getWidth(), 0);
+            glVertex3d(1, 1, 0);
+
+            glNormal3d(1, 1, 1);
+            glTexCoord2d(0, 0);
+            glVertex3d(1, 1, 1);
+
+            // Back
+            glNormal3d(1, -1, -1);
+            glTexCoord2d(0, texture.getHeight());
+            glVertex3d(1, 0, 0);
+
+            glNormal3d(-1, -1, -1);
+            glTexCoord2d(texture.getWidth(), texture.getHeight());
+            glVertex3d(0, 0, 0);
+
+            glNormal3d(-1, 1, -1);
+            glTexCoord2d(texture.getWidth(), 0);
+            glVertex3d(0, 1, 0);
+
+            glNormal3d(1, 1, -1);
+            glTexCoord2d(0, 0);
+            glVertex3d(1, 1, 0);
+
+            // Left
+            glNormal3d(-1, -1, -1);
+            glTexCoord2d(0, texture.getHeight());
+            glVertex3d(0, 0, 0);
+
+            glNormal3d(-1, -1, 1);
+            glTexCoord2d(texture.getWidth(), texture.getHeight());
+            glVertex3d(0, 0, 1);
+
+            glNormal3d(-1, 1, 1);
+            glTexCoord2d(texture.getWidth(), 0);
+            glVertex3d(0, 1, 1);
+
+            glNormal3d(-1, 1, -1);
+            glTexCoord2d(0, 0);
+            glVertex3d(0, 1, 0);
+
+            // Bottom
+            glNormal3d(-1, -1, -1);
+            glTexCoord2d(0, texture.getHeight());
+            glVertex3d(0, 0, 0);
+
+            glNormal3d(1, -1, -1);
+            glTexCoord2d(texture.getWidth(), texture.getHeight());
+            glVertex3d(1, 0, 0);
+
+            glNormal3d(1, -1, 1);
+            glTexCoord2d(texture.getWidth(), 0);
+            glVertex3d(1, 0, 1);
+
+            glNormal3d(-1, -1, 1);
+            glTexCoord2d(0, 0);
+            glVertex3d(0, 0, 1);
+
+            // Top
+            glNormal3d(-1, 1, -1);
+            glTexCoord2d(0, texture.getHeight());
+            glVertex3d(0, 1, 1);
+
+            glNormal3d(-1, 1, 1);
+            glTexCoord2d(texture.getWidth(), texture.getHeight());
+            glVertex3d(1, 1, 1);
+
+            glNormal3d(1, 1, 1);
+            glTexCoord2d(texture.getWidth(), 0);
+            glVertex3d(1, 1, 0);
+
+            glNormal3d(1, 1, -1);
+            glTexCoord2d(0, 0);
+            glVertex3d(0, 1, 0);
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture
 
-        if(texture != null) {
-            double x = object.getX();
-            double y = object.getY();
-            double z = object.getZ();
-            double scale = object.getScale();
-            boolean outline = object.getOutlined();
-
-            glColor3f(1, 1, 1);
-
-            glPushMatrix();
-            glTranslated(x, y, z);
-            glScaled(scale, scale, scale);
-
-            glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
-
-            glEnable(GL_TEXTURE_2D);
-            glBegin(GL_QUADS);
-            {
-                // For greater shading variation, Each vertex points out in all 3 directions
-                // if vertex value is 0, normal is -1, if value is 1, normal is 1
-                // Front
-                glNormal3d(-1, -1, 1);
-                glTexCoord2d(0, texture.getHeight());
-                glVertex3d(0, 0, 1); // BL
-
-                glNormal3d(1, -1, 1);
-                glTexCoord2d(texture.getWidth(), texture.getHeight());
-                glVertex3d(1, 0, 1); // BR
-
-                glNormal3d(1, 1, 1);
-                glTexCoord2d(texture.getWidth(), 0);
-                glVertex3d(1, 1, 1); // TR
-
-                glNormal3d(-1, 1, 1);
-                glTexCoord2d(0, 0);
-                glVertex3d(0, 1, 1); // TL
-
-                // Right
-                glNormal3d(1, -1, 1);
-                glTexCoord2d(0, texture.getHeight());
-                glVertex3d(1, 0, 1);
-
-                glNormal3d(1, -1, -1);
-                glTexCoord2d(texture.getWidth(), texture.getHeight());
-                glVertex3d(1, 0, 0);
-
-                glNormal3d(1, 1, -1);
-                glTexCoord2d(texture.getWidth(), 0);
-                glVertex3d(1, 1, 0);
-
-                glNormal3d(1, 1, 1);
-                glTexCoord2d(0, 0);
-                glVertex3d(1, 1, 1);
-
-                // Back
-                glNormal3d(1, -1, -1);
-                glTexCoord2d(0, texture.getHeight());
-                glVertex3d(1, 0, 0);
-
-                glNormal3d(-1, -1, -1);
-                glTexCoord2d(texture.getWidth(), texture.getHeight());
-                glVertex3d(0, 0, 0);
-
-                glNormal3d(-1, 1, -1);
-                glTexCoord2d(texture.getWidth(), 0);
-                glVertex3d(0, 1, 0);
-
-                glNormal3d(1, 1, -1);
-                glTexCoord2d(0, 0);
-                glVertex3d(1, 1, 0);
-
-                // Left
-                glNormal3d(-1, -1, -1);
-                glTexCoord2d(0, texture.getHeight());
-                glVertex3d(0, 0, 0);
-
-                glNormal3d(-1, -1, 1);
-                glTexCoord2d(texture.getWidth(), texture.getHeight());
-                glVertex3d(0, 0, 1);
-
-                glNormal3d(-1, 1, 1);
-                glTexCoord2d(texture.getWidth(), 0);
-                glVertex3d(0, 1, 1);
-
-                glNormal3d(-1, 1, -1);
-                glTexCoord2d(0, 0);
-                glVertex3d(0, 1, 0);
-
-                // Bottom
-                glNormal3d(-1, -1, -1);
-                glTexCoord2d(0, texture.getHeight());
-                glVertex3d(0, 0, 0);
-
-                glNormal3d(1, -1, -1);
-                glTexCoord2d(texture.getWidth(), texture.getHeight());
-                glVertex3d(1, 0, 0);
-
-                glNormal3d(1, -1, 1);
-                glTexCoord2d(texture.getWidth(), 0);
-                glVertex3d(1, 0, 1);
-
-                glNormal3d(-1, -1, 1);
-                glTexCoord2d(0, 0);
-                glVertex3d(0, 0, 1);
-
-                // Top
-                glNormal3d(-1, 1, -1);
-                glTexCoord2d(0, texture.getHeight());
-                glVertex3d(0, 1, 1);
-
-                glNormal3d(-1, 1, 1);
-                glTexCoord2d(texture.getWidth(), texture.getHeight());
-                glVertex3d(1, 1, 1);
-
-                glNormal3d(1, 1, 1);
-                glTexCoord2d(texture.getWidth(), 0);
-                glVertex3d(1, 1, 0);
-
-                glNormal3d(1, 1, -1);
-                glTexCoord2d(0, 0);
-                glVertex3d(0, 1, 0);
-            }
-            glEnd();
-            glDisable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture
-            texture.release();
-
-            drawCubeOutline(outline);
-            glPopMatrix();
-        }
-        else {
-            System.err.println("Texture failed " + textureFilename);
-        }
+        drawCubeOutline(outline);
+        glPopMatrix();
     }
 
-    public static void drawCubeOutline(boolean outline) {
+    public void drawCubeOutline(boolean outline) {
         if (outline) {
             glColor3f(0, 0, 0);
             glBegin(GL_LINES);
@@ -581,7 +583,7 @@ public class ShapeRenderer {
         }
     }
 
-    public static void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color) {
+    public void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color) {
         glColor3f(color.x, color.y, color.z);
         glPushMatrix();
         glTranslated(x, y, z);

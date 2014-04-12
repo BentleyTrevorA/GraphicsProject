@@ -4,12 +4,18 @@ import model.Colors;
 import model.mapObjects.nondestructible.CubeObstacle;
 import model.mapObjects.nondestructible.PyramidObstacle;
 import model.mapObjects.nondestructible.SphereObstacle;
+import model.renderers.ShapeRenderer;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
 public class MapObstaclePopulator {
+    private ShapeRenderer shapeRenderer;
+
+    public MapObstaclePopulator(ShapeRenderer shapeRenderer) {
+        this.shapeRenderer = shapeRenderer;
+    }
 
     public Collection<MapObject> createMap(int mapNumber) {
         Collection<MapObject> map = new HashSet<MapObject>();
@@ -32,33 +38,33 @@ public class MapObstaclePopulator {
     }
 
     private Collection<MapObject> createMap1(Collection<MapObject> map) {
-        map.add(new PyramidObstacle(100, 0, 0, Colors.CYAN));
-        map.add(new PyramidObstacle(-100, 0, 0, Colors.GREEN));
-        map.add(new PyramidObstacle(0, 0, 100, Colors.ORANGE));
-        map.add(new PyramidObstacle(0, 0, -100, Colors.PURPLE));
+        map.add(new PyramidObstacle(100, 0, 0, Colors.CYAN, shapeRenderer));
+        map.add(new PyramidObstacle(-100, 0, 0, Colors.GREEN, shapeRenderer));
+        map.add(new PyramidObstacle(0, 0, 100, Colors.ORANGE, shapeRenderer));
+        map.add(new PyramidObstacle(0, 0, -100, Colors.PURPLE, shapeRenderer));
 
-        map.add(new CubeObstacle(-50, 25, -50, Colors.YELLOW));
-        map.add(new CubeObstacle(50, 0, 50, Colors.ORANGE));
+        map.add(new CubeObstacle(-50, 25, -50, Colors.YELLOW, shapeRenderer));
+        map.add(new CubeObstacle(50, 0, 50, Colors.ORANGE, shapeRenderer));
 
-        map.add(new SphereObstacle(0, 25, 0, Colors.YELLOW));
+        map.add(new SphereObstacle(0, 25, 0, Colors.YELLOW, shapeRenderer));
         return map;
     }
 
     private Collection<MapObject> createTestCollisionMap1(Collection<MapObject> map) {
-        map.add(new CubeObstacle(0, 0, -50));
-        map.add(new CubeObstacle(50, 0, 0));
-        map.add(new CubeObstacle(100, 0, -50));
-        map.add(new CubeObstacle(150, 0, 0));
-        map.add(new CubeObstacle(0, 0, 50));
+        map.add(new CubeObstacle(0, 0, -50, shapeRenderer));
+        map.add(new CubeObstacle(50, 0, 0, shapeRenderer));
+        map.add(new CubeObstacle(100, 0, -50, shapeRenderer));
+        map.add(new CubeObstacle(150, 0, 0, shapeRenderer));
+        map.add(new CubeObstacle(0, 0, 50, shapeRenderer));
 
         return map;
     }
 
     private Collection<MapObject> createTestCollisionMap2(Collection<MapObject> map) {
-        map.add(new CubeObstacle(50, -50, 0, 0));
-        map.add(new CubeObstacle(50, 50, 0, 0));
-        map.add(new CubeObstacle(50, 0, 0, -50));
-        map.add(new CubeObstacle(50, 0, 0, 50));
+        map.add(new CubeObstacle(50, -50, 0, 0, shapeRenderer));
+        map.add(new CubeObstacle(50, 50, 0, 0, shapeRenderer));
+        map.add(new CubeObstacle(50, 0, 0, -50, shapeRenderer));
+        map.add(new CubeObstacle(50, 0, 0, 50, shapeRenderer));
 
         return map;
     }

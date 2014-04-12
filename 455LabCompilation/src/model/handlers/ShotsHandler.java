@@ -4,6 +4,7 @@ import camera.Camera;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.EnemyEntity;
+import model.renderers.ShapeRenderer;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -12,14 +13,16 @@ import java.util.Set;
 public class ShotsHandler {
     private EnemyHandler enemyHandler;
     private ObstacleHandler obstacleHandler;
+    private ShapeRenderer shapeRenderer;
 
     private Collection<Shot> shots;
     private int maxShots = 1;
     private Set<Shot> shotsToRemove;
 
-    public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler) {
+    public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler, ShapeRenderer shapeRenderer) {
         this.obstacleHandler = obstacleHandler;
         this.enemyHandler = enemyHandler;
+        this.shapeRenderer = shapeRenderer;
         shots = new HashSet<Shot>();
     }
 
@@ -38,7 +41,9 @@ public class ShotsHandler {
 
     public void addShot(Camera camera) {
         if (shots.size() < maxShots) {
-            shots.add(new Shot(camera));
+            Shot shot = new Shot(camera);
+            shot.setShapeRenderer(shapeRenderer);
+            shots.add(shot);
         }
     }
 

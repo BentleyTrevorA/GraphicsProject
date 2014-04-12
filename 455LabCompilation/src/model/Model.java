@@ -17,13 +17,15 @@ public class Model {
     private ObstacleHandler obstacleHandler;
     private ShotsHandler shotsHandler;
     private HudHandler hudHandler;
+    private ShapeRenderer shapeRenderer;
 
     public Model(Camera camera, int mapNumber) {
         this.camera = camera;
         scoreHandler = new ScoreHandler();
-        enemyHandler = new EnemyHandler(scoreHandler);
-        obstacleHandler = new ObstacleHandler(mapNumber);
-        shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler);
+        shapeRenderer = new ShapeRenderer();
+        enemyHandler = new EnemyHandler(scoreHandler, shapeRenderer);
+        obstacleHandler = new ObstacleHandler(shapeRenderer, mapNumber);
+        shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, shapeRenderer);
         hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler);
     }
 
@@ -33,8 +35,8 @@ public class Model {
     }
 
     public void drawMap() {
-        ShapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION); // Makes floor pink
-        ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE);
+        shapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION); // Makes floor pink
+        shapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE);
 
         obstacleHandler.drawObstacles();
         enemyHandler.drawEnemies();

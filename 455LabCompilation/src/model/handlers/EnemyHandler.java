@@ -4,19 +4,22 @@ import camera.Camera;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
+import model.renderers.ShapeRenderer;
 
 import java.util.Collection;
 import java.util.HashSet;
 
 public class EnemyHandler {
     private ScoreHandler scoreHandler;
+    private ShapeRenderer shapeRenderer;
 
     private Collection<EnemyEntity> enemies;
 
-    public EnemyHandler(ScoreHandler scoreHandler) {
+    public EnemyHandler(ScoreHandler scoreHandler, ShapeRenderer shapeRenderer) {
         enemies = new HashSet<EnemyEntity>();
-        populateTestEnemies();
         this.scoreHandler = scoreHandler;
+        this.shapeRenderer = shapeRenderer;
+        populateTestEnemies();
     }
 
     public void updateEnemies(Camera camera) {
@@ -28,9 +31,9 @@ public class EnemyHandler {
     }
 
     public void populateTestEnemies() {
-        for(int i=0; i<1; i++)
+        for(int i=0; i<6; i++)
         {
-            EnemyEntity test = new CubeEnemy(i * 15, i * 15);
+            EnemyEntity test = new CubeEnemy(i * 15, i * 15, shapeRenderer);
             test.setHp(6 - i);
             enemies.add(test);
         }

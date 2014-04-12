@@ -45,6 +45,7 @@ public class LWJGLSandbox {
         //OpenGL
         initGL();
         c.resizeGL();
+        c.setupAfterInitGL();
     }
 
     public void destroy() {

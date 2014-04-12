@@ -32,9 +32,12 @@ public class GameController extends LabController {
 
     protected void initBase() {
         camera = new Camera();
-        model = new Model(camera, map);
         depthBuffer = new DepthBuffer();
         light = new Lighting();
+    }
+
+    public void setupAfterInitGL() {
+        model = new Model(camera, map);
     }
 
     // This method is called to "resize" the viewport to match the screen.

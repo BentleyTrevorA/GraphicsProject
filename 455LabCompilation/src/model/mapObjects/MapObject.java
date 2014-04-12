@@ -19,7 +19,8 @@ public abstract class MapObject {
     protected Vector3f color;        // Color of object
     protected boolean outline;       // Draw outline of object
     protected ShapeType type;        // Type of object
-    protected String textureFile;    // Texture of object
+    protected int texture;           // Texture of object
+    protected ShapeRenderer shapeRenderer; // Draws all the shapes
 
     // Collision Variables
     public static final int X_PLANE = 0;
@@ -51,23 +52,28 @@ public abstract class MapObject {
 
         this.color = color;
         this.outline = outline;
+        texture = -1;
+        shapeRenderer = null;
     }
 
     public void render() {
-        switch (type) {
-            case CUBE:
-                ShapeRenderer.drawCubeWithTexture(this);
-                break;
-            case PYRAMID:
-                ShapeRenderer.drawPyramid(scale, x, y, z, color, outline);
-                break;
-            case SPHERE:
-                ShapeRenderer.drawSphere(scale, this.x, this.y, this.z, slices, stacks, color);
-                break;
-            case PLANE:
-                break;
-            default:
-                break;
+        if(shapeRenderer != null)
+        {
+            switch (type) {
+                case CUBE:
+                    shapeRenderer.drawCubeWithTexture(this);
+                    break;
+                case PYRAMID:
+                    shapeRenderer.drawPyramid(scale, x, y, z, color, outline);
+                    break;
+                case SPHERE:
+                    shapeRenderer.drawSphere(scale, this.x, this.y, this.z, slices, stacks, color);
+                    break;
+                case PLANE:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -261,8 +267,8 @@ public abstract class MapObject {
         return type;
     }
 
-    public String getTextureFilename() {
-        return textureFile;
+    public int getTextureNumber() {
+        return texture;
     }
 
     /**************** SETTERS *********************/
@@ -278,8 +284,12 @@ public abstract class MapObject {
         this.dz = dz;
     }
 
-    public void setTextureFile(String textureFile) {
-        this.textureFile = textureFile;
+    public void setShapeRenderer(ShapeRenderer shapeRenderer) {
+        this.shapeRenderer = shapeRenderer;
+    }
+
+    public void setTexture(int texture) {
+        this.texture = texture;
     }
 
     public String toString() {

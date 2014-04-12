@@ -129,6 +129,10 @@ public abstract class LabController {
         fogDensity = 1;
     }
 
+    public void setupAfterInitGL() {
+
+    }
+
     public void init() {
     }
 
