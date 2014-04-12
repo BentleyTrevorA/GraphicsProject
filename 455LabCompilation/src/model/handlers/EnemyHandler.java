@@ -1,6 +1,6 @@
 package model.handlers;
 
-import game.Shot;
+import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
 import model.mapObjects.destructible.SphereEnemy;
@@ -38,7 +38,7 @@ public class EnemyHandler {
 
     public EnemyEntity findEnemyHitByShot(Shot shot) {
         for (EnemyEntity enemy : enemies) {
-            if (enemy.isCollidingWith(shot.x, shot.y, shot.z)) {
+            if (enemy.isCollidingWith(shot)) {
                 return enemy;
             }
         }

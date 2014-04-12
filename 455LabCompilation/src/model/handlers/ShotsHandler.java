@@ -1,12 +1,10 @@
 package model.handlers;
 
 import camera.Camera;
-import game.Shot;
-import model.Colors;
+import model.mapObjects.destructible.Shot;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.EnemyEntity;
 import model.renderers.ShapeRenderer;
-import org.lwjgl.util.vector.Vector3f;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,7 +17,6 @@ public class ShotsHandler {
     private Collection<Shot> shots;
     private int maxShots = 1;
     private Set<Shot> shotsToRemove;
-    private Vector3f shotColor = Colors.PINK; // TODO: Move to shot
 
     public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler) {
         this.obstacleHandler = obstacleHandler;
@@ -36,7 +33,7 @@ public class ShotsHandler {
      * *********************************************/
     public void drawShots() {
         for (Shot shot : shots) {
-            ShapeRenderer.drawSphere(shot.size, shot.x, shot.y, shot.z, shot.slices, shot.stacks, shotColor);
+            shot.render();
         }
     }
 

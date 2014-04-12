@@ -9,12 +9,13 @@ import org.lwjgl.util.vector.Vector4f;
 import java.nio.FloatBuffer;
 
 public abstract class MapObject {
-    protected double scale;       // Scale of object
-    protected double rotation;    // Rotation of object
-    protected double x, y, z;     // Position of object
-    protected Vector3f color;     // Color of object
-    protected boolean outline;    // Draw outline of object
-    protected ShapeType type;     // Type of object
+    protected double scale;          // Scale of object
+    protected int slices, stacks;    // For Spheres
+    protected double rotation;       // Rotation of object
+    protected double x, y, z;        // Position of object
+    protected Vector3f color;        // Color of object
+    protected boolean outline;       // Draw outline of object
+    protected ShapeType type;        // Type of object
 
     // Collision Variables
     public static final int X_PLANE = 0;
@@ -25,6 +26,13 @@ public abstract class MapObject {
     public MapObject(ShapeType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {
         this.type = type;
         this.scale = scale;
+
+        slices = (int)(scale * scale);
+
+        if(slices < 16)
+            slices = 16;
+
+        stacks = slices;
         rotation = 0;
         this.x = x;
         this.y = y;
@@ -42,8 +50,7 @@ public abstract class MapObject {
                 ShapeRenderer.drawPyramid(scale, x, y, z, color, outline);
                 break;
             case SPHERE:
-                int slicesAndStacks = (int) (scale * scale);
-                ShapeRenderer.drawSphere(scale, x, y, z, slicesAndStacks, slicesAndStacks, color);
+                ShapeRenderer.drawSphere(scale, this.x, this.y, this.z, slices, stacks, color);
                 break;
             case PLANE:
                 break;
@@ -66,13 +73,11 @@ public abstract class MapObject {
      * Given the coordinates of an object, determine if that object is colliding
      * with this one
      *
-     * @param x - x position of other object
-     * @param y - y position of other object
-     * @param z - z position of other object
+     * @param object - MapObject to text against
      * @return - if the (x, y, z) position is colliding with this MapObject
      */
-    public boolean isCollidingWith(double x, double y, double z) {
-        collisionPoint = new Vector4f((float) x, (float) y, (float) z, 1);
+    public boolean isCollidingWith(MapObject object) {
+        collisionPoint = new Vector4f((float) object.x, (float) object.y, (float) object.z, 1);
 
         collisionPoint = inverseTranslate(collisionPoint);
         collisionPoint = inverseRotate(collisionPoint);

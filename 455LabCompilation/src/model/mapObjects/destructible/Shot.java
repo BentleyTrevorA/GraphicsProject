@@ -1,24 +1,25 @@
-package game;
+package model.mapObjects.destructible;
 
 import camera.Camera;
+import model.Colors;
 import model.Model;
+import model.mapObjects.ShapeType;
+import org.lwjgl.util.vector.Vector3f;
 
 import java.util.Calendar;
 
-public class Shot {
-    public double x, y, z, dx, dy, dz;
-    public double size = 1;
-    public int slices = 16;
-    public int stacks = 14;
+public class Shot extends DestructibleObject {
+    public double dx, dy, dz;
+    protected static double radius = 1;
+    public static Vector3f color = Colors.PINK;
 
-    public int damage = 1;       // Damage shot does to enemies
+    public int damage = 1;        // Damage shot does to enemies
 
-    public int timeOfBirth;      // Time that the shot was born (seconds)
-    public int secToLive = 10;   // Time (seconds) that shot will live before dying
+    private int timeOfBirth;      // Time that the shot was born (seconds)
+    private int secToLive = 10;   // Time (seconds) that shot will live before dying
 
-    public boolean alive = true; // Shot is alive and moving around the map still
+    public boolean alive;         // Shot is alive and moving around the map still
 
-    // TODO: Extend MapObject
 //    protected double scale;       // Scale of object
 //    protected double rotation;    // Rotation of object
 //    protected double x, y, z;     // Position of object
@@ -27,24 +28,27 @@ public class Shot {
 //    protected ShapeType type; // Type of object
 
     public Shot(double x, double y, double z, double dx, double dy, double dz) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        super (ShapeType.SPHERE, radius, x, y, z, color, false);
+        //ShapeType type, double scale, double x, double y, double z, Vector3f color, boolean outline
         this.dx = dx;
         this.dy = dy;
         this.dz = dz;
+        alive = true;
     }
 
     public Shot(Camera camera) {
-        x = camera.xPos + 4 * Math.sin(Math.toRadians(camera.rotateAngle));
-        y = camera.yPos;
-        z = camera.zPos - 4 * Math.cos(Math.toRadians(camera.rotateAngle));
+        super(ShapeType.SPHERE, radius,
+                camera.xPos + 4 * Math.sin(Math.toRadians(camera.rotateAngle)),
+                camera.yPos,
+                camera.zPos - 4 * Math.cos(Math.toRadians(camera.rotateAngle)),
+                color, false);
 
         // Set speed of ball to be faster than the player so if they are running it's not weird
         dx = 2 * Math.sin(Math.toRadians(camera.rotateAngle));
         dy = 0;
         dz = -2 * Math.cos(Math.toRadians(camera.rotateAngle));
 
+        alive = true;
         timeOfBirth = getCurrentTimeInSeconds();
     }
 

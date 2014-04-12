@@ -1,6 +1,6 @@
 package model.handlers;
 
-import game.Shot;
+import model.mapObjects.destructible.Shot;
 import model.mapObjects.MapObstaclePopulator;
 import model.mapObjects.MapObject;
 
@@ -24,7 +24,7 @@ public class ObstacleHandler {
 
     public MapObject findObstacleHitByShot(Shot shot) {
         for (MapObject obstacle : obstacles) {
-            if (obstacle.isCollidingWith(shot.x, shot.y, shot.z)) {
+            if (obstacle.isCollidingWith(shot)) {
                 return obstacle;
             }
         }
