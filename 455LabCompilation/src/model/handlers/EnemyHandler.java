@@ -1,9 +1,12 @@
 package model.handlers;
 
+import camera.Camera;
+import game.GameController;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
 import model.mapObjects.destructible.SphereEnemy;
+import model.mapObjects.nondestructible.SphereObstacle;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,10 +22,18 @@ public class EnemyHandler {
         this.scoreHandler = scoreHandler;
     }
 
+    public void updateEnemies(Camera camera) {
+        for (EnemyEntity enemy : enemies) {
+            enemy.updatePosition();
+//            enemy.updateTargetPosition(new SphereObstacle(GameController.a, 5, GameController.b));
+            enemy.updateTargetPosition(camera);
+        }
+    }
+
     public void populateTestEnemies() {
-        enemies.add(new CubeEnemy(0, 0));
-        enemies.add(new CubeEnemy(0, -200, 50));
-        enemies.add(new CubeEnemy(0, 200, 50));
+        enemies.add(new CubeEnemy(0, 200));
+        enemies.add(new CubeEnemy(0, -200, 5));
+        enemies.add(new CubeEnemy(0, 200, 5));
         enemies.add(new SphereEnemy(150, 0));
     }
 

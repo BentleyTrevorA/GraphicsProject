@@ -5,6 +5,7 @@ import camera.Camera;
 import controllers.LabController;
 import driver.LWJGLSandbox;
 import model.*;
+import model.renderers.ShapeRenderer;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
@@ -21,16 +22,16 @@ public class GameController extends LabController {
     private Camera camera;
     private DepthBuffer depthBuffer;
     private Lighting light;
-    private static int map = -2; // TODO: Change to 1
+    private static int map = 0; // TODO: Change to 1
 
-    float a = 1f;
-    float b = 1f;
-    float c = 1f;
-    float d = 0;
+    public static float a = 1f;
+    public static float b = 1f;
+    public static float c = 1f;
+    public static float d = 0;
 
     protected void initBase() {
-        model = new Model(map);
         camera = new Camera();
+        model = new Model(camera, map);
         depthBuffer = new DepthBuffer();
         light = new Lighting();
     }
@@ -86,7 +87,7 @@ public class GameController extends LabController {
         }
 
         if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
-            model.addShot(camera);
+            model.addShot();
         }
 
         // Debugging using a, b, c, and d variables

@@ -1,5 +1,6 @@
 package model.mapObjects;
 
+import camera.Camera;
 import model.renderers.ShapeRenderer;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.util.vector.Matrix4f;
@@ -14,6 +15,7 @@ public abstract class MapObject {
     protected double rotation;       // Rotation of object
     protected double x, y, z;        // Position of object
     protected double dx, dy, dz;     // Speed in x, y, and z respectively
+    protected double speed;          // Speed a MapObject can move in x, y, and z in a single update
     protected Vector3f color;        // Color of object
     protected boolean outline;       // Draw outline of object
     protected ShapeType type;        // Type of object
@@ -34,13 +36,18 @@ public abstract class MapObject {
             slices = 16;
 
         stacks = slices;
-        rotation = 0;
+
         this.x = x;
         this.y = y;
         this.z = z;
+
         dx = 0;
         dy = 0;
         dz = 0;
+        speed = 0;
+
+        rotation = 0;
+
         this.color = color;
         this.outline = outline;
     }
@@ -69,9 +76,37 @@ public abstract class MapObject {
         z += dz;
     }
 
-    // TODO: Update to move towards a given location, or a given position
     public void updateTargetPosition(MapObject objectToMoveTowards) {
+        updateTargetPosition(objectToMoveTowards.x, objectToMoveTowards.y, objectToMoveTowards.z);
+    }
 
+    public void updateTargetPosition(Camera camera) {
+        updateTargetPosition(camera.xPos, camera.yPos, camera.zPos);
+    }
+
+    private void updateTargetPosition(double x, double y, double z) {
+
+        double distX = x - this.x;
+        double distY = y - this.y;
+        double distZ = z - this.z;
+
+        double greaterDist;
+        if(Math.abs(distX) > Math.abs(distZ))
+            greaterDist = Math.abs(distX);
+        else
+            greaterDist = Math.abs(distZ);
+
+        if(greaterDist == 0)
+            greaterDist = 1;
+
+        // TODO: Figure out how to always move a dist of 1 * speed - do the same for the camera movement
+        dx = speed * distX / greaterDist;
+        dy = 0;
+        dz = speed * distZ / greaterDist;
+
+//        System.out.println("DX: " + x);
+//        System.out.println("DY: " + y);
+//        System.out.println("DZ: " + z);
     }
 
     public double getDx() {

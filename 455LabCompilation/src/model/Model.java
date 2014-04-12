@@ -11,13 +11,15 @@ public class Model {
     public static final int MIN_MAP_COORDINATE = -TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
     public static final int MAX_MAP_COORDINATE = TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
 
+    private Camera camera;
     private ScoreHandler scoreHandler;
     private EnemyHandler enemyHandler;
     private ObstacleHandler obstacleHandler;
     private ShotsHandler shotsHandler;
     private HudHandler hudHandler;
 
-    public Model(int mapNumber) {
+    public Model(Camera camera, int mapNumber) {
+        this.camera = camera;
         scoreHandler = new ScoreHandler();
         enemyHandler = new EnemyHandler(scoreHandler);
         obstacleHandler = new ObstacleHandler(mapNumber);
@@ -27,6 +29,7 @@ public class Model {
 
     public void update() {
         shotsHandler.updateShots();
+        enemyHandler.updateEnemies(camera);
     }
 
     public void drawMap() {
@@ -39,7 +42,7 @@ public class Model {
         hudHandler.drawHud();
     }
 
-    public void addShot(Camera camera) {
+    public void addShot() {
         shotsHandler.addShot(camera);
     }
 }

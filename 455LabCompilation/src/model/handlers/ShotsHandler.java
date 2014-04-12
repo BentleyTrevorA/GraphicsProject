@@ -4,7 +4,6 @@ import camera.Camera;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.EnemyEntity;
-import model.renderers.ShapeRenderer;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -47,7 +46,7 @@ public class ShotsHandler {
         shotsToRemove = new HashSet<Shot>();
 
         for (Shot shot : shots) {
-            updateShotPositions(shot);
+            updateShotPosition(shot);
             checkForEnemyCollisions(shot);
             checkForObstacleCollisions(shot);
             shot.checkShotLife();
@@ -59,7 +58,7 @@ public class ShotsHandler {
         removeDeadShots();
     }
 
-    private void updateShotPositions(Shot shot) {
+    private void updateShotPosition(Shot shot) {
         shot.updatePosition();
 
         if (shot.isOutsideGameField())
