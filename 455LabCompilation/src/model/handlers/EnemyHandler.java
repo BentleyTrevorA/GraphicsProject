@@ -1,6 +1,8 @@
 package model.handlers;
 
 import camera.Camera;
+import game.GameController;
+import model.Model;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
@@ -21,7 +23,7 @@ public class EnemyHandler {
         enemies = new HashSet<EnemyEntity>();
         this.scoreHandler = scoreHandler;
         this.shapeRenderer = shapeRenderer;
-        populateTestEnemies();
+//        populateTestEnemies();
     }
 
     public void updateEnemies(Camera camera) {
@@ -29,14 +31,31 @@ public class EnemyHandler {
             enemy.updatePosition();
             enemy.updateTargetPosition(camera);
         }
+        populateEnemies();
     }
 
     public void populateTestEnemies() {
-        for(int i=0; i<6; i++) {
+        for(int i=0; i<=6; i++){
             EnemyEntity test = new CubeEnemy(i * 15, i * 15, shapeRenderer);
             test.setHp(6 - i);
             test.setPointValue(test.getHp() * 10);
             enemies.add(test);
+        }
+    }
+
+    public void populateEnemies() {
+        int xScale = Model.MAX_MAP_COORDINATE;
+        int zScale = Model.MAX_MAP_COORDINATE;
+
+        while(enemies.size() < 30) {
+            EnemyEntity test = new CubeEnemy(Math.random() * xScale, Math.random() * zScale, shapeRenderer);
+//            test.setHp(6 - i);
+//            test.setPointValue(test.getHp() * 10);
+            enemies.add(test);
+            if(enemies.size() % 3 == 1)
+                xScale *= -1;
+            if(enemies.size() % 4 == 1)
+                zScale *= -1;
         }
     }
 

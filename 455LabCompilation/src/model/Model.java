@@ -20,7 +20,7 @@ public class Model {
     private HudHandler hudHandler;
     private ShapeRenderer shapeRenderer;
 
-    public Model(Camera camera, int mapNumber) {
+    public Model(Camera camera, int mapNumber, int difficulty) {
         this.camera = camera;
         scoreHandler = new ScoreHandler();
         shapeRenderer = new ShapeRenderer();
@@ -29,6 +29,10 @@ public class Model {
         obstacleHandler = new ObstacleHandler(shapeRenderer, mapNumber);
         shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, shapeRenderer);
         hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler, playerHandler, shapeRenderer);
+    }
+
+    public void resetGame(int difficulty) {
+        // TODO: Reset game with new difficulty
     }
 
     public void update() {
@@ -49,5 +53,9 @@ public class Model {
 
     public void addShot() {
         shotsHandler.addShot(camera);
+    }
+
+    public PlayerHandler getPlayerHandler() {
+        return playerHandler;
     }
 }

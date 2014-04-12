@@ -5,15 +5,9 @@ import camera.Camera;
 import controllers.LabController;
 import driver.LWJGLSandbox;
 import model.*;
-import model.renderers.ShapeRenderer;
+import model.handlers.PlayerHandler;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
-import org.lwjgl.util.vector.Vector3f;
-import org.newdawn.slick.opengl.Texture;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
@@ -22,8 +16,10 @@ public class GameController extends LabController {
     private Model model;
     private Camera camera;
     private DepthBuffer depthBuffer;
+    private PlayerHandler playerHandler;
     private Lighting light;
     private static int map = 0; // TODO: Change to 1
+    private static int difficulty = 1;
 
     public static float a = 1f;
     public static float b = 1f;
@@ -37,7 +33,8 @@ public class GameController extends LabController {
     }
 
     public void setupAfterInitGL() {
-        model = new Model(camera, map);
+        model = new Model(camera, map, difficulty);
+        playerHandler = model.getPlayerHandler();
     }
 
     // This method is called to "resize" the viewport to match the screen.
@@ -61,48 +58,58 @@ public class GameController extends LabController {
     //The "Keyboard" static class should contain everything you need to finish
     // this up.
     public void updateKeyboard() {
-        if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
-            camera.moveForward();
-        } else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
-            camera.moveBackward();
-        }
+        if(!playerHandler.isAlive()) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_1)) {
+                model.resetGame(1);
+            }
 
-        if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
-            camera.moveLeft();
-        } else if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
-            camera.moveRight();
+            if (Keyboard.isKeyDown(Keyboard.KEY_2)) {
+                model.resetGame(1);
+            }
         }
+        else {
+            if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
+                playerHandler.moveForward();
+            } else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+                playerHandler.moveBackward();
+            }
 
-        if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
-            camera.turnLeft();
-        } else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
-            camera.turnRight();
+            if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+                playerHandler.moveLeft();
+            } else if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
+                playerHandler.moveRight();
+            }
+
+            if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
+                playerHandler.turnLeft();
+            } else if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
+                playerHandler.turnRight();
+            }
+
+            if (Keyboard.isKeyDown(Keyboard.KEY_C)) {
+                playerHandler.moveUp();
+            } else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
+                playerHandler.moveDown();
+            }
+
+            if (Keyboard.isKeyDown(Keyboard.KEY_H)) {
+                playerHandler.resetPosition();
+            }
+
+            if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
+                model.addShot();
+            }
+
+            // Debugging using a, b, c, and d variables
+    //        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d += (1.0/180.f); printLightVariables();}
+    //        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d -= (1.0/180.f); printLightVariables();}
+    //        if (Keyboard.isKeyDown(Keyboard.KEY_O)) { c += 1f; printLightVariables();}
+    //        if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= 1f; printLightVariables();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables();}
+            if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables();}
         }
-
-        if (Keyboard.isKeyDown(Keyboard.KEY_C)) {
-            camera.moveUp();
-        } else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
-            camera.moveDown();
-        }
-
-        // TODO: Remove in actual gameplay
-        if (Keyboard.isKeyDown(Keyboard.KEY_H)) {
-            camera.resetPosition();
-        }
-
-        if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
-            model.addShot();
-        }
-
-        // Debugging using a, b, c, and d variables
-//        if (Keyboard.isKeyDown(Keyboard.KEY_P)) { d += (1.0/180.f); printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d -= (1.0/180.f); printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_O)) { c += 1f; printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= 1f; printLightVariables();}
-        if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables();}
-        if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables();}
-        if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables();}
-        if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables();}
     }
 
     //This method is the one that actually draws to the screen.
@@ -113,10 +120,13 @@ public class GameController extends LabController {
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        camera.positionCamera();
-        depthBuffer.enableDepthBuffering();
-        light.enableLighting();
-        model.drawMap();
+        if(playerHandler.isAlive()) {
+            playerHandler.positionCamera();
+            depthBuffer.enableDepthBuffering();
+            light.enableLighting();
+            model.drawMap();
+        }
+        // TODO: Else draw game-over and options to start again (#'s or something)
         glFlush();
     }
 

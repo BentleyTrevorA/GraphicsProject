@@ -16,7 +16,7 @@ public class ShotsHandler {
     private ShapeRenderer shapeRenderer;
 
     private Collection<Shot> shots;
-    private int maxShots = 1;
+    private int maxShots = 10;
     private Set<Shot> shotsToRemove;
 
     public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler, ShapeRenderer shapeRenderer) {
@@ -39,6 +39,7 @@ public class ShotsHandler {
         }
     }
 
+    // TODO: Use Calendar.getSeconds() to only let you shoot every so often.
     public void addShot(Camera camera) {
         if (shots.size() < maxShots) {
             Shot shot = new Shot(camera);

@@ -92,10 +92,22 @@ public abstract class MapObject {
     }
 
     private void updateTargetPosition(double x, double y, double z) {
-
         double distX = x - this.x;
         double distY = y - this.y;
         double distZ = z - this.z;
+        double halfScale = scale / 2;
+
+        // Have the target be a bit farther so it will collide with it
+        if(distX < 0)
+            distX -= halfScale;
+        else
+            distX += halfScale;
+
+        // Have the target be a bit farther so it will collide with it
+        if(distZ < 0)
+            distZ -= halfScale;
+        else
+            distZ += halfScale;
 
         double greaterDist;
         if(Math.abs(distX) > Math.abs(distZ))
@@ -133,6 +145,7 @@ public abstract class MapObject {
         return isCollidingWith(new Vector4f((float) object.x, (float) object.y, (float) object.z, 1));
     }
 
+    // TODO: Need to better detect when running into player and killing them
     public boolean isCollidingWith(Vector4f collisionPoint) {
         collisionPoint = inverseTranslate(collisionPoint);
         collisionPoint = inverseRotate(collisionPoint);
