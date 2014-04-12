@@ -25,7 +25,7 @@ public abstract class Entity extends DestructibleObject {
     }
 
     public void loseHp(int amount) {
-        System.out.println("Hit an enemy!\nEnemy lost " + amount + "hp!\n Enemy hp: " + hp);
+//        System.out.println("Hit an enemy!\nEnemy lost " + amount + "hp!\n Enemy hp: " + hp);
         hp -= amount;
 
         updateTexture();

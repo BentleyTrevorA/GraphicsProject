@@ -130,8 +130,10 @@ public abstract class MapObject {
      * @return - if the (x, y, z) position is colliding with this MapObject
      */
     public boolean isCollidingWith(MapObject object) {
-        collisionPoint = new Vector4f((float) object.x, (float) object.y, (float) object.z, 1);
+        return isCollidingWith(new Vector4f((float) object.x, (float) object.y, (float) object.z, 1));
+    }
 
+    public boolean isCollidingWith(Vector4f collisionPoint) {
         collisionPoint = inverseTranslate(collisionPoint);
         collisionPoint = inverseRotate(collisionPoint);
         collisionPoint = inverseScale(collisionPoint);

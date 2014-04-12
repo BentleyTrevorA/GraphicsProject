@@ -479,6 +479,19 @@ public class TextRenderer {
                 x = startX;
             } else if (c == ' ') {
                 x += 8;
+            } else if (c == '/') {
+//                for (int i = 0; i <= 7; i++)
+//                    glVertex3d(x + i, y + 8, z);
+                glVertex3d(x + 7, y + 7, z);
+                glVertex3d(x + 7, y + 6, z);
+
+                glVertex3d(x + 6, y + 5, z);
+                glVertex3d(x + 5, y + 4, z);
+                glVertex3d(x + 4, y + 3, z);
+                glVertex3d(x + 3, y + 2, z);
+                glVertex3d(x + 2, y + 1, z);
+                glVertex3d(x + 1, y, z);
+                x += 8;
             }
         }
         glEnd();

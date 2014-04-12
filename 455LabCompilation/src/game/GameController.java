@@ -99,10 +99,10 @@ public class GameController extends LabController {
 //        if (Keyboard.isKeyDown(Keyboard.KEY_SEMICOLON)) { d -= (1.0/180.f); printLightVariables();}
 //        if (Keyboard.isKeyDown(Keyboard.KEY_O)) { c += 1f; printLightVariables();}
 //        if (Keyboard.isKeyDown(Keyboard.KEY_L)) { c -= 1f; printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables();}
-//        if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_I)) { b += 1f; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_K)) { b -= 1f; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_U)) { a += 1f; printLightVariables();}
+        if (Keyboard.isKeyDown(Keyboard.KEY_J)) { a -= 1f; printLightVariables();}
     }
 
     //This method is the one that actually draws to the screen.

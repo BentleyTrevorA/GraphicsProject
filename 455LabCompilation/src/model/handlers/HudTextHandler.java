@@ -9,7 +9,7 @@ import org.lwjgl.util.vector.Vector3f;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glPopMatrix;
 
-public class HUDTextHandler {
+public class HudTextHandler {
     private static final int WIDTH = LWJGLSandbox.DISPLAY_WIDTH;
     private static final int HEIGHT = LWJGLSandbox.DISPLAY_HEIGHT;
     private Vector3f color = Colors.WHITE;
@@ -22,15 +22,19 @@ public class HUDTextHandler {
      * Draw shot count on all the walls
      */
     public void drawShotsRemaining(int shotsRemaining) {
-        drawTextToScreen("Shots Remaining: " + shotsRemaining, 1, HEIGHT - 10);
+        drawTextToScreen("Shots Remaining: " + shotsRemaining, 1, HEIGHT - 15);
     }
 
     public void drawPoints(int points) {
-        drawTextToScreen("Points: " + points, 1, HEIGHT - 25);
+        drawTextToScreen("Points: " + points, 1, HEIGHT - 30);
     }
 
     public void drawNumEnemies(int numEnemies) {
-        drawTextToScreen("Enemies Remaining: " + numEnemies, WIDTH - 175, HEIGHT - 10);
+        drawTextToScreen("Enemies Remaining: " + numEnemies, WIDTH - 175, HEIGHT - 15);
+    }
+
+    public void drawHpRemaining(int hp, int maxHp) {
+        drawTextToScreen("HP: " + hp + "/" + maxHp, 300, HEIGHT - 35);
     }
 
     private void drawTextToScreen(String text, int xPos, int yPos) {

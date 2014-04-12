@@ -1,5 +1,7 @@
 package camera;
 
+import org.lwjgl.util.vector.Vector4f;
+
 import static org.lwjgl.opengl.GL11.*;
 
 public class Camera {
@@ -66,6 +68,10 @@ public class Camera {
     public void turnRight() {
         rotateAngle += rotateSpeed;
         printCameraVariables();
+    }
+
+    public Vector4f getVector(){
+        return new Vector4f((float)xPos, (float)yPos, (float)zPos, 1);
     }
 
     public void resetPosition() {
