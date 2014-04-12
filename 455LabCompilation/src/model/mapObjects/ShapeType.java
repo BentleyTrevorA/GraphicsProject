@@ -1,5 +1,5 @@
 package model.mapObjects;
 
-public enum MapObjectType {
+public enum ShapeType {
     CUBE, PYRAMID, PLANE, SPHERE
 }

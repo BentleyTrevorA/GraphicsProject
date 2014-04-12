@@ -27,7 +27,7 @@ public class EnemyHandler {
     }
 
     public void drawEnemies() {
-        for(EnemyEntity enemy : enemies) {
+        for (EnemyEntity enemy : enemies) {
             enemy.render();
         }
     }
@@ -37,8 +37,8 @@ public class EnemyHandler {
     }
 
     public EnemyEntity findEnemyHitByShot(Shot shot) {
-        for(EnemyEntity enemy: enemies) {
-            if(enemy.isCollidingWith(shot.x, shot.y, shot.z)) {
+        for (EnemyEntity enemy : enemies) {
+            if (enemy.isCollidingWith(shot.x, shot.y, shot.z)) {
                 return enemy;
             }
         }
@@ -48,7 +48,7 @@ public class EnemyHandler {
     public void damageEnemy(EnemyEntity enemy, Shot shot) {
         enemy.loseHp(shot.damage);
 
-        if(enemy.isDead()) {
+        if (enemy.isDead()) {
             enemies.remove(enemy);
             scoreHandler.addPoints(enemy);
         }

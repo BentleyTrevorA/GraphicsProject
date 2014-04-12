@@ -84,7 +84,7 @@ public class ShapeRenderer {
         glRotated(angle, rX, rY, rZ);
         glScaled(sX, sY, sZ);
 
-        if(normalize) {
+        if (normalize) {
             glBegin(GL_QUADS);
             {
                 glNormal3d(-1, -1, -1);
@@ -99,8 +99,7 @@ public class ShapeRenderer {
                 glNormal3d(-1, 1, -1);
                 glVertex3d(0, 1, 0);
             }
-        }
-        else {
+        } else {
             glBegin(GL_QUADS);
             {
                 glVertex3d(0, 0, 0);
@@ -114,15 +113,14 @@ public class ShapeRenderer {
     }
 
     public static void drawWalls(double width, double height, Vector3f color) {
-        drawQuad(width, height, 1, -width/2, 0, -width/2, 0, 0, 1, 0, color, true); // Front
-        drawQuad(width, height, 1, width/2, 0, width/2, 180, 0, 1, 0, color, true); // Back
-        drawQuad(width, height, 1, width/2, 0, -width/2, -90, 0, 1, 0, color, true); // Right
-        drawQuad(width, height, 1, -width/2, 0, width/2, 90, 0, 1, 0, color, true); // Left
+        drawQuad(width, height, 1, -width / 2, 0, -width / 2, 0, 0, 1, 0, color, true); // Front
+        drawQuad(width, height, 1, width / 2, 0, width / 2, 180, 0, 1, 0, color, true); // Back
+        drawQuad(width, height, 1, width / 2, 0, -width / 2, -90, 0, 1, 0, color, true); // Right
+        drawQuad(width, height, 1, -width / 2, 0, width / 2, 90, 0, 1, 0, color, true); // Left
     }
 
     // Draaws floor with normals
-    public static void drawFloorTiles(double tileSize, int numTilesInOneDirection)
-    {
+    public static void drawFloorTiles(double tileSize, int numTilesInOneDirection) {
         for (int x = 0; x < numTilesInOneDirection + 1; x++) {
             for (int z = 0; z < numTilesInOneDirection + 1; z++) {
                 Vector3f tileColor;

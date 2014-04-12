@@ -55,7 +55,7 @@ public class ShotsHandler {
             checkForObstacleCollisions(shot);
             shot.checkShotLife();
 
-            if(shot.isDead())
+            if (shot.isDead())
                 shotsToRemove.add(shot);
         }
 
@@ -70,7 +70,7 @@ public class ShotsHandler {
     }
 
     private void checkForEnemyCollisions(Shot shot) {
-        if(shot.isDead())
+        if (shot.isDead())
             return;
 
         EnemyEntity enemyHit = enemyHandler.findEnemyHitByShot(shot);
@@ -81,7 +81,7 @@ public class ShotsHandler {
     }
 
     private void checkForObstacleCollisions(Shot shot) {
-        if(shot.isDead())
+        if (shot.isDead())
             return;
 
         MapObject objectHit = obstacleHandler.findObstacleHitByShot(shot);

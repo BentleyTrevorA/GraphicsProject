@@ -24,7 +24,7 @@ public class Shot {
 //    protected double x, y, z;     // Position of object
 //    protected Vector3f color;     // Color of object
 //    protected boolean outline;    // Draw outline of object
-//    protected MapObjectType type; // Type of object
+//    protected ShapeType type; // Type of object
 
     public Shot(double x, double y, double z, double dx, double dy, double dz) {
         this.x = x;
@@ -62,7 +62,7 @@ public class Shot {
 
     // Checks if lifespan of shot is over
     public void checkShotLife() {
-        if(getCurrentTimeInSeconds() - timeOfBirth >= secToLive)
+        if (getCurrentTimeInSeconds() - timeOfBirth >= secToLive)
             kill();
     }
 

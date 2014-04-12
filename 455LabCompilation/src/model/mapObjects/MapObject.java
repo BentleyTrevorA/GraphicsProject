@@ -14,7 +14,7 @@ public abstract class MapObject {
     protected double x, y, z;     // Position of object
     protected Vector3f color;     // Color of object
     protected boolean outline;    // Draw outline of object
-    protected MapObjectType type; // Type of object
+    protected ShapeType type;     // Type of object
 
     // Collision Variables
     public static final int X_PLANE = 0;
@@ -22,7 +22,7 @@ public abstract class MapObject {
     public static final int Z_PLANE = 2;
     protected Vector4f collisionPoint; // point used for checking collisions
 
-    public MapObject(MapObjectType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public MapObject(ShapeType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {
         this.type = type;
         this.scale = scale;
         rotation = 0;
@@ -34,7 +34,7 @@ public abstract class MapObject {
     }
 
     public void render() {
-        switch(type) {
+        switch (type) {
             case CUBE:
                 ShapeRenderer.drawCube(scale, x, y, z, color, outline);
                 break;
@@ -42,7 +42,7 @@ public abstract class MapObject {
                 ShapeRenderer.drawPyramid(scale, x, y, z, color, outline);
                 break;
             case SPHERE:
-                int slicesAndStacks = (int)(scale * scale);
+                int slicesAndStacks = (int) (scale * scale);
                 ShapeRenderer.drawSphere(scale, x, y, z, slicesAndStacks, slicesAndStacks, color);
                 break;
             case PLANE:
@@ -61,6 +61,7 @@ public abstract class MapObject {
     }
 
     // TODO: Take in MapObject instead of position
+
     /**
      * Given the coordinates of an object, determine if that object is colliding
      * with this one
@@ -71,14 +72,14 @@ public abstract class MapObject {
      * @return - if the (x, y, z) position is colliding with this MapObject
      */
     public boolean isCollidingWith(double x, double y, double z) {
-        collisionPoint = new Vector4f((float)x, (float)y, (float)z, 1);
+        collisionPoint = new Vector4f((float) x, (float) y, (float) z, 1);
 
         collisionPoint = inverseTranslate(collisionPoint);
         collisionPoint = inverseRotate(collisionPoint);
         collisionPoint = inverseScale(collisionPoint);
 
         // For now, ignore y value since it should always hit with how it is setup currently
-        switch(type) {
+        switch (type) {
             case CUBE:
                 boolean withinX = (collisionPoint.x >= 0 && collisionPoint.x <= 1);
                 boolean withinZ = (collisionPoint.z >= 0 && collisionPoint.z <= 1);
@@ -101,7 +102,7 @@ public abstract class MapObject {
 
     public int getCollisionPlane(double dx, double dz) {
         // TODO: Figure out this logic for balls bouncing off right (Maybe, or just forget it)
-        if(collisionPoint.z > collisionPoint.x && dz < 0 || collisionPoint.z < collisionPoint.x && dz > 0)
+        if (collisionPoint.z > collisionPoint.x && dz < 0 || collisionPoint.z < collisionPoint.x && dz > 0)
             return Z_PLANE;
         else
             return X_PLANE;
@@ -115,7 +116,7 @@ public abstract class MapObject {
                 .put(1).put(0).put(0).put(0)
                 .put(0).put(1).put(0).put(0)
                 .put(0).put(0).put(1).put(0)
-                .put((float)-x).put((float)-y).put((float)-z).put(1).flip();
+                .put((float) -x).put((float) -y).put((float) -z).put(1).flip();
 
         inverseTranslate.load(inverseTranslation);
 
@@ -125,7 +126,7 @@ public abstract class MapObject {
     private Vector4f inverseScale(Vector4f position) {
         Matrix4f inverseScaleMatrix = new Matrix4f();
         FloatBuffer inverseScaleBuffer = BufferUtils.createFloatBuffer(16);
-        float inverseScale = (float)(1/scale);
+        float inverseScale = (float) (1 / scale);
 
         inverseScaleBuffer
                 .put(inverseScale).put(0).put(0).put(0)
@@ -151,7 +152,7 @@ public abstract class MapObject {
         return position;
     }
 
-    public MapObjectType getType() {
+    public ShapeType getType() {
         return type;
     }
 

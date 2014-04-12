@@ -1,18 +1,17 @@
 package model.mapObjects.destructible;
 
-import game.GameController;
-import model.mapObjects.MapObjectType;
+import model.mapObjects.ShapeType;
 import org.lwjgl.util.vector.Vector3f;
 
-public abstract class Entity extends DestructibleObject{
+public abstract class Entity extends DestructibleObject {
     protected int hp;
 
-    public Entity(MapObjectType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public Entity(ShapeType type, double scale, double x, double y, double z, Vector3f color, boolean outline) {
         super(type, scale, x, y, z, color, outline);
         hp = 1;
     }
 
-    public Entity(MapObjectType type, double scale, double x, double y, double z, Vector3f color, boolean outline, int hp) {
+    public Entity(ShapeType type, double scale, double x, double y, double z, Vector3f color, boolean outline, int hp) {
         super(type, scale, x, y, z, color, outline);
         this.hp = hp;
     }

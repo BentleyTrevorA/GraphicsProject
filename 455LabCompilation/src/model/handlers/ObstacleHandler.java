@@ -17,14 +17,14 @@ public class ObstacleHandler {
     }
 
     public void drawObstacles() {
-        for(MapObject obstacle : obstacles) {
+        for (MapObject obstacle : obstacles) {
             obstacle.render();
         }
     }
 
     public MapObject findObstacleHitByShot(Shot shot) {
-        for(MapObject obstacle : obstacles) {
-            if(obstacle.isCollidingWith(shot.x, shot.y, shot.z)) {
+        for (MapObject obstacle : obstacles) {
+            if (obstacle.isCollidingWith(shot.x, shot.y, shot.z)) {
                 return obstacle;
             }
         }
