@@ -3,6 +3,7 @@ package model.mapObjects.destructible;
 import model.Colors;
 import model.mapObjects.ShapeType;
 import org.lwjgl.util.vector.Vector3f;
+import org.newdawn.slick.opengl.Texture;
 
 public abstract class EnemyEntity extends Entity {
     protected static Vector3f defaultColor = Colors.RED;
@@ -42,6 +43,4 @@ public abstract class EnemyEntity extends Entity {
     public int getPointValue() {
         return pointValue;
     }
-
-    // TODO: Update color based off of hp
 }

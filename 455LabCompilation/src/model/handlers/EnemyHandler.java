@@ -1,12 +1,9 @@
 package model.handlers;
 
 import camera.Camera;
-import game.GameController;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
-import model.mapObjects.destructible.SphereEnemy;
-import model.mapObjects.nondestructible.SphereObstacle;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -26,15 +23,17 @@ public class EnemyHandler {
         for (EnemyEntity enemy : enemies) {
             enemy.updatePosition();
 //            enemy.updateTargetPosition(new SphereObstacle(GameController.a, 5, GameController.b));
-            enemy.updateTargetPosition(camera);
+//            enemy.updateTargetPosition(camera); // TODO: Enable - also enable damage
         }
     }
 
     public void populateTestEnemies() {
-        enemies.add(new CubeEnemy(0, 200));
-        enemies.add(new CubeEnemy(0, -200, 5));
-        enemies.add(new CubeEnemy(0, 200, 5));
-        enemies.add(new SphereEnemy(150, 0));
+        for(int i=0; i<1; i++)
+        {
+            EnemyEntity test = new CubeEnemy(i * 15, i * 15);
+            test.setHp(6 - i);
+            enemies.add(test);
+        }
     }
 
     public void drawEnemies() {

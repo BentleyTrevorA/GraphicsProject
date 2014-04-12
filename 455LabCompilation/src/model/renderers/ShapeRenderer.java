@@ -4,10 +4,14 @@ import model.Colors;
 import model.HouseModel;
 import model.Line3D;
 import model.WireFrame;
+import model.mapObjects.MapObject;
 import org.lwjgl.util.glu.Sphere;
 import org.lwjgl.util.vector.Vector3f;
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureLoader;
 
-import java.awt.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Iterator;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -17,6 +21,28 @@ import static org.lwjgl.opengl.GL11.glVertex3d;
 public class ShapeRenderer {
 
     private static WireFrame model = new HouseModel();
+    public Texture EnemyCubeHP6, EnemyCubeHP5,EnemyCubeHP4, EnemyCubeHP3, EnemyCubeHP2, EnemyCubeHP1;
+    public Texture stone1, stone2, stone3, stone4;
+    public String imgLocation = "img/textures/";
+
+    public void loadTextures() {
+        try {
+            EnemyCubeHP6 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar1.png"));
+            EnemyCubeHP5 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar2.png"));
+            EnemyCubeHP4 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar3.png"));
+            EnemyCubeHP3 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar4.png"));
+            EnemyCubeHP2 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar5.png"));
+            EnemyCubeHP1 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar6.png"));
+
+            stone1 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone1.png"));
+            stone2 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone2.png"));
+            stone3 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone3.png"));
+            stone4 = TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone4.png"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
         glColor3f(houseColor.x, houseColor.y, houseColor.z);
@@ -252,7 +278,19 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public static void drawCube(double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public static void drawCube(MapObject object) {
+        if(object.getTextureFilename() != null) {
+            drawCubeWithTexture(object);
+            return;
+        }
+
+        Vector3f color = object.getColor();
+        double x = object.getX();
+        double y = object.getY();
+        double z = object.getZ();
+        double scale = object.getScale();
+        boolean outline = object.getOutlined();
+
         glColor3f(color.x, color.y, color.z);
 
         glPushMatrix();
@@ -343,6 +381,159 @@ public class ShapeRenderer {
         }
         glEnd();
 
+        drawCubeOutline(outline);
+
+        glPopMatrix();
+    }
+
+    public static void drawCubeWithTexture(MapObject object) {
+        Texture texture = null;
+
+        String textureFilename = object.getTextureFilename();
+        try {
+            FileInputStream stream = new FileInputStream("img/textures/" + object.getTextureFilename());
+            texture = TextureLoader.getTexture("PNG", new FileInputStream("img/textures/" + object.getTextureFilename()));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if(texture != null) {
+            double x = object.getX();
+            double y = object.getY();
+            double z = object.getZ();
+            double scale = object.getScale();
+            boolean outline = object.getOutlined();
+
+            glColor3f(1, 1, 1);
+
+            glPushMatrix();
+            glTranslated(x, y, z);
+            glScaled(scale, scale, scale);
+
+            glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
+
+            glEnable(GL_TEXTURE_2D);
+            glBegin(GL_QUADS);
+            {
+                // For greater shading variation, Each vertex points out in all 3 directions
+                // if vertex value is 0, normal is -1, if value is 1, normal is 1
+                // Front
+                glNormal3d(-1, -1, 1);
+                glTexCoord2d(0, texture.getHeight());
+                glVertex3d(0, 0, 1); // BL
+
+                glNormal3d(1, -1, 1);
+                glTexCoord2d(texture.getWidth(), texture.getHeight());
+                glVertex3d(1, 0, 1); // BR
+
+                glNormal3d(1, 1, 1);
+                glTexCoord2d(texture.getWidth(), 0);
+                glVertex3d(1, 1, 1); // TR
+
+                glNormal3d(-1, 1, 1);
+                glTexCoord2d(0, 0);
+                glVertex3d(0, 1, 1); // TL
+
+                // Right
+                glNormal3d(1, -1, 1);
+                glTexCoord2d(0, texture.getHeight());
+                glVertex3d(1, 0, 1);
+
+                glNormal3d(1, -1, -1);
+                glTexCoord2d(texture.getWidth(), texture.getHeight());
+                glVertex3d(1, 0, 0);
+
+                glNormal3d(1, 1, -1);
+                glTexCoord2d(texture.getWidth(), 0);
+                glVertex3d(1, 1, 0);
+
+                glNormal3d(1, 1, 1);
+                glTexCoord2d(0, 0);
+                glVertex3d(1, 1, 1);
+
+                // Back
+                glNormal3d(1, -1, -1);
+                glTexCoord2d(0, texture.getHeight());
+                glVertex3d(1, 0, 0);
+
+                glNormal3d(-1, -1, -1);
+                glTexCoord2d(texture.getWidth(), texture.getHeight());
+                glVertex3d(0, 0, 0);
+
+                glNormal3d(-1, 1, -1);
+                glTexCoord2d(texture.getWidth(), 0);
+                glVertex3d(0, 1, 0);
+
+                glNormal3d(1, 1, -1);
+                glTexCoord2d(0, 0);
+                glVertex3d(1, 1, 0);
+
+                // Left
+                glNormal3d(-1, -1, -1);
+                glTexCoord2d(0, texture.getHeight());
+                glVertex3d(0, 0, 0);
+
+                glNormal3d(-1, -1, 1);
+                glTexCoord2d(texture.getWidth(), texture.getHeight());
+                glVertex3d(0, 0, 1);
+
+                glNormal3d(-1, 1, 1);
+                glTexCoord2d(texture.getWidth(), 0);
+                glVertex3d(0, 1, 1);
+
+                glNormal3d(-1, 1, -1);
+                glTexCoord2d(0, 0);
+                glVertex3d(0, 1, 0);
+
+                // Bottom
+                glNormal3d(-1, -1, -1);
+                glTexCoord2d(0, texture.getHeight());
+                glVertex3d(0, 0, 0);
+
+                glNormal3d(1, -1, -1);
+                glTexCoord2d(texture.getWidth(), texture.getHeight());
+                glVertex3d(1, 0, 0);
+
+                glNormal3d(1, -1, 1);
+                glTexCoord2d(texture.getWidth(), 0);
+                glVertex3d(1, 0, 1);
+
+                glNormal3d(-1, -1, 1);
+                glTexCoord2d(0, 0);
+                glVertex3d(0, 0, 1);
+
+                // Top
+                glNormal3d(-1, 1, -1);
+                glTexCoord2d(0, texture.getHeight());
+                glVertex3d(0, 1, 1);
+
+                glNormal3d(-1, 1, 1);
+                glTexCoord2d(texture.getWidth(), texture.getHeight());
+                glVertex3d(1, 1, 1);
+
+                glNormal3d(1, 1, 1);
+                glTexCoord2d(texture.getWidth(), 0);
+                glVertex3d(1, 1, 0);
+
+                glNormal3d(1, 1, -1);
+                glTexCoord2d(0, 0);
+                glVertex3d(0, 1, 0);
+            }
+            glEnd();
+            glDisable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture
+            texture.release();
+
+            drawCubeOutline(outline);
+            glPopMatrix();
+        }
+        else {
+            System.err.println("Texture failed " + textureFilename);
+        }
+    }
+
+    public static void drawCubeOutline(boolean outline) {
         if (outline) {
             glColor3f(0, 0, 0);
             glBegin(GL_LINES);
@@ -388,8 +579,6 @@ public class ShapeRenderer {
             }
             glEnd();
         }
-
-        glPopMatrix();
     }
 
     public static void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color) {

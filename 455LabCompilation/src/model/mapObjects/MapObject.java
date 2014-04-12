@@ -19,6 +19,7 @@ public abstract class MapObject {
     protected Vector3f color;        // Color of object
     protected boolean outline;       // Draw outline of object
     protected ShapeType type;        // Type of object
+    protected String textureFile;    // Texture of object
 
     // Collision Variables
     public static final int X_PLANE = 0;
@@ -55,7 +56,7 @@ public abstract class MapObject {
     public void render() {
         switch (type) {
             case CUBE:
-                ShapeRenderer.drawCube(scale, x, y, z, color, outline);
+                ShapeRenderer.drawCubeWithTexture(this);
                 break;
             case PYRAMID:
                 ShapeRenderer.drawPyramid(scale, x, y, z, color, outline);
@@ -103,36 +104,9 @@ public abstract class MapObject {
         dx = speed * distX / greaterDist;
         dy = 0;
         dz = speed * distZ / greaterDist;
-
-//        System.out.println("DX: " + x);
-//        System.out.println("DY: " + y);
-//        System.out.println("DZ: " + z);
     }
 
-    public double getDx() {
-        return dx;
-    }
-
-    public double getDy() {
-        return dy;
-    }
-
-    public double getDz() {
-        return dz;
-    }
-
-    public void setDx(double dx) {
-        this.dx = dx;
-    }
-
-    public void setDy(double dy) {
-        this.dy = dy;
-    }
-
-    public void setDz(double dz) {
-        this.dz = dz;
-    }
-
+    // TODO: Handle reflections
     public void reflect(MapObject object) {
         // based off of object, reflect
         // this will apply for both enemies and for shots
@@ -230,8 +204,82 @@ public abstract class MapObject {
         return position;
     }
 
+    /**************** GETTERS *********************/
+    public double getScale() {
+        return scale;
+    }
+
+    public int getSlices() {
+        return slices;
+    }
+
+    public int getStacks() {
+        return stacks;
+    }
+
+    public double getRotation() {
+        return rotation;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getZ() {
+        return z;
+    }
+
+    public double getDx() {
+        return dx;
+    }
+
+    public double getDy() {
+        return dy;
+    }
+
+    public double getDz() {
+        return dz;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public Vector3f getColor() {
+        return color;
+    }
+
+    public boolean getOutlined() {
+        return outline;
+    }
+
     public ShapeType getType() {
         return type;
+    }
+
+    public String getTextureFilename() {
+        return textureFile;
+    }
+
+    /**************** SETTERS *********************/
+    public void setDx(double dx) {
+        this.dx = dx;
+    }
+
+    public void setDy(double dy) {
+        this.dy = dy;
+    }
+
+    public void setDz(double dz) {
+        this.dz = dz;
+    }
+
+    public void setTextureFile(String textureFile) {
+        this.textureFile = textureFile;
     }
 
     public String toString() {

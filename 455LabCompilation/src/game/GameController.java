@@ -9,6 +9,7 @@ import model.renderers.ShapeRenderer;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
+import org.newdawn.slick.opengl.Texture;
 
 import java.util.ArrayList;
 import java.util.HashSet;

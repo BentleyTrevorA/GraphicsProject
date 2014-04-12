@@ -28,8 +28,6 @@ public class MapObstaclePopulator {
     }
 
     private Collection<MapObject> createBaseMap(Collection<MapObject> map) {
-        map.add(new SphereObstacle(0, 5, 0));
-
         return map;
     }
 
