@@ -31,8 +31,7 @@ public class EnemyHandler {
     }
 
     public void populateTestEnemies() {
-        for(int i=0; i<6; i++)
-        {
+        for(int i=0; i<6; i++) {
             EnemyEntity test = new CubeEnemy(i * 15, i * 15, shapeRenderer);
             test.setHp(6 - i);
             enemies.add(test);

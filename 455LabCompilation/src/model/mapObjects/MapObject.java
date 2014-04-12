@@ -61,7 +61,7 @@ public abstract class MapObject {
         {
             switch (type) {
                 case CUBE:
-                    shapeRenderer.drawCubeWithTexture(this);
+                    shapeRenderer.drawCube(this);
                     break;
                 case PYRAMID:
                     shapeRenderer.drawPyramid(scale, x, y, z, color, outline);

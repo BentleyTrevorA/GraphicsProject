@@ -297,7 +297,7 @@ public class ShapeRenderer {
     }
 
     public void drawCube(MapObject object) {
-        if(object.getTextureNumber() > 0) {
+        if(object.getTextureNumber() >= 0) {
             drawCubeWithTexture(object);
             return;
         }

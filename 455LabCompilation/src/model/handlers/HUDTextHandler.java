@@ -30,7 +30,7 @@ public class HUDTextHandler {
     }
 
     public void drawNumEnemies(int numEnemies) {
-        drawTextToScreen("Enemies Remaining: " + numEnemies, WIDTH - 150, HEIGHT - 10);
+        drawTextToScreen("Enemies Remaining: " + numEnemies, WIDTH - 175, HEIGHT - 10);
     }
 
     private void drawTextToScreen(String text, int xPos, int yPos) {

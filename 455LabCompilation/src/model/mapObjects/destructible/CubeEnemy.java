@@ -6,37 +6,36 @@ import org.lwjgl.util.vector.Vector3f;
 
 public class CubeEnemy extends EnemyEntity {
     private static double cubeScale = 10;
-    private int defaultTexture = 1;
 
     public CubeEnemy(double x, double z, ShapeRenderer shapeRenderer) {
         super(ShapeType.CUBE, cubeScale, x, z);
-        texture = defaultTexture;
+        updateTexture();
         this.shapeRenderer = shapeRenderer;
     }
 
     public CubeEnemy(double x, double z, int pointValue, ShapeRenderer shapeRenderer) {
         super(ShapeType.CUBE, cubeScale, x, z);
         this.pointValue = pointValue;
-        texture = defaultTexture;
+        updateTexture();
         this.shapeRenderer = shapeRenderer;
     }
 
     public CubeEnemy(double x, double z, Vector3f color, ShapeRenderer shapeRenderer) {
         super(ShapeType.CUBE, cubeScale, x, z, color);
-        texture = defaultTexture;
+        updateTexture();
         this.shapeRenderer = shapeRenderer;
     }
 
     public CubeEnemy(double x, double z, int pointValue, Vector3f color, ShapeRenderer shapeRenderer) {
         super(ShapeType.CUBE, cubeScale, x, z, color);
         this.pointValue = pointValue;
-        texture = defaultTexture;
+        updateTexture();
         this.shapeRenderer = shapeRenderer;
     }
 
     public CubeEnemy(double x, double z, Vector3f color, boolean outline, ShapeRenderer shapeRenderer) {
         super(ShapeType.CUBE, cubeScale, x, z, color, outline);
-        texture = defaultTexture;
+        updateTexture();
         this.shapeRenderer = shapeRenderer;
     }
 
@@ -60,6 +59,9 @@ public class CubeEnemy extends EnemyEntity {
                 break;
             case 1:
                 texture = ShapeRenderer.ENEMY_HP_1;
+                break;
+            default:
+                texture = ShapeRenderer.ENEMY_HP_6;
                 break;
         }
     }
