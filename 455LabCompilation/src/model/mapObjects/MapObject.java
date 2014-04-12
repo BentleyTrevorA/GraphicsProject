@@ -52,7 +52,7 @@ public abstract class MapObject {
 
         this.color = color;
         this.outline = outline;
-        texture = -1;
+        texture = ShapeRenderer.NO_TEXTURE;
         shapeRenderer = null;
     }
 

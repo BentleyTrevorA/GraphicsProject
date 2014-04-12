@@ -26,6 +26,7 @@ public class ShapeRenderer {
     public String imgLocation = "img/textures/";
     public Map<Integer, Texture> textures;
 
+    public static final int NO_TEXTURE = -1;
     public static final int ENEMY_HP_6 = 0;
     public static final int ENEMY_HP_5 = 1;
     public static final int ENEMY_HP_4 = 2;
@@ -120,64 +121,121 @@ public class ShapeRenderer {
     public void drawQuad(double sX, double sY, double sZ,
                                 double tX, double tY, double tZ,
                                 double angle, int rX, int rY, int rZ,
-                                Vector3f color, boolean normalize) {
-        glColor3f(color.x, color.y, color.z);
-        glPushMatrix();
+                                Vector3f color, boolean normalize, int textureNum) {
+        // Textured
+        if(textureNum > NO_TEXTURE) {
+            Texture texture = textures.get(textureNum);
 
-        glTranslated(tX, tY, tZ);
-        glRotated(angle, rX, rY, rZ);
-        glScaled(sX, sY, sZ);
+            glColor3f(1, 1, 1);
+            glPushMatrix();
 
-        if (normalize) {
-            glBegin(GL_QUADS);
-            {
-                glNormal3d(-1, -1, -1);
-                glVertex3d(0, 0, 0);
+            glTranslated(tX, tY, tZ);
+            glRotated(angle, rX, rY, rZ);
+            glScaled(sX, sY, sZ);
 
-                glNormal3d(1, -1, -1);
-                glVertex3d(1, 0, 0);
+            glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
+            glEnable(GL_TEXTURE_2D);
+            if (normalize) {
+                glBegin(GL_QUADS);
+                {
+                    glNormal3d(-1, -1, -1);
+                    glTexCoord2d(0, texture.getHeight());
+                    glVertex3d(0, 0, 0);
 
-                glNormal3d(1, 1, -1);
-                glVertex3d(1, 1, 0);
+                    glNormal3d(1, -1, -1);
+                    glTexCoord2d(texture.getWidth(), texture.getHeight());
+                    glVertex3d(1, 0, 0);
 
-                glNormal3d(-1, 1, -1);
-                glVertex3d(0, 1, 0);
+                    glNormal3d(1, 1, -1);
+                    glTexCoord2d(texture.getWidth(), 0);
+                    glVertex3d(1, 1, 0);
+
+                    glNormal3d(-1, 1, -1);
+                    glTexCoord2d(0, 0);
+                    glVertex3d(0, 1, 0);
+                }
+            } else {
+                glBegin(GL_QUADS);
+                {
+                    glTexCoord2d(0, texture.getHeight());
+                    glVertex3d(0, 0, 0);
+                    glTexCoord2d(texture.getWidth(), texture.getHeight());
+                    glVertex3d(1, 0, 0);
+                    glTexCoord2d(texture.getWidth(), 0);
+                    glVertex3d(1, 1, 0);
+                    glTexCoord2d(0, 0);
+                    glVertex3d(0, 1, 0);
+                }
             }
-        } else {
-            glBegin(GL_QUADS);
-            {
-                glVertex3d(0, 0, 0);
-                glVertex3d(1, 0, 0);
-                glVertex3d(1, 1, 0);
-                glVertex3d(0, 1, 0);
-            }
+            glEnd();
+            glDisable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture
+            glPopMatrix();
         }
-        glEnd();
-        glPopMatrix();
+        else { // No Texture
+            glColor3f(color.x, color.y, color.z);
+            glPushMatrix();
+
+            glTranslated(tX, tY, tZ);
+            glRotated(angle, rX, rY, rZ);
+            glScaled(sX, sY, sZ);
+
+            if (normalize) {
+                glBegin(GL_QUADS);
+                {
+                    glNormal3d(-1, -1, -1);
+                    glVertex3d(0, 0, 0);
+
+                    glNormal3d(1, -1, -1);
+                    glVertex3d(1, 0, 0);
+
+                    glNormal3d(1, 1, -1);
+                    glVertex3d(1, 1, 0);
+
+                    glNormal3d(-1, 1, -1);
+                    glVertex3d(0, 1, 0);
+                }
+            } else {
+                glBegin(GL_QUADS);
+                {
+                    glVertex3d(0, 0, 0);
+                    glVertex3d(1, 0, 0);
+                    glVertex3d(1, 1, 0);
+                    glVertex3d(0, 1, 0);
+                }
+            }
+            glEnd();
+            glPopMatrix();
+        }
     }
 
-    public void drawWalls(double width, double height, Vector3f color) {
-        drawQuad(width, height, 1, -width / 2, 0, -width / 2, 0, 0, 1, 0, color, true); // Front
-        drawQuad(width, height, 1, width / 2, 0, width / 2, 180, 0, 1, 0, color, true); // Back
-        drawQuad(width, height, 1, width / 2, 0, -width / 2, -90, 0, 1, 0, color, true); // Right
-        drawQuad(width, height, 1, -width / 2, 0, width / 2, 90, 0, 1, 0, color, true); // Left
+    public void drawWalls(double width, double height, Vector3f color, int texture) {
+        drawQuad(width, height, 1, -width / 2, 0, -width / 2, 0, 0, 1, 0, color, true, texture); // Front
+        drawQuad(width, height, 1, width / 2, 0, width / 2, 180, 0, 1, 0, color, true, texture); // Back
+        drawQuad(width, height, 1, width / 2, 0, -width / 2, -90, 0, 1, 0, color, true, texture); // Right
+        drawQuad(width, height, 1, -width / 2, 0, width / 2, 90, 0, 1, 0, color, true, texture); // Left
     }
 
     // Draws floor with normals
-    public void drawFloorTiles(double tileSize, int numTilesInOneDirection) {
+    public void drawFloorTiles(double tileSize, int numTilesInOneDirection, int texture1, int texture2) {
         for (int x = 0; x < numTilesInOneDirection + 1; x++) {
             for (int z = 0; z < numTilesInOneDirection + 1; z++) {
                 Vector3f tileColor;
-                if ((x + z) % 2 == 0)
+                int texture;
+                if ((x + z) % 2 == 0) {
                     tileColor = Colors.WHITE;
-                else
+                    texture = texture1;
+                }
+                else {
                     tileColor = Colors.BLACK;
+                    texture = texture2;
+                }
 
                 glDisable(GL_LIGHTING);
-                drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false);
-                drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false); // Reflect across z axis
-                drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false); // Reflect across x axis
-                drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false); // Reflect across x & z axis
+                drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false, texture);
+                drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false, texture); // Reflect across z axis
+                drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false, texture); // Reflect across x axis
+                drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false, texture); // Reflect across x & z axis
                 glEnable(GL_LIGHTING);
             }
         }
@@ -297,7 +355,7 @@ public class ShapeRenderer {
     }
 
     public void drawCube(MapObject object) {
-        if(object.getTextureNumber() >= 0) {
+        if(object.getTextureNumber() > NO_TEXTURE) {
             drawCubeWithTexture(object);
             return;
         }

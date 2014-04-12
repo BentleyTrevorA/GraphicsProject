@@ -35,8 +35,8 @@ public class Model {
     }
 
     public void drawMap() {
-        shapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION); // Makes floor pink
-        shapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE);
+        shapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION, ShapeRenderer.STONE_1, ShapeRenderer.STONE_2);
+        shapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, ShapeRenderer.NO_TEXTURE);
 
         obstacleHandler.drawObstacles();
         enemyHandler.drawEnemies();
