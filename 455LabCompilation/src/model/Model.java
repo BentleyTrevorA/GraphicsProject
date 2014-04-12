@@ -18,17 +18,17 @@ public class Model {
     private ObstacleHandler obstacleHandler;
     private ShotsHandler shotsHandler;
     private HudHandler hudHandler;
-    private ShapeRenderer shapeRenderer;
+    private TextureHandler textureHandler;
 
     public Model(Camera camera, int mapNumber, int difficulty) {
         this.camera = camera;
         scoreHandler = new ScoreHandler();
-        shapeRenderer = new ShapeRenderer();
-        enemyHandler = new EnemyHandler(scoreHandler, shapeRenderer);
+        textureHandler = new TextureHandler(); // IMPORTANT: Has to happen AFTER InitGL()
+        enemyHandler = new EnemyHandler(scoreHandler, textureHandler);
         playerHandler = new PlayerHandler(camera, enemyHandler);
-        obstacleHandler = new ObstacleHandler(shapeRenderer, mapNumber);
-        shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, shapeRenderer);
-        hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler, playerHandler, shapeRenderer);
+        obstacleHandler = new ObstacleHandler(textureHandler, mapNumber);
+        shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, textureHandler);
+        hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler, playerHandler, textureHandler);
     }
 
     public void resetGame(int difficulty) {
@@ -42,8 +42,9 @@ public class Model {
     }
 
     public void drawMap() {
-        shapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION, ShapeRenderer.STONE_1, ShapeRenderer.STONE_2);
-        shapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, ShapeRenderer.STONE_4);
+        ShapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION,
+                textureHandler.getTexture(TextureHandler.STONE_1), textureHandler.getTexture(TextureHandler.STONE_2));
+        ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, textureHandler.getTexture(TextureHandler.STONE_4));
 
         obstacleHandler.drawObstacles();
         enemyHandler.drawEnemies();

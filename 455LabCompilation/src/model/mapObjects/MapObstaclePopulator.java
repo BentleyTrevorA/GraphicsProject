@@ -1,20 +1,19 @@
 package model.mapObjects;
 
 import model.Colors;
+import model.handlers.TextureHandler;
 import model.mapObjects.nondestructible.CubeObstacle;
 import model.mapObjects.nondestructible.PyramidObstacle;
 import model.mapObjects.nondestructible.SphereObstacle;
-import model.renderers.ShapeRenderer;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
 public class MapObstaclePopulator {
-    private ShapeRenderer shapeRenderer;
+    private TextureHandler textureHandler;
 
-    public MapObstaclePopulator(ShapeRenderer shapeRenderer) {
-        this.shapeRenderer = shapeRenderer;
+    public MapObstaclePopulator(TextureHandler textureHandler) {
+        this.textureHandler = textureHandler;
     }
 
     public Collection<MapObject> createMap(int mapNumber) {
@@ -38,33 +37,33 @@ public class MapObstaclePopulator {
     }
 
     private Collection<MapObject> createMap1(Collection<MapObject> map) {
-        map.add(new PyramidObstacle(100, 0, 0, Colors.CYAN, shapeRenderer));
-        map.add(new PyramidObstacle(-100, 0, 0, Colors.GREEN, shapeRenderer));
-        map.add(new PyramidObstacle(0, 0, 100, Colors.ORANGE, shapeRenderer));
-        map.add(new PyramidObstacle(0, 0, -100, Colors.PURPLE, shapeRenderer));
+        map.add(new PyramidObstacle(100, 0, 0, Colors.CYAN, textureHandler));
+        map.add(new PyramidObstacle(-100, 0, 0, Colors.GREEN, textureHandler));
+        map.add(new PyramidObstacle(0, 0, 100, Colors.ORANGE, textureHandler));
+        map.add(new PyramidObstacle(0, 0, -100, Colors.PURPLE, textureHandler));
 
-        map.add(new CubeObstacle(-50, 25, -50, Colors.YELLOW, shapeRenderer));
-        map.add(new CubeObstacle(50, 0, 50, Colors.ORANGE, shapeRenderer));
+        map.add(new CubeObstacle(-50, 25, -50, Colors.YELLOW, textureHandler));
+        map.add(new CubeObstacle(50, 0, 50, Colors.ORANGE, textureHandler));
 
-        map.add(new SphereObstacle(0, 25, 0, Colors.YELLOW, shapeRenderer));
+        map.add(new SphereObstacle(0, 25, 0, Colors.YELLOW, textureHandler));
         return map;
     }
 
     private Collection<MapObject> createTestCollisionMap1(Collection<MapObject> map) {
-        map.add(new CubeObstacle(0, 0, -50, shapeRenderer));
-        map.add(new CubeObstacle(50, 0, 0, shapeRenderer));
-        map.add(new CubeObstacle(100, 0, -50, shapeRenderer));
-        map.add(new CubeObstacle(150, 0, 0, shapeRenderer));
-        map.add(new CubeObstacle(0, 0, 50, shapeRenderer));
+        map.add(new CubeObstacle(0, 0, -50, textureHandler));
+        map.add(new CubeObstacle(50, 0, 0, textureHandler));
+        map.add(new CubeObstacle(100, 0, -50, textureHandler));
+        map.add(new CubeObstacle(150, 0, 0, textureHandler));
+        map.add(new CubeObstacle(0, 0, 50, textureHandler));
 
         return map;
     }
 
     private Collection<MapObject> createTestCollisionMap2(Collection<MapObject> map) {
-        map.add(new CubeObstacle(50, -50, 0, 0, shapeRenderer));
-        map.add(new CubeObstacle(50, 50, 0, 0, shapeRenderer));
-        map.add(new CubeObstacle(50, 0, 0, -50, shapeRenderer));
-        map.add(new CubeObstacle(50, 0, 0, 50, shapeRenderer));
+        map.add(new CubeObstacle(50, -50, 0, 0, textureHandler));
+        map.add(new CubeObstacle(50, 50, 0, 0, textureHandler));
+        map.add(new CubeObstacle(50, 0, 0, -50, textureHandler));
+        map.add(new CubeObstacle(50, 0, 0, 50, textureHandler));
 
         return map;
     }

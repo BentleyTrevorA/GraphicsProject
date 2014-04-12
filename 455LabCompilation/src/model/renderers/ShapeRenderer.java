@@ -4,6 +4,7 @@ import model.Colors;
 import model.HouseModel;
 import model.Line3D;
 import model.WireFrame;
+import model.handlers.TextureHandler;
 import model.mapObjects.MapObject;
 import org.lwjgl.util.glu.Sphere;
 import org.lwjgl.util.vector.Vector3f;
@@ -23,47 +24,8 @@ import static org.lwjgl.opengl.GL11.glVertex3d;
 public class ShapeRenderer {
 
     private static WireFrame model = new HouseModel();
-    public String imgLocation = "img/textures/";
-    public Map<Integer, Texture> textures;
 
-    public static final int NO_TEXTURE = -1;
-    public static final int ENEMY_HP_6 = 0;
-    public static final int ENEMY_HP_5 = 1;
-    public static final int ENEMY_HP_4 = 2;
-    public static final int ENEMY_HP_3 = 3;
-    public static final int ENEMY_HP_2 = 4;
-    public static final int ENEMY_HP_1 = 5;
-    public static final int STONE_1 = 6;
-    public static final int STONE_2 = 7;
-    public static final int STONE_3 = 8;
-    public static final int STONE_4 = 9;
-
-    public ShapeRenderer() {
-        loadTextures();
-    }
-
-    public void loadTextures() {
-        try {
-            textures = new HashMap<Integer, Texture>();
-
-            textures.put(ENEMY_HP_6, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar1.png")));
-            textures.put(ENEMY_HP_5, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar2.png")));
-            textures.put(ENEMY_HP_4, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar3.png")));
-            textures.put(ENEMY_HP_3, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar4.png")));
-            textures.put(ENEMY_HP_2, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar5.png")));
-            textures.put(ENEMY_HP_1, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "Gengar6.png")));
-
-            textures.put(STONE_1, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone1.png")));
-            textures.put(STONE_2, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone2.png")));
-            textures.put(STONE_3, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone3.png")));
-            textures.put(STONE_4, TextureLoader.getTexture("PNG", new FileInputStream(imgLocation + "stone4.png")));
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
+    public static void drawHouse(Vector3f houseColor, Vector3f outlineColor) {
         glColor3f(houseColor.x, houseColor.y, houseColor.z);
         glBegin(GL_POLYGON);
         {
@@ -118,14 +80,13 @@ public class ShapeRenderer {
      * @param rZ    - rotation about z
      * @param color - color
      */
-    public void drawQuad(double sX, double sY, double sZ,
+    public static void drawQuad(double sX, double sY, double sZ,
                                 double tX, double tY, double tZ,
                                 double angle, int rX, int rY, int rZ,
-                                Vector3f color, boolean normalize, int textureNum) {
+                                Vector3f color, boolean normalize,
+                                Texture texture) {
         // Textured
-        if(textureNum > NO_TEXTURE) {
-            Texture texture = textures.get(textureNum);
-
+        if(texture != null) {
             glColor3f(1, 1, 1);
             glPushMatrix();
 
@@ -209,7 +170,7 @@ public class ShapeRenderer {
         }
     }
 
-    public void drawWalls(double width, double height, Vector3f color, int texture) {
+    public static void drawWalls(double width, double height, Vector3f color, Texture texture) {
         drawQuad(width, height, 1, -width / 2, 0, -width / 2, 0, 0, 1, 0, color, true, texture); // Front
         drawQuad(width, height, 1, width / 2, 0, width / 2, 180, 0, 1, 0, color, true, texture); // Back
         drawQuad(width, height, 1, width / 2, 0, -width / 2, -90, 0, 1, 0, color, true, texture); // Right
@@ -217,11 +178,11 @@ public class ShapeRenderer {
     }
 
     // Draws floor with normals
-    public void drawFloorTiles(double tileSize, int numTilesInOneDirection, int texture1, int texture2) {
+    public static void drawFloorTiles(double tileSize, int numTilesInOneDirection, Texture texture1, Texture texture2) {
         for (int x = 0; x < numTilesInOneDirection + 1; x++) {
             for (int z = 0; z < numTilesInOneDirection + 1; z++) {
                 Vector3f tileColor;
-                int texture;
+                Texture texture;
                 if ((x + z) % 2 == 0) {
                     tileColor = Colors.WHITE;
                     texture = texture1;
@@ -250,7 +211,7 @@ public class ShapeRenderer {
      * @param z       - z offset
      * @param outline - draw the shape outline
      */
-    public void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public static void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
         double halfScale = .5;
         double height = Math.sqrt(halfScale * halfScale + halfScale * halfScale);
         glColor3f(color.x, color.y, color.z);
@@ -354,9 +315,10 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public void drawCube(MapObject object) {
-        if(object.getTextureNumber() > NO_TEXTURE) {
-            drawCubeWithTexture(object);
+    public static void drawCube(MapObject object) {
+        Texture texture = object.getTexture();
+        if(texture != null) {
+            drawCubeWithTexture(object, texture);
             return;
         }
 
@@ -462,8 +424,7 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public void drawCubeWithTexture(MapObject object) {
-        Texture texture = textures.get(object.getTextureNumber());
+    public static void drawCubeWithTexture(MapObject object, Texture texture) {
 
         double x = object.getX();
         double y = object.getY();
@@ -593,7 +554,7 @@ public class ShapeRenderer {
         glPopMatrix();
     }
 
-    public void drawCubeOutline(boolean outline) {
+    public static void drawCubeOutline(boolean outline) {
         if (outline) {
             glColor3f(0, 0, 0);
             glBegin(GL_LINES);
@@ -641,7 +602,7 @@ public class ShapeRenderer {
         }
     }
 
-    public void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color) {
+    public static void drawSphere(double radius, double x, double y, double z, int slices, int stacks, Vector3f color) {
         glColor3f(color.x, color.y, color.z);
         glPushMatrix();
         glTranslated(x, y, z);

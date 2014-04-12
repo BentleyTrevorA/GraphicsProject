@@ -15,14 +15,14 @@ import java.util.HashSet;
 
 public class EnemyHandler {
     private ScoreHandler scoreHandler;
-    private ShapeRenderer shapeRenderer;
+    private TextureHandler textureHandler;
 
     private Collection<EnemyEntity> enemies;
 
-    public EnemyHandler(ScoreHandler scoreHandler, ShapeRenderer shapeRenderer) {
+    public EnemyHandler(ScoreHandler scoreHandler, TextureHandler textureHandler) {
         enemies = new HashSet<EnemyEntity>();
         this.scoreHandler = scoreHandler;
-        this.shapeRenderer = shapeRenderer;
+        this.textureHandler = textureHandler;
 //        populateTestEnemies();
     }
 
@@ -36,7 +36,7 @@ public class EnemyHandler {
 
     public void populateTestEnemies() {
         for(int i=0; i<=6; i++){
-            EnemyEntity test = new CubeEnemy(i * 15, i * 15, shapeRenderer);
+            EnemyEntity test = new CubeEnemy(i * 15, i * 15, textureHandler);
             test.setHp(6 - i);
             test.setPointValue(test.getHp() * 10);
             enemies.add(test);
@@ -48,7 +48,7 @@ public class EnemyHandler {
         int zScale = Model.MAX_MAP_COORDINATE;
 
         while(enemies.size() < 30) {
-            EnemyEntity test = new CubeEnemy(Math.random() * xScale, Math.random() * zScale, shapeRenderer);
+            EnemyEntity test = new CubeEnemy(Math.random() * xScale, Math.random() * zScale, textureHandler);
 //            test.setHp(6 - i);
 //            test.setPointValue(test.getHp() * 10);
             enemies.add(test);

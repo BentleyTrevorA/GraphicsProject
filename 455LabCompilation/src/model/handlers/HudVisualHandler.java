@@ -1,10 +1,8 @@
 package model.handlers;
 
 import driver.LWJGLSandbox;
-import game.GameController;
 import model.Colors;
 import model.renderers.ShapeRenderer;
-import model.renderers.TextRenderer;
 import org.lwjgl.util.vector.Vector3f;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -15,10 +13,10 @@ public class HudVisualHandler {
     private static final int WIDTH = LWJGLSandbox.DISPLAY_WIDTH;
     private static final int HEIGHT = LWJGLSandbox.DISPLAY_HEIGHT;
 
-    private ShapeRenderer shapeRenderer;
+    private TextureHandler textureHandler;
 
-    public HudVisualHandler(ShapeRenderer shapeRenderer) {
-        this.shapeRenderer = shapeRenderer;
+    public HudVisualHandler(TextureHandler textureHandler) {
+        this.textureHandler = textureHandler;
     }
 
     public void drawLife(float percentLife) {
@@ -34,7 +32,8 @@ public class HudVisualHandler {
         glLoadIdentity();
 
         glDisable(GL_LIGHTING);
-        shapeRenderer.drawQuad(400 * percentLife, 20, 1, 295, HEIGHT - 25, 0, 0, 0, 0, 0, color, false, ShapeRenderer.NO_TEXTURE);
+        ShapeRenderer.drawQuad(400 * percentLife, 20, 1, 295, HEIGHT - 25, 0, 0, 0, 0, 0, color, false,
+                textureHandler.getTexture(TextureHandler.NO_TEXTURE));
         glEnable(GL_LIGHTING);
         glPopMatrix();
 

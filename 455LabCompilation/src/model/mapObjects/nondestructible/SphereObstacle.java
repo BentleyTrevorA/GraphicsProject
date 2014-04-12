@@ -1,30 +1,30 @@
 package model.mapObjects.nondestructible;
 
 import model.Colors;
+import model.handlers.TextureHandler;
 import model.mapObjects.ShapeType;
-import model.renderers.ShapeRenderer;
 import org.lwjgl.util.vector.Vector3f;
 
 public class SphereObstacle extends NonDestructibleObject {
     private static double defaultRadius = 5;
 
-    public SphereObstacle(double x, double y, double z, ShapeRenderer shapeRenderer) {
+        public SphereObstacle(double x, double y, double z, TextureHandler textureHandler) {
         super(ShapeType.SPHERE, defaultRadius, x, y, z, Colors.LIGHT_BLUE, false);
-        this.shapeRenderer = shapeRenderer;
+        this.textureHandler = textureHandler;
     }
 
-    public SphereObstacle(double x, double y, double z, Vector3f color, ShapeRenderer shapeRenderer) {
+    public SphereObstacle(double x, double y, double z, Vector3f color, TextureHandler textureHandler) {
         super(ShapeType.SPHERE, defaultRadius, x, y, z, color, false);
-        this.shapeRenderer = shapeRenderer;
+        this.textureHandler = textureHandler;
     }
 
-    public SphereObstacle(double radius, double x, double y, double z, Vector3f color, ShapeRenderer shapeRenderer) {
+    public SphereObstacle(double radius, double x, double y, double z, Vector3f color, TextureHandler textureHandler) {
         super(ShapeType.SPHERE, radius, x, y, z, color, false);
-        this.shapeRenderer = shapeRenderer;
+        this.textureHandler = textureHandler;
     }
 
-    public SphereObstacle(double radius, double x, double y, double z, Vector3f color, boolean outline, ShapeRenderer shapeRenderer) {
+    public SphereObstacle(double radius, double x, double y, double z, Vector3f color, boolean outline, TextureHandler textureHandler) {
         super(ShapeType.SPHERE, radius, x, y, z, color, outline);
-        this.shapeRenderer = shapeRenderer;
+        this.textureHandler = textureHandler;
     }
 }

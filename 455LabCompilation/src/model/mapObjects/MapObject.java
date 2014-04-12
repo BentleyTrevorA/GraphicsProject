@@ -1,11 +1,13 @@
 package model.mapObjects;
 
 import camera.Camera;
+import model.handlers.TextureHandler;
 import model.renderers.ShapeRenderer;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
+import org.newdawn.slick.opengl.Texture;
 
 import java.nio.FloatBuffer;
 
@@ -19,8 +21,8 @@ public abstract class MapObject {
     protected Vector3f color;        // Color of object
     protected boolean outline;       // Draw outline of object
     protected ShapeType type;        // Type of object
-    protected int texture;           // Texture of object
-    protected ShapeRenderer shapeRenderer; // Draws all the shapes
+    protected int textureNum;           // Texture of object
+    protected TextureHandler textureHandler;
 
     // Collision Variables
     public static final int X_PLANE = 0;
@@ -52,22 +54,22 @@ public abstract class MapObject {
 
         this.color = color;
         this.outline = outline;
-        texture = ShapeRenderer.NO_TEXTURE;
-        shapeRenderer = null;
+        textureNum = TextureHandler.NO_TEXTURE;
+        textureHandler = null;
     }
 
     public void render() {
-        if(shapeRenderer != null)
+        if(textureHandler != null)
         {
             switch (type) {
                 case CUBE:
-                    shapeRenderer.drawCube(this);
+                    ShapeRenderer.drawCube(this);
                     break;
                 case PYRAMID:
-                    shapeRenderer.drawPyramid(scale, x, y, z, color, outline);
+                    ShapeRenderer.drawPyramid(scale, x, y, z, color, outline);
                     break;
                 case SPHERE:
-                    shapeRenderer.drawSphere(scale, this.x, this.y, this.z, slices, stacks, color);
+                    ShapeRenderer.drawSphere(scale, this.x, this.y, this.z, slices, stacks, color);
                     break;
                 case PLANE:
                     break;
@@ -283,7 +285,11 @@ public abstract class MapObject {
     }
 
     public int getTextureNumber() {
-        return texture;
+        return textureNum;
+    }
+
+    public Texture getTexture() {
+        return textureHandler.getTexture(textureNum);
     }
 
     /**************** SETTERS *********************/
@@ -299,12 +305,12 @@ public abstract class MapObject {
         this.dz = dz;
     }
 
-    public void setShapeRenderer(ShapeRenderer shapeRenderer) {
-        this.shapeRenderer = shapeRenderer;
+    public void setTextureHandler(TextureHandler textureHandler) {
+        this.textureHandler = textureHandler;
     }
 
-    public void setTexture(int texture) {
-        this.texture = texture;
+    public void setTextureNum(int textureNum) {
+        this.textureNum = textureNum;
     }
 
     public String toString() {

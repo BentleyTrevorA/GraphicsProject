@@ -1,7 +1,5 @@
 package model.handlers;
 
-import model.renderers.ShapeRenderer;
-
 public class HudHandler {
     private ShotsHandler shotsHandler;
     private ScoreHandler scoreHandler;
@@ -15,9 +13,9 @@ public class HudHandler {
                       ShotsHandler shotsHandler,
                       EnemyHandler enemyHandler,
                       PlayerHandler playerHandler,
-                      ShapeRenderer shapeRenderer) {
+                      TextureHandler textureHandler) {
         hudTextHandler = new HudTextHandler();
-        hudVisualHandler = new HudVisualHandler(shapeRenderer);
+        hudVisualHandler = new HudVisualHandler(textureHandler);
         this.scoreHandler = scoreHandler;
         this.shotsHandler = shotsHandler;
         this.enemyHandler = enemyHandler;
