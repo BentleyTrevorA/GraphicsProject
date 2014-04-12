@@ -8,7 +8,7 @@ import model.mapObjects.nondestructible.Sphere;
 
 import java.util.ArrayList;
 
-public class MapCreator {
+public class MapObstaclePopulator {
 
     public ArrayList<MapObject> createMap(int mapNumber) {
         ArrayList<MapObject> map = new ArrayList<MapObject>();

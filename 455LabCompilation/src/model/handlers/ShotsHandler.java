@@ -8,22 +8,23 @@ import model.mapObjects.destructible.EnemyEntity;
 import model.renderers.ShapeRenderer;
 import org.lwjgl.util.vector.Vector3f;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 public class ShotsHandler {
     private EnemyHandler enemyHandler;
+    private ObstacleHandler obstacleHandler;
 
-    private ArrayList<Shot> shots;
+    private Collection<Shot> shots;
     private int maxShots = 1;
     private Set<Shot> shotsToRemove;
     private Vector3f shotColor = Colors.PINK; // TODO: Move to shot
 
-    public ShotsHandler(EnemyHandler enemyHandler) {
+    public ShotsHandler(ObstacleHandler obstacleHandler, EnemyHandler enemyHandler) {
+        this.obstacleHandler = obstacleHandler;
         this.enemyHandler = enemyHandler;
-        shots = new ArrayList<Shot>();
+        shots = new HashSet<Shot>();
     }
 
     public int getShotsRemaining() {
@@ -45,13 +46,13 @@ public class ShotsHandler {
         }
     }
 
-    public void updateShots(Collection<MapObject> obstacles) {
+    public void updateShots() {
         shotsToRemove = new HashSet<Shot>();
 
         for (Shot shot : shots) {
             updateShotPositions(shot);
             checkForEnemyCollisions(shot);
-            checkForObstacleCollisions(shot, obstacles);
+            checkForObstacleCollisions(shot);
             shot.checkShotLife();
 
             if(shot.isDead())
@@ -79,11 +80,11 @@ public class ShotsHandler {
         }
     }
 
-    private void checkForObstacleCollisions(Shot shot, Collection<MapObject> obstacles) {
+    private void checkForObstacleCollisions(Shot shot) {
         if(shot.isDead())
             return;
 
-        MapObject objectHit = findObstacleHitByShot(shot, obstacles);
+        MapObject objectHit = obstacleHandler.findObstacleHitByShot(shot);
         if (objectHit != null) {
             System.out.println("I'm hit!\n" + objectHit);
 
@@ -99,14 +100,5 @@ public class ShotsHandler {
         for (Shot shot : shotsToRemove) {
             shots.remove(shot);
         }
-    }
-
-    private MapObject findObstacleHitByShot(Shot shot, Collection<MapObject> obstacles) {
-        for(MapObject obstacle : obstacles) {
-            if(obstacle.isCollidingWith(shot.x, shot.y, shot.z)) {
-                return obstacle;
-            }
-        }
-        return null;
     }
 }

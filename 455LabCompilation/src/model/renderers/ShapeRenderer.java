@@ -131,51 +131,14 @@ public class ShapeRenderer {
                 else
                     tileColor = Colors.BLACK;
 
+                glDisable(GL_LIGHTING);
                 drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false);
                 drawQuad(tileSize, tileSize, 1, tileSize * x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false); // Reflect across z axis
                 drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * z, -90, 1, 0, 0, tileColor, false); // Reflect across x axis
                 drawQuad(tileSize, tileSize, 1, tileSize * -x, 0, tileSize * -z, -90, 1, 0, 0, tileColor, false); // Reflect across x & z axis
+                glEnable(GL_LIGHTING);
             }
         }
-    }
-
-    public static void drawFloor(int scale, int numTiles) {
-        for (int x = 0; x < numTiles + 1; x++) {
-            for (int z = 0; z < numTiles + 1; z++) {
-                Vector3f tileColor;
-                if ((x + z) % 2 == 0)
-                    tileColor = Colors.WHITE;
-                else
-                    tileColor = Colors.BLACK;
-
-                drawFloorTile(scale, scale * x, 0, scale * z, tileColor);
-                // Reflect across z axis
-                drawFloorTile(scale, scale * x, 0, scale * -z, tileColor);
-                // Reflect across x axis
-                drawFloorTile(scale, scale * -x, 0, scale * z, tileColor);
-                // Reflect across x and z axis
-                drawFloorTile(scale, scale * -x, 0, scale * -z, tileColor);
-            }
-        }
-    }
-
-    private static void drawFloorTile(double scale, double x, double y, double z, Vector3f color) {
-        glColor3f(color.x, color.y, color.z);
-
-        glPushMatrix();
-        glTranslated(x, y, z);
-        glScaled(scale, scale, scale);
-
-        glBegin(GL_QUADS);
-        {
-            glVertex3d(0, 0, 0);
-            glVertex3d(0, 0, 1);
-            glVertex3d(1, 0, 1);
-            glVertex3d(1, 0, 0);
-        }
-        glEnd();
-
-        glPopMatrix();
     }
 
     /**
