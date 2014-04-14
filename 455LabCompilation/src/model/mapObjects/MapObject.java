@@ -66,7 +66,7 @@ public abstract class MapObject {
                     ShapeRenderer.drawCube(this);
                     break;
                 case PYRAMID:
-                    ShapeRenderer.drawPyramid(scale, x, y, z, color, outline);
+                    ShapeRenderer.drawPyramid(this);
                     break;
                 case SPHERE:
                     ShapeRenderer.drawSphere(scale, this.x, this.y, this.z, slices, stacks, color);
@@ -165,7 +165,7 @@ public abstract class MapObject {
                 break;
             case SPHERE:
                 double distFromCenter = collisionPoint.x * collisionPoint.x + collisionPoint.y * collisionPoint.y + collisionPoint.z * collisionPoint.z;
-                return (distFromCenter <= scale * scale);
+                return (distFromCenter <= 1);
             case PLANE:
                 break;
             default:

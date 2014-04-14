@@ -9,7 +9,7 @@ import org.lwjgl.util.vector.Vector3f;
 
 public class Shot extends DestructibleObject {
     protected static double radius = 1;
-    private static Vector3f color = Colors.PINK;
+    private static Vector3f color = Colors.CYAN;
 
     private int damage = 1;        // Damage shot does to enemies
 

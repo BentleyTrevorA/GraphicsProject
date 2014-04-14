@@ -202,23 +202,138 @@ public class ShapeRenderer {
         }
     }
 
-    /**
-     * Draw a basic pyramid shape
-     *
-     * @param scale   - Scale of shape
-     * @param x       - x offset
-     * @param y       - y offset
-     * @param z       - z offset
-     * @param outline - draw the shape outline
-     */
-    public static void drawPyramid(double scale, double x, double y, double z, Vector3f color, boolean outline) {
+    public static void drawPyramid(double sX, double sY, double sZ,
+                                double tX, double tY, double tZ,
+                                double angle, int rX, int rY, int rZ,
+                                Vector3f color, boolean outline,
+                                Texture texture) {
         double halfScale = .5;
         double height = Math.sqrt(halfScale * halfScale + halfScale * halfScale);
         glColor3f(color.x, color.y, color.z);
 
         glPushMatrix();
-        glTranslated(x, y, z);
-        glScaled(scale, scale, scale);
+        glTranslated(tX, tY, tZ);
+        glRotated(angle, rX, rY, rZ);
+        glScaled(sX, sY, sZ);
+
+        // Be sure to be CCW
+        glBegin(GL_TRIANGLES);
+        {
+            // Back face
+            glNormal3d(1, -1, -1);
+            glVertex3d(1, 0, 0);
+
+            glNormal3d(-1, -1, -1);
+            glVertex3d(0, 0, 0);
+
+            glNormal3d(0, 1, 0);
+            glVertex3d(halfScale, height, halfScale);
+
+            // Right face
+            glNormal3d(1, -1, 1);
+            glVertex3d(1, 0, 1);
+
+            glNormal3d(1, -1, -1);
+            glVertex3d(1, 0, 0);
+
+            glNormal3d(0, 1, 0);
+            glVertex3d(halfScale, height, halfScale);
+
+            // Front face
+            glNormal3d(-1, -1, 1);
+            glVertex3d(0, 0, 1);
+
+            glNormal3d(1, -1, 1);
+            glVertex3d(1, 0, 1);
+
+            glNormal3d(0, 1, 0);
+            glVertex3d(halfScale, height, halfScale);
+
+            // Left face
+            glNormal3d(-1, -1, -1);
+            glVertex3d(0, 0, 0);
+
+            glNormal3d(-1, -1, 1);
+            glVertex3d(0, 0, 1);
+
+            glNormal3d(0, 1, 0);
+            glVertex3d(halfScale, height, halfScale);
+        }
+        glEnd();
+
+        glBegin(GL_QUADS);
+        {
+            // Bottom face
+            glNormal3d(-1, -1, -1);
+            glVertex3d(0, 0, 0);
+
+            glNormal3d(1, -1, -1);
+            glVertex3d(1, 0, 0);
+
+            glNormal3d(1, -1, 1);
+            glVertex3d(1, 0, 1);
+
+            glNormal3d(-1, -1, 1);
+            glVertex3d(0, 0, 1);
+        }
+        glEnd();
+
+        if (outline) {
+            glColor3f(0, 0, 0);
+            glBegin(GL_LINES);
+            {
+                glVertex3d(0, 0, 0);
+                glVertex3d(1, 0, 0);
+
+                glVertex3d(1, 0, 0);
+                glVertex3d(1, 0, 1);
+
+                glVertex3d(1, 0, 1);
+                glVertex3d(0, 0, 1);
+
+                glVertex3d(0, 0, 1);
+                glVertex3d(0, 0, 0);
+
+                glVertex3d(0, 0, 0);
+                glVertex3d(halfScale, height, halfScale);
+
+                glVertex3d(1, 0, 0);
+                glVertex3d(halfScale, height, halfScale);
+
+                glVertex3d(1, 0, 1);
+                glVertex3d(halfScale, height, halfScale);
+
+                glVertex3d(0, 0, 1);
+                glVertex3d(halfScale, height, halfScale);
+            }
+            glEnd();
+        }
+        glPopMatrix();
+    }
+
+    public static void drawPyramid(MapObject object) {
+        drawPyramid(object.getScale(), object.getScale(), object.getScale(),
+                object.getX(), object.getY(), object.getZ(),
+                0, 0, 0, 0,
+                object.getColor(),
+                object.getOutlined(),
+                object.getTexture());
+    }
+
+    public static void drawPyramidHorizontal(double sX, double sY, double sZ,
+                                   double tX, double tY, double tZ,
+                                   double angle, int rX, int rY, int rZ,
+                                   Vector3f color, boolean outline,
+                                   Texture texture) {
+        double halfScale = .5;
+        double height = Math.sqrt(halfScale * halfScale + halfScale * halfScale);
+        glColor3f(color.x, color.y, color.z);
+
+        glPushMatrix();
+        glTranslated(tX, tY, tZ);
+        glRotated(-90, 1, 0, 0);
+        glRotated(angle, rX, rY, rZ);
+        glScaled(sX, sY, sZ);
 
         // Be sure to be CCW
         glBegin(GL_TRIANGLES);

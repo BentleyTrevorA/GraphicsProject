@@ -6,9 +6,9 @@ import org.lwjgl.util.vector.Vector3f;
 import org.newdawn.slick.opengl.Texture;
 
 public abstract class EnemyEntity extends Entity {
-    protected static Vector3f defaultColor = Colors.RED;
+    protected static Vector3f defaultColor = Colors.ORANGE;
     protected static int defaultPointValue = 10;
-    private static double defaultSpeed = .3;
+    protected static double defaultSpeed = .3;
 
     protected int pointValue;
 

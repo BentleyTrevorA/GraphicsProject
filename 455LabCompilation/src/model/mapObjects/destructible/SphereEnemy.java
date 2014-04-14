@@ -8,12 +8,14 @@ public class SphereEnemy extends EnemyEntity {
     private static double radius = 6;
     private static int baseValue = 25;
     private static int baseHp = 3;
+//    protected static double speed = .4; // TODO: make faster
 
     public SphereEnemy(double x, double z, TextureHandler textureHandler) {
         super(ShapeType.SPHERE, radius, x, radius, z);
         pointValue = baseValue;
         hp = baseHp;
         this.textureHandler = textureHandler;
+
     }
 
     public SphereEnemy(double x, double z, int pointValue, TextureHandler textureHandler) {

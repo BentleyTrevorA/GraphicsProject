@@ -1,7 +1,9 @@
 package model.handlers;
 
 import camera.Camera;
+import model.Colors;
 import model.mapObjects.destructible.EnemyEntity;
+import model.renderers.ShapeRenderer;
 import org.lwjgl.util.vector.Vector4f;
 
 public class PlayerHandler {
@@ -18,6 +20,11 @@ public class PlayerHandler {
         this.enemyHandler = enemyHandler;
         this.soundHandler = soundHandler;
         hasPlayedDyingSound = false;
+    }
+
+    public void drawPlayer() {
+        if(camera.isFacingForward())
+            ShapeRenderer.drawPyramidHorizontal(10, 20, 10, camera.xPos + camera.xCharAdjust(5, 10), 0, camera.zPos + camera.zCharAdjust(5, 10), -camera.rotateAngle, 0, 0, 1, Colors.RED, false, null);
     }
 
     public int getMaxHp() {

@@ -44,6 +44,7 @@ public class Model {
 
     public void update() {
         playerHandler.checkForCollisions();
+        playerHandler.drawPlayer();
         shotsHandler.updateShots();
         enemyHandler.updateEnemies(camera);
     }
@@ -54,6 +55,7 @@ public class Model {
         ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, textureHandler.getTexture(TextureHandler.STONE_4));
 
         obstacleHandler.drawObstacles();
+        playerHandler.drawPlayer();
         enemyHandler.drawEnemies();
         shotsHandler.drawShots();
     }
@@ -64,6 +66,7 @@ public class Model {
             ShapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION,
                     textureHandler.getTexture(TextureHandler.STONE_1), textureHandler.getTexture(TextureHandler.STONE_2));
             ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, textureHandler.getTexture(TextureHandler.STONE_4));
+            playerHandler.drawPlayer();
             obstacleHandler.drawObstacles();
             enemyHandler.drawEnemies();
             shotsHandler.drawShots();

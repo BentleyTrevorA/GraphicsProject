@@ -17,6 +17,8 @@ public class Camera {
     private double movementSpeed = 1.2;
 
     private boolean printVariables = false;
+    private double cosineOfAngle = 0;
+    private double sineOFAngle = 0;
 
     public Camera() {
 
@@ -26,6 +28,10 @@ public class Camera {
         // TODO: This messes with the Orthographic projection
         glRotated(rotateAngle, 0f, 1.0f, 0f);
         glTranslated(-xPos, -yPos, -zPos);
+    }
+
+    public boolean isFacingForward() {
+        return Math.cos(Math.toRadians(rotateAngle)) > 0;
     }
 
     public void moveForward() {
@@ -47,6 +53,18 @@ public class Camera {
         zPos -= movementSpeed * Math.sin(Math.toRadians(rotateAngle));
         printCameraVariables();
         remainInsidePlayingField();
+    }
+
+    public double xCharAdjust(double distanceToMoveInX, double distanceToMoveInZ) {
+        double dxX = -1 * distanceToMoveInX * movementSpeed * Math.cos(Math.toRadians(rotateAngle));
+        double dxZ = -1 * distanceToMoveInZ * Math.sin(Math.toRadians(rotateAngle));
+        return dxX + dxZ;
+    }
+
+    public double zCharAdjust(double distanceToMoveInX, double distanceToMoveInZ) {
+        double dzX = -1 * distanceToMoveInX * Math.sin(Math.toRadians(rotateAngle));
+        double dzZ = distanceToMoveInZ * Math.cos(Math.toRadians(rotateAngle));
+        return dzX + dzZ;
     }
 
     public void moveRight() {

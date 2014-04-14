@@ -7,6 +7,7 @@ import model.mapObjects.MapObject;
 import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
+import model.mapObjects.destructible.SphereEnemy;
 import model.renderers.ShapeRenderer;
 import org.lwjgl.util.vector.Vector4f;
 
@@ -54,14 +55,19 @@ public class EnemyHandler {
         int zScale = Model.MAX_MAP_COORDINATE;
 
         while(enemies.size() < maxEnemies) {
-            EnemyEntity test = new CubeEnemy(Math.random() * xScale, Math.random() * zScale, textureHandler);
-            if(enemies.size() % 5 == 0) {
-                test.setHp(2);
+            EnemyEntity test;
+            if(counter % 10 == 0) {
+                test = new SphereEnemy(Math.random() * xScale, Math.random() * zScale, textureHandler);
+            }
+            else {
+                test = new CubeEnemy(Math.random() * xScale, Math.random() * zScale, textureHandler);
+                if(counter % 5 == 0) {
+                    test.setHp(5);
+                }
             }
             enemies.add(test);
 
             counter++;
-            System.out.println(counter);
             xScale *= -1;
             if(counter % 2 == 0)
                 zScale *= -1;
