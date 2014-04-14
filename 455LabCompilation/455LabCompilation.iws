@@ -935,7 +935,11 @@
       <created>1397501725622</created>
       <updated>1397501725622</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Display a pyramid for the player&#10;Fixed collisions with spheres&#10;Added sphere enemies&#10;made every 10 enemies a 5 hp cube">
+      <created>1397501858954</created>
+      <updated>1397501858954</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
