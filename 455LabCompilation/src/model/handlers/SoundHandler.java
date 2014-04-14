@@ -14,6 +14,7 @@ public class SoundHandler {
     private static String backgroundFolder = baseFolder + "background/";
 
     private Audio backgroundMusic;
+    private Audio backgroundMusic2;
 
     public static final int SHOT1 = 0;
     public static final int SHOT2 = 1;
@@ -34,6 +35,7 @@ public class SoundHandler {
     private void loadAudio() {
         try {
             backgroundMusic = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream(backgroundFolder + "Cut and Run.wav"));
+            backgroundMusic2 = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream(backgroundFolder + "Ouroboros.wav"));
 
             effects = new HashMap<Integer, Audio>();
 
@@ -56,7 +58,7 @@ public class SoundHandler {
     }
 
     public Audio getBackgroundAudio() {
-        return backgroundMusic;
+        return backgroundMusic2;
     }
 
     public Audio getSoundEffect(int effect) {
