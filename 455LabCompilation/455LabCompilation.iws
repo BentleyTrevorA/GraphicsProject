@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/camera/Camera.java" afterPath="$PROJECT_DIR$/src/camera/Camera.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/destructible/EnemyEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/MapObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Model.java" afterPath="$PROJECT_DIR$/src/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/PlayerHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/PlayerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/renderers/ShapeRenderer.java" afterPath="$PROJECT_DIR$/src/model/renderers/ShapeRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/destructible/Shot.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/destructible/Shot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/mapObjects/destructible/SphereEnemy.java" afterPath="$PROJECT_DIR$/src/model/mapObjects/destructible/SphereEnemy.java" />
     </list>
     <list id="e93f3324-464a-46f7-91c2-e8c05dfc6fc2" name="Entries" comment="">
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Camera/.svn/entries" afterPath="$PROJECT_DIR$/src/camera/.svn/entries" />
@@ -940,7 +931,11 @@
       <created>1397340373627</created>
       <updated>1397340373628</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Display a pyramid for the player&#10;Fixed collisions with spheres&#10;Added sphere enemies&#10;made every 10 enemies a 5 hp cube">
+      <created>1397501725622</created>
+      <updated>1397501725622</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1006,8 +1001,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Normals working correctly on cubes and pyramids.&#10;Bottom face fixed on pyramids so normal is facing down, not up." />
-    <MESSAGE value="Draw map using array of MapObjects" />
     <MESSAGE value="Pushing to repository failed." />
     <MESSAGE value="I can shoot stuff. &#10;Collisions work&#10;Points work&#10;Enemy hp works&#10;Shot hp works (can hit obstacles a given amounts of times before dying)" />
     <MESSAGE value="Made enemy spheres bigger&#10;Made shot have 1000 hp&#10;Moved renderers to renderers package&#10;Attempt at determining which plane has been collided with&#10;" />
@@ -1031,7 +1024,9 @@
     <MESSAGE value="Added the capability of displaying a mini-map" />
     <MESSAGE value="Displaying Mini Map&#10;Can't go outside of map area" />
     <MESSAGE value="Shot speed setup so you shoot every 125 ms." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shot speed setup so you shoot every 125 ms." />
+    <MESSAGE value="Display a pyramid for the player" />
+    <MESSAGE value="Display a pyramid for the player&#10;Fixed collisions with spheres&#10;Added sphere enemies&#10;made every 10 enemies a 5 hp cube" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display a pyramid for the player&#10;Fixed collisions with spheres&#10;Added sphere enemies&#10;made every 10 enemies a 5 hp cube" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
