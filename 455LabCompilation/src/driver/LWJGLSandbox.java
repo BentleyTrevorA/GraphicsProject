@@ -1,42 +1,29 @@
 package driver;
 
-import controllers.LabController;
-import game.GameController;
+import controller.GameController;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
-import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import static org.lwjgl.opengl.GL11.glClearColor;
 
 public class LWJGLSandbox {
-    public static int DISPLAY_WIDTH = 640;
-    public static int DISPLAY_HEIGHT = 480;
+    public static int DISPLAY_WIDTH = 960;
+    public static int DISPLAY_HEIGHT = 720;
 
     public LWJGLSandbox() {
     }
 
-    public LabController c;
+    public GameController c;
 
-    public void create(LabController c) throws LWJGLException {
+    public void create(GameController c) throws LWJGLException {
         this.c = c;
-
-        //Display
-        if (c.getClass() == GameController.class) {
-            DISPLAY_WIDTH = 960;
-            DISPLAY_HEIGHT = 720;
-        }
-
         Display.setDisplayMode(new DisplayMode(DISPLAY_WIDTH, DISPLAY_HEIGHT));
 
         Display.setFullscreen(false);
-        Display.setTitle("OpenGL Frame");
+        Display.setTitle("Game Frame");
         Display.create();
 
         //Keyboard

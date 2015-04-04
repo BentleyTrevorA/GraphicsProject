@@ -1,14 +1,11 @@
 package model.handlers;
 
 import camera.Camera;
-import game.GameController;
 import model.Model;
-import model.mapObjects.MapObject;
-import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
+import model.mapObjects.destructible.Shot;
 import model.mapObjects.destructible.SphereEnemy;
-import model.renderers.ShapeRenderer;
 import org.lwjgl.util.vector.Vector4f;
 
 import java.util.Collection;

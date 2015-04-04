@@ -2,16 +2,12 @@ package model.handlers;
 
 import camera.Camera;
 import driver.LWJGLSandbox;
-import game.GameController;
 import model.Colors;
 import model.Model;
 import model.renderers.ShapeRenderer;
 import org.lwjgl.util.vector.Vector3f;
-import org.lwjgl.util.vector.Vector4f;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL11.GL_PROJECTION;
-import static org.lwjgl.opengl.GL11.glPopMatrix;
 
 public class HudVisualHandler {
     private static final int WIDTH = LWJGLSandbox.DISPLAY_WIDTH;

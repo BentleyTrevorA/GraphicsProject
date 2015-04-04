@@ -1,10 +1,10 @@
-package game;
-
+package controller;
 
 import camera.Camera;
-import controllers.LabController;
 import driver.LWJGLSandbox;
-import model.*;
+import model.DepthBuffer;
+import model.Lighting;
+import model.Model;
 import model.handlers.PlayerHandler;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
@@ -12,7 +12,7 @@ import org.lwjgl.opengl.Display;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
 
-public class GameController extends LabController {
+public class GameController {
     private Model model;
     private Camera camera;
     private DepthBuffer depthBuffer;
@@ -26,7 +26,8 @@ public class GameController extends LabController {
     public static float c = 0f;
     public static float d = 0f;
 
-    protected void initBase() {
+    public GameController()
+    {
         camera = new Camera();
         depthBuffer = new DepthBuffer();
         light = new Lighting();

@@ -1,13 +1,11 @@
 package model.handlers;
 
 import driver.LWJGLSandbox;
-import game.GameController;
 import model.Colors;
 import model.renderers.TextRenderer;
 import org.lwjgl.util.vector.Vector3f;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL11.glPopMatrix;
 
 public class HudTextHandler {
     private static final int WIDTH = LWJGLSandbox.DISPLAY_WIDTH;
