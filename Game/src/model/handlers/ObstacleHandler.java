@@ -1,5 +1,6 @@
 package model.handlers;
 
+import model.mapObjects.MapName;
 import model.mapObjects.MapObject;
 import model.mapObjects.MapObstaclePopulator;
 import model.mapObjects.destructible.Shot;
@@ -11,9 +12,9 @@ public class ObstacleHandler {
 
     private Collection<MapObject> obstacles;
 
-    public ObstacleHandler(TextureHandler textureHandler, int mapNumber) {
+    public ObstacleHandler(TextureHandler textureHandler, MapName mapName) {
         mapCreator = new MapObstaclePopulator(textureHandler);
-        obstacles = mapCreator.createMap(mapNumber);
+        obstacles = mapCreator.populateObstacles(mapName);
     }
 
     public void drawObstacles() {

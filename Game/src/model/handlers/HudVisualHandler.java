@@ -58,7 +58,7 @@ public class HudVisualHandler {
         return Colors.RED;
     }
 
-    public void drawMiniMap(Camera camera) {
+    public void pushMatricesForMiniMap(Camera camera) {
         drawingMiniMap = true;
         glMatrixMode(GL_PROJECTION);
         glPushMatrix();

@@ -1,6 +1,7 @@
 package model.handlers;
 
 import camera.Camera;
+import model.BasicSettings;
 import model.Model;
 import model.mapObjects.destructible.CubeEnemy;
 import model.mapObjects.destructible.EnemyEntity;
@@ -17,7 +18,6 @@ public class EnemyHandler {
     private SoundHandler soundHandler;
 
     private Collection<EnemyEntity> enemies;
-    private int maxEnemies = 30;
     private int counter = 0;
 
     public EnemyHandler(ScoreHandler scoreHandler,
@@ -51,7 +51,7 @@ public class EnemyHandler {
         int xScale = Model.MAX_MAP_COORDINATE;
         int zScale = Model.MAX_MAP_COORDINATE;
 
-        while(enemies.size() < maxEnemies) {
+        while(enemies.size() < BasicSettings.MAX_ENEMIES) {
             EnemyEntity test;
             if(counter % 10 == 0) {
                 test = new SphereEnemy(Math.random() * xScale, Math.random() * zScale, textureHandler);

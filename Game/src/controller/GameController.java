@@ -6,6 +6,7 @@ import model.DepthBuffer;
 import model.Lighting;
 import model.Model;
 import model.handlers.PlayerHandler;
+import model.mapObjects.MapName;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
@@ -18,7 +19,7 @@ public class GameController {
     private DepthBuffer depthBuffer;
     private PlayerHandler playerHandler;
     private Lighting light;
-    private static int map = 0; // TODO: Change to 1
+    private static MapName mapName = MapName.EXPERIMENT_MAP;
     private static int difficulty = 1;
 
     public static float a = 1f;
@@ -34,7 +35,7 @@ public class GameController {
     }
 
     public void setupAfterInitGL() {
-        model = new Model(camera, map, difficulty);
+        model = new Model(camera, mapName, difficulty);
         playerHandler = model.getPlayerHandler();
     }
 

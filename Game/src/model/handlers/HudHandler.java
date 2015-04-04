@@ -1,6 +1,6 @@
 package model.handlers;
 
-import model.Model;
+import model.BasicSettings;
 
 public class HudHandler {
     private ShotsHandler shotsHandler;
@@ -30,8 +30,8 @@ public class HudHandler {
         hudTextHandler.drawHpRemaining(playerHandler.getHp(), playerHandler.getMaxHp());
         hudVisualHandler.drawLife(playerHandler.getPercentLife());
 
-        if(Model.DRAW_MINI_MAP)
-            hudVisualHandler.drawMiniMap(playerHandler.getCamera());
+        if(BasicSettings.DRAW_MINI_MAP)
+            hudVisualHandler.pushMatricesForMiniMap(playerHandler.getCamera());
     }
 
     public void finishDrawingHud() {

@@ -2,6 +2,7 @@ package model;
 
 import camera.Camera;
 import model.handlers.*;
+import model.mapObjects.MapName;
 import model.renderers.ShapeRenderer;
 
 public class Model {
@@ -10,7 +11,6 @@ public class Model {
     private static final int NUM_TILES_IN_ONE_DIRECTION = 25;
     public static final int MIN_MAP_COORDINATE = -TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
     public static final int MAX_MAP_COORDINATE = TILE_SIZE * NUM_TILES_IN_ONE_DIRECTION;
-    public static final boolean DRAW_MINI_MAP = true;
 
     private Camera camera;
     private ScoreHandler scoreHandler;
@@ -24,14 +24,14 @@ public class Model {
     private TextureHandler textureHandler;
     private SoundHandler soundHandler;
 
-    public Model(Camera camera, int mapNumber, int difficulty) {
+    public Model(Camera camera, MapName mapName, int difficulty) {
         this.camera = camera;
         scoreHandler = new ScoreHandler();
         textureHandler = new TextureHandler();
         soundHandler = new SoundHandler();
         enemyHandler = new EnemyHandler(scoreHandler, textureHandler, soundHandler);
         playerHandler = new PlayerHandler(camera, enemyHandler, soundHandler);
-        obstacleHandler = new ObstacleHandler(textureHandler, mapNumber);
+        obstacleHandler = new ObstacleHandler(textureHandler, mapName);
         shotsHandler = new ShotsHandler(obstacleHandler, enemyHandler, textureHandler, soundHandler);
         hudHandler = new HudHandler(scoreHandler, shotsHandler, enemyHandler, playerHandler, textureHandler);
 
@@ -62,7 +62,7 @@ public class Model {
 
     public void drawHud() {
         hudHandler.drawHud();
-        if(DRAW_MINI_MAP) {
+        if(BasicSettings.DRAW_MINI_MAP) {
             ShapeRenderer.drawFloorTiles(TILE_SIZE, NUM_TILES_IN_ONE_DIRECTION,
                     textureHandler.getTexture(TextureHandler.STONE_1), textureHandler.getTexture(TextureHandler.STONE_2));
             ShapeRenderer.drawWalls(500.0, 100.0, Colors.BLUE, textureHandler.getTexture(TextureHandler.STONE_4));
