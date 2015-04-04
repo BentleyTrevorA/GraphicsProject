@@ -19,9 +19,7 @@
       </profile>
     </annotationProcessing>
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
+  <component name="CopyrightManager" default="" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -165,7 +163,7 @@
       <module fileurl="file://$PROJECT_DIR$/455LabCompilation.iml" filepath="$PROJECT_DIR$/455LabCompilation.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SvnBranchConfigurationManager">
@@ -176,20 +174,44 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="lwjgl">
+    <library name="lwjgl-2.9.3">
       <CLASSES>
-        <root url="jar://C:/Program Files/Java/jdk1.7.0_40/lib/lwjgl-2.9.0/jar/lwjgl.jar!/" />
+        <root url="file://$PROJECT_DIR$/lib/lwjgl-2.9.3/jar" />
       </CLASSES>
-      <JAVADOC />
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/lib/lwjgl-2.9.3/doc" />
+      </JAVADOC>
       <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/lwjgl-2.9.3/jar" recursive="false" />
     </library>
-    <library name="lwjgl_util">
+    <library name="lwjgl-3">
       <CLASSES>
-        <root url="jar://C:/Program Files/Java/jdk1.7.0_40/lib/lwjgl-2.9.0/jar/lwjgl_util.jar!/" />
+        <root url="file://$PROJECT_DIR$/lib/lwjgl-3/jar" />
       </CLASSES>
-      <JAVADOC />
-      <SOURCES />
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/lib/lwjgl-3/doc" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/lib/lwjgl-3/src" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib/lwjgl-3/jar" recursive="false" />
+    </library>
+    <library name="slick">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/slick" />
+        <root url="file://$PROJECT_DIR$/lib/slick/lib" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/lib/slick/javadoc" />
+      </JAVADOC>
+      <NATIVE>
+        <root url="file://$PROJECT_DIR$/lib/slick" />
+      </NATIVE>
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/lib/slick/src" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib/slick" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/slick/lib" recursive="false" />
     </library>
   </component>
 </project>
-

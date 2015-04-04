@@ -34,6 +34,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lwjgl-2.9.3" level="project" />
+    <orderEntry type="library" name="lwjgl-3" level="project" />
+    <orderEntry type="library" name="slick" level="project" />
   </component>
 </module>
-
