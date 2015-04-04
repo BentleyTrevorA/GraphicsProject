@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Created .gitignore file&#10;Testing change in BigPoint class">
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\Controllers\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\DataRepresentations\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\controllers\Lab1Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\controllers\Lab2Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\controllers\Lab3Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\controllers\Lab4Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\controllers\LabController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\dataRepresentations\BigPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\dataRepresentations\ConvexShape.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\dataRepresentations\Line.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\dataRepresentations\PointData.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\dataRepresentations\Quad.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\dataRepresentations\Triangle.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Github\GameBranch\455LabCompilation\src\game\GameController.java" afterPath="$PROJECT_DIR$/src/controller/GameController.java" />
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Removed all code from old labs so it is only game code">
+      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\.svn\entries" afterPath="" />
+      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\.svn\lock" afterPath="" />
+      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\.svn\props\DataStructures.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\.svn\props\LWJGLSandbox.java.svn-work" afterPath="" />
+      <change type="DELETED" beforePath="C:\Github\GameBranch\455LabCompilation\src\.svn\props\LWJGLmain.java.svn-work" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/EnemyHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/HudTextHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/HudTextHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/handlers/HudVisualHandler.java" afterPath="$PROJECT_DIR$/src/model/handlers/HudVisualHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/driver/LWJGLSandbox.java" afterPath="$PROJECT_DIR$/src/driver/LWJGLSandbox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/driver/LWJGLmain.java" afterPath="$PROJECT_DIR$/src/driver/LWJGLmain.java" />
     </list>
     <list id="e93f3324-464a-46f7-91c2-e8c05dfc6fc2" name="Entries" comment="" />
     <ignored path="455LabCompilation.iws" />
@@ -169,12 +155,12 @@
       <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52991456">
-              <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.43304843">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2136#2137#0" expanded="true" />
-                <element signature="e#2166#2167#0" expanded="true" />
+                <element signature="e#2189#2190#0" expanded="true" />
+                <element signature="e#2219#2220#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -274,6 +260,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="455LabCompilation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,12 +544,6 @@
       <created>1389821283963</created>
       <option name="number" value="Default" />
       <updated>1389821283963</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Shear works both in LWJGL and my implementation.">
-      <created>1393481581647</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1393481581647</updated>
     </task>
     <task id="LOCAL-00016" summary="IPR Updated">
       <created>1394068187923</created>
@@ -839,7 +833,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428130121747</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Removed all code from old labs so it is only game code">
+      <created>1428135921392</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1428135921392</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -907,7 +907,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Shot extends MapObject now" />
     <MESSAGE value="Removed some completed TODO tasks and removed unused WallObstacle class" />
     <MESSAGE value="Moved movement into MapObject class" />
     <MESSAGE value="Enemies now move around the map towards you as a player" />
@@ -932,7 +931,8 @@
     <MESSAGE value="Updated directory name for datarepresentations to be all lowercase&#10;Deleted &quot;out&quot; directory" />
     <MESSAGE value="Updated directory name for datarepresentations, controllers, and camera to be all lowercase&#10;Deleted &quot;out&quot; directory" />
     <MESSAGE value="Created .gitignore file&#10;Testing change in BigPoint class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created .gitignore file&#10;Testing change in BigPoint class" />
+    <MESSAGE value="Removed all code from old labs so it is only game code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed all code from old labs so it is only game code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1237,12 +1237,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52991456">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.43304843">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2166#2167#0" expanded="true" />
+            <element signature="e#2189#2190#0" expanded="true" />
+            <element signature="e#2219#2220#0" expanded="true" />
           </folding>
         </state>
       </provider>
