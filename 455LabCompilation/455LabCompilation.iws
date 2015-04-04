@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Updated directory name for datarepresentations, controllers, and camera to be all lowercase&#10;Deleted &quot;out&quot; directory" />
+    <list default="true" id="7812872c-57fa-4c50-8386-3f55d8c8f827" name="Default" comment="Created .gitignore file&#10;Testing change in BigPoint class">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/455LabCompilation.iws" afterPath="$PROJECT_DIR$/455LabCompilation.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataRepresentations/BigPoint.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/BigPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/LabController.java" afterPath="$PROJECT_DIR$/src/controllers/LabController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataRepresentations/Line.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/Line.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataRepresentations/PointData.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/PointData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataRepresentations/Quad.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/Quad.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataRepresentations/Triangle.java" afterPath="$PROJECT_DIR$/src/dataRepresentations/Triangle.java" />
+    </list>
     <list id="e93f3324-464a-46f7-91c2-e8c05dfc6fc2" name="Entries" comment="" />
     <ignored path="455LabCompilation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,10 +106,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="BigPoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/datarepresentations/BigPoint.java">
+        <entry file="file://$PROJECT_DIR$/src/dataRepresentations/BigPoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +118,7 @@
         </entry>
       </file>
       <file leaf-file-name="ConvexShape.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/datarepresentations/ConvexShape.java">
+        <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -117,10 +127,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Line.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/datarepresentations/Line.java">
+      <file leaf-file-name="Line.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.112026356">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
@@ -128,25 +138,21 @@
         </entry>
       </file>
       <file leaf-file-name="Quad.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/datarepresentations/Quad.java">
+        <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#1495#1506#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Triangle.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/datarepresentations/Triangle.java">
+      <file leaf-file-name="Triangle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36408567">
+            <state vertical-scroll-proportion="0.0">
               <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-              <folding>
-                <element signature="e#1310#1321#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,7 +162,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,26 +174,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#866#867#0" expanded="false" />
+                <element signature="e#930#931#0" expanded="false" />
+                <element signature="e#3399#3400#0" expanded="false" />
+                <element signature="e#3476#3477#0" expanded="false" />
+                <element signature="e#3668#3669#0" expanded="false" />
+                <element signature="e#3705#3706#0" expanded="false" />
+                <element signature="e#3745#3746#0" expanded="false" />
+                <element signature="e#3783#3784#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="PointData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/datarepresentations/PointData.java">
+        <entry file="file://$PROJECT_DIR$/src/dataRepresentations/PointData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lab4Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/Lab4Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="266" column="45" selection-start-line="266" selection-start-column="45" selection-end-line="266" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -290,12 +298,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/controllers/LabController.java" />
-        <option value="$PROJECT_DIR$/src/datarepresentations/BigPoint.java" />
         <option value="$PROJECT_DIR$/src/datarepresentations/ConvexShape.java" />
         <option value="$PROJECT_DIR$/src/datarepresentations/Line.java" />
         <option value="$PROJECT_DIR$/src/datarepresentations/PointData.java" />
         <option value="$PROJECT_DIR$/src/datarepresentations/Quad.java" />
         <option value="$PROJECT_DIR$/src/datarepresentations/Triangle.java" />
+        <option value="$PROJECT_DIR$/src/datarepresentations/BigPoint.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/dataRepresentations/BigPoint.java" />
       </list>
     </option>
   </component>
@@ -335,8 +345,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -383,43 +393,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="datarepresentations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="455LabCompilation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camera" />
+              <option name="myItemId" value="dataRepresentations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -449,7 +423,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="SearchEverywhereHistory" value="&#10;shear" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -1007,7 +981,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4287902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1020,7 +994,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2510981" sideWeight="0.68856174" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8503937" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.72231686" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1035,6 +1008,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26141733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8503937" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1050,7 +1024,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Reformatted Code&#10;Renamed NonDestructibleObject classes to have Obstacle at the end of their class names&#10;Renamed MapObjectType to be ShapeType&#10;" />
     <MESSAGE value="Shot extends MapObject now" />
     <MESSAGE value="Removed some completed TODO tasks and removed unused WallObstacle class" />
     <MESSAGE value="Moved movement into MapObject class" />
@@ -1075,7 +1048,8 @@
     <MESSAGE value="Updated directory name for datarepresentations to be all lowercase" />
     <MESSAGE value="Updated directory name for datarepresentations to be all lowercase&#10;Deleted &quot;out&quot; directory" />
     <MESSAGE value="Updated directory name for datarepresentations, controllers, and camera to be all lowercase&#10;Deleted &quot;out&quot; directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated directory name for datarepresentations, controllers, and camera to be all lowercase&#10;Deleted &quot;out&quot; directory" />
+    <MESSAGE value="Created .gitignore file&#10;Testing change in BigPoint class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created .gitignore file&#10;Testing change in BigPoint class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1105,11 +1079,81 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/camera/Camera.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/LabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#LabController#0;class#LabController#0" expanded="false" />
+            <element signature="method#initBase#0;class#LabController#0" expanded="false" />
+            <element signature="method#init#0;class#LabController#0" expanded="false" />
+            <element signature="method#resizeGL#0;class#LabController#0" expanded="false" />
+            <element signature="method#updateKeyboard#0;class#LabController#0" expanded="false" />
+            <element signature="method#setPixel#0;class#LabController#0" expanded="false" />
+            <element signature="method#calculateLight#0;class#LabController#0" expanded="false" />
+            <element signature="e#8156#8232#0" expanded="false" />
+            <element signature="method#calculateSpecularLightColor#0;class#LabController#0" expanded="false" />
+            <element signature="e#9837#9916#0" expanded="false" />
+            <element signature="method#calculateNewColor#0;class#LabController#0" expanded="false" />
+            <element signature="method#calculateColorChangeFromLight#0;class#LabController#0" expanded="false" />
+            <element signature="e#11481#11544#0" expanded="false" />
+            <element signature="e#11891#11980#0" expanded="false" />
+            <element signature="method#calculateColorChangeFromFog#0;class#LabController#0" expanded="false" />
+            <element signature="e#13206#13246#0" expanded="false" />
+            <element signature="method#withinViewport#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLClear#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLBegin#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLVertex2i#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLEnd#0;class#LabController#0" expanded="false" />
+            <element signature="e#16220#16281#0" expanded="false" />
+            <element signature="method#doGLColor3f#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLLines3D#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLLineStrip3D#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLLineLoop3D#0;class#LabController#0" expanded="false" />
+            <element signature="method#closeLoop#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLTriangles3D#0;class#LabController#0" expanded="false" />
+            <element signature="method#drawNormalTriangle#0;class#LabController#0" expanded="false" />
+            <element signature="method#drawTriangleStrip#0;class#LabController#0" expanded="false" />
+            <element signature="method#drawTriangleFan#0;class#LabController#0" expanded="false" />
+            <element signature="docComment;method#doGLQuads3D#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLQuads3D#0;class#LabController#0" expanded="false" />
+            <element signature="method#drawPoints#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLEnable#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLDisable#0;class#LabController#0" expanded="false" />
+            <element signature="docComment;method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLMatrixMode#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLViewport#0;class#LabController#0" expanded="false" />
+            <element signature="e#27399#27439#0" expanded="false" />
+            <element signature="method#doGLPushMatrix#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLPopMatrix#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLVertex2f#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLVertex4f#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLLoadIdentity#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLLoadMatrixd#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLTranslatef#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLOrtho#0;class#LabController#0" expanded="false" />
+            <element signature="method#shear#0;class#LabController#0" expanded="false" />
+            <element signature="docComment;method#doGluLookAt#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGluLookAt#0;class#LabController#0" expanded="false" />
+            <element signature="e#35342#35419#0" expanded="false" />
+            <element signature="e#36481#36549#0" expanded="false" />
+            <element signature="method#modelToScreen#0;class#LabController#0" expanded="false" />
+            <element signature="method#modelToModelView#0;class#LabController#0" expanded="false" />
+            <element signature="method#modelToScreenNormal#0;class#LabController#0" expanded="false" />
+            <element signature="method#modelToProjection#0;class#LabController#0" expanded="false" />
+            <element signature="method#projectionToScreen#0;class#LabController#0" expanded="false" />
+            <element signature="method#ScreenToModelview#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLFrustumD#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLFrustumF#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGluPerspective#0;class#LabController#0" expanded="false" />
+            <element signature="e#41715#41730#0" expanded="false" />
+            <element signature="method#doGLLight#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLFog#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLFogf#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLMaterial#0;class#LabController#0" expanded="false" />
+            <element signature="method#doGLMaterialf#0;class#LabController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,41 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="200" selection-start-line="26" selection-start-column="200" selection-end-line="26" selection-end-column="200" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#968#969#0" expanded="false" />
-            <element signature="e#996#997#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1084#1085#0" expanded="false" />
-            <element signature="e#1124#1125#0" expanded="false" />
-            <element signature="e#1608#1609#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1680#1681#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1762#1763#0" expanded="false" />
-            <element signature="e#1791#1792#0" expanded="false" />
-            <element signature="e#2244#2245#0" expanded="false" />
-            <element signature="e#2280#2281#0" expanded="false" />
-            <element signature="e#2314#2315#0" expanded="false" />
-            <element signature="e#2351#2352#0" expanded="false" />
-            <element signature="e#2382#2383#0" expanded="false" />
-            <element signature="e#2416#2417#0" expanded="false" />
-            <element signature="e#2446#2447#0" expanded="false" />
-            <element signature="e#2479#2480#0" expanded="false" />
-            <element signature="e#2507#2508#0" expanded="false" />
-            <element signature="e#2538#2539#0" expanded="false" />
-            <element signature="e#2568#2569#0" expanded="false" />
-            <element signature="e#2601#2602#0" expanded="false" />
-            <element signature="e#2631#2632#0" expanded="false" />
-            <element signature="e#2664#2665#0" expanded="false" />
-            <element signature="e#2695#2696#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2765#2766#0" expanded="false" />
-            <element signature="e#2804#2805#0" expanded="false" />
-            <element signature="e#2839#2840#0" expanded="false" />
-            <element signature="e#2912#2913#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1327,7 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.224719">
           <caret line="68" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1349,41 +1357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="200" selection-start-line="26" selection-start-column="200" selection-end-line="26" selection-end-column="200" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#968#969#0" expanded="false" />
-            <element signature="e#996#997#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1084#1085#0" expanded="false" />
-            <element signature="e#1124#1125#0" expanded="false" />
-            <element signature="e#1608#1609#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1680#1681#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1762#1763#0" expanded="false" />
-            <element signature="e#1791#1792#0" expanded="false" />
-            <element signature="e#2244#2245#0" expanded="false" />
-            <element signature="e#2280#2281#0" expanded="false" />
-            <element signature="e#2314#2315#0" expanded="false" />
-            <element signature="e#2351#2352#0" expanded="false" />
-            <element signature="e#2382#2383#0" expanded="false" />
-            <element signature="e#2416#2417#0" expanded="false" />
-            <element signature="e#2446#2447#0" expanded="false" />
-            <element signature="e#2479#2480#0" expanded="false" />
-            <element signature="e#2507#2508#0" expanded="false" />
-            <element signature="e#2538#2539#0" expanded="false" />
-            <element signature="e#2568#2569#0" expanded="false" />
-            <element signature="e#2601#2602#0" expanded="false" />
-            <element signature="e#2631#2632#0" expanded="false" />
-            <element signature="e#2664#2665#0" expanded="false" />
-            <element signature="e#2695#2696#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2765#2766#0" expanded="false" />
-            <element signature="e#2804#2805#0" expanded="false" />
-            <element signature="e#2839#2840#0" expanded="false" />
-            <element signature="e#2912#2913#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1454,7 +1427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,7 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1478,7 +1449,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1486,7 +1459,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#866#867#0" expanded="false" />
+            <element signature="e#930#931#0" expanded="false" />
+            <element signature="e#3399#3400#0" expanded="false" />
+            <element signature="e#3476#3477#0" expanded="false" />
+            <element signature="e#3668#3669#0" expanded="false" />
+            <element signature="e#3705#3706#0" expanded="false" />
+            <element signature="e#3745#3746#0" expanded="false" />
+            <element signature="e#3783#3784#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1568,33 +1551,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datarepresentations/BigPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datarepresentations/ConvexShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datarepresentations/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datarepresentations/PointData.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/PointData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
@@ -1602,23 +1559,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datarepresentations/Quad.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Quad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/BigPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
           <folding>
-            <element signature="e#1495#1506#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datarepresentations/Triangle.java">
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/ConvexShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36408567">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#1310#1321#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataRepresentations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.112026356">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

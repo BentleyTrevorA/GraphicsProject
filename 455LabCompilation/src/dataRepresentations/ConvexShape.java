@@ -1,4 +1,4 @@
-package datarepresentations;
+package dataRepresentations;
 
 import controllers.LabController;
 

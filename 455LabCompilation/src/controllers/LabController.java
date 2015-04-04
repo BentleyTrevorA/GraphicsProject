@@ -1,6 +1,6 @@
 package controllers;
 
-import datarepresentations.*;
+import dataRepresentations.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Matrix4f;

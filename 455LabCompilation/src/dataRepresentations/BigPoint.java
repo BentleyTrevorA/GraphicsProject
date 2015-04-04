@@ -1,4 +1,4 @@
-package datarepresentations;
+package dataRepresentations;
 
 import org.lwjgl.util.vector.Vector4f;
 
@@ -10,6 +10,7 @@ public class BigPoint extends ConvexShape {
     ArrayList<PointData> circlePoints;
 
     public BigPoint(int x, int y, int radius, Vector4f color) {
+        // TODO: Test if this change commits
         this.color = color;
         circlePoints = new ArrayList<PointData>();
 

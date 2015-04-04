@@ -1,0 +1,9 @@
+# Out directory
+out/
+
+# All class files
+*.class\
+
+#.iws Files
+*.iws
+

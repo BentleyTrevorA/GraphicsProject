@@ -1,4 +1,4 @@
-package datarepresentations;
+package dataRepresentations;
 
 import org.lwjgl.util.vector.Vector4f;
 
