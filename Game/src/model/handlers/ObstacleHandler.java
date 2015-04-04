@@ -1,8 +1,8 @@
 package model.handlers;
 
-import model.mapObjects.destructible.Shot;
-import model.mapObjects.MapObstaclePopulator;
 import model.mapObjects.MapObject;
+import model.mapObjects.MapObstaclePopulator;
+import model.mapObjects.destructible.Shot;
 
 import java.util.Collection;
 

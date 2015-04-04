@@ -4,22 +4,14 @@ import model.Colors;
 import model.HouseModel;
 import model.Line3D;
 import model.WireFrame;
-import model.handlers.TextureHandler;
 import model.mapObjects.MapObject;
 import org.lwjgl.util.glu.Sphere;
 import org.lwjgl.util.vector.Vector3f;
 import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureLoader;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL11.glEnd;
-import static org.lwjgl.opengl.GL11.glVertex3d;
 
 public class ShapeRenderer {
 

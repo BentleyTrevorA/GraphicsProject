@@ -1,9 +1,9 @@
 package model.handlers;
 
 import camera.Camera;
-import model.mapObjects.destructible.Shot;
 import model.mapObjects.MapObject;
 import model.mapObjects.destructible.EnemyEntity;
+import model.mapObjects.destructible.Shot;
 
 import java.util.Collection;
 import java.util.HashSet;

@@ -3,7 +3,6 @@ package model.mapObjects.destructible;
 import model.Colors;
 import model.mapObjects.ShapeType;
 import org.lwjgl.util.vector.Vector3f;
-import org.newdawn.slick.opengl.Texture;
 
 public abstract class EnemyEntity extends Entity {
     protected static Vector3f defaultColor = Colors.ORANGE;

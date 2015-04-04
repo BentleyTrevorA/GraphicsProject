@@ -2,8 +2,8 @@ package model.renderers;
 
 // http://ninjacave.com/taxonomy/term/3?page=1
 
-import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.Color;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.awt.*;
 

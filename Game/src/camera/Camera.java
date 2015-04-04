@@ -3,7 +3,8 @@ package camera;
 import model.Model;
 import org.lwjgl.util.vector.Vector4f;
 
-import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.glRotated;
+import static org.lwjgl.opengl.GL11.glTranslated;
 
 public class Camera {
     // Right handed coordinate system - These values (numeric) are inverted because of the translation matrix
